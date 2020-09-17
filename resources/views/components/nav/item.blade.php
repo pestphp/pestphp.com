@@ -1,7 +1,6 @@
-@if ($url = is_string($item) ?? $item)
+@if (is_string($item))
     <div class="mt-1">
-        {{-- {{ $page->isActive($url) ? 'bg-cool-gray-200 hover:bg-cool-gray-300 text-cool-gray-700 font-semibold' : '' }} --}}
-        <a href="{{ url($url) }}" class="group font-system font-normal flex items-center px-3 py-1.5 text-sm leading-5 text-cool-gray-500 rounded-md hover:text-cool-gray-900 hover:bg-cool-gray-300 focus:bg-cool-gray-300 transition ease-in-out duration-150">
+        <a href="{{ url($item) }}" class="{{ is_current_url(url($item)) ? 'bg-cool-gray-200 hover:bg-cool-gray-300 text-cool-gray-700 font-semibold' : '' }} group font-system font-normal flex items-center px-3 py-1.5 text-sm leading-5 text-cool-gray-500 rounded-md hover:text-cool-gray-900 hover:bg-cool-gray-300 focus:bg-cool-gray-300 transition ease-in-out duration-150">
             <span class="truncate">
                 {{ $label }}
             </span>

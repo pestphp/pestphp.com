@@ -22,4 +22,8 @@ Route::get('/', function () {
 
 Route::get('/docs/team', TeamController::class)->name('team');
 
-Route::get('/docs/{page?}', DocsController::class)->name('docs')->where('page', '.*');;
+Route::get('/docs/{page?}', DocsController::class)->name('docs')->where('page', '.*');
+
+Route::get('/test', function () {
+	return is_current_url(url('test'));
+});
