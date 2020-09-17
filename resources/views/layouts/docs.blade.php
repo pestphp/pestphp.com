@@ -17,6 +17,7 @@
     </section>
 
     <x-slot name="footer">
+        <script src="{{ mix('js/main.js') }}"></script>
         {{ $footer ?? '' }}
     </x-slot>
 </x-html>

@@ -1,0 +1,100 @@
+body {
+    font-size: 17px;
+    scroll-behavior: smooth;
+}
+
+a {
+    @apply .font-semibold;
+    @apply .no-underline;
+    @apply .text-purple-600;
+
+    &:hover {
+        @apply .text-purple-800;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply .leading-tight;
+    @apply .mb-4;
+    @apply .mt-8;
+    @apply .text-gray-900;
+
+    &:first-child {
+        @apply .mt-0;
+    }
+}
+
+h1 {
+    @apply .font-extrabold;
+    @apply .text-5xl;
+}
+
+h2 {
+    @apply .font-bold;
+    @apply .text-4xl;
+}
+
+h3 {
+    @apply .font-bold;
+    @apply .text-3xl;
+}
+
+h4 {
+    @apply .font-normal;
+    @apply .text-2xl;
+}
+
+h5 {
+    @apply .font-normal;
+    @apply .text-xl;
+}
+
+h6 {
+    @apply .font-light;
+    @apply .text-lg;
+}
+
+hr {
+    @apply .border-b;
+    @apply .border-purple-200;
+    @apply .my-12;
+    @apply .rounded-full;
+}
+
+li {
+    ul,
+    ol {
+        @apply .my-0;
+    }
+}
+
+ol,
+ul {
+    @apply .my-4;
+}
+
+ol {
+    @apply .list-decimal;
+}
+
+ul {
+    @apply .list-disc;
+}
+
+p {
+    @apply .my-3;
+
+    @screen md {
+        @apply .my-6;
+    }
+}
+
+::selection {
+    @apply .bg-purple-500;
+    @apply .text-white;
+}

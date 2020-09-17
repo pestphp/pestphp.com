@@ -1,0 +1,12 @@
+.documentation {
+	blockquote {
+		@apply .border-purple-400;
+		@apply .border-l-4;
+		@apply .font-normal;
+		@apply .italic;
+		@apply .my-8;
+		@apply .pl-6;
+		@apply .text-cool-gray-800;
+		@apply .text-lg;
+	}
+}

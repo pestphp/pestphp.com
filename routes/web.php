@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DocsController;
+use App\Http\Controllers\TeamController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/docs/team', function () {
-    return view('team',[
-        "team" => require_once(base_path('data/team.php'))
-    ]);
-});
+Route::get('/docs/team', TeamController::class)->name('team');
+
+Route::get('/docs/{page?}', DocsController::class)->name('docs')->where('page', '.*');;
