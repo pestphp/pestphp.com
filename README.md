@@ -1,6 +1,6 @@
 ## Pest Website
 
-This is the source of the official [Pesr website](https://pestphp.com).
+This is the source of the official [Pest website](https://pestphp.com).
 
 ## Local Development
 
