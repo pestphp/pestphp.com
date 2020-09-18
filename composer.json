@@ -10,13 +10,13 @@
     "require": {
         "php": "^7.3",
         "blade-ui-kit/blade-ui-kit": "^0.1.1",
+        "erusev/parsedown-extra": "^0.8.1",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
         "league/commonmark": "^1.5",
-        "parsedown/laravel": "^1.2",
         "spatie/yaml-front-matter": "^2.0",
         "symfony/yaml": "^5.1"
     },

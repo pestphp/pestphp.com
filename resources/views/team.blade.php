@@ -1,4 +1,4 @@
-<x-app-layout layout="docs" title="Team | Pest">
+<x-app-layout layout="docs" :title='"Team | Pest"'>
     <h1>Meet the team</h1>
 
     <blockquote>

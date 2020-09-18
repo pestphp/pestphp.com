@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Documentation;
 use Illuminate\Http\Request;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
+use App\Parsedown;
 
 class DocsController extends Controller
 {
@@ -33,8 +34,13 @@ class DocsController extends Controller
         $matter = $contents->matter();
         $markdown = $contents->body();
 
-        // dd($markdown);
+        $parsedown = new Parsedown();
+        $body = $parsedown->text($markdown);
 
-        return view('docs', compact('markdown', 'matter'));
+        // dd($parsedown->toc);
+
+        // dd($parsedown);
+
+        return view('docs', compact('body', 'matter', 'markdown'));
     }
 }

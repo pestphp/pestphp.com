@@ -22,7 +22,7 @@ module.exports = {
     theme: {
         extend: {
             height: {
-                'screen-24': '100vh'
+                'screen-24': 'calc(100vh - 4rem)'
             },
             fontFamily: {
                 sans: [
