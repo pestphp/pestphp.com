@@ -1,4 +1,4 @@
-<x-app-layout layout="docs" :title='"Team | Pest"'>
+<x-app-layout layout="docs" :title='"Team | ".config("site.name")'>
     <h1>Meet the team</h1>
 
     <blockquote>
@@ -13,9 +13,9 @@
         </ul>
     </div>
 
-    @foreach($teams['teams'] as $position => $team)
+    @foreach($teams['teams'] as $team)
         <div class="mt-20">
-            <h3 class="text-2xl lg:text-3xl mb-1">{{ $team['name'] }}</h3>
+            {{-- <h3 class="text-2xl lg:text-3xl mb-1">{{ dd($team) }}</h3> --}}
             <p class="text-gray-700 text-lg mb-16">{{ $team['description'] }}</p>
 
             <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 row-gap-16">
@@ -25,4 +25,8 @@
             </div>
         </div>
     @endforeach
+
+    <div class="absolute top-0 right-0 h-8 w-100 pt-3 hidden md:block">
+        <a href="https://github.com/pestphp/pestphp.com-next/edit/main/resources/views/team.blade.php">Edit this page →</a>
+    </div>
 </x-app-layout>

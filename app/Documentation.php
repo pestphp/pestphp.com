@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Filesystem\Filesystem;
-use Illuminate\Support\Str;
 
 class Documentation
 {

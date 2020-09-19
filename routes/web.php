@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DocsController;
 use App\Http\Controllers\TeamController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,5 +24,5 @@ Route::get('/docs/team', TeamController::class)->name('team');
 Route::get('/docs/{page?}', DocsController::class)->name('docs')->where('page', '.*');
 
 Route::get('/test', function () {
-	return is_current_url(url('test'));
+    return is_current_url(url('test'));
 });

@@ -2,12 +2,11 @@
 
 namespace App\View\Components;
 
-use Illuminate\View\Component;
 use Illuminate\View\View;
+use Illuminate\View\Component;
 
 class AppLayout extends Component
 {
-
     public string $layout;
 
     /**

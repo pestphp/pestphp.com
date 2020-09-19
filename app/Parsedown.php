@@ -2,8 +2,8 @@
 
 namespace App;
 
-use Illuminate\Support\Str;
 use ParsedownExtra;
+use Illuminate\Support\Str;
 
 class Parsedown extends ParsedownExtra
 {
@@ -27,9 +27,9 @@ class Parsedown extends ParsedownExtra
                 $name = $matches[1];
 
                 if (isset($lines[$number + 1]) && Str::startsWith($lines[$number + 1], '<h')) {
-                    $header = substr_replace($lines[$number + 1],sprintf('<a href="#%s">', $name), 4, 0);
-                    $header = substr_replace($header,sprintf('</a>', $name), -5, 0);
-                    $header = substr_replace($header,sprintf(' id="%s"', $name), 3, 0);
+                    $header = substr_replace($lines[$number + 1], sprintf('<a href="#%s">', $name), 4, 0);
+                    $header = substr_replace($header, sprintf('</a>', $name), -5, 0);
+                    $header = substr_replace($header, sprintf(' id="%s"', $name), 3, 0);
                     $lines[$number + 1] = $header;
                 }
             }

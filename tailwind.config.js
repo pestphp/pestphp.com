@@ -56,6 +56,7 @@ module.exports = {
             },
             inset:{
                 '16': '4rem',
+                'nav': '4.1rem',
             },
             fontSize: {
                 'xs': '.8rem',

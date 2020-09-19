@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Parsedown;
 use App\Documentation;
 use Illuminate\Http\Request;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
-use App\Parsedown;
 
 class DocsController extends Controller
 {
@@ -15,7 +15,7 @@ class DocsController extends Controller
     
     /**
      * Handle the incoming request.
-     * 
+     *
      * @return \Illuminate\Http\Response
      */
     public function __invoke(Documentation $docs, string $page = null)
@@ -41,6 +41,6 @@ class DocsController extends Controller
 
         // dd($parsedown);
 
-        return view('docs', compact('body', 'matter', 'markdown'));
+        return view('docs', compact('body', 'matter', 'markdown', 'page'));
     }
 }

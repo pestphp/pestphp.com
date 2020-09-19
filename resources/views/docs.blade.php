@@ -1,13 +1,6 @@
-<x-app-layout layout="docs" :title='"{$matter["title"]} | Pest"'>
-{{-- 	<x-slot name="toc">
-		<div class="docs-main">
-			<div id="toc">
-				<x-toc>
-					{{ $markdown }}	
-				</x-toc>
-			</div>
-		</div>
-	</x-slot> --}}
-	
+<x-app-layout layout="docs" :title='"{$matter["title"]} | ".config("site.name")'>
 	{!! $body !!}
+	<div class="absolute top-0 right-0 h-8 w-100 pt-3 hidden md:block">
+		<a href="https://github.com/pestphp/docs/edit/master/{{ $page }}.md">Edit this page →</a>
+	</div>
 </x-app-layout>
