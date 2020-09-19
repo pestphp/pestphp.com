@@ -6,4 +6,7 @@ return [
     'description' => "Introducing Pest: An elegant PHP Testing Framework with a focus on simplicity",
 
     "team" => require_once(__DIR__.'/../data/team.php'),
+    "discord" => "https://discord.gg/bMAJv82",
+    "twitter" => "pestphp",
+    "github" => "https://github.com/pestphp/pest"
 ];

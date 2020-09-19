@@ -3,6 +3,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
     purge: {
+        layers: ['utilities', 'base', 'components'],
         content: [
             './app/**/*.php',
             './resources/**/*.html',
@@ -10,14 +11,17 @@ module.exports = {
             './resources/**/*.jsx',
             './resources/**/*.ts',
             './resources/**/*.tsx',
-            './resources/**/*.php',
-            './resources/**/*.vue',
+            './resources/**/*.blade.php',
             './resources/**/*.twig',
         ],
         options: {
             defaultExtractor: (content) => content.match(/[\w-/.:]+(?<!:)/g) || [],
             whitelistPatterns: [/-active$/, /-enter$/, /-leave-to$/, /show$/],
         },
+    },
+    future: {
+        removeDeprecatedGapUtilities: true,
+        purgeLayersByDefault: true,
     },
     theme: {
         extend: {

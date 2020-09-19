@@ -4,7 +4,7 @@ body {
 }
 
 a {
-    @apply .font-semibold;
+    @apply .font-medium;
     @apply .no-underline;
     @apply .text-purple-600;
 
@@ -80,6 +80,7 @@ ul {
 
 ol {
     @apply .list-decimal;
+    padding-inline-start: 0.3rem;
 }
 
 ul {

@@ -1,6 +1,6 @@
 window.hljs = require('highlight.js');
 import 'alpinejs';
-import { listen, prefetch } from "quicklink";
+import { listen } from "quicklink";
 import docsearch from '@docsearch/js';
 
 import './clipboard';
