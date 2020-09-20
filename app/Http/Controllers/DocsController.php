@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Support\Parsedown;
-use App\Support\Documentation;
 use Illuminate\Http\Request;
+use App\Support\Documentation;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 class DocsController extends Controller

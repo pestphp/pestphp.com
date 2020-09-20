@@ -14,8 +14,8 @@
     </div>
 @endif
 
-@if (! is_string($item) && $item['children'])
-    @foreach ($item['children'] as $label => $item)
+@if (! is_string($item))
+    @foreach ($item as $label => $item)
         <x-docs.nav.item :item="$item" :label="$label" :level="++$level"></x-docs.nav.item>
     @endforeach
 @endif
