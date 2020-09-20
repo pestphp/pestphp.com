@@ -18,8 +18,8 @@
             <div class="space-x-6 lg:flex hidden">
                 <a class="font-medium text-cool-gray-600" 
                     href="/docs">Docs</a>
-                {{-- <a class="font-medium text-cool-gray-600" 
-                    href="{{ route('screencasts') }}">Screencasts</a> --}}
+                <a class="font-medium text-cool-gray-600" 
+                    href="{{ route('screencasts') }}">Screencasts</a>
             </div>
 
             <a title="@{{ config('site.twitter') }}" href="https://twitter.com/{{ config('site.twitter') }}" 

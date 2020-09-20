@@ -27,4 +27,9 @@ class Documentation
     {
         return resource_path("docs/{$version}/{$file}");
     }
+
+    public static function navigation()
+    {
+        return require_once(base_path('data/navigation.php'));
+    }
 }

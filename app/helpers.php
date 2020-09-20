@@ -17,8 +17,8 @@ if (! function_exists('docs_navigation')) {
      * Add an element to an array using "dot" notation if it doesn't exist.
      *
      */
-    function docs_navigation($version = "")
+    function docs_navigation(   )
     {
-        return (new \App\DocumentationPages)->navigation($version);
+        return \App\Support\Documentation::navigation();
     }
 }
