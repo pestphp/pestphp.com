@@ -16,6 +16,7 @@
 
 @if (! is_string($item) && $item['children'])
     @foreach ($item['children'] as $label => $item)
-        <x-docs.nav.item :item="$item" :label="$label" :level="++$level"></x-docs.nav.item>
+        <x-screencasts.nav.item :item="$item" :label="$label" :level="++$level">
+        </x-screencasts.nav.item>
     @endforeach
 @endif

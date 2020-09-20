@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Support;
 
 use ParsedownExtra;
 use Illuminate\Support\Str;

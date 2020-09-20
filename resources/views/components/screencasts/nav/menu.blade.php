@@ -12,7 +12,8 @@
 	x-ref="dialog" x-on:keydown.escape.window="close()">
 		<div class="pb-6 lg:pr-4 xl:pl-0">
 		@foreach ($items as $label => $item)
-			<x-docs.nav.item :item="$item" :label="$label" :level="$level"></x-docs.nav-item>
+			<x-screencasts.nav.item :item="$item" :label="$label" :level="$level">
+			</x-screencasts.nav-item>
 		@endforeach
 		</div>
 	</div>

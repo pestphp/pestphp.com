@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Parsedown;
-use App\Documentation;
+use App\Support\Parsedown;
+use App\Support\Documentation;
 use Illuminate\Http\Request;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 

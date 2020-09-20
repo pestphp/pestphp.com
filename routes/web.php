@@ -21,6 +21,10 @@ Route::get('/', function () {
 
 Route::get('/docs/team', TeamController::class)->name('team');
 
+// Route::get('/screencasts', function () {
+// 	return view('screencasts');
+// })->name('screencasts');
+
 Route::get('/docs/{page?}', DocsController::class)->name('docs')->where('page', '.*');
 
 Route::get('/test', function () {

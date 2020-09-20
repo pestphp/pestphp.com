@@ -9,20 +9,18 @@
     <x-docs.header></x-docs.header>
 
     <main role="main" class="w-full flex-auto">
-        <section class="documentation">
-            <div class="max-w-8xl mx-auto px-4 lg:px-4 xl:px-6 lg:flex lg:flex-row">
+        <div class="max-w-8xl mx-auto px-4 lg:px-4 xl:px-6 lg:flex lg:flex-row">
 
-                <x-docs.nav.menu :items="docs_navigation()"></x-nav-menu>
+            <x-screencasts.nav.menu :items="docs_navigation()"></x-screencasts.nav.menu>
 
-                <div class="relative docs-main DocSearch-content w-full px-3 lg:ml-10 xl:ml-16 lg:px-0 mt-10 mb-20">
+                <div class="relative w-full px-3 lg:ml-10 xl:ml-16 lg:px-0 mt-10 mb-20">
                     {{ $slot }}
                 </div> 
-            </div>
-        </section>
+        </div>
     </main>
 
     <x-slot name="footer">
         <script src="{{ mix('js/main.js') }}"></script>
-        {{ $footer ?? '' }}
+        @stack('scripts')
     </x-slot>
 </x-html>

@@ -11,20 +11,20 @@
 
         <div class="mt-4 flex space-x-3 items-center flex-row">
             @if(Arr::has($contributor, 'github'))
-                <a title="GitHub" aria-label="GitHub" href="https://github.com/{{ $contributor['github'] }}" target="_blank" rel="external">
+                <a title="GitHub" aria-label="GitHub" href="https://github.com/{{ $contributor['github'] }}" target="_blank" rel="noopener">
                     <x-i.github class="w-5 text-black" />
                 </a>
             @endif
 
             @if(Arr::has($contributor, 'twitter'))
-                <a title="Twitter" aria-label="Twitter" href="https://twitter.com/{{ $contributor['twitter'] }}" target="_blank" rel="external">
+                <a title="Twitter" aria-label="Twitter" href="https://twitter.com/{{ $contributor['twitter'] }}" target="_blank" rel="noopener">
                     <x-i.twitter class="w-5 mt-px" />
                 </a>
             @endif
 
             @if(Arr::has($contributor, 'links'))
                 @foreach($contributor['links'] as $link)
-                    <a aria-label="" href="{{ $link['url'] }}" target="_blank" rel="external">
+                    <a aria-label="" href="{{ $link['url'] }}" target="_blank" rel="noopener">
                         <x-i.link class="w-5 text-cool-gray-600" />
                     </a>
                 @endforeach

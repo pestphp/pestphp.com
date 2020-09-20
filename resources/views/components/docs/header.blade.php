@@ -1,7 +1,7 @@
 <header class="flex bg-white items-center shadow-sm bg-white h-16 py-4" role="banner">
     <div class="container flex items-center max-w-8xl mx-auto px-4 space-x-4 lg:px-4" >
         <div class="flex items-center lg:hidden">
-            <button @click.prevent="toggle()">
+            <button aria-label="Toggle Documentation Navigation" @click.prevent="toggle()">
                 <x-i.menu class="h-6 w-6 text-cool-gray-500 opacity-50"></x-i.menu>
             </button>
         </div>
@@ -19,14 +19,14 @@
                 <a class="font-medium text-cool-gray-600" 
                     href="/docs">Docs</a>
                 <a class="font-medium text-cool-gray-600" 
-                    href="#screencasts">Screencasts</a>
+                    href="{{ route('screencasts') }}">Screencasts</a>
             </div>
 
-            <a href="https://twitter.com/{{ config('site.twitter') }}" 
+            <a title="@{{ config('site.twitter') }}" href="https://twitter.com/{{ config('site.twitter') }}" 
                 target="_blank" rel="noopener">
                 <x-i.twitter class="h-6 w-6"></x-i.twitter>
             </a>
-            <a href="{{ config('site.discord') }}" 
+            <a title="{{ config('site.twitter') }}" href="{{ config('site.discord') }}" 
                 target="_blank" rel="noopener">
                 <x-i.discord class="h-8 w-8"></x-i.discord>
             </a>
