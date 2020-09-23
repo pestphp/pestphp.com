@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Support\Teams;
 use Illuminate\Http\Request;
 
 class TeamController extends Controller
@@ -15,7 +16,8 @@ class TeamController extends Controller
     {
         // dd(config('site.team'));
         return view('team', [
-            "teams" => config('site.team')
+            "teams" => Teams::teams(),
+            "index" => $index = (new Parsedown())->text($docs->getIndex())
         ]);
     }
 }

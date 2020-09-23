@@ -18,6 +18,12 @@ class Documentation
         return $this->filesystem->exists(resource_path("docs/{$version}/{$page}.md"));
     }
 
+    public function getIndex(string $version): string
+    {
+        return $this->filesystem->get(resource_path("docs/{$version}/Documentation.md"));
+    }
+
+
     public function get(string $version, string $page): string
     {
         return $this->filesystem->get(resource_path("docs/{$version}/{$page}.md"));
@@ -28,8 +34,4 @@ class Documentation
         return resource_path("docs/{$version}/{$file}");
     }
 
-    public static function navigation()
-    {
-        return require_once(base_path('data/navigation.php'));
-    }
 }

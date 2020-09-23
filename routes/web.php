@@ -1,8 +1,10 @@
 <?php
 
+use App\Models\Screencast;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DocsController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\ShowScreencastController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,12 +23,10 @@ Route::get('/', function () {
 
 Route::get('/docs/team', TeamController::class)->name('team');
 
-// Route::get('/screencasts', function () {
-// 	return view('screencasts');
-// })->name('screencasts');
+Route::get('/screencasts', function () {
+    return redirect()->to(route("screencast", Screencast::first()->slug));
+})->name('screencasts');
+
+Route::get('/screencasts/{slug}', ShowScreencastController::class)->name('screencast');
 
 Route::get('/docs/{page?}', DocsController::class)->name('docs')->where('page', '.*');
-
-Route::get('/test', function () {
-    return is_current_url(url('test'));
-});

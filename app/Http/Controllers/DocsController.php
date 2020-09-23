@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Support\Parsedown;
-use App\Support\Documentation;
 use Illuminate\Http\Request;
+use App\Support\Documentation;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 class DocsController extends Controller
 {
-    private const DEFAULT_VERSION = 'master';
+    private const DEFAULT_VERSION = "master";
     private const DEFAULT_PAGE = 'installation';
     private const EXCLUDED = ['readme', 'license'];
     
@@ -28,6 +28,7 @@ class DocsController extends Controller
             abort(404);
         }
 
+        $index = (new Parsedown())->text($docs->getIndex(self::DEFAULT_VERSION));
 
         $file = $docs->get(self::DEFAULT_VERSION, $page);
         $contents = YamlFrontMatter::parse($file);
@@ -37,10 +38,7 @@ class DocsController extends Controller
         $parsedown = new Parsedown();
         $body = $parsedown->text($markdown);
 
-        // dd($parsedown->toc);
 
-        // dd($parsedown);
-
-        return view('docs', compact('body', 'matter', 'markdown', 'page'));
+        return view('docs', compact('body', 'matter', 'markdown', 'page', 'index'));
     }
 }

@@ -6,20 +6,20 @@
         </x-social-meta>
     </x-slot>
     <section>
-        <x-welcome.intro></x-welcome.intro>
+        @include('_partials.welcome.intro')
 
-        <x-welcome.features></x-welcome.features>
+        @include('_partials.welcome.features')
 
-        <x-welcome.testimonials></x-welcome.testimonials>
+        @include('_partials.welcome.testimonials')
 
-        <x-welcome.faq
+        @include('_partials.welcome.faq')
 
         <div class="bg-white mb-12">
-            <x-welcome.newsletter></x-welcome.newsletter>
+            @include('_partials.welcome.newsletter')
 
             <div class="mt-8">
                 <p class="text-center text-base leading-6 text-cool-gray-400">
-                    © 2020 Pest
+                    © 2020 {{ config('site.name') }}
                 </p>
             </div>
         </div>

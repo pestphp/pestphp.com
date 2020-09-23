@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.3",
         "blade-ui-kit/blade-ui-kit": "^0.1.1",
+        "calebporzio/sushi": "^2.1",
         "erusev/parsedown-extra": "^0.8.1",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
