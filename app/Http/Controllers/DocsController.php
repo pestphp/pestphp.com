@@ -2,21 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\View\View;
 use App\Support\Parsedown;
-use Illuminate\Http\Request;
 use App\Support\Documentation;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Contracts\View\Factory;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
+use Illuminate\Contracts\Foundation\Application;
 
 class DocsController extends Controller
 {
-    private const DEFAULT_VERSION = "master";
-    private const DEFAULT_PAGE = 'installation';
-    private const EXCLUDED = ['readme', 'license'];
-    
+    protected const DEFAULT_PAGE = 'installation';
+    protected const EXCLUDED = ['readme', 'license'];
+
     /**
      * Handle the incoming request.
      *
-     * @return \Illuminate\Http\Response
+     * @param Documentation $docs
+     * @param string|null $page
+     * @return Application|Factory|View|RedirectResponse
      */
     public function __invoke(Documentation $docs, string $page = null)
     {
@@ -24,13 +28,13 @@ class DocsController extends Controller
             return redirect()->route('docs', [self::DEFAULT_PAGE]);
         }
 
-        if (! $docs->exists(self::DEFAULT_VERSION, $page) || in_array($page, self::EXCLUDED)) {
+        if (! $docs->exists(config('site.defaultVersion'), $page) || in_array($page, self::EXCLUDED)) {
             abort(404);
         }
 
-        $index = (new Parsedown())->text($docs->getIndex(self::DEFAULT_VERSION));
+        $index = (new Parsedown())->text($docs->getIndex(config('site.defaultVersion')));
 
-        $file = $docs->get(self::DEFAULT_VERSION, $page);
+        $file = $docs->get(config('site.defaultVersion'), $page);
         $contents = YamlFrontMatter::parse($file);
         $matter = $contents->matter();
         $markdown = $contents->body();

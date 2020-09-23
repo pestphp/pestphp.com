@@ -7,6 +7,5 @@ return [
     "discord" => "https://discord.gg/bMAJv82",
     "twitter" => "pestphp",
     "github" => "https://github.com/pestphp/pest",
-    "jetbrainsID" => "14636",
-    "vscodeID" => "",
+    "defaultVersion" => "master"
 ];

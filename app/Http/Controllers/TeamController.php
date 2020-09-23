@@ -3,21 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Support\Teams;
-use Illuminate\Http\Request;
+use Illuminate\View\View;
+use App\Support\Documentation;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\Foundation\Application;
 
 class TeamController extends Controller
 {
+    protected const DEFAULT_VERSION = "master";
     /**
      * Handle the incoming request.
      *
-     * @return \Illuminate\Http\Response
+     * @param Documentation $docs
+     * @return Application|Factory|View
      */
-    public function __invoke()
+    public function __invoke(Documentation $docs)
     {
-        // dd(config('site.team'));
         return view('team', [
             "teams" => Teams::teams(),
-            "index" => $index = (new Parsedown())->text($docs->getIndex())
+            "index" => $docs->getIndex(config('site.defaultVersion'))
         ]);
     }
 }

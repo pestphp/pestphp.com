@@ -3,33 +3,44 @@
 namespace App\Support;
 
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Contracts\Cache\Repository as Cache;
 
 class Documentation
 {
-    private Filesystem $filesystem;
+    protected Filesystem $filesystem;
 
-    public function __construct(Filesystem $filesystem)
+    protected Cache $cache;
+
+    public function __construct(Filesystem $filesystem, Cache $cache)
     {
         $this->filesystem = $filesystem;
+        $this->cache = $cache;
     }
 
     public function exists(string $version, string $page): bool
     {
-        return $this->filesystem->exists(resource_path("docs/{$version}/{$page}.md"));
+        return $this->filesystem->exists($this->path($version, "{$page}.md"));
     }
 
-    public function getIndex(string $version): string
+    public function getIndex(string $version): ?string
     {
-        return $this->filesystem->get(resource_path("docs/{$version}/Documentation.md"));
-    }
+        return $this->cache->remember("docs.{$version}.index", 5, function () use ($version) {
+            $path = $this->path($version, 'documentation.md');
 
+            if ($this->exists($version, 'documentation')) {
+                return (new Parsedown())->text($this->filesystem->get($path));
+            }
+
+            return null;
+        });
+    }
 
     public function get(string $version, string $page): string
     {
-        return $this->filesystem->get(resource_path("docs/{$version}/{$page}.md"));
+        return $this->filesystem->get($this->path($version, "{$page}.md"));
     }
 
-    private function path(string $version, string $file): string
+    protected function path(string $version, string $file): string
     {
         return resource_path("docs/{$version}/{$file}");
     }

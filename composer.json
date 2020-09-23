@@ -8,7 +8,7 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.3",
+        "php": "^7.4",
         "blade-ui-kit/blade-ui-kit": "^0.1.1",
         "calebporzio/sushi": "^2.1",
         "erusev/parsedown-extra": "^0.8.1",
@@ -19,7 +19,9 @@
         "laravel/tinker": "^2.0",
         "league/commonmark": "^1.5",
         "spatie/yaml-front-matter": "^2.0",
-        "symfony/yaml": "^5.1"
+        "symfony/yaml": "^5.1",
+        "ext-simplexml": "*",
+        "ext-json": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.3.6",

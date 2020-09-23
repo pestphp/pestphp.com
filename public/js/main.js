@@ -39890,7 +39890,14 @@ window.AppOffCanvasMenu = function () {
       });
     }
   };
-};
+}; // Activates current url in Docs Navigation
+
+
+var current = document.querySelector('.docs-nav ul a[href="' + window.location.pathname + '"]');
+
+if (current) {
+  current.parentNode.classList.add('active');
+}
 
 /***/ }),
 
@@ -39923,9 +39930,9 @@ window.AppOffCanvasMenu = function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/homepc/code/pestphp.com-next/resources/js/main.js */"./resources/js/main.js");
-__webpack_require__(/*! /home/homepc/code/pestphp.com-next/resources/sass/app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! /home/homepc/code/pestphp.com-next/resources/sass/docs.scss */"./resources/sass/docs.scss");
+__webpack_require__(/*! /home/octoper/code/pestphp.com-next/resources/js/main.js */"./resources/js/main.js");
+__webpack_require__(/*! /home/octoper/code/pestphp.com-next/resources/sass/app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! /home/octoper/code/pestphp.com-next/resources/sass/docs.scss */"./resources/sass/docs.scss");
 
 
 /***/ })
