@@ -1,4 +1,4 @@
-<x-app-layout :title='$screencast->title. " | Screencasts | ".config("site.name")' layout="app">
+<x-app-layout :title='$screencast->title. " | Screencasts"' layout="app">
     <main role="main" class="w-full flex-auto">
         <div class="max-w-8xl mx-auto px-4 lg:px-4 xl:px-6 lg:flex lg:flex-row">
 

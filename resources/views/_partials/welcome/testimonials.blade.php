@@ -10,7 +10,7 @@
                 <footer class="mt-8">
                     <div class="md:flex md:items-center md:justify-center">
                         <div class="md:flex-shrink-0">
-                            <img alt="" class="mx-auto h-10 w-10 rounded-full" src="/assets/img/taylor.jpg"/>
+                            <img alt="Taylor" loading="lazy" class="mx-auto h-10 w-10 rounded-full" src="/assets/img/taylor.jpg"/>
                         </div>
                         <div class="mt-3 text-center md:mt-0 md:ml-4 md:flex md:items-center">
                             <div class="text-base leading-6 font-medium text-cool-gray-900">
@@ -42,7 +42,7 @@
                 <footer class="mt-8">
                     <div class="md:flex md:items-center md:justify-center">
                         <div class="md:flex-shrink-0">
-                            <img alt="" class="mx-auto h-10 w-10 rounded-full" src="/assets/img/freek.jpg"/>
+                            <img alt="Freek" loading="lazy" class="mx-auto h-10 w-10 rounded-full" src="/assets/img/freek.jpg"/>
                         </div>
                         <div class="mt-3 text-center md:mt-0 md:ml-4 md:flex md:items-center">
                             <div class="text-base leading-6 font-medium text-cool-gray-900">

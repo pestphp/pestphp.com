@@ -1,7 +1,9 @@
-<x-html :title="$attributes->get('title')">
+<x-app-layout layout="base" :title="$attributes->get('title')">
+    @push('styles')
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    @endpush
     <x-slot name="head">
         {{ $head ?? '' }}
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     </x-slot>
 
     {{ $slot }}
@@ -9,4 +11,4 @@
     <x-slot name="footer">
         {{ $footer ?? '' }}
     </x-slot>
-</x-html>
+</x-app-layout>

@@ -1,10 +1,4 @@
-<x-app-layout layout="app" :title='"IDE plugins | ".config("site.name")'>
-    <x-slot name="head">
-        <x-social-meta :title="'IDE plugins  | '.config('site.title')"
-                       description="Pest has IDE plugins for PhpStorm and VSCode."
-                       image="https://pestphp.com/assets/img/og.jpg">
-        </x-social-meta>
-    </x-slot>
+<x-app-layout layout="app" title='IDE plugins' description="Pest has IDE plugins for PhpStorm and VSCode.">
     <main role="main" class="w-full flex-auto">
         <section class="documentation">
             <div class="max-w-8xl mx-auto px-4 lg:px-4 xl:px-6 lg:flex lg:flex-row">

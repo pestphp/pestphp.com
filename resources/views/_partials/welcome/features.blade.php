@@ -16,7 +16,7 @@
                     <picture>
                         <source srcset="/assets/img/webp/collision.webp" type="image/webp">
                             <source srcset="/assets/img/collision.png" type="image/png">
-                                <img alt="" class="relative mx-auto" src="/assets/img/collision.png" width="490"/>
+                                <img alt="" loading="lazy" class="relative mx-auto" src="/assets/img/collision.png" width="490"/>
                             </source>
                         </source>
                     </picture>
@@ -39,7 +39,7 @@
                     <picture>
                         <source srcset="/assets/img/webp/test.webp" type="image/webp">
                             <source srcset="/assets/img/test.png" type="image/png">
-                                <img alt="" class="relative mx-auto" src="/assets/img/test.png" width="490"/>
+                                <img alt="" loading="lazy" class="relative mx-auto" src="/assets/img/test.png" width="490"/>
                             </source>
                         </source>
                     </picture>

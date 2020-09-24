@@ -1,10 +1,4 @@
-<x-app-layout :title="config('app.name')" layout="welcome">
-    <x-slot name="head">
-        <x-social-meta :title="config('site.title')"
-            :description="config('site.description')" 
-            image="https://pestphp.com/assets/img/og.jpg">
-        </x-social-meta>
-    </x-slot>
+<x-app-layout layout="welcome">
     <section>
         @include('_partials.welcome.intro')
 
