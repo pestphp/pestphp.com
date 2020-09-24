@@ -15,15 +15,15 @@
 	ul {
 		@apply .list-none;
 		h2 {
-			@apply .px-3 .mb-0 .text-xs .leading-4 .font-bold .text-cool-gray-400 .uppercase .tracking-wider;
+			@apply .px-3 .mb-0 .text-sm .leading-4 .font-bold .text-cool-gray-400 .uppercase .tracking-wider;
 		}
 
 		li {
 			@apply my-1;
 			& > :not(template) + :not(template) {
-			  @apply mb-4 mt-2;
+			  @apply mb-8 mt-3;
 			}
-			
+
 			a {
 				@apply font-system font-normal flex items-center px-3 py-1.5 text-sm leading-5 text-cool-gray-500 rounded-md;
 
@@ -73,7 +73,7 @@
 	p {
 	    @apply .my-2;
 	    @apply break-words;
-	    
+
 	    @screen md {
 	        @apply .my-5;
 	    }
