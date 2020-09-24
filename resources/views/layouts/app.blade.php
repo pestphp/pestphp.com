@@ -1,5 +1,5 @@
-<x-html :title="$attributes->get('title') ?? ''" 
-    class="text-cool-gray-800 leading-normal lg:px-2 font-sans" 
+<x-html :title="$attributes->get('title') ?? ''"
+    class="text-cool-gray-800 leading-normal lg:px-2 font-sans"
     x-data="AppOffCanvasMenu()">
 
     <x-slot name="head">
@@ -11,7 +11,8 @@
     {{ $slot }}
 
     <x-slot name="footer">
-        <script src="{{ mix('js/main.js') }}"></script>
+        <script defer src="{{ mix('js/app.js') }}"></script>
+
         {{ $footer ?? '' }}
         @stack('scripts')
     </x-slot>

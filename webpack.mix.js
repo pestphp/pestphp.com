@@ -13,10 +13,10 @@ require("laravel-mix-tailwind");
  |
  */
 
-mix.js("resources/js/main.js", "public/js/main.js")
+mix.js("resources/js/app.js", "public/js/app.js")
     .sass("resources/sass/app.scss", "public/css/app.css")
     .sass("resources/sass/docs.scss", "public/css/docs.css")
-    .tailwind("./tailwind.config.js")
+    .tailwind("./tailwind.config.js");
 
 if (mix.inProduction()) {
     mix.version();
