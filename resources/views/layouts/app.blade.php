@@ -3,6 +3,7 @@
     x-data="AppOffCanvasMenu()">
 
     <x-slot name="head">
+        {{ $head ?? '' }}
         <link rel="stylesheet" href="{{ mix('css/docs.css') }}">
     </x-slot>
 

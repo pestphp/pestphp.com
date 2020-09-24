@@ -1,4 +1,10 @@
 <x-app-layout layout="app" :title='"{$matter["title"]} | ".config("site.name")'>
+    <x-slot name="head">
+        <x-social-meta :title='"{$matter["title"]} | ".config("site.title")'
+                       :title='$matter["description"]'
+                       image="https://pestphp.com/assets/img/og.jpg">
+        </x-social-meta>
+    </x-slot>
     <main role="main" class="w-full flex-auto">
         <section class="documentation">
             <div class="max-w-8xl mx-auto px-4 lg:px-4 xl:px-6 lg:flex lg:flex-row">

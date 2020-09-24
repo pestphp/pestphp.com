@@ -1,4 +1,10 @@
 <x-app-layout layout="app" :title='"Team | ".config("site.name")'>
+    <x-slot name="head">
+        <x-social-meta :title="'Team | '.config('site.title')"
+                       :description="config('site.description')"
+                       image="https://pestphp.com/assets/img/og.jpg">
+        </x-social-meta>
+    </x-slot>
     <main role="main" class="w-full flex-auto">
         <section class="documentation">
             <div class="max-w-8xl mx-auto px-4 lg:px-4 xl:px-6 lg:flex lg:flex-row">
@@ -40,7 +46,7 @@
                             </div>
                         </div>
                     @endforeach
-                </div> 
+                </div>
             </div>
         </section>
     </main>
