@@ -1,20 +1,17 @@
 <?php
 
-namespace Tests\Feature;
+it('has welcome page')
+    ->get('/')
+    ->assertStatus(200);
 
-use Tests\TestCase;
+it('has team page')
+    ->get('/docs/team')
+    ->assertStatus(200);
 
-class ExampleTest extends TestCase
-{
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function testBasicTest()
-    {
-        $response = $this->get('/');
+it('has installation page')
+    ->get('/docs/installation')
+    ->assertStatus(200);
 
-        $response->assertStatus(200);
-    }
-}
+it('has screencasts page')
+    ->get('/screencasts')
+    ->assertStatus(302);

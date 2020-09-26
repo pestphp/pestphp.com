@@ -1,5 +1,7 @@
 <x-app-layout layout="base" :title="$attributes->get('title')">
     @push('styles')
+        <link rel="preload" href="{{ mix('css/app.css') }}" as="style">
+
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     @endpush
     <x-slot name="head">

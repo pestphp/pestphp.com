@@ -3,6 +3,9 @@
               class="text-cool-gray-800 leading-normal lg:px-2 font-sans"
               x-data="AppOffCanvasMenu()">
     @push('styles')
+        <link rel="preload" href="{{ mix('css/docs.css') }}" as="style">
+        <link rel="preload" href="{{ mix('js/app.js') }}" as="script">
+
         <link rel="stylesheet" href="{{ mix('css/docs.css') }}">
     @endpush
     <x-slot name="head">
