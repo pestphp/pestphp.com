@@ -3,7 +3,6 @@
 use App\Models\Screencast;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DocsController;
-use App\Http\Controllers\TeamController;
 use App\Http\Controllers\IDEPluginsController;
 use App\Http\Controllers\ShowScreencastController;
 
@@ -21,8 +20,6 @@ use App\Http\Controllers\ShowScreencastController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/docs/team', TeamController::class)->name('team');
 
 Route::get('/docs/ide-plugins', IDEPluginsController::class)->name('ide-plugins');
 

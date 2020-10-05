@@ -3,14 +3,6 @@
        href="{{ route('docs', '') }}">
         Docs
     </a>
-    <a class="font-medium text-cool-gray-600 w-full"
-       href="{{ route('team') }}">
-        Team
-    </a>
-    <a class="font-medium text-cool-gray-600 w-full"
-       href="{{ route('screencasts') }}">
-        Screencasts
-    </a>
     <div class="flex flex-row space-x-4 mt-20 lg:mt-0 items-center">
         <a title="@{{ config('site.twitter') }}" href="https://twitter.com/{{ config('site.twitter') }}"
            target="_blank" rel="noopener">
