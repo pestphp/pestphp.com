@@ -11,7 +11,7 @@
         <div class="mt-8 sm:w-full sm:max-w-md xl:mt-0 xl:ml-8">
             <div id="mc_embed_signup">
                 <form action="https://nunomaduro.us12.list-manage.com/subscribe/post?u=d5f11957aceb28cf3e4c30788&id=0d8aed1043" class="sm:flex validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
-                    <input aria-label="Email address" class="required rounded-md px-4 email" id="mce-EMAIL" name="EMAIL" placeholder="Enter your email" required="" type="email" value="">
+                    <input aria-label="Email address" class="required rounded-md w-full px-4 py-2 email" id="mce-EMAIL" name="EMAIL" placeholder="Enter your email" required="" type="email" value="">
                         <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
                             <button class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-400 focus:outline-none focus:bg-indigo-400 transition duration-150 ease-in-out" id="mc-embedded-subscribe" type="submit">
                                 Subscribe
