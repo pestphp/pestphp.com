@@ -5,17 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     @php
-        $title = empty($attributes->get('title')) ? config('site.title') : "{$attributes->get('title')} | ".config('site.title')
+        $newTitle = empty($title) ? config('site.title') : "{$title} | ".config('site.title')
     @endphp
-    <title>{{ $title  }}</title>
+    <title>{{ $newTitle }}</title>
 
-    <meta name="description" content="{{ $attributes->get('description') ?? config('site.description') }}">
+    <meta name="description" content="{{ $description ?? config('site.description') }}">
 
     <meta property="og:site_name" content="{{ config('site.title') }}"/>
-    <meta property="og:title" content="{{ $title }}"/>
-    <meta property="og:description" content="{{ $attributes->get('description') ?? config('site.description') }}"/>
+    <meta property="og:title" content="{{ $newTitle }}"/>
+    <meta property="og:description" content="{{ $description ?? config('site.description') }}"/>
     <meta property="og:url" content="{{ url()->current() }}"/>
     <meta property="og:image" content="https://pestphp.com/assets/img/og.jpg"/>
     <meta property="og:type" content="website"/>

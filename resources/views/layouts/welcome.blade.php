@@ -1,4 +1,4 @@
-<x-app-layout layout="base" :title="$attributes->get('title')">
+<x-app-layout layout="base" :title="$title">
     @push('styles')
         <link rel="preload" href="{{ mix('css/app.css') }}" as="style">
 
