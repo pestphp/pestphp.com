@@ -3,6 +3,7 @@ import php from 'highlight.js/lib/languages/php';
 import shell from 'highlight.js/lib/languages/shell';
 import bash from 'highlight.js/lib/languages/bash';
 import json from 'highlight.js/lib/languages/json';
+import diff from 'highlight.js/lib/languages/diff';
 
 import 'alpinejs';
 import { listen } from "quicklink";
@@ -16,6 +17,7 @@ hljs.registerLanguage('php', php);
 hljs.registerLanguage('shell', shell);
 hljs.registerLanguage('bash', bash);
 hljs.registerLanguage('json', json);
+hljs.registerLanguage('diff', diff);
 hljs.configure({
 	classPrefix: 'hljs-'
 });
