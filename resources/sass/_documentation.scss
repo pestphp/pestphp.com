@@ -79,17 +79,26 @@
 	    }
 	}
 
-	.collection-method-list > p {
-	    column-count: 1;
+    .collection-method-list {
+        ul {
+            @apply .list-none;
+            column-count: 1;
 
-		@screen lg {
-	        column-count: 2;
-	        column-gap: 0.5em;
-	    }
-    }
+            @screen lg {
+                column-count: 2;
+                column-gap: 0.5em;
+            }
 
-    .collection-method-list a {
-        display: block;
+            li a {
+                display: block;
+
+                code {
+                    border-radius: 3px;
+                    padding: 1px 5px;
+                    background-color: rgba(251, 107, 255, 0.2);
+                }
+            }
+        }
     }
 
 	.content-list ul {
