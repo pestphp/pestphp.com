@@ -1,6 +1,6 @@
 <div class="relative bg-white overflow-hidden">
     <div class="max-w-screen-xl mx-auto ">
-        <div class="relative z-10 bg-white lg:max-w-2xl lg:w-full">
+        <div class="relative z-10 bg-white pb-8 lg:max-w-2xl lg:w-full">
             <svg class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2" fill="currentColor" preserveaspectratio="none" viewbox="0 0 100 100">
                 <polygon points="50,0 100,0 50,100 0,100">
                 </polygon>
@@ -45,8 +45,6 @@
                     </div>
                 </div>
             </div>
-
-            <x-welcome.sponsors></x-welcome.sponsors>
         </div>
     </div>
     <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
@@ -59,3 +57,4 @@
         </picture>
     </div>
 </div>
+<x-welcome.sponsors></x-welcome.sponsors>
