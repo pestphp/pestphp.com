@@ -47,7 +47,6 @@
             </div>
 
             <x-welcome.sponsors></x-welcome.sponsors>
-
         </div>
     </div>
     <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">

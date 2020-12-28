@@ -10,6 +10,12 @@
                     </img>
                 </a>
             </div>
+            <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+                <a href="https://github.com/sponsors/nunomaduro" target="_blank" rel="noopener">
+                    <img alt="Your Company Here" loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc3IdJVHT2GH4fy2HS2luZHkUYK-WzrLlvvg&usqp=CAU">
+                    </img>
+                </a>
+            </div>
         </div>
     </div>
 </div>
