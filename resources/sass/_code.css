@@ -1,10 +1,4 @@
-@import 'tailwindcss/base';
-
-@import 'tailwindcss/components';
-
-@import 'tailwindcss/utilities';
-
-p {
+p, li {
   code {
     border-radius: 3px;
     padding: 1px 5px;
@@ -26,8 +20,7 @@ pre {
   }
 
   code {
-    @apply flex;
-    @apply flex-1;
+    @apply flex flex-1;
   }
 }
 
@@ -38,9 +31,7 @@ pre {
  * For use with Highlight.js, https://github.com/isagalaev/highlight.js
  */
 /* cyrillic-ext */
-/* @apply .rounded-lg bg-gray-800 mb-12; */
 @font-face {
-
   font-family: 'Fira Mono';
   font-style: normal;
   font-weight: 400;
@@ -99,6 +90,7 @@ pre {
   line-height: 40px;
   border-radius: 0.5rem;
 }
+
 .hljs > *::selection {
   background-color: #9f7aea;
 }

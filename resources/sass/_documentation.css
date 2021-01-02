@@ -1,9 +1,3 @@
-@import 'tailwindcss/base';
-
-@import 'tailwindcss/components';
-
-@import 'tailwindcss/utilities';
-
 .documentation {
 	blockquote {
 		@apply border-purple-400 border-l-4 font-normal italic my-8 pl-6 text-gray-800 text-lg;
