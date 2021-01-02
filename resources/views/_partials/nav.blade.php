@@ -2,7 +2,7 @@
     <div class="container flex items-center max-w-8xl mx-auto px-4 space-x-4 lg:px-4" >
         <div class="flex items-center lg:hidden">
             <button aria-label="Toggle Documentation Navigation" @click.prevent="toggle()">
-                <x-i.menu class="h-6 w-6 md:h-8 md:w-8 text-cool-gray-500 opacity-50"></x-i.menu>
+                <x-i.menu class="h-6 w-6 md:h-8 md:w-8 text-gray-500 opacity-50"></x-i.menu>
             </button>
         </div>
 

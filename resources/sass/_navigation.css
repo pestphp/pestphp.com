@@ -1,0 +1,18 @@
+@import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
+
+@import 'tailwindcss/utilities';
+
+.nav-menu {
+    @apply -mt-12 bg-gray-200 -ml-8 mb-8 pb-4 px-4 shadow w-auto;
+    margin-right: -1.5rem;
+
+    @screen lg {
+        @apply -mx-4 bg-transparent block border-b-0 pl-0 pt-8 pr-4 pt-0 shadow-none w-1/4;
+    }
+}
+
+.nav-menu__item {
+    @apply block no-underline mb-3 mt-0 text-gray-800 text-sm;
+}

@@ -1,5 +1,5 @@
 <div class="flex flex-col px-3 mt-4 space-y-6 lg:mt-0 lg:px-3 lg:items-center lg:space-y-0 lg:space-x-6 lg:flex-row">
-    <a class="font-medium text-cool-gray-600 w-full"
+    <a class="font-medium text-gray-600 w-full"
        href="{{ route('docs', '') }}">
         Docs
     </a>
@@ -13,7 +13,7 @@
             <x-i.discord class="h-8 w-8"></x-i.discord>
         </a>
         <a href="{{ config('site.github') }}" target="_blank" rel="noopener"
-           class="text-cool-gray-800 hover:text-black">
+           class="text-gray-800 hover:text-black">
             <x-i.github class="h-6 w-6"></x-i.github>
         </a>
     </div>

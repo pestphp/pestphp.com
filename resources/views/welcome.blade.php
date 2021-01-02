@@ -12,7 +12,7 @@
             @include('_partials.welcome.newsletter')
 
             <div class="mt-8">
-                <p class="text-center text-base leading-6 text-cool-gray-400">
+                <p class="text-center text-base leading-6 text-gray-400">
                     © 2020 {{ config('site.name') }}
                 </p>
             </div>

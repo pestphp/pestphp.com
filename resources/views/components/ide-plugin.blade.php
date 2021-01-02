@@ -1,4 +1,4 @@
-<div class="rounded-md shadow-dome border-cool-gray-300 transition duration-200 ease-in-out px-16 py-12">
+<div class="rounded-md shadow-dome border-gray-300 transition duration-200 ease-in-out px-16 py-12">
     <div class="flex flex-col lg:flex-row space-y-8 lg:space-y-0">
         <div class="flex lg:items-center justify-center bg-white rounded-full lg:shadow-dome py-6 px-6">
             <img class="h-20 lg:h-16" src="{{ $logo }}" alt="{{ $title }} logo">
