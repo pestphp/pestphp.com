@@ -3,17 +3,10 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
     purge: {
-        layers: ['utilities', 'base', 'components'],
         content: [
-            './app/**/*.php',
-            './resources/**/*.html',
-            './resources/**/*.js',
-            './resources/**/*.blade.php',
-        ],
-        options: {
-            defaultExtractor: (content) => content.match(/[\w-/.:]+(?<!:)/g) || [],
-            whitelistPatterns: [/-active$/, /-enter$/, /-leave-to$/, /show$/],
-        },
+            'resources/views/**/*.blade.php',
+            'resources/js/**/*.js',
+        ]
     },
     theme: {
         extend: {
