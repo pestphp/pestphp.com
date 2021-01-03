@@ -1,0 +1,159 @@
+.documentation {
+	blockquote {
+		@apply border-purple-400 border-l-4 font-normal italic my-8 pl-6 text-gray-800 text-lg;
+	}
+}
+
+.docs-nav {
+	ul {
+		@apply list-none;
+		h2 {
+			@apply px-3 mb-0 text-xs leading-4 font-bold text-gray-400 uppercase tracking-wider;
+		}
+
+		li {
+			@apply my-1;
+			& > :not(template) + :not(template) {
+			  @apply mb-8 mt-3;
+			}
+
+			a {
+				@apply font-system font-normal flex items-center px-3 py-1.5 text-sm leading-5 text-gray-500 rounded-md;
+
+				&:hover, &:focus {
+					@apply bg-gray-300;
+				}
+			}
+
+			.active {
+				a {
+					@apply bg-gray-200 text-gray-700 font-semibold !important;
+				}
+			}
+
+			li {
+				& > :not(template) + :not(template) {
+			  		@apply mb-0 mt-0;
+				}
+			}
+		}
+	}
+}
+
+.docs-main {
+	content-visibility: auto;
+  	contain-intrinsic-size: 1000px;
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply break-words;
+		a {
+			@apply text-gray-900 !important;
+		}
+	}
+
+	h2 {
+	    @apply font-bold text-4xl;
+	}
+
+	h3 {
+	    @apply font-medium text-3xl;
+	}
+
+	p {
+	    @apply my-2 break-words;
+
+	    @screen md {
+	        @apply my-5;
+	    }
+	}
+
+    .collection-method-list {
+        ul {
+            @apply list-none;
+            column-count: 1;
+
+            @screen lg {
+                column-count: 2;
+                column-gap: 0.5em;
+            }
+
+            li a {
+                display: block;
+
+                code {
+                    border-radius: 3px;
+                    padding: 1px 5px;
+                    background-color: rgba(251, 107, 255, 0.2);
+                }
+            }
+        }
+    }
+
+	.content-list ul {
+		@apply list-none;
+	}
+
+	.content-list ul li:before, .content-list ul:not(:first-of-type) li:before {
+	    content: "◯";
+	    position: absolute;
+	    font-size: 10px;
+	    margin-top: .6em;
+	    margin-left: -25px;
+	}
+
+	ol, ul {
+		@apply list-inside;
+		li {
+			p {
+				@apply inline-block;
+			}
+		}
+	}
+
+	h1 + ul, #toc ul {
+	    margin-bottom: 4em;
+	    @apply no-underline m-0 p-0;
+
+	    li {
+	        @apply block;
+	        margin-bottom: .5em;
+
+	        a {
+	            @apply relative text-gray-600 no-underline font-medium;
+	            font-size: .89em;
+
+	            &::before {
+	                content: "# ";
+	                @apply text-purple-600;
+	            }
+	        }
+	    }
+
+	    ul {
+	        margin-top: .5em;
+	        @apply p-0 mb-0;
+
+	        li {
+	            padding-left: 1.5em;
+
+	            a {
+	                @apply font-normal;
+	            }
+	        }
+	    }
+	}
+
+	h2:before, h3:before {
+		@apply text-purple-500 text-opacity-50;
+	    content: "#";
+	    font-weight: 400;
+	    margin-left: -25px;
+	    position: absolute;
+	    font-size: 28px;
+	}
+}

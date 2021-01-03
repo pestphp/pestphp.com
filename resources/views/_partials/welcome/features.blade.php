@@ -1,12 +1,12 @@
-<div class="bg-cool-gray-50 relative overflow-hidden lg:py-6 text-center lg:text-left">
+<div class="bg-gray-50 relative overflow-hidden lg:py-6 text-center lg:text-left">
     <div class="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl">
         <div class="relative mt-12 sm:mt-16 lg:mt-24">
             <div class="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center">
                 <div class="col-start-2 lg:col-start-2">
-                    <h4 class="text-2xl leading-8 font-extrabold text-cool-gray-900 tracking-tight sm:text-3xl sm:leading-9">
+                    <h4 class="text-2xl leading-8 font-extrabold text-gray-900 tracking-tight sm:text-3xl sm:leading-9">
                         Interfaces that people love
                     </h4>
-                    <p class="mt-3 text-lg leading-7 text-cool-gray-500">
+                    <p class="mt-3 text-lg leading-7 text-gray-500">
                         Pest gives you the most beautiful test reporting in the world, straight from the console! Also, the readable errors and stack traces make debugging lightning fast.
                     </p>
                 </div>
@@ -26,10 +26,10 @@
         <div class="relative mt-12 sm:mt-16 lg:mt-24">
             <div class="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center">
                 <div class="col-start-1">
-                    <h4 class="text-2xl leading-8 font-extrabold text-cool-gray-900 tracking-tight sm:text-3xl sm:leading-9">
+                    <h4 class="text-2xl leading-8 font-extrabold text-gray-900 tracking-tight sm:text-3xl sm:leading-9">
                         Testing can be more productive
                     </h4>
-                    <p class="mt-3 text-lg leading-7 text-cool-gray-500">
+                    <p class="mt-3 text-lg leading-7 text-gray-500">
                         Pest makes testing a breeze. Tests are easy to read and understand. Also, it's powered by PHPUnit — just run your current PHPUnit test suite with Pest and it will just work. You won't have to change a thing.
                     </p>
                 </div>

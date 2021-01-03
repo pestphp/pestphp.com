@@ -1,0 +1,86 @@
+body {
+    font-size: 17px;
+    scroll-behavior: smooth;
+}
+
+a {
+    @apply font-medium text-purple-600 no-underline;
+
+    &:hover {
+        @apply text-purple-800;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply mt-8 text-gray-900 mb-4 leading-tight;
+
+    &:first-child {
+        @apply mt-0;
+    }
+}
+
+h1 {
+    @apply font-extrabold text-5xl;
+}
+
+h2 {
+    @apply font-bold text-4xl;
+}
+
+h3 {
+    @apply font-bold text-3xl;
+}
+
+h4 {
+    @apply font-normal text-2xl;
+}
+
+h5 {
+    @apply font-normal text-xl;
+}
+
+h6 {
+    @apply font-light text-lg;
+}
+
+hr {
+    @apply border-b border-purple-200 my-12 rounded-full;
+}
+
+li {
+    ul,
+    ol {
+        @apply my-0;
+    }
+}
+
+ol,
+ul {
+    @apply my-4;
+}
+
+ol {
+    @apply list-decimal;
+    padding-inline-start: 0.3rem;
+}
+
+ul {
+    @apply list-disc;
+}
+
+p {
+    @apply my-3;
+
+    @screen md {
+        @apply my-6;
+    }
+}
+
+::selection {
+    @apply bg-purple-500 text-white;
+}

@@ -18,7 +18,7 @@
         </div>
         @guest
         <div class="mt-4">
-            <a class="text-sm md:text-base cursor-pointer border-2 border-white flex hover:border-cool-gray-300 hover:text-cool-gray-400 items-center px-4 md:px-8 py-1 md:py-2 rounded-full shadow text-white" href="/login/github">
+            <a class="text-sm md:text-base cursor-pointer border-2 border-white flex hover:border-gray-300 hover:text-gray-400 items-center px-4 md:px-8 py-1 md:py-2 rounded-full shadow text-white" href="/login/github">
                 <span class="mr-2">
                     Log in with GitHub
                 </span>
@@ -26,7 +26,7 @@
         </div>
         @else
         <div class="mt-4">
-            <a class="text-sm md:text-base cursor-pointer border-2 border-white flex hover:border-gray-300 hover:text-cool-gray-400 items-center px-4 md:px-8 py-1 md:py-2 rounded-full shadow text-white" href="https://github.com/sponsors/nunomaduro" target="__blank">
+            <a class="text-sm md:text-base cursor-pointer border-2 border-white flex hover:border-gray-300 hover:text-gray-400 items-center px-4 md:px-8 py-1 md:py-2 rounded-full shadow text-white" href="https://github.com/sponsors/nunomaduro" target="__blank">
                 <span class="mr-4">
                     Become A GitHub Sponsor
                 </span>

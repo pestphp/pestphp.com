@@ -15,10 +15,6 @@ module.exports = {
             whitelistPatterns: [/-active$/, /-enter$/, /-leave-to$/, /show$/],
         },
     },
-    future: {
-        removeDeprecatedGapUtilities: true,
-        purgeLayersByDefault: true,
-    },
     theme: {
         extend: {
             height: {
@@ -80,7 +76,6 @@ module.exports = {
         display: ['responsive', 'motion-safe', 'motion-reduce'],
     },
     plugins: [
-        require('@tailwindcss/ui'),
         require('@tailwindcss/typography'),
         function({ addUtilities }) {
             const newUtilities = {
