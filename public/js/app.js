@@ -11597,10 +11597,10 @@ module.exports = shell;
 
 /***/ }),
 
-/***/ "./resources/sass/app.css":
-/*!********************************!*\
-  !*** ./resources/sass/app.css ***!
-  \********************************/
+/***/ "./resources/css/app.css":
+/*!*******************************!*\
+  !*** ./resources/css/app.css ***!
+  \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -11610,10 +11610,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/docs.css":
-/*!*********************************!*\
-  !*** ./resources/sass/docs.css ***!
-  \*********************************/
+/***/ "./resources/css/docs.css":
+/*!********************************!*\
+  !*** ./resources/css/docs.css ***!
+  \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -12906,8 +12906,8 @@ function n(n){return new Promise(function(e,t,r){(r=new XMLHttpRequest).open("GE
 /******/ 		
 /******/ 		var deferredModules = [
 /******/ 			["./resources/js/app.js"],
-/******/ 			["./resources/sass/app.css"],
-/******/ 			["./resources/sass/docs.css"]
+/******/ 			["./resources/css/app.css"],
+/******/ 			["./resources/css/docs.css"]
 /******/ 		];
 /******/ 		// no chunk on demand loading
 /******/ 		

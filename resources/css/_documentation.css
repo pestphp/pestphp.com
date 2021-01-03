@@ -41,6 +41,9 @@
 }
 
 .docs-main {
+	content-visibility: auto;
+  	contain-intrinsic-size: 1000px;
+
 	h1,
 	h2,
 	h3,
