@@ -48,7 +48,7 @@
                             <a target="_blank" rel="noopener" class="" href="https://twitter.com/enunomaduro">Nuno Maduro</a>
                             under the
                             <a rel="noopener" target="_blank" href="https://github.com/sponsorware/docs">Sponsorware license</a>.
-                            It got open-sourced early this year and is now licensed under the
+                            It got open-sourced early 2020 and is now licensed under the
                             <a rel="noopener" target="_blank" href="https://opensource.org/licenses/MIT">MIT license</a>.
                         </p>
                     </dd>
