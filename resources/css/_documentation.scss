@@ -27,7 +27,7 @@
 
 			.active {
 				a {
-					@apply bg-gray-200 text-gray-700 font-semibold !important;
+					@apply bg-gray-200 text-gray-700 font-semibold #{!important};
 				}
 			}
 
@@ -41,9 +41,6 @@
 }
 
 .docs-main {
-	content-visibility: auto;
-  	contain-intrinsic-size: 1000px;
-
 	h1,
 	h2,
 	h3,
@@ -51,17 +48,36 @@
 	h5,
 	h6 {
 		@apply break-words;
+
 		a {
-			@apply text-gray-900 !important;
+			@apply text-gray-900 #{!important};
 		}
 	}
 
 	h2 {
-	    @apply font-bold text-4xl;
+		@apply font-bold text-4xl;
+
+		&:before {
+			@apply text-purple-500;
+			content: "#";
+			font-weight: 400;
+			margin-left: -25px;
+			position: absolute;
+			font-size: 28px;
+		}
 	}
 
 	h3 {
-	    @apply font-medium text-3xl;
+		@apply font-medium text-3xl;
+
+		&:before {
+			@apply text-purple-500;
+			content: "#";
+			font-weight: 400;
+			margin-left: -25px;
+			position: absolute;
+			font-size: 28px;
+		}
 	}
 
 	p {
@@ -148,12 +164,4 @@
 	    }
 	}
 
-	h2:before, h3:before {
-		@apply text-purple-500 text-opacity-50;
-	    content: "#";
-	    font-weight: 400;
-	    margin-left: -25px;
-	    position: absolute;
-	    font-size: 28px;
-	}
 }
