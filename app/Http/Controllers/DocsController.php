@@ -2,22 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Support\MarkdownParser;
 use Illuminate\View\View;
-use App\Support\Parsedown;
 use App\Support\Documentation;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Contracts\View\Factory;
-use League\CommonMark\Block\Element\FencedCode;
-use League\CommonMark\Block\Element\IndentedCode;
-use League\CommonMark\CommonMarkConverter;
-use League\CommonMark\Environment;
-use League\CommonMark\Extension\Autolink\AutolinkExtension;
-use League\CommonMark\Extension\DisallowedRawHtml\DisallowedRawHtmlExtension;
-use League\CommonMark\Extension\Strikethrough\StrikethroughExtension;
-use League\CommonMark\Extension\Table\TableExtension;
-use League\CommonMark\Extension\TaskList\TaskListExtension;
-use Spatie\CommonMarkHighlighter\FencedCodeRenderer;
-use Spatie\CommonMarkHighlighter\IndentedCodeRenderer;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 use Illuminate\Contracts\Foundation\Application;
 
@@ -25,6 +14,16 @@ class DocsController extends Controller
 {
     protected const DEFAULT_PAGE = 'installation';
     protected const EXCLUDED = ['readme', 'license'];
+
+    /**
+     * @var MarkdownParser
+     */
+    protected MarkdownParser $markdownParser;
+
+    public function __construct(MarkdownParser $markdownParser)
+    {
+        $this->markdownParser = $markdownParser;
+    }
 
     /**
      * Handle the incoming request.
@@ -50,22 +49,7 @@ class DocsController extends Controller
         $matter = $contents->matter();
         $markdown = $contents->body();
 
-        $environment = Environment::createCommonMarkEnvironment();
-        // Remove any of the lines below if you don't want a particular feature
-        $environment->addExtension(new AutolinkExtension());
-        $environment->addExtension(new DisallowedRawHtmlExtension());
-        $environment->addExtension(new StrikethroughExtension());
-        $environment->addExtension(new TableExtension());
-        $environment->addExtension(new TaskListExtension());
-
-        $langs = ['php', 'bash', 'shell', 'json', 'diff'];
-
-        $environment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer($langs));
-        $environment->addBlockRenderer(IndentedCode::class, new IndentedCodeRenderer($langs));
-
-        $converter = new CommonMarkConverter([], $environment);
-
-        $body = $converter->convertToHtml($markdown);
+        $body = $this->markdownParser->convertToHtml($markdown);
 
         return view('docs', compact('body', 'matter', 'markdown', 'page', 'index'));
     }

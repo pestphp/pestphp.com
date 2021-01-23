@@ -29,7 +29,7 @@ class Documentation
             $path = $this->path($version, 'documentation.md');
 
             if ($this->exists($version, 'documentation')) {
-                return (new CommonMarkConverter())->convertToHtml($this->filesystem->get($path));
+                return (new MarkdownParser())->convertToHtml($this->filesystem->get($path));
             }
 
             return null;
