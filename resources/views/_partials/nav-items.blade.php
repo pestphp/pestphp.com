@@ -4,7 +4,7 @@
         Docs
     </a>
     <div class="flex flex-row space-x-4 mt-20 lg:mt-0 items-center">
-        <a title="@{{ config('site.twitter') }}" href="https://twitter.com/{{ config('site.twitter') }}"
+        <a title="{{ "@".config('site.twitter') }}" href="https://twitter.com/{{ config('site.twitter') }}"
            target="_blank" rel="noopener">
             <x-i.twitter class="h-6 w-6"></x-i.twitter>
         </a>
