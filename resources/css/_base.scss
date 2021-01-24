@@ -1,4 +1,5 @@
 body {
+    @apply dark:text-white;
     font-size: 17px;
     scroll-behavior: smooth;
 }
@@ -7,7 +8,7 @@ a {
     @apply font-medium text-purple-600 no-underline;
 
     &:hover {
-        @apply text-purple-800;
+        @apply text-purple-800 dark:text-white;
     }
 }
 
@@ -17,7 +18,7 @@ h3,
 h4,
 h5,
 h6 {
-    @apply mt-8 text-gray-900 mb-4 leading-tight;
+    @apply mt-8 text-gray-900 dark:text-white mb-4 leading-tight;
 
     &:first-child {
         @apply mt-0;
@@ -83,4 +84,20 @@ p {
 
 ::selection {
     @apply bg-purple-500 text-white;
+}
+
+.scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    @apply dark:bg-gray-600 bg-gray-400;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-gray-500;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-600;
 }

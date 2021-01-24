@@ -1,6 +1,6 @@
 .documentation {
 	blockquote {
-		@apply border-purple-400 border-l-4 font-normal italic my-8 pl-6 text-gray-800 text-lg;
+		@apply border-purple-400 border-l-4 font-normal italic my-8 pl-6 text-gray-800 dark:text-white text-lg;
 	}
 }
 
@@ -8,7 +8,7 @@
 	ul {
 		@apply list-none;
 		h2 {
-			@apply px-3 mb-0 text-xs leading-4 font-bold text-gray-400 uppercase tracking-wider;
+			@apply px-3 mb-0 text-xs leading-4 font-bold text-gray-400 dark:text-white uppercase tracking-wider;
 		}
 
 		li {
@@ -18,7 +18,7 @@
 			}
 
 			a {
-				@apply font-system font-normal flex items-center px-3 py-1.5 text-sm leading-5 text-gray-500 rounded-md;
+				@apply font-system font-normal flex items-center px-3 py-1.5 text-sm leading-5 text-gray-500 dark:text-white rounded-md;
 
 				&:hover, &:focus {
 					@apply bg-gray-300;
@@ -50,7 +50,7 @@
 		@apply break-words;
 
 		a {
-			@apply text-gray-900 #{!important};
+			@apply text-gray-900 dark:text-white #{!important};
 		}
 	}
 
@@ -140,7 +140,7 @@
 	        margin-bottom: .5em;
 
 	        a {
-	            @apply relative text-gray-600 no-underline font-medium;
+	            @apply relative text-gray-600 dark:text-white no-underline font-medium;
 	            font-size: .89em;
 
 	            &::before {
