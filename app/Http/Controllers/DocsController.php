@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Support\MarkdownParser;
 use Illuminate\View\View;
-use App\Support\Parsedown;
 use App\Support\Documentation;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Contracts\View\Factory;
@@ -14,6 +14,16 @@ class DocsController extends Controller
 {
     protected const DEFAULT_PAGE = 'installation';
     protected const EXCLUDED = ['readme', 'license'];
+
+    /**
+     * @var MarkdownParser
+     */
+    protected MarkdownParser $markdownParser;
+
+    public function __construct(MarkdownParser $markdownParser)
+    {
+        $this->markdownParser = $markdownParser;
+    }
 
     /**
      * Handle the incoming request.
@@ -32,16 +42,14 @@ class DocsController extends Controller
             abort(404);
         }
 
-        $index = (new Parsedown())->text($docs->getIndex(config('site.defaultVersion')));
+        $index = $docs->getIndex(config('site.defaultVersion'));
 
         $file = $docs->get(config('site.defaultVersion'), $page);
         $contents = YamlFrontMatter::parse($file);
         $matter = $contents->matter();
         $markdown = $contents->body();
 
-        $parsedown = new Parsedown();
-        $body = $parsedown->text($markdown);
-
+        $body = $this->markdownParser->convertToHtml($markdown);
 
         return view('docs', compact('body', 'matter', 'markdown', 'page', 'index'));
     }
