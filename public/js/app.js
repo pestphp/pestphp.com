@@ -7389,7 +7389,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var clipboard_dist_clipboard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! clipboard/dist/clipboard */ "./node_modules/clipboard/dist/clipboard.js");
 /* harmony import */ var clipboard_dist_clipboard__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(clipboard_dist_clipboard__WEBPACK_IMPORTED_MODULE_0__);
 
-var clipboardIcon = "\n    <svg fill=\"currentColor\" class=\"fill-current text-gray-500 h-6 w-6\" viewBox=\"0 0 20 20\">\n        <path d=\"M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z\"></path>\n        <path d=\"M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z\">\n    </path></svg>";
+var clipboardIcon = "\n    <svg fill=\"currentColor\" class=\"fill-current text-gray-500 hover:text-gray-400 h-6 w-6\" viewBox=\"0 0 20 20\">\n        <path d=\"M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z\"></path>\n        <path d=\"M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z\">\n    </path></svg>";
 var clipboardCopiedIcon = "\n    <svg fill=\"currentColor\" class=\"fill-current text-white h-6 w-6\" viewBox=\"0 0 20 20\"><path d=\"M9 2a1 1 0 000 2h2a1 1 0 100-2H9z\"></path>\n        <path fill-rule=\"evenodd\" d=\"M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2\n         0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z\" clip-rule=\"evenodd\">\n    </path></svg>"; // Copy to Clipboard
 
 var codeBlocks = document.querySelectorAll('pre');

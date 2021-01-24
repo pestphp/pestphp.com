@@ -73,6 +73,7 @@ module.exports = {
         borderWidth: ['responsive', 'active', 'focus'],
         width: ['responsive', 'focus'],
         translate: ['dark'],
+        textDecoration: ['dark'],
         display: ['responsive', 'motion-safe', 'motion-reduce', 'dark'],
     },
     plugins: [

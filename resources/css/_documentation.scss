@@ -1,9 +1,3 @@
-.documentation {
-	blockquote {
-		@apply border-purple-400 border-l-4 font-normal italic my-8 pl-6 text-gray-800 dark:text-white text-lg;
-	}
-}
-
 .docs-nav {
 	ul {
 		@apply list-none;
@@ -18,16 +12,14 @@
 			}
 
 			a {
-				@apply font-system font-normal flex items-center px-3 py-1.5 text-sm leading-5 text-gray-500 dark:text-white rounded-md;
+				@apply font-system font-normal flex items-center px-3 py-1.5 text-sm leading-5 text-gray-500 rounded-md;
 
-				&:hover, &:focus {
-					@apply bg-gray-300;
-				}
+                @apply dark:text-white dark:hover:text-gray-700 hover:bg-gray-300 focus:bg-gray-300;
 			}
 
 			.active {
 				a {
-					@apply bg-gray-200 text-gray-700 font-semibold #{!important};
+					@apply bg-gray-200 text-gray-800 font-semibold #{!important};
 				}
 			}
 
@@ -41,6 +33,10 @@
 }
 
 .docs-main {
+    a {
+        @apply text-purple-600 dark:text-white dark:underline;
+    }
+
 	h1,
 	h2,
 	h3,
@@ -80,6 +76,10 @@
 		}
 	}
 
+    blockquote {
+        @apply border-purple-400 border-l-4 font-normal italic my-8 pl-6 text-gray-800 dark:text-white text-lg;
+    }
+
 	p {
 	    @apply my-2 break-words;
 
@@ -99,7 +99,7 @@
             }
 
             li a {
-                display: block;
+                @apply block no-underline;
 
                 code {
                     border-radius: 3px;
@@ -132,15 +132,13 @@
 	}
 
 	h1 + ul, #toc ul {
-	    margin-bottom: 4em;
-	    @apply no-underline m-0 p-0;
+	    @apply m-0 p-0 mb-16;
 
 	    li {
-	        @apply block;
-	        margin-bottom: .5em;
+	        @apply block mb-2;
 
 	        a {
-	            @apply relative text-gray-600 dark:text-white no-underline font-medium;
+	            @apply relative text-gray-600 dark:text-white no-underline font-medium #{!important};
 	            font-size: .89em;
 
 	            &::before {
@@ -151,14 +149,13 @@
 	    }
 
 	    ul {
-	        margin-top: .5em;
-	        @apply p-0 mb-0;
+	        @apply p-0 mb-0 mt-2;
 
 	        li {
-	            padding-left: 1.5em;
+	            @apply pl-6;
 
 	            a {
-	                @apply font-normal;
+	                @apply font-normal no-underline #{!important};
 	            }
 	        }
 	    }

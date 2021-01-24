@@ -5,7 +5,7 @@ body {
 }
 
 a {
-    @apply font-medium text-purple-600 no-underline;
+    @apply font-medium text-purple-600 no-underline dark:text-white;
 
     &:hover {
         @apply text-purple-800 dark:text-white;
@@ -81,6 +81,19 @@ p {
         @apply my-6;
     }
 }
+
+.DocSearch-Button {
+    @apply dark:bg-gray-500;
+}
+
+.DocSearch-Button .DocSearch-Search-Icon {
+    @apply dark:text-white;
+}
+
+.DocSearch-Button-Placeholder {
+    @apply dark:text-white;
+}
+
 
 ::selection {
     @apply bg-purple-500 text-white;

@@ -86,10 +86,11 @@ pre {
 }
 
 .hljs {
-    @apply block p-4 overflow-x-auto bg-gray-700 text-white text-base;
+    @apply block p-4 overflow-x-auto text-white text-base;
     font-family: "Fira Mono", monospace;
     line-height: 40px;
     border-radius: 0.5rem;
+    background: #211F2F;
 }
 
 .hljs > *::selection {
