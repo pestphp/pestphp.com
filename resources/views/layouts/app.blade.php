@@ -1,5 +1,5 @@
 <x-app-layout layout="base" :title="$title" :description="$title"
-              class="text-gray-800 leading-normal font-sans dark:bg-gray-800"
+              class="text-gray-800 leading-normal transition-colors duration-700 ease-in-out font-sans dark:bg-gray-800"
               x-data="AppOffCanvasMenu()">
     @push('styles')
         <link rel="preload" href="{{ mix('css/app.css') }}" as="style">

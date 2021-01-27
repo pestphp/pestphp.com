@@ -1,4 +1,4 @@
-<header class="flex bg-white dark:bg-gray-700 items-center shadow-sm bg-white h-16 py-4" role="banner">
+<header class="flex bg-white dark:bg-gray-700 transition-colors duration-500 ease-in-out items-center shadow-sm bg-white h-16 py-4" role="banner">
     <div class="container flex items-center max-w-8xl mx-auto px-4 space-x-4 lg:px-4">
         <div class="flex items-center lg:hidden">
             <button aria-label="Toggle Documentation Navigation" @click.prevent="toggle()">
@@ -6,14 +6,18 @@
             </button>
         </div>
 
-        <div class="flex items-center">
+        <div class="flex items-center lg:w-56 xl:w-64">
             <a href="/" title="{{ config('app.name')}} home" class="inline-flex items-center">
                 <img class="h-4 md:h-6 lg:h-8 mr-3 flex dark:hidden" loading="lazy" src="/assets/img/small-logo.png" alt="{{ config('app.name')}} logo"/>
                 <img class="h-4 md:h-6 lg:h-8 mr-3 hidden dark:flex" loading="lazy" src="/assets/img/logo.svg" alt="{{ config('app.name')}} logo"/>
             </a>
         </div>
 
-        <div class="flex flex-1 justify-end items-center text-right space-x-2">
+        <div class="flex flex-1 justify-end lg:justify-start">
+            <div id="docsearch" class="md:ml-2 lg:ml-4"></div>
+        </div>
+
+        <div class="flex justify-end items-center text-right space-x-2">
             <button type="button" aria-pressed="false" x-data="ToggleDark()" x-cloak x-init="created()" title="Dark Mode" @click.prevent="toggle()"
                 class="bg-gray-300 dark:bg-gray-500 relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent
                 rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2
@@ -44,8 +48,6 @@
                     </span>
                 </span>
             </button>
-
-            <div id="docsearch"></div>
 
             <div class="hidden lg:flex">
                 @include('_partials.nav-items')

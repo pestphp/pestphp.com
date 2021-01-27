@@ -83,6 +83,7 @@ p {
 }
 
 .DocSearch-Button {
+    @apply rounded #{!important};
     @apply dark:bg-gray-500;
 }
 
@@ -91,7 +92,7 @@ p {
 }
 
 .DocSearch-Button-Placeholder {
-    @apply dark:text-white;
+    @apply dark:text-white pr-20;
 }
 
 
