@@ -8,5 +8,39 @@
 }
 
 .nav-menu__item {
-    @apply block no-underline mb-3 mt-0 text-gray-800 text-sm;
+    @apply block no-underline mb-3 mt-0 text-gray-800 dark:text-white text-sm;
+}
+
+.docs-nav {
+    ul {
+        @apply list-none;
+        h2 {
+            @apply px-3 mb-4 text-xs leading-4 font-bold text-gray-400 dark:text-white uppercase tracking-wider;
+        }
+
+        li {
+            @apply my-1;
+            & > :not(template) + :not(template) {
+                @apply mb-12 mt-3;
+            }
+
+            a {
+                @apply font-system font-normal flex items-center px-3 py-1.5 text-sm leading-5 text-gray-500 rounded-md;
+
+                @apply dark:text-white dark:hover:text-gray-700 hover:bg-gray-300 focus:bg-gray-300;
+            }
+
+            .active {
+                a {
+                    @apply bg-gray-200 text-gray-800 font-semibold #{!important};
+                }
+            }
+
+            li {
+                & > :not(template) + :not(template) {
+                    @apply mb-0 mt-0;
+                }
+            }
+        }
+    }
 }

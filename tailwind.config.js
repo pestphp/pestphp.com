@@ -2,6 +2,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
+    darkMode: 'class',
     purge: {
         content: [
             'resources/views/**/*.blade.php',
@@ -10,6 +11,11 @@ module.exports = {
     },
     theme: {
         extend: {
+            colors: {
+                ...defaultTheme.color,
+                discord: '#7289da',
+                twitter: '#1DA1F2',
+            },
             height: {
                 'screen-24': 'calc(100vh - 4rem)'
             },
@@ -66,7 +72,9 @@ module.exports = {
         borderRadius: ['responsive', 'focus'],
         borderWidth: ['responsive', 'active', 'focus'],
         width: ['responsive', 'focus'],
-        display: ['responsive', 'motion-safe', 'motion-reduce'],
+        translate: ['dark'],
+        textDecoration: ['dark'],
+        display: ['responsive', 'motion-safe', 'motion-reduce', 'dark'],
     },
     plugins: [
         require('@tailwindcss/typography'),

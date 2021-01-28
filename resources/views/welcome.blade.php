@@ -13,7 +13,7 @@
 
             <div class="mt-8">
                 <p class="text-center text-base leading-6 text-gray-400">
-                    © 2021 {{ config('site.name') }}
+                    © {{ now()->year }} {{ config('site.name') }}
                 </p>
             </div>
         </div>

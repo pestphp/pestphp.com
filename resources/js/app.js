@@ -4,6 +4,7 @@ import docsearch from '@docsearch/js';
 
 import './clipboard';
 import './nav';
+import './darkmode';
 
 // Configure DocSearch
 docsearch({
