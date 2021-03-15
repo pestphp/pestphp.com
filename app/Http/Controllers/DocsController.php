@@ -16,16 +16,6 @@ class DocsController extends Controller
     protected const EXCLUDED = ['readme', 'license'];
 
     /**
-     * @var MarkdownParser
-     */
-    protected MarkdownParser $markdownParser;
-
-    public function __construct(MarkdownParser $markdownParser)
-    {
-        $this->markdownParser = $markdownParser;
-    }
-
-    /**
      * Handle the incoming request.
      *
      * @param Documentation $docs
@@ -44,12 +34,11 @@ class DocsController extends Controller
 
         $index = $docs->getIndex(config('site.defaultVersion'));
 
-        $file = $docs->get(config('site.defaultVersion'), $page);
-        $contents = YamlFrontMatter::parse($file);
-        $matter = $contents->matter();
-        $markdown = $contents->body();
+        $document = $docs->get(config('site.defaultVersion'), $page);
 
-        $body = $this->markdownParser->convertToHtml($markdown);
+        $matter = $document['matter'];
+        $markdown = $document['markdown'];
+        $body = $document['html'];
 
         return view('docs', compact('body', 'matter', 'markdown', 'page', 'index'));
     }
