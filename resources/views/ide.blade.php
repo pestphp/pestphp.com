@@ -24,7 +24,7 @@
                         <x-ide-plugin
                             title="PHPStorm"
                             :installs="$jetbrains"
-                            logo="https://upload.wikimedia.org/wikipedia/commons/c/c8/PhpStorm_Logo.svg"
+                            logo="https://upload.wikimedia.org/wikipedia/commons/c/c9/PhpStorm_Icon.svg"
                             url="https://plugins.jetbrains.com/plugin/14636-pest"
                             github="https://github.com/pestphp/pest-intellij">
                         </x-ide-plugin>
