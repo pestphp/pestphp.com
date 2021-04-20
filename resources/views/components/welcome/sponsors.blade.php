@@ -15,6 +15,12 @@
                         </img>
                     </a>
                 </div>
+                <div>
+                    <a href="https://scoutapm.com/" target="_blank" rel="noopener">
+                        <img alt="Scout APM" loading="lazy" style="max-width: 200px;" src="{{ asset('assets/img/sponsors/scout-apm.jpg') }}">
+                        </img>
+                    </a>
+                </div>
             </div>
             <div class="text-center text-gray-400 font-semibold text-sm">
                 Want to see your logo here?
