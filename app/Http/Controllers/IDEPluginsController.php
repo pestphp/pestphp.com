@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Support\Documentation;
 use Illuminate\View\View;
+use App\Support\Documentation;
 use App\Services\JetBrainsMarketplace;
 use Illuminate\Contracts\View\Factory;
 use App\Services\VisualStudioMarketplace;
