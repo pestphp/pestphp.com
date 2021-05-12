@@ -2,17 +2,17 @@
 
 namespace App\Support;
 
+use League\CommonMark\Environment;
+use League\CommonMark\CommonMarkConverter;
 use League\CommonMark\Block\Element\FencedCode;
 use League\CommonMark\Block\Element\IndentedCode;
-use League\CommonMark\CommonMarkConverter;
-use League\CommonMark\Environment;
-use League\CommonMark\Extension\Autolink\AutolinkExtension;
-use League\CommonMark\Extension\DisallowedRawHtml\DisallowedRawHtmlExtension;
-use League\CommonMark\Extension\Strikethrough\StrikethroughExtension;
-use League\CommonMark\Extension\Table\TableExtension;
-use League\CommonMark\Extension\TaskList\TaskListExtension;
 use Spatie\CommonMarkHighlighter\FencedCodeRenderer;
+use League\CommonMark\Extension\Table\TableExtension;
 use Spatie\CommonMarkHighlighter\IndentedCodeRenderer;
+use League\CommonMark\Extension\Autolink\AutolinkExtension;
+use League\CommonMark\Extension\TaskList\TaskListExtension;
+use League\CommonMark\Extension\Strikethrough\StrikethroughExtension;
+use League\CommonMark\Extension\DisallowedRawHtml\DisallowedRawHtmlExtension;
 
 class MarkdownParser
 {

@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Support\MarkdownParser;
 use Illuminate\View\View;
 use App\Support\Documentation;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Contracts\View\Factory;
-use Spatie\YamlFrontMatter\YamlFrontMatter;
 use Illuminate\Contracts\Foundation\Application;
 
 class DocsController extends Controller

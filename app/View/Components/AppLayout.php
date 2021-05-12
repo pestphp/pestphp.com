@@ -23,8 +23,7 @@ class AppLayout extends Component
         string $layout,
         string $title = null,
         string $description = null
-    )
-    {
+    ) {
         $this->layout = $layout;
         $this->title = $title;
         $this->description = $description;
