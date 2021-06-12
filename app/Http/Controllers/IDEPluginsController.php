@@ -21,10 +21,15 @@ class IDEPluginsController extends Controller
      */
     public function __invoke(JetBrainsMarketplace $jetbrains, VisualStudioMarketplace $visualStudio, Documentation $docs)
     {
+        $document = $docs->get(config('site.defaultVersion'), 'ide-plugins');
+
+        $body = $document['html'];
+
         return view('ide', [
             'index' => $docs->getIndex(config('site.defaultVersion')),
             'jetbrains' => $jetbrains->downloadNumber(),
             'visualStudio' => $visualStudio->downloadNumber(),
+            'body' => $body,
         ]);
     }
 }

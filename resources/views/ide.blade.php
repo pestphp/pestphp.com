@@ -37,6 +37,8 @@
                             github="https://github.com/m1guelpf/better-pest">
                         </x-ide-plugin>
                     </div>
+
+                    {!! $body !!}
                 </div>
             </div>
         </section>
