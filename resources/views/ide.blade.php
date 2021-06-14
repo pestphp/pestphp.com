@@ -36,6 +36,13 @@
                             url="https://marketplace.visualstudio.com/items?itemName=m1guelpf.better-pest"
                             github="https://github.com/m1guelpf/better-pest">
                         </x-ide-plugin>
+
+                        <x-ide-plugin
+                            title="VSCode Snippets"
+                            logo="https://raw.githubusercontent.com/dansysanalyst/pest-snippets/main/images/icon.png"
+                            url="https://marketplace.visualstudio.com/items?itemName=dansysanalyst.pest-snippets"
+                            github="https://github.com/dansysanalyst/pest-snippets">
+                        </x-ide-plugin>
                     </div>
 
                     {!! $body !!}
