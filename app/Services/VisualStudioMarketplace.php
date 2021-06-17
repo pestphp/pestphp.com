@@ -7,16 +7,23 @@ use Illuminate\Support\Facades\Cache;
 
 class VisualStudioMarketplace
 {
+    protected string $extension;
+
+    public function __construct(string $extension)
+    {
+        $this->extension = $extension;
+    }
+
+
     public function downloadNumber(): int
     {
         $statistics = collect($this->result()["statistics"]);
 
-        $downloadCount = $statistics->first(function ($value) {
-            return $value["statisticName"] == "install";
-        });
+        $downloadCount = $statistics->first(fn ($value) => $value["statisticName"] === "install");
 
         return $downloadCount['value'];
     }
+
     protected function result()
     {
         $url = "https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery/";
@@ -27,7 +34,7 @@ class VisualStudioMarketplace
                     "criteria" => [
                         [
                             "filterType" => 7,
-                            "value" => "m1guelpf.better-pest"
+                            "value" => $this->extension
                         ]
                     ],
                 ]
@@ -35,7 +42,7 @@ class VisualStudioMarketplace
             "flags" => 914,
         ];
 
-        $data = Cache::remember('vsmarketplace.apiRequest', now()->addHour(), function () use ($url, $requestBody) {
+        $data = Cache::remember("vsmarketplace.apiRequest.$this->extension", now()->addHour(), function () use ($url, $requestBody) {
             $response = Http::withBody(
                 json_encode($requestBody),
                 "application/json"

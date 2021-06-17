@@ -21,28 +21,29 @@
                     </p>
 
                     <div class="space-y-12 mt-16">
-                        <x-ide-plugin
+                        <x-jetbrains-ide-plugin
                             title="PHPStorm"
-                            :installs="$jetbrains"
+                            plugin-id="14636"
                             logo="https://upload.wikimedia.org/wikipedia/commons/c/c9/PhpStorm_Icon.svg"
                             url="https://plugins.jetbrains.com/plugin/14636-pest"
                             github="https://github.com/pestphp/pest-intellij">
-                        </x-ide-plugin>
+                        </x-jetbrains-ide-plugin>
 
-                        <x-ide-plugin
+                        <x-vs-code-ide-plugin
                             title="VSCode"
-                            :installs="$visualStudio"
+                            extension="m1guelpf.better-pest"
                             logo="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg"
                             url="https://marketplace.visualstudio.com/items?itemName=m1guelpf.better-pest"
                             github="https://github.com/m1guelpf/better-pest">
-                        </x-ide-plugin>
+                        </x-vs-code-ide-plugin>
 
-                        <x-ide-plugin
+                        <x-vs-code-ide-plugin
                             title="VSCode Snippets"
+                            extension="dansysanalyst.pest-snippets"
                             logo="https://raw.githubusercontent.com/dansysanalyst/pest-snippets/main/images/icon.png"
                             url="https://marketplace.visualstudio.com/items?itemName=dansysanalyst.pest-snippets"
                             github="https://github.com/dansysanalyst/pest-snippets">
-                        </x-ide-plugin>
+                        </x-vs-code-ide-plugin>
                     </div>
 
                     {!! $body !!}

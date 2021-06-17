@@ -19,7 +19,7 @@ class IDEPluginsController extends Controller
      * @param Documentation $docs
      * @return Application|Factory|View
      */
-    public function __invoke(JetBrainsMarketplace $jetbrains, VisualStudioMarketplace $visualStudio, Documentation $docs)
+    public function __invoke(Documentation $docs)
     {
         $document = $docs->get(config('site.defaultVersion'), 'ide-plugins');
 
@@ -27,8 +27,6 @@ class IDEPluginsController extends Controller
 
         return view('ide', [
             'index' => $docs->getIndex(config('site.defaultVersion')),
-            'jetbrains' => $jetbrains->downloadNumber(),
-            'visualStudio' => $visualStudio->downloadNumber(),
             'body' => $body,
         ]);
     }
