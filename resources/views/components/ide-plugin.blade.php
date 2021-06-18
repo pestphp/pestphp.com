@@ -9,7 +9,7 @@
         </div>
         <div class="flex justify-center lg:flex-row flex-grow items-center lg:justify-end lg:ml-16">
             @if(isset($installs))
-            <x-i.download class="h-6 text-green-500 mr-2"></x-i.download> {{ $installs }} downloads
+                <x-i.download class="h-6 text-green-500 mr-2"></x-i.download> {{ $installs }} downloads
             @endif
         </div>
     </div>

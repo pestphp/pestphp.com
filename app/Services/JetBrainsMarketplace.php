@@ -7,6 +7,13 @@ use Illuminate\Support\Facades\Cache;
 
 class JetBrainsMarketplace
 {
+    protected string $pluginId;
+
+    public function __construct(string $pluginId)
+    {
+        $this->pluginId = $pluginId;
+    }
+
     public function downloadNumber(): ?int
     {
         if (empty($this->result())) {
@@ -18,7 +25,7 @@ class JetBrainsMarketplace
 
     protected function result(): ?array
     {
-        $url = "https://plugins.jetbrains.com/plugins/list?pluginId=14636";
+        $url = "https://plugins.jetbrains.com/plugins/list?pluginId=$this->pluginId";
 
         $body = Cache::remember('jetbrains.apiRequest', now()->addHour(), function () use ($url) {
             $response = Http::retry(3, 200)->contentType(
