@@ -4,11 +4,8 @@ namespace App\Support;
 
 use League\CommonMark\Environment;
 use League\CommonMark\CommonMarkConverter;
-use League\CommonMark\Block\Element\FencedCode;
-use League\CommonMark\Block\Element\IndentedCode;
-use Spatie\CommonMarkHighlighter\FencedCodeRenderer;
+use Torchlight\Commonmark\TorchlightExtension;
 use League\CommonMark\Extension\Table\TableExtension;
-use Spatie\CommonMarkHighlighter\IndentedCodeRenderer;
 use League\CommonMark\Extension\Autolink\AutolinkExtension;
 use League\CommonMark\Extension\TaskList\TaskListExtension;
 use League\CommonMark\Extension\Strikethrough\StrikethroughExtension;
@@ -31,11 +28,7 @@ class MarkdownParser
         $environment->addExtension(new StrikethroughExtension());
         $environment->addExtension(new TableExtension());
         $environment->addExtension(new TaskListExtension());
-
-        $languages = ['php', 'bash', 'shell', 'json', 'diff'];
-
-        $environment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer($languages));
-        $environment->addBlockRenderer(IndentedCode::class, new IndentedCodeRenderer($languages));
+        $environment->addExtension(new TorchlightExtension());
 
         $converter = new CommonMarkConverter([], $environment);
 
