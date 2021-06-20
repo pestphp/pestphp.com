@@ -19,9 +19,9 @@
         "laravel/framework": "^8.22",
         "laravel/tinker": "^2.5",
         "league/commonmark": "^1.5",
-        "spatie/commonmark-highlighter": "^2.1",
         "spatie/yaml-front-matter": "^2.0",
-        "symfony/yaml": "^5.2"
+        "symfony/yaml": "^5.2",
+        "torchlight/torchlight-commonmark": "^0.3.1"
     },
     "require-dev": {
         "facade/ignition": "^2.5.8",

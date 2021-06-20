@@ -3,56 +3,56 @@
         @apply text-purple-600 dark:text-white dark:underline;
     }
 
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		@apply break-words;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply break-words;
 
-		a {
-			@apply text-gray-900 dark:text-white #{!important};
-		}
-	}
+        a {
+            @apply text-gray-900 dark:text-white #{!important};
+        }
+    }
 
-	h2 {
-		@apply font-bold text-4xl;
+    h2 {
+        @apply font-bold text-4xl;
 
-		&:before {
-			@apply text-purple-500;
-			content: "#";
-			font-weight: 400;
-			margin-left: -25px;
-			position: absolute;
-			font-size: 28px;
-		}
-	}
+        &:before {
+            @apply text-purple-500;
+            content: "#";
+            font-weight: 400;
+            margin-left: -25px;
+            position: absolute;
+            font-size: 28px;
+        }
+    }
 
-	h3 {
-		@apply font-medium text-3xl;
+    h3 {
+        @apply font-medium text-3xl;
 
-		&:before {
-			@apply text-purple-500;
-			content: "#";
-			font-weight: 400;
-			margin-left: -25px;
-			position: absolute;
-			font-size: 28px;
-		}
-	}
+        &:before {
+            @apply text-purple-500;
+            content: "#";
+            font-weight: 400;
+            margin-left: -25px;
+            position: absolute;
+            font-size: 28px;
+        }
+    }
 
     blockquote {
         @apply border-purple-400 border-l-4 font-normal italic my-8 pl-6 text-gray-800 dark:text-white text-lg;
     }
 
-	p {
-	    @apply my-2 break-words;
+    p {
+        @apply my-2 break-words;
 
-	    @screen md {
-	        @apply my-5;
-	    }
-	}
+        @screen md {
+            @apply my-5;
+        }
+    }
 
     .collection-method-list {
         ul {
@@ -76,55 +76,69 @@
         }
     }
 
-	.content-list ul {
-		@apply list-none;
-	}
+    .content-list ul {
+        @apply list-none;
+    }
 
-	.content-list ul li:before, .content-list ul:not(:first-of-type) li:before {
-	    content: "◯";
-	    position: absolute;
-	    font-size: 10px;
-	    margin-top: .6em;
-	    margin-left: -25px;
-	}
+    .content-list ul li:before, .content-list ul:not(:first-of-type) li:before {
+        content: "◯";
+        position: absolute;
+        font-size: 10px;
+        margin-top: .6em;
+        margin-left: -25px;
+    }
 
-	ol, ul {
-		@apply list-inside;
-		li {
-			p {
-				@apply inline-block;
-			}
-		}
-	}
+    ol, ul {
+        @apply list-inside;
+        li {
+            p {
+                @apply inline-block;
+            }
+        }
+    }
 
-	h1 + ul, #toc ul {
-	    @apply m-0 p-0 mb-16;
+    h1 + ul, #toc ul {
+        @apply m-0 p-0 mb-16;
 
-	    li {
-	        @apply block mb-2;
+        li {
+            @apply block mb-2;
 
-	        a {
-	            @apply relative text-gray-600 dark:text-white no-underline font-medium #{!important};
-	            font-size: .89em;
+            a {
+                @apply relative text-gray-600 dark:text-white no-underline font-medium #{!important};
+                font-size: .89em;
 
-	            &::before {
-	                content: "# ";
-	                @apply text-purple-600;
-	            }
-	        }
-	    }
+                &::before {
+                    content: "# ";
+                    @apply text-purple-600;
+                }
+            }
+        }
 
-	    ul {
-	        @apply p-0 mb-0 mt-2;
+        ul {
+            @apply p-0 mb-0 mt-2;
 
-	        li {
-	            @apply pl-6;
+            li {
+                @apply pl-6;
 
-	            a {
-	                @apply font-normal no-underline #{!important};
-	            }
-	        }
-	    }
-	}
+                a {
+                    @apply font-normal no-underline #{!important};
+                }
+            }
+        }
+    }
+
+    pre {
+        code.torchlight {
+            @apply block py-4 min-w-max;
+        }
+
+        code.torchlight .line {
+            @apply px-4;
+        }
+
+        code.torchlight .line-number, code.torchlight .summary-caret {
+            @apply mr-4;
+        }
+    }
 
 }
