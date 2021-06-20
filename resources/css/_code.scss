@@ -22,6 +22,9 @@ pre {
 
     code {
         @apply flex flex-1;
+        font-size: 0.9em;
+        line-height: 2;
+        font-family: Menlo,ui-monospace,SFMono-Regular,Monaco,Consolas,Liberation Mono,Courier New,monospace;
     }
 }
 
