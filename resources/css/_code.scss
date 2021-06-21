@@ -7,7 +7,7 @@ p, li {
 }
 
 pre {
-    @apply flex;
+    @apply flex rounded-lg overflow-x-scroll;
 
     .copyBtn {
         @apply absolute right-0 h-6 w-6 outline-none text-gray-700;

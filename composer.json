@@ -31,7 +31,8 @@
         "nunomaduro/collision": "^5.1",
         "pestphp/pest": "^1.0",
         "pestphp/pest-plugin-laravel": "^1.0",
-        "phpunit/phpunit": "^9.5.0"
+        "phpunit/phpunit": "^9.5.0",
+        "spatie/commonmark-highlighter": "^2.1"
     },
     "config": {
         "optimize-autoloader": true,
