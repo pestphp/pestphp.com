@@ -28,7 +28,7 @@ pre {
     }
 
     code.torchlight {
-        @apply block py-4 min-w-max;
+        @apply block py-4 w-full;
     }
 
     code.torchlight .line {
@@ -37,6 +37,16 @@ pre {
 
     code.torchlight .line-number, code.torchlight .summary-caret {
         @apply mr-4;
+    }
+
+    code.torchlight .line-number {
+        @apply text-gray-200 #{!important};
+    }
+
+    @screen md {
+        code.torchlight {
+            @apply overflow-x-auto;
+        }
     }
 }
 
