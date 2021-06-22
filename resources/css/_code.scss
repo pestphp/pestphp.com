@@ -32,7 +32,7 @@ pre {
     }
 
     code.torchlight .line {
-        @apply px-4;
+        @apply px-6;
     }
 
     code.torchlight .line-number, code.torchlight .summary-caret {
@@ -40,7 +40,7 @@ pre {
     }
 
     code.torchlight .line-number {
-        @apply text-gray-200 #{!important};
+        @apply hidden;
     }
 
     @screen md {
