@@ -1,6 +1,6 @@
 <x-app-layout layout="base" :title="$title" :description="$title"
               class="text-gray-800 leading-normal transition-all duration-700 ease-in-out font-sans dark:bg-gray-800"
-              x-data="AppOffCanvasMenu()">
+              x-data="offcanvasNav">
     @push('styles')
         <link rel="preload" href="{{ mix('css/app.css') }}" as="style">
         <link rel="preload" href="{{ mix('js/app.js') }}" as="script">

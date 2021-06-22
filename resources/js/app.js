@@ -1,10 +1,15 @@
-import 'alpinejs';
+import Alpine from 'alpinejs'
 import { listen } from "quicklink";
 import docsearch from '@docsearch/js';
 
+window.Alpine = Alpine
+
 import './clipboard';
-import './nav';
-import './darkmode';
+import Nav from './nav';
+import DarkMode from './darkmode';
+
+Alpine.data('offcanvasNav', Nav)
+Alpine.data('ToggleDark', DarkMode);
 
 // Configure DocSearch
 docsearch({
@@ -16,3 +21,5 @@ docsearch({
 window.addEventListener('load', () => {
 	listen();
 });
+
+Alpine.start()

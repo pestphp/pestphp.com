@@ -19,7 +19,7 @@
 
         <div class="flex justify-end items-center text-right space-x-2">
             {{-- Thanks to Dries Vints and https://paste.laravel.io/ --}}
-            <button type="button" aria-pressed="false" x-data="ToggleDark()" x-cloak x-init="created()" title="Dark Mode" @click.prevent="toggle()"
+            <button type="button" aria-pressed="false" x-data="ToggleDark" x-cloak x-init="created()" title="Dark Mode" @click.prevent="toggle()"
                 class="bg-gray-300 dark:bg-gray-500 relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent
                 rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2
                 focus:ring-offset-2 focus:ring-gray-500">

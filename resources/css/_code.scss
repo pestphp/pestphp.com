@@ -7,7 +7,7 @@ p, li {
 }
 
 pre {
-    @apply flex rounded-lg overflow-x-scroll;
+    @apply flex rounded-lg;
 
     .copyBtn {
         @apply absolute right-0 h-6 w-6 outline-none text-gray-700;
@@ -28,7 +28,7 @@ pre {
     }
 
     code.torchlight {
-        @apply block py-4;
+        @apply block py-4 overflow-x-auto;
     }
 
     code.torchlight .line {
