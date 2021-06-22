@@ -7,7 +7,7 @@ p, li {
 }
 
 pre {
-    @apply flex rounded-lg overflow-x-scroll;
+    @apply flex rounded-lg overflow-x-auto;
 
     .copyBtn {
         @apply absolute right-0 h-6 w-6 outline-none text-gray-700;
@@ -32,7 +32,7 @@ pre {
     }
 
     code.torchlight .line {
-        @apply px-4;
+        @apply px-6;
     }
 
     code.torchlight .line-number, code.torchlight .summary-caret {
@@ -40,7 +40,7 @@ pre {
     }
 
     code.torchlight .line-number {
-        @apply text-gray-200 #{!important};
+        @apply hidden;
     }
 
     @screen md {
