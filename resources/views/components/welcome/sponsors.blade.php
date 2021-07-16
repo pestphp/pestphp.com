@@ -23,7 +23,7 @@
                 </div>
                 <div>
                     <a href="https://spatie.be/" target="_blank" rel="noopener">
-                        <img alt="Spatie" loading="lazy" style="max-width: 200px;" src="{{ asset('assets/img/sponsors/spatie.png') }}">
+                        <img alt="Spatie" loading="lazy" style="max-width: 150px;" src="{{ asset('assets/img/sponsors/spatie.png') }}">
                         </img>
                     </a>
                 </div>
