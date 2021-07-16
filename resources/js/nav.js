@@ -2,7 +2,14 @@ import queryFirstTabbable from 'ally.js/src/query/first-tabbable'
 import maintainTabFocus from 'ally.js/src/maintain/tab-focus'
 import whenVisibleArea from 'ally.js/src/when/visible-area'
 
-window.AppOffCanvasMenu = () => {
+// Activates current url in Docs Navigation
+var current = document.querySelector('.docs-nav ul a[href="' + window.location.pathname + '"]');
+
+if (current) {
+    current.parentNode.classList.add('active');
+}
+
+export default () => {
     return {
         isOpen: false,
         lastActiveElement: null,
@@ -66,11 +73,4 @@ window.AppOffCanvasMenu = () => {
             })
         }
     }
-}
-
-// Activates current url in Docs Navigation
-var current = document.querySelector('.docs-nav ul a[href="' + window.location.pathname + '"]');
-
-if (current) {
-    current.parentNode.classList.add('active');
 }
