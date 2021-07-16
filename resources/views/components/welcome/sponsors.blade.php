@@ -21,6 +21,12 @@
                         </img>
                     </a>
                 </div>
+                <div>
+                    <a href="https://spatie.be/" target="_blank" rel="noopener">
+                        <img alt="Spatie" loading="lazy" style="max-width: 200px;" src="{{ asset('assets/img/sponsors/spatie.png') }}">
+                        </img>
+                    </a>
+                </div>
             </div>
             <div class="text-center text-gray-400 font-semibold text-sm">
                 Want to see your logo here?
