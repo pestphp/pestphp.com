@@ -2,10 +2,15 @@
     <div class="lg:max-w-2xl lg:w-full mx-auto">
         <div class="flex flex-col space-y-4 items-center">
             <div class="flex flex-col lg:flex-row items-center space-y-4 lg:space-x-4 lg:space-y-0">
-                <div class="font-semibold text-gray-500">Sponsors:</div>
                 <div>
                     <a href="https://akaunting.com/" target="_blank" rel="noopener">
-                        <img alt="Akaunting" loading="lazy" style="max-width: 200px;" src="{{ asset('assets/img/sponsors/akaunting-logo.svg') }}">
+                        <img alt="Akaunting" loading="lazy" style="max-width: 200px;" src="{{ asset('assets/img/sponsors/akaunting.svg') }}">
+                        </img>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://codecourse.com/" target="_blank" rel="noopener">
+                        <img alt="Codecourse" loading="lazy" style="max-width: 200px;" src="{{ asset('assets/img/sponsors/codecourse.svg') }}">
                         </img>
                     </a>
                 </div>
