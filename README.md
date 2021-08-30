@@ -10,7 +10,7 @@ If you want to work on this project on your local machine, you may follow the in
 2. Open your terminal and `cd` to your `~/Sites` folder
 3. Clone your fork into the `~/Sites/pest` folder, by running the following command *with your username placed into the {username} slot*:
     ```bash
-    git clone https://github.com:{username}/pestphp.com pestphp.com
+    git clone https://github.com/{username}/pestphp.com pestphp.com
     ```
 4. CD into the new directory you just created:
     ```bash
