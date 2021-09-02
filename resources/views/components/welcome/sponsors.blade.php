@@ -3,6 +3,12 @@
         <div class="flex flex-col space-y-4 items-center">
             <div class="flex flex-col lg:flex-row items-center space-y-4 lg:space-x-4 lg:space-y-0">
                 <div>
+                    <a href="https://auth0.com" target="_blank" rel="noopener">
+                        <img alt="Auth0" loading="lazy" style="max-width: 150px;" src="{{ asset('assets/img/sponsors/auth0.png') }}">
+                        </img>
+                    </a>
+                </div>
+                <div>
                     <a href="https://akaunting.com/" target="_blank" rel="noopener">
                         <img alt="Akaunting" loading="lazy" style="max-width: 200px;" src="{{ asset('assets/img/sponsors/akaunting.svg') }}">
                         </img>
