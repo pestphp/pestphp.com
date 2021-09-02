@@ -8,8 +8,8 @@
 
         <div class="flex items-center lg:w-56 xl:w-64">
             <a href="/" title="{{ config('app.name')}} home" class="inline-flex items-center">
-                <img class="h-4 md:h-6 lg:h-8 mr-3 flex dark:hidden" loading="lazy" src="/assets/img/small-logo.png" alt="{{ config('app.name')}} logo"/>
-                <img class="h-4 md:h-6 lg:h-8 mr-3 hidden dark:flex" loading="lazy" src="/assets/img/logo.svg" alt="{{ config('app.name')}} logo"/>
+                <img class="h-4 md:h-6 lg:h-8 mr-3 flex dark:hidden" loading="lazy" src="{{ asset('assets/img/small-logo.png') }}" alt="{{ config('app.name')}} logo"/>
+                <img class="h-4 md:h-6 lg:h-8 mr-3 hidden dark:flex" loading="lazy" src="{{ asset('assets/img/logo.svg') }}" alt="{{ config('app.name')}} logo"/>
             </a>
         </div>
 

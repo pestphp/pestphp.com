@@ -9,8 +9,8 @@
                     <div>
                         <div class="flex w-full md:w-auto">
                             <a href="/" title="{{ config('site.name') }} home">
-                                <img alt="{{ config('site.name') }} logo" loading="lazy" class="h-10 w-auto md:h-15 lg:h-20 hidden motion-safe:block" src="/assets/img/small-logo.gif"/>
-                                <img alt="{{ config('site.name') }} logo" loading="lazy" class="h-10 w-auto md:h-15 lg:h-20 motion-safe:hidden" src="/assets/img/logo.png"/>
+                                <img alt="{{ config('site.name') }} logo" loading="lazy" class="h-10 w-auto md:h-15 lg:h-20 hidden motion-safe:block" src="{{ asset('assets/img/small-logo.gif') }}"/>
+                                <img alt="{{ config('site.name') }} logo" loading="lazy" class="h-10 w-auto md:h-15 lg:h-20 motion-safe:hidden" src="{{ asset('assets/img/logo.png') }}"/>
                             </a>
                         </div>
                     </div>
@@ -47,9 +47,9 @@
     </div>
     <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
         <picture>
-            <source srcset="/assets/img/webp/hero.webp" type="image/webp">
-                <source srcset="/assets/img/hero.jpg" type="image/jpeg">
-                    <img alt="" loading="lazy" class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="/assets/img/hero.jpg"/>
+            <source srcset="{{ asset('assets/img/webp/hero.webp') }}" type="image/webp">
+                <source srcset="{{ asset('assets/img/hero.jpg') }}" type="image/jpeg">
+                    <img alt="" loading="lazy" class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="{{ asset('assets/img/hero.jpg') }}"/>
                 </source>
             </source>
         </picture>
