@@ -26,9 +26,9 @@ Let's get started
 ### Setup
 
 1. Fork the project
-2. Clone your fork into the by running the following command *with your username placed into the {username} slot*:
+2. Clone your fork by running the following command *with your username placed into the {username} slot*:
 	```bash
-    git clone https://github.com:{username}/pestphp.com-next pest
+    git clone https://github.com/{username}/pestphp.com pest
     ```
 3. CD into the new directory you just created:
     ```bash

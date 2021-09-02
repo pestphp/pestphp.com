@@ -1,4 +1,4 @@
-<x-app-layout layout="app" :title="$matter['title']" :description="$matter['description']">
+<x-app-layout layout="app"  :title="$matter['title']" :description="$matter['description']">
 
     <main role="main" class="w-full flex-auto">
         <section class="documentation">
