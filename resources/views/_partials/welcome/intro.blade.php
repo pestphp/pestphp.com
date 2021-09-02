@@ -9,10 +9,8 @@
                     <div>
                         <div class="flex w-full md:w-auto">
                             <a href="/" title="{{ config('site.name') }} home">
-                                <img alt="{{ config('site.name') }} logo" loading="lazy" class="h-10 w-auto md:h-15 lg:h-20 hidden motion-safe:block" src="/assets/img/small-logo.gif">
-                                    <img alt="{{ config('site.name') }} logo" loading="lazy" class="h-10 w-auto md:h-15 lg:h-20 motion-safe:hidden" src="/assets/img/logo.png">
-                                    </img>
-                                </img>
+                                <img alt="{{ config('site.name') }} logo" loading="lazy" class="h-10 w-auto md:h-15 lg:h-20 hidden motion-safe:block" src="/assets/img/small-logo.gif"/>
+                                <img alt="{{ config('site.name') }} logo" loading="lazy" class="h-10 w-auto md:h-15 lg:h-20 motion-safe:hidden" src="/assets/img/logo.png"/>
                             </a>
                         </div>
                     </div>

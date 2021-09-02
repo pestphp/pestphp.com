@@ -4,38 +4,32 @@
             <div class="flex flex-col lg:flex-row items-center space-y-4 lg:space-x-4 lg:space-y-0">
                 <div>
                     <a href="https://auth0.com" target="_blank" rel="noopener">
-                        <img alt="Auth0" loading="lazy" style="max-width: 150px;" src="{{ asset('assets/img/sponsors/auth0.png') }}">
-                        </img>
+                        <img alt="Auth0" loading="lazy" style="max-width: 150px;" src="{{ asset('assets/img/sponsors/auth0.png') }}"/>
                     </a>
                 </div>
                 <div>
                     <a href="https://akaunting.com/" target="_blank" rel="noopener">
-                        <img alt="Akaunting" loading="lazy" style="max-width: 200px;" src="{{ asset('assets/img/sponsors/akaunting.svg') }}">
-                        </img>
+                        <img alt="Akaunting" loading="lazy" style="max-width: 200px;" src="{{ asset('assets/img/sponsors/akaunting.svg') }}"/>
                     </a>
                 </div>
                 <div>
                     <a href="https://codecourse.com/" target="_blank" rel="noopener">
-                        <img alt="Codecourse" loading="lazy" style="max-width: 200px;" src="{{ asset('assets/img/sponsors/codecourse.svg') }}">
-                        </img>
+                        <img alt="Codecourse" loading="lazy" style="max-width: 200px;" src="{{ asset('assets/img/sponsors/codecourse.svg') }}"/>
                     </a>
                 </div>
                 <div>
                     <a href="https://meema.io/" target="_blank" rel="noopener">
-                        <img alt="Meema" loading="lazy" style="max-width: 150px;" src="{{ asset('assets/img/sponsors/meema.png') }}">
-                        </img>
+                        <img alt="Meema" loading="lazy" style="max-width: 150px;" src="{{ asset('assets/img/sponsors/meema.png') }}"/>
                     </a>
                 </div>
                 <div>
                     <a href="https://scoutapm.com/" target="_blank" rel="noopener">
-                        <img alt="Scout APM" loading="lazy" style="max-width: 200px;" src="{{ asset('assets/img/sponsors/scout-apm.jpg') }}">
-                        </img>
+                        <img alt="Scout APM" loading="lazy" style="max-width: 200px;" src="{{ asset('assets/img/sponsors/scout-apm.jpg') }}"/>
                     </a>
                 </div>
                 <div>
                     <a href="https://spatie.be/" target="_blank" rel="noopener">
-                        <img alt="Spatie" loading="lazy" style="max-width: 150px;" src="{{ asset('assets/img/sponsors/spatie.png') }}">
-                        </img>
+                        <img alt="Spatie" loading="lazy" style="max-width: 150px;" src="{{ asset('assets/img/sponsors/spatie.png') }}"/>
                     </a>
                 </div>
             </div>
