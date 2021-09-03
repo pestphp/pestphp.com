@@ -14,9 +14,9 @@
                     <div class="bg-pest absolute top-0 left-0 -mt-12 hidden lg:block" style="z-index: 0; width: 400px; height: 531px; opacity: 10%">
                     </div>
                     <picture>
-                        <source srcset="/assets/img/webp/collision.webp" type="image/webp">
-                            <source srcset="/assets/img/collision.png" type="image/png">
-                                <img alt="" loading="lazy" class="relative mx-auto" src="/assets/img/collision.png" width="490"/>
+                        <source srcset="{{ asset('assets/img/webp/collision.webp') }}" type="image/webp">
+                            <source srcset="{{ asset('assets/img/collision.png') }}" type="image/png">
+                                <img alt="" loading="lazy" class="relative mx-auto" src="{{ asset('assets/img/collision.png') }}" width="490"/>
                             </source>
                         </source>
                     </picture>
@@ -37,9 +37,9 @@
                     <div class="bg-pest absolute top-0 right-0 -mt-12 hidden lg:block" style="z-index: 0; width: 400px; height: 531px; opacity: 10%">
                     </div>
                     <picture>
-                        <source srcset="/assets/img/webp/test.webp" type="image/webp">
-                            <source srcset="/assets/img/test.png" type="image/png">
-                                <img alt="" loading="lazy" class="relative mx-auto" src="/assets/img/test.png" width="490"/>
+                        <source srcset="{{ asset('assets/img/webp/test.webp') }}" type="image/webp">
+                            <source srcset="{{ asset('assets/img/test.png') }}" type="image/png">
+                                <img alt="" loading="lazy" class="relative mx-auto" src="{{ asset('assets/img/test.png') }}" width="490"/>
                             </source>
                         </source>
                     </picture>
