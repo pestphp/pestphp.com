@@ -28,6 +28,26 @@
     {{ $head ?? '' }}
 
     @stack('styles')
+
+    <script>
+        function updateTheme() {
+            if (!('mode' in localStorage)) {
+                localStorage.mode = 'light';
+            }
+
+            switch (localStorage.mode) {
+                case 'dark':
+                    document.documentElement.classList.add('dark');
+                    break;
+
+                case 'light':
+                    document.documentElement.classList.remove('dark');
+                    break;
+            }
+        }
+
+        updateTheme();
+    </script>
 </head>
 <body {{ $attributes->except(['title', 'description']) }}>
 
