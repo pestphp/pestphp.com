@@ -2,8 +2,17 @@
     <div class="lg:max-w-2xl lg:w-full mx-auto">
         <div class="flex flex-col space-y-4 items-center">
             <div class="flex flex-col lg:flex-row items-center space-y-4 lg:space-x-4 lg:space-y-0">
-                @foreach(config('sponsors') as $name => $sponsor)
+                @foreach(config('sponsors.platinum') as $name => $sponsor)
                     <div>
+                        <a href="{{ $sponsor['website'] }}" target="_blank" rel="noopener">
+                            <img alt="{{ $name }}" loading="lazy" style="max-width: {{ $sponsor['max_width'] }};width: {{ $sponsor['width'] }};" src="{{ asset($sponsor['image']) }}"/>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+            <div class="mt-10 flex flex-col lg:flex-row items-center space-y-4 lg:space-x-4 lg:space-y-0">
+                @foreach(config('sponsors.premium') as $name => $sponsor)
+                    <div class="mx-3">
                         <a href="{{ $sponsor['website'] }}" target="_blank" rel="noopener">
                             <img alt="{{ $name }}" loading="lazy" style="max-width: {{ $sponsor['max_width'] }};" src="{{ asset($sponsor['image']) }}"/>
                         </a>
