@@ -2,6 +2,12 @@
 
 return [
     'platinum' => [
+        'Spatie' => [
+            'website' => 'https://spatie.be/',
+            'image' => 'assets/img/sponsors/spatie.png',
+            'max_width' => '230px',
+            'width' => '230px',
+        ],
         'Worksome' => [
             'website' => 'https://worksome.com/',
             'image' => 'assets/img/sponsors/worksome.svg',
@@ -40,10 +46,5 @@ return [
             'image' => 'assets/img/sponsors/scout-apm.jpg',
             'max_width' => '150px'
         ],
-        'Spatie' => [
-            'website' => 'https://spatie.be/',
-            'image' => 'assets/img/sponsors/spatie.png',
-            'max_width' => '100px'
-        ]
     ]
 ];
