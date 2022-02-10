@@ -6,6 +6,7 @@ use App\Contracts\MarkdownStyler;
 use League\CommonMark\ConfigurableEnvironmentInterface;
 use League\CommonMark\Environment;
 use League\CommonMark\CommonMarkConverter;
+use League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkExtension;
 use League\CommonMark\Extension\Table\TableExtension;
 use League\CommonMark\Extension\Autolink\AutolinkExtension;
 use League\CommonMark\Extension\TaskList\TaskListExtension;
@@ -34,13 +35,18 @@ class MarkdownParser
         $this->addDefaultExtensions($environment);
         $this->markdownStyler->stylise($environment);
 
-        $converter = new CommonMarkConverter([], $environment);
+        $converter = new CommonMarkConverter([
+            'heading_permalink' => [
+                'inner_contents' => '#',
+            ]
+        ], $environment);
 
         return $converter->convertToHtml($markdown);
     }
 
     private function addDefaultExtensions(ConfigurableEnvironmentInterface $environment)
     {
+        $environment->addExtension(new HeadingPermalinkExtension());
         $environment->addExtension(new AutolinkExtension());
         $environment->addExtension(new DisallowedRawHtmlExtension());
         $environment->addExtension(new StrikethroughExtension());

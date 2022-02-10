@@ -12,29 +12,27 @@
         @apply break-words;
 
         a {
-            @apply text-gray-900 dark:text-white #{!important};
+            @apply text-gray-900 dark:text-white;
         }
     }
 
     h2 {
-        @apply font-bold text-4xl;
+        @apply font-bold text-4xl flex items-baseline;
 
-        &:before {
+        a.heading-permalink {
             @apply text-purple-500;
-            content: "#";
             font-weight: 400;
             margin-left: -25px;
             position: absolute;
-            font-size: 28px;
+            font-size: 32px;
         }
     }
 
     h3 {
-        @apply font-medium text-3xl;
+        @apply font-medium text-3xl flex items-baseline;
 
-        &:before {
+        a.heading-permalink {
             @apply text-purple-500;
-            content: "#";
             font-weight: 400;
             margin-left: -25px;
             position: absolute;
