@@ -26,17 +26,19 @@ class MarkdownParser
      * Converts CommonMark to HTML.
      *
      * @param string $markdown
+     * @param array{enable_heading_permalinks?: bool} $config
      * @return string
      */
-    public function convertToHtml(string $markdown)
+    public function convertToHtml(string $markdown, array $config = [])
     {
         $environment = Environment::createCommonMarkEnvironment();
 
-        $this->addDefaultExtensions($environment);
+        $this->addDefaultExtensions($environment, $config);
         $this->markdownStyler->stylise($environment);
 
         $converter = new CommonMarkConverter([
             'heading_permalink' => [
+                'html_class' => 'heading-permalink mr-2',
                 'inner_contents' => '#',
             ]
         ], $environment);
@@ -44,9 +46,12 @@ class MarkdownParser
         return $converter->convertToHtml($markdown);
     }
 
-    private function addDefaultExtensions(ConfigurableEnvironmentInterface $environment)
+    private function addDefaultExtensions(ConfigurableEnvironmentInterface $environment, array $config = [])
     {
-        $environment->addExtension(new HeadingPermalinkExtension());
+        if ($config['enable_heading_permalinks'] ?? true) {
+            $environment->addExtension(new HeadingPermalinkExtension());
+        }
+
         $environment->addExtension(new AutolinkExtension());
         $environment->addExtension(new DisallowedRawHtmlExtension());
         $environment->addExtension(new StrikethroughExtension());

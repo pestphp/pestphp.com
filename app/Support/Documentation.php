@@ -27,7 +27,9 @@ class Documentation
             $path = $this->path($version, 'documentation.md');
 
             if ($this->exists($version, 'documentation')) {
-                return (resolve(MarkdownParser::class))->convertToHtml($this->filesystem->get($path));
+                return (resolve(MarkdownParser::class))->convertToHtml($this->filesystem->get($path), [
+                    'enable_heading_permalinks' => false,
+                ]);
             }
 
             return null;
