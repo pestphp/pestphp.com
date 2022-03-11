@@ -2,6 +2,12 @@
 
 return [
     'platinum' => [
+        'Advent' => [
+            'website' => 'https://advent.dev/',
+            'image' => 'assets/img/sponsors/advent.jpg',
+            'max_width' => '270px',
+            'width' => '270px',
+        ],
         'Spatie' => [
             'website' => 'https://spatie.be/',
             'image' => 'assets/img/sponsors/spatie.png',
