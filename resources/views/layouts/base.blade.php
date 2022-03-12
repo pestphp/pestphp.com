@@ -29,25 +29,27 @@
 
     @stack('styles')
 
-    <script>
-        function updateTheme() {
-            if (!('mode' in localStorage)) {
-                localStorage.mode = 'light';
+    @if (! request()->is('/'))
+        <script>
+            function updateTheme() {
+                if (!('mode' in localStorage)) {
+                    localStorage.mode = 'light';
+                }
+
+                switch (localStorage.mode) {
+                    case 'dark':
+                        document.documentElement.classList.add('dark');
+                        break;
+
+                    case 'light':
+                        document.documentElement.classList.remove('dark');
+                        break;
+                }
             }
 
-            switch (localStorage.mode) {
-                case 'dark':
-                    document.documentElement.classList.add('dark');
-                    break;
-
-                case 'light':
-                    document.documentElement.classList.remove('dark');
-                    break;
-            }
-        }
-
-        updateTheme();
-    </script>
+            updateTheme();
+        </script>
+    @endif
 </head>
 <body {{ $attributes->except(['title', 'description']) }}>
 
