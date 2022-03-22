@@ -2,11 +2,11 @@
 
 return [
     'platinum' => [
-        'Advent' => [
-            'website' => 'https://advent.dev/',
-            'image' => 'assets/img/sponsors/advent.jpg',
-            'max_width' => '270px',
-            'width' => '270px',
+        'LoadForge' => [
+            'website' => 'https://loadforge.com',
+            'image' => 'assets/img/sponsors/loadforge.svg',
+            'max_width' => '320px',
+            'width' => '320px',
         ],
         'Spatie' => [
             'website' => 'https://spatie.be/',
