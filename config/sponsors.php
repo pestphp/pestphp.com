@@ -2,6 +2,12 @@
 
 return [
     'platinum' => [
+        'Localazy' => [
+            'website' => 'https://localazy.com',
+            'image' => 'assets/img/sponsors/localazy.png',
+            'max_width' => '280px',
+            'width' => '280px',
+        ],
         'LoadForge' => [
             'website' => 'https://loadforge.com',
             'image' => 'assets/img/sponsors/loadforge.svg',
