@@ -43,6 +43,11 @@ return [
             'image' => 'assets/img/sponsors/codecourse.svg',
             'max_width' => '150px'
         ],
+        'Laracasts' => [
+            'website' => 'https://laracasts.com/',
+            'image' => 'assets/img/sponsors/laracasts.svg',
+            'max_width' => '150px'
+        ],
         'Fathom Analytics' => [
             'website' => 'https://usefathom.com/',
             'image' => 'assets/img/sponsors/fathom.svg',
