@@ -22,7 +22,7 @@
 
                     <div class="space-y-12 mt-16">
                         <x-jetbrains-ide-plugin
-                            title="PHPStorm"
+                            title="PhpStorm"
                             plugin-id="14636"
                             logo="https://upload.wikimedia.org/wikipedia/commons/c/c9/PhpStorm_Icon.svg"
                             url="https://plugins.jetbrains.com/plugin/14636-pest"
