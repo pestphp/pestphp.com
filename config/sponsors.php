@@ -2,12 +2,6 @@
 
 return [
     'platinum' => [
-        'Localazy' => [
-            'website' => 'https://localazy.com',
-            'image' => 'assets/img/sponsors/localazy.png',
-            'max_width' => '280px',
-            'width' => '280px',
-        ],
         'LoadForge' => [
             'website' => 'https://loadforge.com',
             'image' => 'assets/img/sponsors/loadforge.svg',
@@ -57,6 +51,12 @@ return [
             'website' => 'https://usefathom.com/',
             'image' => 'assets/img/sponsors/fathom.svg',
             'max_width' => '100px'
+        ],
+        'Localazy' => [
+            'website' => 'https://localazy.com',
+            'image' => 'assets/img/sponsors/localazy.png',
+            'max_width' => '140px',
+            'width' => '140px',
         ],
         'Meema' => [
             'website' => 'https://meema.io/',
