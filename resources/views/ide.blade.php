@@ -44,6 +44,13 @@
                             url="https://marketplace.visualstudio.com/items?itemName=dansysanalyst.pest-snippets"
                             github="https://github.com/dansysanalyst/pest-snippets">
                         </x-vs-code-ide-plugin>
+
+                        <x-neovim-ide-plugin
+                            title="Neovim (via Neotest)"
+                            logo="https://upload.wikimedia.org/wikipedia/commons/3/3a/Neovim-mark.svg"
+                            url="https://github.com/theutz/neotest-pest"
+                            github="https://github.com/theutz/neotest-pest">
+                        </x-ide-plugin>
                     </div>
 
                     {!! $body !!}
