@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[hidden] { display: none !important; }
+
+@layer base {
+  body {
+    background: url('/assets/bg-head.svg');
+    background-position: center top;
+    @apply sm:bg-center bg-no-repeat bg-cover;
+  }
+
+  main {
+    background: url('/assets/pattern.svg');
+    background-repeat: repeat;
+    background-position: 10px 10px;
+    background-size: 30px 30px;
+  }
+
+  @screen md {
+    main {
+      background: url('/assets/pattern.svg'), url('/assets/bg-foot.svg');
+      background-repeat: repeat, no-repeat;
+      background-position: 10px 10px, center bottom;
+      background-size: 40px 40px, contain;
+    }
+  }
+}
