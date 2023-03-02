@@ -1,6 +1,6 @@
 .docs-main {
     a {
-        @apply text-sky-600 underline dark:text-white;
+        @apply text-pink-500 underline dark:text-cyan-400;
     }
 
     h1,
@@ -75,7 +75,7 @@
     }
 
     blockquote {
-        @apply border-sky-600 border-l-4 font-normal my-8 pl-3 text-gray-800 dark:text-white text-lg;
+        @apply border-cyan-500 dark:border-pink-500 border-l-4 font-normal my-8 pl-3 text-gray-800 dark:text-white text-lg;
     }
 
     p {

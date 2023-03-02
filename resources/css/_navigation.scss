@@ -16,7 +16,7 @@
         @apply mt-0 list-none;
 
         h2 {
-            @apply px-3 mb-4 text-xs leading-4 font-bold text-gray-400 dark:text-white uppercase tracking-wider;
+            @apply mb-4 text-xs leading-4 font-bold text-gray-700 dark:text-white/75 uppercase tracking-wider;
         }
 
         li {
@@ -27,7 +27,7 @@
             }
 
             a {
-                @apply font-system font-normal flex items-center px-3 py-1.5 text-sm leading-5 text-gray-500 rounded-md;
+                @apply font-system font-normal flex items-center py-1.5 text-sm leading-5 text-gray-500 rounded-md;
 
                 @apply dark:text-white dark:hover:text-white hover:underline focus:underline;
             }

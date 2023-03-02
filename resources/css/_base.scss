@@ -8,7 +8,7 @@ body {
         url(../img/bg-head-opacity.webp),
         url(/www/assets/pattern.svg);
     background-repeat: no-repeat, repeat;
-    background-position: center -350px, 10px 10px;
+    background-position: left -350px, 10px 10px;
     background-size: auto auto, 30px 30px;
 }
 
@@ -67,7 +67,7 @@ h6 {
 }
 
 hr {
-    @apply border-b border-purple-200 my-12 rounded-full;
+    @apply border-b border-cyan-200 dark:border-pink-300 my-12 rounded-full;
 }
 
 li {
@@ -99,15 +99,18 @@ p {
     }
 }
 
+[id=docsearch] {
+    width: 100%;
+    @apply md:w-auto;
+}
 .DocSearch-Button {
-    @apply rounded #{!important};
-
-    @apply border border-solid border-gray-400/30 dark:border-white/10 dark:bg-black/10 flex items-center w-24 lg:w-auto;
-
+    @apply border border-solid border-gray-400/50 dark:border-white/10 dark:bg-black/10 flex items-center;
     &:hover {
         box-shadow: none;
         @apply text-gray-400 border-gray-400/70 bg-transparent dark:border-white/20;
     }
+    width: 100% !important;
+    @apply rounded #{!important};
 }
 
 .DocSearch-Button .DocSearch-Search-Icon {
