@@ -1,52 +1,45 @@
-<header class="flex bg-white dark:bg-gray-700 transition-all duration-500 ease-in-out items-center shadow-sm bg-white h-16 py-4" role="banner">
-    <div class="container flex items-center max-w-8xl mx-auto px-4 space-x-4 lg:px-4">
+<header class="flex items-center shadow-sm dark:shadow-white/10 h-16 py-4 header-pattern" role="banner">
+    <div class="container flex items-center max-w-8xl mx-auto px-4 space-x-3 lg:px-4">
         <div class="flex items-center lg:hidden">
             <button aria-label="Toggle Documentation Navigation" @click.prevent="toggle()">
                 <x-i.menu class="h-6 w-6 md:h-8 md:w-8 text-gray-500 dark:text-white opacity-50"></x-i.menu>
             </button>
         </div>
 
-        <div class="flex items-center lg:w-56 xl:w-64">
+        <div class="flex items-center">
             <a href="/" title="{{ config('app.name')}} home" class="inline-flex items-center">
-                <img class="h-4 md:h-6 lg:h-8 mr-3 flex dark:hidden" loading="lazy" src="{{ asset('assets/img/small-logo.png') }}" alt="{{ config('app.name')}} logo"/>
-                <img class="h-4 md:h-6 lg:h-8 mr-3 hidden dark:flex" loading="lazy" src="{{ asset('assets/img/logo.svg') }}" alt="{{ config('app.name')}} logo"/>
+                <figure class="flex items-center justify-center p-3 bg-black rounded-lg">
+                    <img src="/www/assets/logo.svg" alt="pestphp logo" class="ml-1 h-[18px]">
+                </figure>
             </a>
         </div>
 
-        <div class="flex flex-1 justify-end lg:justify-start">
-            <div id="docsearch" class="md:ml-2 lg:ml-4"></div>
+        <div class="flex flex-1 justify-end">
+            <div id="docsearch"></div>
         </div>
 
-        <div class="flex justify-end items-center text-right space-x-2">
-            {{-- Thanks to Dries Vints and https://paste.laravel.io/ --}}
-            <button type="button" aria-pressed="false" x-data="ToggleDark" x-cloak title="Dark Mode" @click.prevent="toggle()"
-                class="bg-gray-300 dark:bg-gray-500 relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent
-                rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2
-                focus:ring-offset-2 focus:ring-gray-500">
-
-                <span class="translate-x-0 dark:translate-x-5 relative inline-block h-5 w-5 rounded-full bg-white
-                shadow transform ring-0 transition ease-in-out duration-200">
-                    <span class="dark:hidden opacity-100 ease-in duration-200 dark:opacity-0 dark:ease-out dark:duration-100
-                    absolute inset-0 h-full w-full flex items-center justify-center transition-opacity"
-                        aria-hidden="true">
-                        <svg class="h-3 w-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343
-                                  17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
-                            </path>
-                        </svg>
-                    </span>
-
-                    <span
-                        class="hidden dark:flex opacity-0 ease-out duration-100 dark:opacity-0 dark:ease-out dark:duration-100
-                        absolute inset-0 h-full w-full items-center justify-center transition-opacity opacity-100 ease-in duration-200 "
-                        aria-hidden="true">
-                        <svg class="h-3 w-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
-                            </path>
-                        </svg>
-                    </span>
+        <div class="flex justify-end items-center text-right space-x-1">
+            <button
+                x-cloak
+                x-data="ToggleDark"
+                class="group"
+                title="Dark Mode"
+                @click.prevent="toggle()"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+            >
+                <span class="dark:hidden">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                        <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" class="transition fill-transparent stroke-gray-400 group-hover:stroke-gray-600"></path>
+                        <path d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836" class="transition stroke-gray-400 group-hover:stroke-gray-600"></path>
+                    </svg>
+                </span>
+                <span class="hidden dark:inline">
+                    <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6">
+                        <path d="m17.715 15.15.95.316a1 1 0 0 0-1.445-1.185l.495.869ZM9 6.035l.846.534a1 1 0 0 0-1.14-1.49L9 6.035Zm8.221 8.246a5.47 5.47 0 0 1-2.72.718v2a7.47 7.47 0 0 0 3.71-.98l-.99-1.738Zm-2.72.718A5.5 5.5 0 0 1 9 9.5H7a7.5 7.5 0 0 0 7.5 7.5v-2ZM9 9.5c0-1.079.31-2.082.845-2.93L8.153 5.5A7.47 7.47 0 0 0 7 9.5h2Zm-4 3.368C5 10.089 6.815 7.75 9.292 6.99L8.706 5.08C5.397 6.094 3 9.201 3 12.867h2Zm6.042 6.136C7.718 19.003 5 16.268 5 12.867H3c0 4.48 3.588 8.136 8.042 8.136v-2Zm5.725-4.17c-.81 2.433-3.074 4.17-5.725 4.17v2c3.552 0 6.553-2.327 7.622-5.537l-1.897-.632Z" class="transition fill-white group-hover:dark:fill-gray-600"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M17 3a1 1 0 0 1 1 1 2 2 0 0 0 2 2 1 1 0 1 1 0 2 2 2 0 0 0-2 2 1 1 0 1 1-2 0 2 2 0 0 0-2-2 1 1 0 1 1 0-2 2 2 0 0 0 2-2 1 1 0 0 1 1-1Z" class="transition fill-white group-hover:dark:fill-gray-600"></path>
+                    </svg>
                 </span>
             </button>
 

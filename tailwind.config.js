@@ -1,19 +1,17 @@
-
 const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors')
 
 module.exports = {
-    mode: 'jit',
     darkMode: 'class',
-    purge: {
-        content: [
-            'resources/views/**/*.blade.php',
-            'resources/js/**/*.js',
-        ]
-    },
+    content: [
+        'resources/views/**/*.blade.php',
+        'resources/js/**/*.js',
+    ],
     theme: {
         extend: {
             colors: {
                 ...defaultTheme.color,
+                gray: colors.zinc,
                 discord: '#7289da',
                 twitter: '#1DA1F2',
             },
@@ -22,9 +20,9 @@ module.exports = {
             },
             fontFamily: {
                 sans: [
-                    'Nunito Sans', ...defaultTheme.fontFamily.sans
+                    'Inter', ...defaultTheme.fontFamily.sans
                 ],
-                system:[
+                system: [
                     `system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",
           Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji",
           "Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"`

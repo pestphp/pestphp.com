@@ -7,13 +7,18 @@
 	x-transition:leave-start="top-0"
 	x-transition:leave-end="-top-full">
 
-	<div class="lg:sticky lg:w-56 xl:w-64 lg:px-0 lg:top-0 overflow-y-auto scrollbar transition-colors duration-700 ease-in-out bg-white lg:bg-transparent
-	mt-1 dark:bg-gray-800 lg:dark:bg-transparent lg:h-screen fixed left-0 top-nav z-50 overflow-x-auto text-left h-full px-4 h-screen-24 w-full"
-	x-ref="dialog" x-on:keydown.escape.window="close()">
-        <div class="lg:hidden my-4">
-            @include('_partials.nav-items')
-        </div>
-		<div class="pt-4 pb-6 lg:pr-4 xl:pl-0 docs-nav">
+	<div
+		class="
+			lg:w-48 xl:w-56 lg:h-screen mt-1 h-full px-4 lg:px-0 w-full
+			lg:mt-8
+			fixed lg:relative left-0 z-50
+			overflow-y-auto lg:overflow-y-clip overflow-x-auto lg:overflow-x-clip
+			bg-white lg:bg-transparent dark:bg-gray-900 lg:dark:bg-transparent text-left
+		"
+		x-ref="dialog"
+		x-on:keydown.escape.window="close()"
+	>
+		<div class="pb-6 lg:pr-4 xl:pl-0 docs-nav">
 			{{ $slot }}
 		</div>
 	</div>

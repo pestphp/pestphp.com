@@ -2,7 +2,8 @@ p, li {
     code {
         border-radius: 3px;
         padding: 1px 5px;
-        background-color: rgba(251, 107, 255, 0.2);
+
+        @apply bg-gray-300 dark:bg-black/50;
     }
 }
 
@@ -11,6 +12,7 @@ pre {
 
     .copyBtn {
         @apply absolute right-0 h-6 w-6 outline-none text-gray-700;
+
         &:hover, &:focus, &:active {
             @apply text-white;
         }
@@ -115,7 +117,8 @@ pre {
     font-family: "Fira Mono", monospace;
     line-height: 40px;
     border-radius: 0.5rem;
-    background: #211F2F;
+
+    @apply bg-gray-800 dark:bg-black/50;
 }
 
 .hljs > *::selection {

@@ -13,13 +13,15 @@
 
 .docs-nav {
     ul {
-        @apply list-none;
+        @apply mt-0 list-none;
+
         h2 {
             @apply px-3 mb-4 text-xs leading-4 font-bold text-gray-400 dark:text-white uppercase tracking-wider;
         }
 
         li {
             @apply my-1;
+
             & > :not(template) + :not(template) {
                 @apply mb-12 mt-3;
             }
@@ -27,12 +29,12 @@
             a {
                 @apply font-system font-normal flex items-center px-3 py-1.5 text-sm leading-5 text-gray-500 rounded-md;
 
-                @apply dark:text-white dark:hover:text-gray-700 hover:bg-gray-300 focus:bg-gray-300;
+                @apply dark:text-white dark:hover:text-white hover:underline focus:underline;
             }
 
             .active {
                 a {
-                    @apply bg-gray-200 text-gray-800 font-semibold #{!important};
+                    @apply underline;
                 }
             }
 

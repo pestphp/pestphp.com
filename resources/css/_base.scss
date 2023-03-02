@@ -2,6 +2,13 @@ body {
     @apply dark:text-white;
     font-size: 17px;
     scroll-behavior: smooth;
+
+    background-image:
+        url(../img/bg-head-opacity.webp),
+        url(/www/assets/pattern.svg);
+    background-repeat: no-repeat, repeat;
+    background-position: center -350px, 10px 10px;
+    background-size: auto auto, 30px 30px;
 }
 
 a {
@@ -84,15 +91,37 @@ p {
 
 .DocSearch-Button {
     @apply rounded #{!important};
-    @apply dark:bg-gray-500;
+
+    @apply border border-solid border-gray-200 dark:border-white/10 dark:bg-black/10 flex items-center;
+
+    &:hover {
+        box-shadow: none;
+        @apply text-gray-400 border-gray-300 dark:bg-transparent dark:border-white/20;
+    }
 }
 
 .DocSearch-Button .DocSearch-Search-Icon {
-    @apply dark:text-white;
+    height: 0.87rem;
+    @apply text-gray-500 dark:text-white/60;
 }
 
 .DocSearch-Button-Placeholder {
-    @apply dark:text-white pr-20;
+    @apply dark:text-white/60 pr-56 text-xs;
+}
+
+.DocSearch-Button-Keys {
+    display: flex;
+    min-width: auto;
+
+    @apply mt-1 text-xs leading-none;
+}
+
+.DocSearch-Button-Key {
+    background: none;
+    box-shadow: none;
+    width: auto;
+
+    @apply font-sans mr-0.5;
 }
 
 
