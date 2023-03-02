@@ -1,8 +1,18 @@
 body {
     @apply dark:text-white;
+
     font-size: 17px;
     scroll-behavior: smooth;
 
+    background-image:
+        url(../img/bg-head-opacity.webp),
+        url(/www/assets/pattern.svg);
+    background-repeat: no-repeat, repeat;
+    background-position: center -350px, 10px 10px;
+    background-size: auto auto, 30px 30px;
+}
+
+.bg-pattern {
     background-image:
         url(../img/bg-head-opacity.webp),
         url(/www/assets/pattern.svg);
@@ -92,7 +102,7 @@ p {
 .DocSearch-Button {
     @apply rounded #{!important};
 
-    @apply border border-solid border-gray-400/30 dark:border-white/10 dark:bg-black/10 flex items-center;
+    @apply border border-solid border-gray-400/30 dark:border-white/10 dark:bg-black/10 flex items-center w-24 lg:w-auto;
 
     &:hover {
         box-shadow: none;

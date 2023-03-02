@@ -1,4 +1,4 @@
-<header class="flex items-center shadow-sm dark:shadow-white/10 h-16 py-4 header-pattern" role="banner">
+<header class="flex items-center shadow-sm dark:shadow-white/10 h-16 py-4 relative z-[100]" role="banner">
     <div class="container flex items-center max-w-8xl mx-auto px-4 space-x-3 lg:px-4">
         <div class="flex items-center lg:hidden">
             <button aria-label="Toggle Documentation Navigation" @click.prevent="toggle()">
