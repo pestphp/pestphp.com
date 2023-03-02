@@ -92,11 +92,11 @@ p {
 .DocSearch-Button {
     @apply rounded #{!important};
 
-    @apply border border-solid border-gray-200 dark:border-white/10 dark:bg-black/10 flex items-center;
+    @apply border border-solid border-gray-400/30 dark:border-white/10 dark:bg-black/10 flex items-center;
 
     &:hover {
         box-shadow: none;
-        @apply text-gray-400 border-gray-300 dark:bg-transparent dark:border-white/20;
+        @apply text-gray-400 border-gray-400/70 bg-transparent dark:border-white/20;
     }
 }
 
