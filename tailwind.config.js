@@ -85,6 +85,9 @@ module.exports = {
                 '.transition': {
                     transition: 'all .5s ease-out',
                 },
+                '.overflow-inherit': {
+                    overflow: 'inherit'
+                }
             }
             addUtilities(newUtilities)
         },

@@ -18,9 +18,9 @@
             text-left
         ">
             <div class="
-                docs-nav h-full
+                docs-nav h-full lg:h-auto
                 pt-6 lg:pt-0.5 pb-6 px-4 lg:pl-0 lg:pr-4
-                overflow-y-auto lg:overflow-y-clip overflow-x-auto lg:overflow-x-clip
+                overflow-y-auto overflow-x-auto lg:overflow-inherit
             ">
                 {{ $slot }}
             </div>
