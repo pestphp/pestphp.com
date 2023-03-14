@@ -21,7 +21,7 @@ class IDEPluginsController extends Controller
      */
     public function __invoke(Documentation $docs)
     {
-        $document = $docs->get(config('site.defaultVersion'), 'ide-plugins');
+        $document = $docs->get(config('site.defaultVersion'), 'editor-setup');
 
         $body = $document['html'];
 

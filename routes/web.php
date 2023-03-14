@@ -19,7 +19,7 @@ use App\Http\Controllers\ShowScreencastController;
 
 Route::get('/', fn() => file_get_contents(public_path('www/index.html')));
 
-Route::get('/docs/ide-plugins', IDEPluginsController::class)->name('ide-plugins');
+Route::get('/docs/editor-setup', IDEPluginsController::class)->name('ide-plugins');
 
 Route::get('/screencasts', function () {
     return redirect()->to(route("screencast", Screencast::first()->slug));

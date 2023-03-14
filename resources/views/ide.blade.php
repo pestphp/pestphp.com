@@ -8,16 +8,20 @@
                 </x-docs.sidebar>
 
                 <div class="relative docs-main DocSearch-content w-full px-3 lg:ml-10 xl:ml-16 lg:px-0 mt-10 mb-20">
-                    <div class="absolute top-0 right-0 h-8 w-100 lg:mt-12 xl:mt-12 hidden lg:block">
+                    <div class="absolute top-0 right-0 h-8 w-100 lg:mt-8 xl:mt-8 hidden lg:block">
                         <a href="https://github.com/pestphp/pestphp.com-next/edit/main/resources/views/ide.blade.php">
                             Edit this page →
                         </a>
                     </div>
 
-                    <h1>IDE plugins</h1>
+                    <h1>Editor Setup</h1>
 
                     <p>
-                        Pest has IDE plugins for PhpStorm and VSCode.
+                        An editor plugin can significantly enhance the developer experience when working with Pest PHP. Although most editors have built-in support for Pest PHP, plugins can offer additional functionalities that can streamline and simplify the development process.
+                    </p>
+
+                    <p>
+                        Currently, our team is in charge of maintaining the PHPStorm plugin, which can be easily accessed on Jetstream's Marketplace.
                     </p>
 
                     <div class="space-y-12 mt-16">
@@ -28,7 +32,13 @@
                             url="https://plugins.jetbrains.com/plugin/14636-pest"
                             github="https://github.com/pestphp/pest-intellij">
                         </x-jetbrains-ide-plugin>
+                    </div>
 
+                    <p>
+                        In case you do not utilize PHPStorm, you may consider experimenting with the community-maintained plugin. Nevertheless, it's worth noting that this alternative may not offer the same level of user experience as the official PHPStorm plugin.
+                    </p>
+
+                    <div class="space-y-12 mt-16">
                         <x-vs-code-ide-plugin
                             title="VSCode"
                             extension="m1guelpf.better-pest"
