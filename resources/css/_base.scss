@@ -99,45 +99,6 @@ p {
     }
 }
 
-[id=docsearch] {
-    width: 100%;
-    @apply md:w-auto;
-}
-.DocSearch-Button {
-    @apply border border-solid border-gray-400/50 dark:border-white/10 dark:bg-black/10 flex items-center;
-    &:hover {
-        box-shadow: none;
-        @apply text-gray-400 border-gray-400/70 bg-transparent dark:border-white/20;
-    }
-    width: 100% !important;
-    @apply rounded #{!important};
-}
-
-.DocSearch-Button .DocSearch-Search-Icon {
-    height: 0.87rem;
-    @apply text-gray-500 dark:text-white/60;
-}
-
-.DocSearch-Button-Placeholder {
-    @apply dark:text-white/60 pr-56 text-xs;
-}
-
-.DocSearch-Button-Keys {
-    display: flex;
-    min-width: auto;
-
-    @apply mt-1 text-xs leading-none;
-}
-
-.DocSearch-Button-Key {
-    background: none;
-    box-shadow: none;
-    width: auto;
-
-    @apply font-sans mr-0.5;
-}
-
-
 ::selection {
     @apply bg-purple-500 text-white;
 }
