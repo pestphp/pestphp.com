@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use App\Contracts\MarkdownStyler;
-use App\Support\MarkdownStylers\SpatieMarkdownStyler;
 use App\Support\MarkdownStylers\TorchlightMarkdownStyler;
 use Illuminate\Support\Collection;
 use Illuminate\Support\ServiceProvider;
@@ -18,11 +17,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(MarkdownStyler::class, function () {
-            if (config('torchlight.token')) {
-                return new TorchlightMarkdownStyler();
-            }
-
-            throw new \Exception('Torchlight token missing.');
+            return new TorchlightMarkdownStyler();
         });
     }
 

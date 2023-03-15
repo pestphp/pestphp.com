@@ -10,6 +10,8 @@ class TorchlightMarkdownStyler implements MarkdownStyler
 {
     public function stylise(Environment $environment): void
     {
-        $environment->addExtension(new TorchlightExtension());
+        if (config('torchlight.token')) {
+            $environment->addExtension(new TorchlightExtension());
+        }
     }
 }

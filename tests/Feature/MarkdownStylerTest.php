@@ -11,12 +11,6 @@ it('uses Torchlight when a Torchlight API key is defined', function () {
     expect(resolve(MarkdownStyler::class))->toBeInstanceOf(TorchlightMarkdownStyler::class);
 });
 
-it('uses Spatie when a Torchlight API key is not defined', function () {
-    config()->set('torchlight.token', null);
-
-    expect(resolve(MarkdownStyler::class))->toBeInstanceOf(SpatieMarkdownStyler::class);
-});
-
 it('is called by the MarkdownParser', function () {
     $this->partialMock(MarkdownStyler::class)
         ->shouldReceive('stylise')
