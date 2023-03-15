@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DOCS_VERSIONS=(
-  feat/v2
+  master
 )
 
 for v in "${DOCS_VERSIONS[@]}"; do

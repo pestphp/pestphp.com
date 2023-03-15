@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'defaultVersion' => 'feat/v2',
+    'defaultVersion' => 'master',
 ];
