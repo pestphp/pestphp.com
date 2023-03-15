@@ -30,7 +30,7 @@
         <script>
             function updateTheme() {
                 if (!('mode' in localStorage)) {
-                    localStorage.mode = 'light';
+                    localStorage.mode = 'dark';
                 }
 
                 switch (localStorage.mode) {
