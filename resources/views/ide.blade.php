@@ -7,8 +7,8 @@
                     {!! $index !!}
                 </x-docs.sidebar>
 
-                <div class="relative docs-main DocSearch-content w-full px-3 lg:ml-10 xl:ml-16 lg:px-0 mt-10 mb-20">
-                    <div class="absolute top-0 right-0 h-8 w-100 lg:mt-8 xl:mt-8 hidden lg:block">
+                <div class="docs-main DocSearch-content lg:ml-10 xl:ml-6 lg:px-0 relative w-full px-3 mt-6 mb-20">
+                    <div class="w-100 lg:block absolute top-0 right-0 hidden h-8 mt-2 text-sm">
                         <a href="https://github.com/pestphp/pestphp.com-next/edit/main/resources/views/ide.blade.php">
                             Edit this page →
                         </a>
@@ -24,7 +24,7 @@
                         Currently, our team is in charge of maintaining the PHPStorm plugin, which can be easily accessed on Jetstream's Marketplace.
                     </p>
 
-                    <div class="space-y-12 mt-16">
+                    <div class="mt-6 mb-12">
                         <x-jetbrains-ide-plugin
                             title="PhpStorm"
                             plugin-id="14636"
@@ -38,7 +38,7 @@
                         In case you do not utilize PHPStorm, you may consider experimenting with the community-maintained plugin. Nevertheless, it's worth noting that this alternative may not offer the same level of user experience as the official PHPStorm plugin.
                     </p>
 
-                    <div class="space-y-12 mt-16">
+                    <div class="space-y-6 mt-6">
                         <x-vs-code-ide-plugin
                             title="VSCode"
                             extension="m1guelpf.better-pest"
