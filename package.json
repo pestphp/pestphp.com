@@ -30,7 +30,6 @@
         "ally.js": "^1.4.1",
         "alpinejs": "^3.11.1",
         "clipboard": "^2.0.11",
-        "highlight.js": "^11.7.0",
         "quicklink": "^2.3.0"
     }
 }
