@@ -23,7 +23,9 @@ pre {
     }
 
     code {
-        @apply flex flex-1;
+        @apply flex flex-1 rounded-lg;
+        @apply bg-black/70 text-white dark:bg-black/50 #{!important};
+
         font-size: 0.9em;
         line-height: 2;
         font-family: Menlo,ui-monospace,SFMono-Regular,Monaco,Consolas,Liberation Mono,Courier New,monospace;
