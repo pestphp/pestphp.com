@@ -99,6 +99,30 @@ p {
     }
 }
 
+table {
+    @apply w-full max-w-2xl divide-y divide-white/30;
+
+    tbody {
+        @apply divide-y divide-white/30;
+    }
+
+    th, td {
+        @apply text-left py-3 px-2 text-xs sm:text-sm;
+
+        &:first-child {
+            @apply pl-0;
+        }
+
+        &:last-child {
+            @apply pr-0;
+        }
+    }
+
+    th {
+        @apply font-semibold;
+    }
+}
+
 ::selection {
     @apply bg-purple-500 text-white;
 }
