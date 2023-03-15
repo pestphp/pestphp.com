@@ -52,3 +52,7 @@
 .DocSearch-Screen-Icon {
     display: none;
 }
+
+.DocSearch-Input {
+    @apply focus-visible:outline-none;
+}
