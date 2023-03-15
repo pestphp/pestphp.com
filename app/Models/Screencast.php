@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Sushi\Sushi;
 use Illuminate\Database\Eloquent\Model;
+use Sushi\Sushi;
 
 class Screencast extends Model
 {
@@ -28,7 +28,7 @@ class Screencast extends Model
         [
             'title' => 'Introducing Pest',
             'slug' => 'introduction',
-            'description' => <<<EOT
+            'description' => <<<'EOT'
                 Pest is a Testing Framework with a focus on simplicity. It was carefully crafted to bring the joy of testing to PHP.
             EOT,
             'url' => 'https://player.vimeo.com/video/399624132?autoplay=1',

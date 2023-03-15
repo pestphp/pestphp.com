@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
 
 class JetBrainsMarketplace
 {
@@ -29,7 +29,7 @@ class JetBrainsMarketplace
 
         $body = Cache::remember('jetbrains.apiRequest', now()->addHour(), function () use ($url) {
             $response = Http::retry(3, 200)->contentType(
-                "text/xml;charset=UTF-8"
+                'text/xml;charset=UTF-8'
             )->get($url);
 
             if ($response->failed()) {
@@ -52,7 +52,7 @@ class JetBrainsMarketplace
 
     protected function data(array $results): ?array
     {
-        if (!isset($results['category']['idea-plugin'][0])) {
+        if (! isset($results['category']['idea-plugin'][0])) {
             return [];
         }
 

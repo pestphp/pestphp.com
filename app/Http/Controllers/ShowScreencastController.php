@@ -18,7 +18,7 @@ class ShowScreencastController extends Controller
         $screencast = Screencast::whereSlug($slug)->firstOrFail();
 
         return view('screencasts', [
-            'title' => $screencast->title . ' | screencasts',
+            'title' => $screencast->title.' | screencasts',
             'screencast' => $screencast,
         ]);
     }

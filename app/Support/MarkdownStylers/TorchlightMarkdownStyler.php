@@ -1,17 +1,14 @@
 <?php
 
-
 namespace App\Support\MarkdownStylers;
 
-
 use App\Contracts\MarkdownStyler;
-use League\CommonMark\ConfigurableEnvironmentInterface;
-use Torchlight\Commonmark\TorchlightExtension;
+use League\CommonMark\Environment\Environment;
+use Torchlight\Commonmark\V2\TorchlightExtension;
 
 class TorchlightMarkdownStyler implements MarkdownStyler
 {
-
-    public function stylise(ConfigurableEnvironmentInterface $environment): void
+    public function stylise(Environment $environment): void
     {
         $environment->addExtension(new TorchlightExtension());
     }

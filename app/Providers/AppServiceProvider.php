@@ -17,12 +17,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(MarkdownStyler::class, function() {
+        $this->app->singleton(MarkdownStyler::class, function () {
             if (config('torchlight.token')) {
                 return new TorchlightMarkdownStyler();
             }
 
-            return new SpatieMarkdownStyler();
+            throw new \Exception('Torchlight token missing.');
         });
     }
 
@@ -38,6 +38,7 @@ class AppServiceProvider extends ServiceProvider
                 if (is_array($value) || is_object($value)) {
                     return collect($value)->recursive();
                 }
+
                 return $value;
             });
         });

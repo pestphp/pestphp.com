@@ -1,5 +1,5 @@
 <?php
 
 return [
-    "defaultVersion" => "master",
+    'defaultVersion' => 'master',
 ];

@@ -31,32 +31,32 @@ return [
         'Akaunting' => [
             'website' => 'https://akaunting.com/',
             'image' => 'assets/img/sponsors/akaunting.svg',
-            'max_width' => '150px'
+            'max_width' => '150px',
         ],
         'Auth0' => [
             'website' => 'https://auth0.com/',
             'image' => 'assets/img/sponsors/auth0.png',
-            'max_width' => '100px'
+            'max_width' => '100px',
         ],
         'Codecourse' => [
             'website' => 'https://codecourse.com/',
             'image' => 'assets/img/sponsors/codecourse.svg',
-            'max_width' => '150px'
+            'max_width' => '150px',
         ],
         'Hyvor' => [
             'website' => 'https://hyvor.com/',
             'image' => 'assets/img/sponsors/hyvor.svg',
-            'max_width' => '100px'
+            'max_width' => '100px',
         ],
         'Laracasts' => [
             'website' => 'https://laracasts.com/',
             'image' => 'assets/img/sponsors/laracasts.svg',
-            'max_width' => '150px'
+            'max_width' => '150px',
         ],
         'Fathom Analytics' => [
             'website' => 'https://usefathom.com/',
             'image' => 'assets/img/sponsors/fathom.svg',
-            'max_width' => '100px'
+            'max_width' => '100px',
         ],
         'Localazy' => [
             'website' => 'https://localazy.com',
@@ -67,12 +67,12 @@ return [
         'Meema' => [
             'website' => 'https://meema.io/',
             'image' => 'assets/img/sponsors/meema.png',
-            'max_width' => '100px'
+            'max_width' => '100px',
         ],
         'Scout APM' => [
             'website' => 'https://scoutapm.com/',
             'image' => 'assets/img/sponsors/scout-apm.jpg',
-            'max_width' => '150px'
+            'max_width' => '150px',
         ],
-    ]
+    ],
 ];

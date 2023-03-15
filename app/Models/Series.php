@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Sushi\Sushi;
 use Illuminate\Database\Eloquent\Model;
+use Sushi\Sushi;
 
 class Series extends Model
 {
@@ -17,7 +17,7 @@ class Series extends Model
     public function getRows()
     {
         return [
-            [ 'id' => 1, 'title' => 'Getting Started' ],
+            ['id' => 1, 'title' => 'Getting Started'],
         ];
     }
 }

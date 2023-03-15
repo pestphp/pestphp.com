@@ -1,10 +1,10 @@
 <?php
 
-use App\Models\Screencast;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DocsController;
 use App\Http\Controllers\IDEPluginsController;
 use App\Http\Controllers\ShowScreencastController;
+use App\Models\Screencast;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +17,12 @@ use App\Http\Controllers\ShowScreencastController;
 |
 */
 
-Route::get('/', fn() => file_get_contents(public_path('www/index.html')));
+Route::get('/', fn () => file_get_contents(public_path('www/index.html')));
 
 Route::get('/docs/editor-setup', IDEPluginsController::class)->name('ide-plugins');
 
 Route::get('/screencasts', function () {
-    return redirect()->to(route("screencast", Screencast::first()->slug));
+    return redirect()->to(route('screencast', Screencast::first()->slug));
 })->name('screencasts');
 
 Route::get('/screencasts/{slug}', ShowScreencastController::class)->name('screencast');

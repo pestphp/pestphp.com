@@ -2,9 +2,9 @@
 
 namespace App\Support;
 
+use Illuminate\Contracts\Cache\Repository as Cache;
 use Illuminate\Filesystem\Filesystem;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
-use Illuminate\Contracts\Cache\Repository as Cache;
 
 class Documentation
 {
@@ -27,7 +27,7 @@ class Documentation
             $path = $this->path($version, 'documentation.md');
 
             if ($this->exists($version, 'documentation')) {
-                return (resolve(MarkdownParser::class))->convertToHtml($this->filesystem->get($path), [
+                return resolve(MarkdownParser::class)->convertToHtml($this->filesystem->get($path), [
                     'enable_heading_permalinks' => false,
                 ]);
             }
@@ -53,6 +53,7 @@ class Documentation
 
             if ($this->exists($version, $page)) {
                 $contents = YamlFrontMatter::parse($this->filesystem->get($path));
+
                 return [
                     'matter' => $contents->matter(),
                     'markdown' => $contents->body(),

@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
 
 class VisualStudioMarketplace
 {
@@ -14,40 +14,39 @@ class VisualStudioMarketplace
         $this->extension = $extension;
     }
 
-
     public function downloadNumber(): int
     {
-        $statistics = collect($this->result()["statistics"]);
+        $statistics = collect($this->result()['statistics']);
 
-        $downloadCount = $statistics->first(fn ($value) => $value["statisticName"] === "install");
+        $downloadCount = $statistics->first(fn ($value) => $value['statisticName'] === 'install');
 
         return $downloadCount['value'];
     }
 
     protected function result()
     {
-        $url = "https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery/";
+        $url = 'https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery/';
 
         $requestBody = [
-            "filters" => [
+            'filters' => [
                 [
-                    "criteria" => [
+                    'criteria' => [
                         [
-                            "filterType" => 7,
-                            "value" => $this->extension
-                        ]
+                            'filterType' => 7,
+                            'value' => $this->extension,
+                        ],
                     ],
-                ]
+                ],
             ],
-            "flags" => 914,
+            'flags' => 914,
         ];
 
         $data = Cache::remember("vsmarketplace.apiRequest.$this->extension", now()->addHour(), function () use ($url, $requestBody) {
             $response = Http::withBody(
                 json_encode($requestBody),
-                "application/json"
+                'application/json'
             )->withHeaders([
-                "Accept" => "application/json;api-version=3.0-preview.1",
+                'Accept' => 'application/json;api-version=3.0-preview.1',
             ])->post($url);
 
             if ($response->failed()) {
@@ -62,15 +61,15 @@ class VisualStudioMarketplace
 
     protected function data($results): array
     {
-        if (!isset($results['results'])) {
+        if (! isset($results['results'])) {
             return [];
         }
 
-        if (!isset($results['results'][0]['extensions'][0])) {
+        if (! isset($results['results'][0]['extensions'][0])) {
             return [];
         }
 
-        if (!isset($results['results'][0]['extensions'][0]['statistics'])) {
+        if (! isset($results['results'][0]['extensions'][0]['statistics'])) {
             return [];
         }
 

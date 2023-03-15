@@ -2,9 +2,9 @@
 
 namespace App\Contracts;
 
-use League\CommonMark\ConfigurableEnvironmentInterface;
+use League\CommonMark\Environment\Environment;
 
 interface MarkdownStyler
 {
-    public function stylise(ConfigurableEnvironmentInterface $environment): void;
+    public function stylise(Environment $environment): void;
 }

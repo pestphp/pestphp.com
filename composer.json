@@ -8,38 +8,33 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.4|^8.0",
+        "php": "^8.1",
         "ext-json": "*",
         "ext-simplexml": "*",
-        "calebporzio/sushi": "^2.1",
-        "fideloper/proxy": "^4.4",
-        "friendsofphp/php-cs-fixer": "^3.0",
-        "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^7.2",
-        "laravel/framework": "^8.22",
-        "laravel/tinker": "^2.5",
-        "league/commonmark": "^1.5",
-        "spatie/yaml-front-matter": "^2.0",
-        "symfony/yaml": "^5.2",
-        "torchlight/torchlight-commonmark": "^0.3.1"
+        "calebporzio/sushi": "^2.4.4",
+        "guzzlehttp/guzzle": "^7.5",
+        "laravel/framework": "^10.3.3",
+        "laravel/tinker": "^2.8.1",
+        "league/commonmark": "^2.3.9",
+        "spatie/yaml-front-matter": "^2.0.7",
+        "symfony/yaml": "^6.2.7",
+        "torchlight/torchlight-commonmark": "^0.5.5"
     },
     "require-dev": {
-        "facade/ignition": "^2.5.8",
-        "fakerphp/faker": "^1.13",
-        "laravel/sail": "^1.1",
-        "mockery/mockery": "^1.4.2",
-        "nunomaduro/collision": "^5.1",
-        "pestphp/pest": "^1.0",
-        "pestphp/pest-plugin-laravel": "^1.0",
-        "phpunit/phpunit": "^9.5.0",
-        "spatie/commonmark-highlighter": "^2.1"
+        "spatie/ignition": "^1.4.5",
+        "fakerphp/faker": "^1.21",
+        "laravel/sail": "^1.21.2",
+        "mockery/mockery": "^1.5.1",
+        "nunomaduro/collision": "^7.1.2",
+        "pestphp/pest": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0"
     },
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
         "sort-packages": true,
         "platform": {
-            "php": "7.4"
+            "php": "8.1"
         },
         "allow-plugins": {
             "pestphp/pest-plugin": true
