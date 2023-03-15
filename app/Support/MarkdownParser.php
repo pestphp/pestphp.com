@@ -53,7 +53,9 @@ class MarkdownParser
         }
 
         $environment->addExtension(new AutolinkExtension());
-        $environment->addExtension(new DisallowedRawHtmlExtension());
+
+        // $environment->addExtension(new DisallowedRawHtmlExtension());
+
         $environment->addExtension(new StrikethroughExtension());
         $environment->addExtension(new TableExtension());
         $environment->addExtension(new TaskListExtension());
