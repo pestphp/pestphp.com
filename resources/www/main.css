@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    background: url('/assets/bg-head.svg');
+    background: url('/assets/bg-head.webp');
     background-position: center top;
     @apply sm:bg-center bg-no-repeat bg-cover;
   }
@@ -20,7 +20,7 @@
 
   @screen md {
     main {
-      background: url('/assets/pattern.svg'), url('/assets/bg-foot.svg');
+      background: url('/assets/pattern.svg'), url('/assets/bg-foot.webp');
       background-repeat: repeat, no-repeat;
       background-position: 10px 10px, center bottom;
       background-size: 40px 40px, contain;
