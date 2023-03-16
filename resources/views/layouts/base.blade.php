@@ -25,6 +25,13 @@
     {{ $head ?? '' }}
 
     @vite(['resources/css/app.scss', 'resources/js/app.js'])
+    <script>
+        if (!('mode' in localStorage)) {
+            localStorage.mode = 'dark';
+        }
+
+        document.documentElement.classList[localStorage.mode === 'dark' ? 'add' : 'remove']('dark');
+    </script>
     @stack('styles')
 
 </head>
