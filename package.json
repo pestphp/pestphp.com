@@ -22,7 +22,6 @@
         "ally.js": "^1.4.1",
         "alpinejs": "^3.12.0",
         "clipboard": "^2.0.11",
-        "laravel-vite-plugin": "^0.7.4",
-        "quicklink": "^2.3.0"
+        "laravel-vite-plugin": "^0.7.4"
     }
 }
