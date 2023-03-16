@@ -24,29 +24,9 @@
 
     {{ $head ?? '' }}
 
+    @vite(['resources/css/app.scss', 'resources/js/app.js'])
     @stack('styles')
 
-    @if (! request()->is('/'))
-        <script>
-            function updateTheme() {
-                if (!('mode' in localStorage)) {
-                    localStorage.mode = 'dark';
-                }
-
-                switch (localStorage.mode) {
-                    case 'dark':
-                        document.documentElement.classList.add('dark');
-                        break;
-
-                    case 'light':
-                        document.documentElement.classList.remove('dark');
-                        break;
-                }
-            }
-
-            updateTheme();
-        </script>
-    @endif
 </head>
 
 <body {{ $attributes->except(['title', 'description']) }}>
