@@ -7,7 +7,7 @@
         </div>
         <div class="flex flex-col justify-center items-center sm:items-start lg:ml-8">
             <a class="text-xl" target="_blank" rel="noopener" href="{{ $url }}">{{ $title }}</a>
-            <span class="italic text-center sm:text-left text-xs sm:text-sm text-gray-400">{{ $github }}</span>
+            <span class="italic text-center md:text-left text-xs sm:text-sm text-gray-400">{{ $github }}</span>
         </div>
         <div class="flex justify-center lg:flex-row flex-grow items-center lg:justify-end lg:ml-16">
             @if(isset($installs))
