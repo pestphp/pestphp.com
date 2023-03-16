@@ -9,7 +9,7 @@
             <a class="text-xl text-center lg:text-left" target="_blank" rel="noopener" href="{{ $url }}">{{ $title }}</a>
             <span class="italic text-center lg:text-left text-xs sm:text-sm text-gray-400">{{ $github }}</span>
         </div>
-        <div class="flex justify-center lg:flex-row flex-grow items-center lg:justify-end lg:ml-16">
+        <div class="flex justify-center lg:flex-row flex-grow items-center lg:justify-end lg:ml-16 text-white">
             @if(isset($installs))
                 <x-i.download class="h-6 text-green-500 mr-2"></x-i.download> {{ $installs }} downloads
             @endif
