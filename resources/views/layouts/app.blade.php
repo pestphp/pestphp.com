@@ -1,4 +1,4 @@
-<x-app-layout layout="base" :title="$title" :description="$title"
+<x-app-layout layout="base" :title="$title" :description="$description"
     class="dark:bg-gray-900 font-sans leading-normal text-gray-900"
     x-data="offcanvasNav">
 
