@@ -1,4 +1,4 @@
-<nav x-cloak class="lg:block hidden"
+<nav class="lg:block hidden"
     :class="{ 'block lg:block': isOpen === true, 'hidden lg:block': isOpen === false }"
     x-transition:enter="transition-all ease-in-out duration-700"
     x-transition:enter-start="-left-full"
