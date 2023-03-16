@@ -5,7 +5,7 @@
                 <img class="w-full h-full object-center object-contain" src="{{ $logo }}" alt="{{ $title }} logo"/>
             </div>
         </div>
-        <div class="flex flex-col justify-center items-center sm:items-start lg:ml-8">
+        <div class="flex flex-col justify-center items-center lg:items-start lg:ml-8">
             <a class="text-xl text-center lg:text-left" target="_blank" rel="noopener" href="{{ $url }}">{{ $title }}</a>
             <span class="italic text-center lg:text-left text-xs sm:text-sm text-gray-400">{{ $github }}</span>
         </div>
