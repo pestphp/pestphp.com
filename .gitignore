@@ -1,6 +1,7 @@
 /resources/docs
 /resources/www/node_modules
 /node_modules
+/public/build
 /public/hot
 /public/mix-manifest.json
 /public/uploads

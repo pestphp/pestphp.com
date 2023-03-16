@@ -8,7 +8,7 @@ fi
 composer install
 source "$(dirname "$0")/checkout_latest_docs.sh"
 npm install
-npm run prod
+npm run build
 
 cd resources/www
 npm install
