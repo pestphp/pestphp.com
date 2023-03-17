@@ -52,13 +52,7 @@
 @stack('scripts')
 
 @if (app()->environment('production'))
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-61404619-4"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-61404619-4');
-    </script>
+    <script src="https://cdn.usefathom.com/script.js" data-site="NYURIQIN" defer></script>
 @endif
 
 </body>
