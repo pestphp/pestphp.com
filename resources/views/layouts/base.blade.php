@@ -23,11 +23,7 @@
     <meta property="og:description" content="{{ $description }}">
     <meta property="og:url" content="{{ url()->current() }}">
 
-    @if (str_ends_with(url()->current(), 'announcing-pest2'))
-        <meta property="og:image" content="https://next.pestphp.com/assets/img/og-announcement.png">
-    @else
-        <meta property="og:image" content="https://next.pestphp.com/assets/img/og.png">
-    @endif
+    <meta property="og:image" content="https://next.pestphp.com/assets/img/og.png">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
