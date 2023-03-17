@@ -18,7 +18,7 @@
 
         {{-- <div class="md:block w-full"></div> --}}
 
-        <div class="flex items-center justify-end w-full pr-3">
+        <div class="flex items-center justify-end w-full pr-5">
             <div id="docsearch"></div>
         </div>
 
