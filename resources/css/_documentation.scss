@@ -170,12 +170,13 @@
     }
 
     .code-snippet {
-        @apply block flex-1 rounded-lg py-6 px-5 bg-black/90 text-white dark:bg-black/50 overflow-x-auto scrollbar:h-1 scrollbar-track:bg-gray-800 scrollbar-thumb:rounded scrollbar-thumb:bg-gray-500 hover:scrollbar-thumb:bg-gray-400;
+        @apply block flex-1 rounded-lg py-6 bg-black/90 text-white dark:bg-black/50 overflow-x-auto scrollbar:h-1 scrollbar-track:bg-gray-800 scrollbar-thumb:rounded scrollbar-thumb:bg-gray-500 hover:scrollbar-thumb:bg-gray-400;
 
         img {
             --line-height: 29.6px;
             max-width: inherit;
             height: calc(var(--line-height) * var(--lines));
+            @apply px-5;
         }
     }
 }
