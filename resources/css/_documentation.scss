@@ -166,7 +166,7 @@
     }
 
     .code-snippet {
-        @apply block flex-1 rounded-lg py-6 px-4 bg-black/90 text-white dark:bg-black/50 overflow-x-auto;
+        @apply block flex-1 rounded-lg py-6 px-5 bg-black/90 text-white dark:bg-black/50 overflow-x-auto;
 
         img {
             --line-height: 29.6px;
