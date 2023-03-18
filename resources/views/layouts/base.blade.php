@@ -23,7 +23,7 @@
     <meta property="og:description" content="{{ $description }}">
     <meta property="og:url" content="{{ url()->current() }}">
 
-    <meta property="og:image" content="https://next.pestphp.com/assets/img/og.png">
+    <meta property="og:image" content="https://next.pestphp.com/assets/img/og.jpg">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
