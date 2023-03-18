@@ -27,7 +27,7 @@
         "nunomaduro/collision": "^7.1.2",
         "pestphp/pest": "^2.0",
         "pestphp/pest-plugin-laravel": "^2.0",
-        "spatie/ignition": "^1.4.5"
+        "spatie/laravel-ignition": "^2.0"
     },
     "config": {
         "optimize-autoloader": true,
