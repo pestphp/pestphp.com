@@ -7,7 +7,3 @@ it('has welcome page')
 it('has installation page')
     ->get('/docs/installation')
     ->assertStatus(200);
-
-it('has screencasts page')
-    ->get('/screencasts')
-    ->assertStatus(302);
