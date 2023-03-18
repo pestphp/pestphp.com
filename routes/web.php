@@ -2,8 +2,6 @@
 
 use App\Http\Controllers\DocsController;
 use App\Http\Controllers\IDEPluginsController;
-use App\Http\Controllers\ShowScreencastController;
-use App\Models\Screencast;
 use Illuminate\Support\Facades\Route;
 
 /*
