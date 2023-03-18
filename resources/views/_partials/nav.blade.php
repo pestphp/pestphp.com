@@ -1,5 +1,5 @@
 <header class="flex items-center dark:shadow-white/10 h-16 py-4 relative z-[100] bg-white/50 dark:bg-black/20 backdrop-blur-md" role="banner">
-    <div class="max-w-5xl px-4 lg:px-1 xl:px-2 container flex items-center mx-auto space-x-3">
+    <div class="max-w-5xl px-6 lg:px-1 xl:px-2 container flex items-center mx-auto space-x-3">
         <div class="lg:hidden flex items-center">
             <button aria-label="Toggle Documentation Navigation" @click.prevent="toggle()">
                 <x-i.menu class="md:h-8 md:w-8 dark:text-white w-6 h-6 text-gray-500 opacity-50"></x-i.menu>
