@@ -32,7 +32,7 @@ pre {
     }
 
     code.torchlight {
-        @apply block py-4 overflow-x-auto;
+        @apply block py-4 overflow-x-auto scrollbar:h-1 scrollbar-track:bg-gray-800 scrollbar-thumb:rounded scrollbar-thumb:bg-gray-500 hover:scrollbar-thumb:bg-gray-400;
     }
 
     code.torchlight .line {
