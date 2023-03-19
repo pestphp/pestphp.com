@@ -7,7 +7,7 @@
         </div>
 
         <div class="flex items-center flex-none">
-            <a href="/docs" class="flex items-center justify-center">
+            <a href="/" class="flex items-center justify-center">
                 <img src="/www/assets/logo.svg"
                     alt="pestphp logo"
                     class="xl:ml-0 lg:ml-1.5"
