@@ -2,7 +2,6 @@
 
 use App\Contracts\MarkdownStyler;
 use App\Support\MarkdownParser;
-use App\Support\MarkdownStylers\SpatieMarkdownStyler;
 use App\Support\MarkdownStylers\TorchlightMarkdownStyler;
 
 it('uses Torchlight when a Torchlight API key is defined', function () {

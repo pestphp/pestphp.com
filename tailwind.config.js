@@ -77,7 +77,7 @@ module.exports = {
     },
     plugins: [
         require('@tailwindcss/typography'),
-        function({ addUtilities }) {
+        ({ addUtilities }) => {
             const newUtilities = {
                 '.transition-fast': {
                     transition: 'all .2s ease-out',
@@ -90,6 +90,11 @@ module.exports = {
                 }
             }
             addUtilities(newUtilities)
+        },
+        ({ addVariant }) => {
+            addVariant('scrollbar', '&::-webkit-scrollbar');
+            addVariant('scrollbar-track', '&::-webkit-scrollbar-track');
+            addVariant('scrollbar-thumb', '&::-webkit-scrollbar-thumb');
         },
     ],
 };

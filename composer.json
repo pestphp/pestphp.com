@@ -20,13 +20,14 @@
         "torchlight/torchlight-commonmark": "^0.5.5"
     },
     "require-dev": {
-        "spatie/ignition": "^1.4.5",
         "fakerphp/faker": "^1.21",
+        "laravel/pint": "^1.6",
         "laravel/sail": "^1.21.2",
         "mockery/mockery": "^1.5.1",
         "nunomaduro/collision": "^7.1.2",
         "pestphp/pest": "^2.0",
-        "pestphp/pest-plugin-laravel": "^2.0"
+        "pestphp/pest-plugin-laravel": "^2.0",
+        "spatie/laravel-ignition": "^2.0"
     },
     "config": {
         "optimize-autoloader": true,
@@ -63,7 +64,7 @@
     },
     "scripts": {
         "format": [
-            "vendor/bin/php-cs-fixer fix"
+            "vendor/bin/pint"
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
