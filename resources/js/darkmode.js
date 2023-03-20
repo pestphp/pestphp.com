@@ -1,17 +1,17 @@
 export default () => ({
-    mode: localStorage.mode,
+    mode: localStorage.theme,
     init() {
         if (!('mode' in localStorage)) {
-            localStorage.mode = 'dark';
+            localStorage.theme = 'dark';
         }
 
-        this.apply(localStorage.mode);
+        this.apply(localStorage.theme);
     },
     apply(mode) {
         document.documentElement.classList[mode === 'dark' ? 'add' : 'remove']('dark');
     },
     toggle() {
-        localStorage.mode = this.mode = this.mode === 'dark' ? 'light' : 'dark';
+        localStorage.theme = this.mode = this.mode === 'dark' ? 'light' : 'dark';
 
         this.apply(this.mode);
     }

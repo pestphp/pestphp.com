@@ -33,11 +33,11 @@
 
     @vite(['resources/css/app.scss', 'resources/js/app.js'])
     <script>
-        if (!('mode' in localStorage)) {
-            localStorage.mode = 'dark';
+        if (!('theme' in localStorage)) {
+            localStorage.theme = 'dark';
         }
 
-        document.documentElement.classList[localStorage.mode === 'dark' ? 'add' : 'remove']('dark');
+        document.documentElement.classList[localStorage.theme === 'dark' ? 'add' : 'remove']('dark');
     </script>
     @stack('styles')
 
