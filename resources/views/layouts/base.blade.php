@@ -5,7 +5,6 @@
     <title>{{ $title = empty($title) ? config('site.title') : "{$title} | ".config('site.title') }}</title>
     <meta charset="utf-8">
     <title>Pest | The elegant PHP testing framework</title>
-    <link href="https://pestphp.com/" rel="canonical">
 
     <meta name="twitter:site" content="@pestphp">
     <meta name="twitter:card" content="summary_large_image">
