@@ -51,9 +51,7 @@
 
 @stack('scripts')
 
-@if (app()->environment('production'))
-    <script src="https://cdn.usefathom.com/script.js" data-site="NYURIQIN" defer></script>
-@endif
+<script src="https://cdn.usefathom.com/script.js" data-site="NYURIQIN" defer></script>
 
 </body>
 </html>
