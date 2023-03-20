@@ -1,7 +1,7 @@
 export default () => ({
     mode: localStorage.theme,
     init() {
-        if (!('mode' in localStorage)) {
+        if (!('theme' in localStorage)) {
             localStorage.theme = 'dark';
         }
 
