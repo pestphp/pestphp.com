@@ -6,7 +6,7 @@ return [
      * Default status code to be used on the redirects
      */
     'status' => 301,
-    
+
     /**
      * Redirects
      * ['old url' => 'new url']
@@ -37,5 +37,5 @@ return [
         'docs/plugins/creating-plugins' => 'docs/plugins',
         'docs/community' => 'docs/community-guide',
         'docs/contribute' => 'docs/community-guide',
-    ]
+    ],
 ];

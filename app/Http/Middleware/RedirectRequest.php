@@ -15,9 +15,9 @@ class RedirectRequest
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $path = optional(config('redirects.redirects'))->get($request->path());
-        
-        if($path){
+        $path = collect(config('redirects.redirects'))->get($request->path());
+
+        if ($path) {
             return redirect()->to($path, config('redirects.status') ?? 301);
         }
 
