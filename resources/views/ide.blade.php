@@ -21,7 +21,7 @@
                     </p>
 
                     <p>
-                        Currently, our team is in charge of maintaining the PHPStorm plugin, which can be easily accessed on Jetstream's Marketplace.
+                        Currently, our team is in charge of maintaining the PHPStorm plugin, which can be easily accessed on JetBrains' Marketplace.
                     </p>
 
                     <div class="mt-6 mb-12">
