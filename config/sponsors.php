@@ -43,11 +43,6 @@ return [
             'image' => 'assets/img/sponsors/codecourse.svg',
             'max_width' => '150px',
         ],
-        'Hyvor' => [
-            'website' => 'https://hyvor.com/',
-            'image' => 'assets/img/sponsors/hyvor.svg',
-            'max_width' => '100px',
-        ],
         'Laracasts' => [
             'website' => 'https://laracasts.com/',
             'image' => 'assets/img/sponsors/laracasts.svg',
