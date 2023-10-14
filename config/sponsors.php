@@ -48,11 +48,6 @@ return [
             'image' => 'assets/img/sponsors/laracasts.svg',
             'max_width' => '150px',
         ],
-        'Fathom Analytics' => [
-            'website' => 'https://usefathom.com/',
-            'image' => 'assets/img/sponsors/fathom.svg',
-            'max_width' => '100px',
-        ],
         'Localazy' => [
             'website' => 'https://localazy.com',
             'image' => 'assets/img/sponsors/localazy.png',
