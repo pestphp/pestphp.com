@@ -4,7 +4,7 @@ This is the source of the official [Pest website](https://pestphp.com).
 
 ## Local Development
 
-If you want to work on this project on your local machine, you may follow the instructions below. These instructions assume you are serving the site using Laravel Valet out of your `~/Sites` directory:
+If you want to work on this project locally, you may follow the instructions below. These instructions assume you are serving the site using Laravel Valet out of your `~/Sites` directory:
 
 1. Fork this repository 
 2. Open your terminal and `cd` to your `~/Sites` folder
