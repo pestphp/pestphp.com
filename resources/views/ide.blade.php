@@ -21,7 +21,7 @@
                     </p>
 
                     <p>
-                        Currently, our team is in charge of maintaining the PHPStorm plugin, which can be easily accessed on JetBrains' Marketplace.
+                        Currently, the PhpStorm team at JetBrains is maintaining the Pest Plugin for PhpStorm. It is installed by default since PhpStorm 2023.3.
                     </p>
 
                     <div class="mt-6 mb-12">
