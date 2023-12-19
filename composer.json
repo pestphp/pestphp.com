@@ -13,7 +13,7 @@
         "ext-simplexml": "*",
         "guzzlehttp/guzzle": "^7.5",
         "laravel/framework": "^10.3.3",
-        "laravel/octane": "^2.2.0",
+        "laravel/octane": "^2.2.1",
         "laravel/tinker": "^2.8.1",
         "league/commonmark": "^2.3.9",
         "spatie/yaml-front-matter": "^2.0.7",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0921b2b534878f15f30c3cbd97015458",
+    "content-hash": "9e4f325b91f3500da72d3b103ffbadb5",
     "packages": [
         {
             "name": "brick/math",
@@ -1334,16 +1334,16 @@
         },
         {
             "name": "laravel/octane",
-            "version": "v2.2.0",
+            "version": "v2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/octane.git",
-                "reference": "00a405c7b26d618736ec6e0d282c3ffb9740f021"
+                "reference": "4bf18550ffec72a6c8fec8cac6c9488e70954145"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/octane/zipball/00a405c7b26d618736ec6e0d282c3ffb9740f021",
-                "reference": "00a405c7b26d618736ec6e0d282c3ffb9740f021",
+                "url": "https://api.github.com/repos/laravel/octane/zipball/4bf18550ffec72a6c8fec8cac6c9488e70954145",
+                "reference": "4bf18550ffec72a6c8fec8cac6c9488e70954145",
                 "shasum": ""
             },
             "require": {
@@ -1418,7 +1418,7 @@
                 "issues": "https://github.com/laravel/octane/issues",
                 "source": "https://github.com/laravel/octane"
             },
-            "time": "2023-12-18T16:04:29+00:00"
+            "time": "2023-12-19T17:59:21+00:00"
         },
         {
             "name": "laravel/prompts",
