@@ -20,3 +20,6 @@ npm-debug.log
 yarn-error.log
 .php-cs-fixer.cache
 /.idea
+
+frankenphp
+frankenphp-worker.php
