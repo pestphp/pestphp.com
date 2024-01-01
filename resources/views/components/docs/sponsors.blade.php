@@ -83,7 +83,7 @@
                     </li>
                 </ul>
                 <div class="mt-8 text-center">
-                    <a href="https://github.com/pestphp/pest" target="_blank" class="sm:w-auto focus:outline-none sm:mt-0 w-full px-8 py-2 text-sm font-bold text-white bg-transparent border border-white rounded-lg">
+                    <a href="https://github.com/sponsors/nunomaduro" target="_blank" class="sm:w-auto focus:outline-none sm:mt-0 w-full px-8 py-2 text-sm font-bold text-white bg-transparent border border-white rounded-lg">
                         Your logo here
                     </a>
                 </div>
