@@ -37,9 +37,11 @@
 
     @vite(['resources/css/app.scss', 'resources/js/app.js'])
     <script>
-        if (!('theme' in localStorage)) {
-            localStorage.theme = 'dark';
-        }
+        // if (!('theme' in localStorage)) {
+        //    localStorage.theme = 'dark';
+        //}
+
+        localStorage.theme = 'dark';
 
         document.documentElement.classList[localStorage.theme === 'dark' ? 'add' : 'remove']('dark');
     </script>
