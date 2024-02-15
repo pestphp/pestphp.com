@@ -58,8 +58,8 @@
                         <x-neovim-ide-plugin
                             title="Neovim (via Neotest)"
                             logo="https://upload.wikimedia.org/wikipedia/commons/3/3a/Neovim-mark.svg"
-                            url="https://github.com/theutz/neotest-pest"
-                            github="https://github.com/theutz/neotest-pest">
+                            url="https://github.com/V13Axel/neotest-pest"
+                            github="https://github.com/V13Axel/neotest-pest">
                         </x-ide-plugin>
                     </div>
 
