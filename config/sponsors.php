@@ -14,6 +14,12 @@ return [
             'max_width' => '230px',
             'width' => '230px',
         ],
+        'Larajobs' => [
+            'website' => 'https://larajobs.com/',
+            'image' => 'assets/img/sponsors/larajobs.svg',
+            'max_width' => '230px',
+            'width' => '230px',
+        ],
         'Forge' => [
             'website' => 'https://forge.laravel.com/',
             'image' => 'assets/img/sponsors/forge.svg',

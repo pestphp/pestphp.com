@@ -30,6 +30,11 @@
 
                 <ul class="pb-8 border-b border-gray-200 dark:border-gray-800 lg:gap-12 drop-shadow lg:px-0 flex flex-wrap items-center justify-center gap-3 px-6 mt-6">
                     <li class="block">
+                        <a href="https://larajobs.com/?ref=pestphp" target="_blank" rel="noopener" class="table">
+                            <img src="/www/assets/sponsors/larajobs.svg" class="w-auto h-12" />
+                        </a>
+                    </li>
+                    <li class="block">
                         <a href="https://forge.laravel.com/?ref=pestphp" target="_blank" rel="noopener" class="table">
                             <img src="/www/assets/sponsors/forge.svg" class="w-auto h-6" />
                         </a>
