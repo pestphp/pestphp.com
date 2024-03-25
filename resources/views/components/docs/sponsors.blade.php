@@ -81,13 +81,6 @@
                             <img src="/www/assets/sponsors/localazy.svg" class="w-auto h-4" />
                         </a>
                     </li>
-                    <li class="md:-mt-7 pl-1">
-                        <a href="https://stormlikes.net/?ref=pestphp" target="_blank" rel="noopener" class="table">
-                            <img src="/www/assets/sponsors/stormlikes.svg" class="w-auto h-4" />
-                        </a>
-                    </li>
-
-                    <li class="md:block hidden w-full h-0 -mt-12"></li>
                     <li class="md:-mt-7 pl-1 mb-8">
                         <a href="https://zapiet.com/?ref=pestphp" target="_blank" rel="noopener" class="table">
                             <img src="/www/assets/sponsors/zapiet.svg" class="w-auto h-5" />
