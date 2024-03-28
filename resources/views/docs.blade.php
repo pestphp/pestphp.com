@@ -14,4 +14,5 @@
             </div>
         </section>
     </main>
+    <x-i.scrolltotop />
 </x-app-layout>
