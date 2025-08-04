@@ -6,7 +6,7 @@
                 <x-docs.sidebar>{!! $index !!}</x-docs.sidebar>
                 <div class="docs-main max-w-prose DocSearch-content mx-auto lg:mr-0 relative w-full px-3 lg:px-0 mt-6 mb-20">
                     <div class="w-100 lg:block absolute top-0 right-0 hidden h-8 mt-2 text-sm">
-                        <a href="https://github.com/pestphp/docs/edit/master/{{ $page }}.md">Edit this page →</a>
+                        <a href="https://github.com/pestphp/docs/edit/{{ config('site.defaultVersion') }}/{{ $page }}.md">Edit this page →</a>
                     </div>
                     {!! $body !!}
                 </div>
