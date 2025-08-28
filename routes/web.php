@@ -23,4 +23,3 @@ Route::group([
     Route::get('/docs/editor-setup', IDEPluginsController::class)->name('ide-plugins');
     Route::get('/docs/{page?}', DocsController::class)->name('docs')->where('page', '.*');
 });
-
