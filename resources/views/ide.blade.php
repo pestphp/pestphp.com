@@ -39,6 +39,15 @@
                     </p>
 
                     <div class="space-y-6 mt-6">
+
+                        <x-vs-code-ide-plugin
+                            title="VSCode PHP Tools"
+                            extension="DEVSENSE.phptools-vscode"
+                            logo="https://raw.githubusercontent.com/DEVSENSE/phptools-docs/refs/heads/master/docs/vscode/imgs/phptools-icon.png"
+                            url="https://marketplace.visualstudio.com/items?itemName=DEVSENSE.phptools-vscode"
+                            github="hthttps://github.com/DEVSENSE/phptools-docs">
+                        </x-vs-code-ide-plugin>
+
                         <x-vs-code-ide-plugin
                             title="VSCode PHPUnit TestExplorer"
                             extension="recca0120.vscode-phpunit"
