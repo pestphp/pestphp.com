@@ -47,9 +47,7 @@
                     sponsors: [
                         { href: 'https://forge.laravel.com/?ref=pestphp', img: '/www/assets/sponsors/forge.svg', class: 'w-auto h-5' },
                         { href: 'https://zapiet.com/?ref=pestphp', img: '/www/assets/sponsors/zapiet.svg', class: 'w-auto h-8' },
-                        { href: 'https://localazy.com/?ref=pestphp', img: '/www/assets/sponsors/localazy.svg', class: 'w-auto h-5' },
                         { href: 'https://loadforge.com/?ref=pestphp', img: '/www/assets/sponsors/loadforge.svg', class: 'w-auto h-5' },
-                        { href: 'https://docuwriter.ai/?ref=pestphp', img: '/www/assets/sponsors/docuwriter-ai.svg', class: 'w-auto h-10' },
                         { href: 'https://route4me.com/?ref=pestphp', img: '/www/assets/sponsors/route4me.svg', class: 'w-auto h-6' },
                         { href: 'https://devtools-for-livewire.com/?ref=pestphp', img: '/www/assets/sponsors/devtools-for-livewire.svg', class: 'w-auto h-4' },
                         { href: 'https://getnerdify.com/?ref=pestphp', img: '/www/assets/sponsors/nerdify.png', class: 'w-auto h-14' },
