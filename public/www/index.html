@@ -23,8 +23,8 @@
         <link rel="icon" href="/www/favicon.svg" type="image/svg+xml">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <script type="module" crossorigin src="/www/index.1e3e7d30.js"></script>
-      <link rel="stylesheet" href="/www/index-6c5b9144.css">
+      <script type="module" crossorigin src="/www/index.8e7c889a.js"></script>
+      <link rel="stylesheet" href="/www/index-77f75c3a.css">
     </head>
     <body x-data="{ mobileMenuIsOpen: false }" class="relative w-full min-h-screen h-full text-white bg-[#040120] bg-top bg-no-repeat bg-pest">
         <div x-show="mobileMenuIsOpen" class="backdrop:bg-transparent lg:hidden z-50 relative">
@@ -201,8 +201,9 @@
                         sponsors: [
                             { href: 'https://cmsmax.com/?ref=pestphp', img: '/www/assets/sponsors/cmsmax.png', alt: 'CMS Max', class: 'h-7 md:h-9 object-contain' },
                             { href: 'https://coderabbit.ai/?ref=pestphp', img: '/www/assets/sponsors/coderabbit.svg', alt: 'CodeRabbit', class: 'h-7 md:h-9 object-contain' },
-                            { href: 'https://laracasts.com/?ref=pestphp', img: '/www/assets/sponsors/laracasts.svg', alt: 'Laracasts', class: 'h-6 md:h-6 object-contain' },
-                            { href: 'https://nativephp.com/?ref=pestphp.com', img: '/www/assets/sponsors/native-php.svg?20082025', alt: 'Native PHP', class: 'h-6 md:h-7 object-contain' },
+                            { href: 'https://devin.ai/?ref=nunomaduro', img: '/www/assets/sponsors/devin.png', alt: 'Devin', class: 'h-7 md:h-9 object-contain' },
+                            { href: 'https://l.rw.rw/pestphp', img: '/www/assets/sponsors/mailtrap.svg', alt: 'Mailtrap', class: 'h-7 md:h-9 object-contain' },
+                            { href: 'https://tighten.com/?ref=nunomaduro', img: '/www/assets/sponsors/tighten.svg?20082025', alt: 'Tighten', class: 'h-6 md:h-7 object-contain' },
                             { href: 'https://redberry.international/laravel-development/?utm_source=pest&utm_medium=banner&utm_campaign=pest_sponsorship', img: '/www/assets/sponsors/redberry.png?20082025', alt: 'Redberry', class: 'h-6 md:h-7 object-contain' }
                         ],
                         shuffledSponsors: [],
@@ -217,7 +218,7 @@
                     }"
                     x-init="init()"
                 >
-                    <div class="mx-auto mt-10 grid max-w-lg grid-cols-2 items-center gap-x-8 gap-y-10 lg:grid-cols-5 sm:gap-x-10 lg:mx-0 lg:max-w-none motion-preset-blur-up-md motion-delay-[800ms] motion-duration-1000">
+                    <div class="mx-auto mt-10 grid max-w-lg grid-cols-2 items-center gap-x-8 gap-y-10 lg:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none motion-preset-blur-up-md motion-delay-[800ms] motion-duration-1000">
                         <template x-for="sponsor in shuffledSponsors" :key="sponsor.alt">
                             <a :href="sponsor.href" target="_blank">
                                 <img :src="sponsor.img" :alt="sponsor.alt" :class="sponsor.class" />
@@ -232,11 +233,9 @@
                             pxPerSecond: 50,
                             duration: 1,
                             items: [
-                                { href: 'https://forge.laravel.com/?ref=pestphp', src: '/www/assets/sponsors/forge.svg', alt: 'Forge', class: 'h-4.5' },
                                 { href: 'https://zapiet.com/?ref=pestphp', src: '/www/assets/sponsors/zapiet.svg', alt: 'Zapiet', class: 'h-5' },
                                 { href: 'https://loadforge.com/?ref=pestphp', src: '/www/assets/sponsors/loadforge.svg', alt: 'Load Forge', class: 'h-5' },
                                 { href: 'https://route4me.com/pt?ref=pestphp', src: '/www/assets/sponsors/route4me.svg', alt: 'Route4Me', class: 'h-6' },
-                                { href: 'https://devtools-for-livewire.com/?ref=pestphp', src: '/www/assets/sponsors/devtools-for-livewire.svg', alt: 'Devtools for Livewire', class: 'h-4.5' },
                                 { href: 'https://getnerdify.com/?ref=pestphp', src: '/www/assets/sponsors/nerdify.png', alt: 'Nerdify', class: 'h-14' },
                                 { href: 'https://akaunting.com/?ref=pestphp', src: '/www/assets/sponsors/akaunting.svg', alt: 'Akaunting', class: 'h-6' },
                                 { href: 'https://lambdatest.com/?ref=pestphp', src: '/www/assets/sponsors/lambdatest.svg', alt: 'Lambdatest', class: 'h-8' },

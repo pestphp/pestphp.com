@@ -14,9 +14,10 @@
             <ul
                 x-data="{
                     sponsors: [
-                        { href: 'https://laracasts.com/?ref=pestphp', img: '/www/assets/sponsors/laracasts.svg', class: 'w-auto' },
-                        { href: 'https://nativephp.com/?ref=pestphp.com', img: '/www/assets/sponsors/native-php.svg', class: 'w-auto' },
-                        { href: 'https://coderabbit.ai/?ref=pestphp', img: '/www/assets/sponsors/coderabbit.svg', class: 'w-auto' },
+                        { href: 'https://l.rw.rw/pestphp', img: '/www/assets/sponsors/mailtrap.svg', class: 'w-auto h-16' },
+                        { href: 'https://tighten.com/?ref=nunomaduro', img: '/www/assets/sponsors/tighten.svg', class: 'w-auto' },
+                        { href: 'https://coderabbit.ai/?ref=pestphp', img: '/www/assets/sponsors/coderabbit.svg', class: 'w-auto h-10' },
+                        { href: 'https://devin.ai/?ref=nunomaduro', img: '/www/assets/sponsors/devin.png', class: 'w-auto h-14' },
                         { href: 'https://cmsmax.com/?ref=pestphp', img: '/www/assets/sponsors/cmsmax.png', class: 'w-auto' },
                         { href: 'https://redberry.international/laravel-development/?utm_source=pest&utm_medium=banner&utm_campaign=pest_sponsorship', img: '/www/assets/sponsors/redberry.png', class: 'w-auto' }
                     ],
@@ -45,11 +46,9 @@
             <ul
                 x-data="{
                     sponsors: [
-                        { href: 'https://forge.laravel.com/?ref=pestphp', img: '/www/assets/sponsors/forge.svg', class: 'w-auto h-5' },
                         { href: 'https://zapiet.com/?ref=pestphp', img: '/www/assets/sponsors/zapiet.svg', class: 'w-auto h-8' },
                         { href: 'https://loadforge.com/?ref=pestphp', img: '/www/assets/sponsors/loadforge.svg', class: 'w-auto h-5' },
                         { href: 'https://route4me.com/?ref=pestphp', img: '/www/assets/sponsors/route4me.svg', class: 'w-auto h-6' },
-                        { href: 'https://devtools-for-livewire.com/?ref=pestphp', img: '/www/assets/sponsors/devtools-for-livewire.svg', class: 'w-auto h-4' },
                         { href: 'https://getnerdify.com/?ref=pestphp', img: '/www/assets/sponsors/nerdify.png', class: 'w-auto h-14' },
                         { href: 'https://akaunting.com/?ref=pestphp', img: '/www/assets/sponsors/akaunting.svg', class: 'w-auto h-5' },
                         { href: 'https://lambdatest.com/?ref=pestphp', img: '/www/assets/sponsors/lambdatest.svg', class: 'w-auto h-8' }
