@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DocsController;
 use App\Http\Controllers\IDEPluginsController;
+use App\Http\Controllers\LlmsTxtController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +21,11 @@ Route::group([
 ], function () {
     Route::get('/', fn () => file_get_contents(public_path('www/index.html')));
 
+    Route::get('/llms.txt', [LlmsTxtController::class, 'index']);
+    Route::get('/llms-full.txt', [LlmsTxtController::class, 'full']);
+
     Route::get('/docs/editor-setup', IDEPluginsController::class)->name('ide-plugins');
+    Route::get('/docs/{page}/llms.txt', [LlmsTxtController::class, 'page']);
     Route::get('/docs/{page?}', DocsController::class)->name('docs')->where('page', '.*');
 });
 
