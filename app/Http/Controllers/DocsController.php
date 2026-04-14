@@ -6,6 +6,8 @@ use App\Support\Documentation;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\View\View;
 
 class DocsController extends Controller
@@ -17,9 +19,9 @@ class DocsController extends Controller
     /**
      * Handle the incoming request.
      *
-     * @return Application|Factory|View|RedirectResponse
+     * @return Application|Factory|View|RedirectResponse|Response
      */
-    public function __invoke(Documentation $docs, ?string $page = null)
+    public function __invoke(Request $request, Documentation $docs, ?string $page = null)
     {
         if ($page === null) {
             return redirect()->route('docs', [self::DEFAULT_PAGE]);
@@ -29,9 +31,13 @@ class DocsController extends Controller
             abort(404);
         }
 
-        $index = $docs->getIndex(config('site.defaultVersion'));
-
         $document = $docs->get(config('site.defaultVersion'), $page);
+
+        if ($request->accepts(['text/markdown', 'text/plain']) && ! $request->accepts(['text/html'])) {
+            return response($document['markdown'])->header('Content-Type', 'text/markdown; charset=utf-8');
+        }
+
+        $index = $docs->getIndex(config('site.defaultVersion'));
 
         $matter = $document['matter'];
         $markdown = $document['markdown'];

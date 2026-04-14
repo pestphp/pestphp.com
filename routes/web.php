@@ -19,7 +19,13 @@ use Illuminate\Support\Facades\Route;
 Route::group([
     //
 ], function () {
-    Route::get('/', fn () => file_get_contents(public_path('www/index.html')));
+    Route::get('/', function (Illuminate\Http\Request $request) {
+        if ($request->accepts(['text/markdown', 'text/plain']) && ! $request->accepts(['text/html'])) {
+            return app(LlmsTxtController::class)->index();
+        }
+
+        return file_get_contents(public_path('www/index.html'));
+    });
 
     Route::get('/llms.txt', [LlmsTxtController::class, 'index']);
     Route::get('/llms-full.txt', [LlmsTxtController::class, 'full']);
