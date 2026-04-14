@@ -1,8 +1,4 @@
 <x-app-layout layout="app" :title="$matter['title']" :description="$matter['description']">
-    <x-slot name="head">
-        <link rel="alternate" type="text/plain" href="{{ url("/docs/{$page}/llms.txt") }}" title="LLM-friendly version">
-    </x-slot>
-
     <main role="main" class="flex-auto overflow-hidden w-full">
         <section class="documentation">
             <div class="max-w-7xl sm:px-6 lg:flex lg:px-8 mx-auto">

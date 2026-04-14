@@ -33,7 +33,8 @@
         <meta property="og:image" content="https://pestphp.com/assets/img/og-v4.jpg">
     @endif
 
-    <meta name="llms-txt" content="{{ url('/llms.txt') }}">
+    <meta name="llms-txt" content="{{ $llmsTxt ?? url('/llms.txt') }}">
+    <link rel="alternate" type="text/plain" href="{{ $llmsTxt ?? url('/llms.txt') }}" title="LLM-friendly version">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
