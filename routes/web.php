@@ -29,4 +29,3 @@ Route::group([
     Route::get('/docs/{page}.md', [LlmsTxtController::class, 'page']);
     Route::get('/docs/{page?}', DocsController::class)->name('docs')->where('page', '.*');
 });
-

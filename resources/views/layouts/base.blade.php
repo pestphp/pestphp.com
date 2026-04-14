@@ -33,6 +33,8 @@
         <meta property="og:image" content="https://pestphp.com/assets/img/og-v4.jpg">
     @endif
 
+    <meta name="llms-txt" content="{{ url('/llms.txt') }}">
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="icon" href="/www/favicon.svg" type="image/svg+xml">

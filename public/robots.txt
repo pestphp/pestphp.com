@@ -1,2 +1,5 @@
 User-agent: *
 Disallow:
+
+# LLM-friendly documentation
+llms-txt: https://pestphp.com/llms.txt
