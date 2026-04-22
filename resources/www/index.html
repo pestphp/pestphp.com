@@ -176,7 +176,7 @@
         <main>
             <section id="hero" class="text-center pt-8 pb-12 lg:py-24 max-w-7xl px-6 lg:px-8 mx-auto">
                 <div class="mb-8 flex justify-center motion-preset-blur-up-lg motion-delay-[300ms] motion-duration-1000">
-                    <div class="relative rounded-full px-3 py-1 text-sm/6 text-white/90 ring-1 ring-white/10 hover:ring-white/20">Pest v4.0 Talk <span class="sm:hidden">-</span><span class="hidden sm:inline-block">- Nuno Maduro at Laracon US 2025.</span> <a href="https://youtube.com/watch?v=f5gAgwwwwOI" target="_blank" class="font-semibold text-pink-400"><span aria-hidden="true" class="absolute inset-0"></span>Watch now <span aria-hidden="true">→</span></a></div>
+                    <div class="relative rounded-full px-3 py-1 text-sm/6 text-white/90 ring-1 ring-white/10 hover:ring-white/20">Check the Creator's YouTube channel<span class="hidden sm:inline-block">&nbsp;— Nuno Maduro.</span> <a href="https://youtube.com/@nunomaduro?sub_confirmation=1" target="_blank" class="font-semibold text-pink-400"><span aria-hidden="true" class="absolute inset-0"></span>Watch now <span aria-hidden="true">→</span></a></div>
                 </div>
 
                 <h1 class="mt-8 text-4xl sm:text-5xl/14 xl:text-6xl/15 tracking-tight font-title motion-preset-blur-up-lg motion-delay-[200ms] motion-duration-1000">The elegant PHP testing framework<br class="hidden lg:block"> with built-in
@@ -198,10 +198,9 @@
                 <div x-data="{
                         sponsors: [
                             { href: 'https://cmsmax.com/?ref=pestphp', img: '/www/assets/sponsors/cmsmax.png', alt: 'CMS Max', class: 'h-7 md:h-9 object-contain' },
-                            { href: 'https://coderabbit.ai/?ref=pestphp', img: '/www/assets/sponsors/coderabbit.svg', alt: 'CodeRabbit', class: 'h-7 md:h-9 object-contain' },
+                            { href: 'https://jb.gg/nuno', img: '/www/assets/sponsors/phpstorm.svg', alt: 'PhpStorm', class: 'h-7 md:h-9 object-contain' },
+                            { href: 'https://coderabbit.link/nunomaduro', img: '/www/assets/sponsors/coderabbit.svg', alt: 'CodeRabbit', class: 'h-7 md:h-9 object-contain' },
                             { href: 'https://serpapi.com/?ref=nunomaduro', img: '/www/assets/sponsors/serpapi.png', alt: 'SerpApi', class: 'h-6 md:h-8 object-contain' },
-                            { href: 'https://l.rw.rw/pestphp', img: '/www/assets/sponsors/mailtrap.svg', alt: 'Mailtrap', class: 'h-7 md:h-9 object-contain' },
-                            { href: 'https://tighten.com/?ref=nunomaduro', img: '/www/assets/sponsors/tighten.svg?20082025', alt: 'Tighten', class: 'h-6 md:h-7 object-contain' },
                             { href: 'https://redberry.international/laravel-development/?utm_source=pest&utm_medium=banner&utm_campaign=pest_sponsorship', img: '/www/assets/sponsors/redberry.png?20082025', alt: 'Redberry', class: 'h-6 md:h-7 object-contain' }
                         ],
                         shuffledSponsors: [],
@@ -216,7 +215,7 @@
                     }"
                     x-init="init()"
                 >
-                    <div class="mx-auto mt-10 grid max-w-lg grid-cols-2 items-center gap-x-8 gap-y-10 lg:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none motion-preset-blur-up-md motion-delay-[800ms] motion-duration-1000">
+                    <div class="mx-auto mt-10 grid max-w-lg grid-cols-2 items-center justify-items-center gap-x-8 gap-y-10 lg:grid-cols-5 sm:gap-x-10 lg:mx-0 lg:max-w-none motion-preset-blur-up-md motion-delay-[800ms] motion-duration-1000">
                         <template x-for="sponsor in shuffledSponsors" :key="sponsor.alt">
                             <a :href="sponsor.href" target="_blank">
                                 <img :src="sponsor.img" :alt="sponsor.alt" :class="sponsor.class" />
