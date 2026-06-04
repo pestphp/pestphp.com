@@ -11,7 +11,7 @@
     },
     "devDependencies": {
         "@tailwindcss/typography": "^0.5.16",
-        "vite": "^4.0.0"
+        "vite": "^8.0.16"
     },
     "dependencies": {
         "@docsearch/css": "^3.3.3",
@@ -20,7 +20,7 @@
         "ally.js": "^1.4.1",
         "alpinejs": "^3.14.9",
         "clipboard": "^2.0.11",
-        "laravel-vite-plugin": "^0.7.4",
+        "laravel-vite-plugin": "^3.1.0",
         "postcss": "^8.5.6",
         "tailwindcss": "^4.1.12",
         "tippy.js": "^6.3.7"
