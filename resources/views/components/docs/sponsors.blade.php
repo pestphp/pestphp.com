@@ -17,6 +17,7 @@
                         { href: 'https://jb.gg/nuno', img: '/www/assets/sponsors/phpstorm.svg', class: 'w-auto h-10' },
                         { href: 'https://coderabbit.link/nunomaduro', img: '/www/assets/sponsors/coderabbit.svg', class: 'w-auto h-10' },
                         { href: 'https://serpapi.com/?ref=nunomaduro', img: '/www/assets/sponsors/serpapi.png', class: 'w-auto h-10' },
+                        { href: 'https://bentonow.com/?ref=nunomaduro', img: '/www/assets/sponsors/bento.svg', class: 'w-auto h-10' },
                         { href: 'https://cmsmax.com/?ref=pestphp', img: '/www/assets/sponsors/cmsmax.png', class: 'w-auto' },
                         { href: 'https://redberry.international/laravel-development/?utm_source=pest&utm_medium=banner&utm_campaign=pest_sponsorship', img: '/www/assets/sponsors/redberry.png', class: 'w-auto' }
                     ],

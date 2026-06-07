@@ -201,6 +201,7 @@
                             { href: 'https://jb.gg/nuno', img: '/www/assets/sponsors/phpstorm.svg', alt: 'PhpStorm', class: 'h-7 md:h-9 object-contain' },
                             { href: 'https://coderabbit.link/nunomaduro', img: '/www/assets/sponsors/coderabbit.svg', alt: 'CodeRabbit', class: 'h-7 md:h-9 object-contain' },
                             { href: 'https://serpapi.com/?ref=nunomaduro', img: '/www/assets/sponsors/serpapi.png', alt: 'SerpApi', class: 'h-6 md:h-8 object-contain' },
+                            { href: 'https://bentonow.com/?ref=nunomaduro', img: '/www/assets/sponsors/bento.svg', alt: 'Bento', class: 'h-5 md:h-7 object-contain' },
                             { href: 'https://redberry.international/laravel-development/?utm_source=pest&utm_medium=banner&utm_campaign=pest_sponsorship', img: '/www/assets/sponsors/redberry.png?20082025', alt: 'Redberry', class: 'h-6 md:h-7 object-contain' }
                         ],
                         shuffledSponsors: [],
@@ -215,7 +216,7 @@
                     }"
                     x-init="init()"
                 >
-                    <div class="mx-auto mt-10 grid max-w-lg grid-cols-2 items-center justify-items-center gap-x-8 gap-y-10 lg:grid-cols-5 sm:gap-x-10 lg:mx-0 lg:max-w-none motion-preset-blur-up-md motion-delay-[800ms] motion-duration-1000">
+                    <div class="mx-auto mt-10 grid max-w-lg grid-cols-2 items-center justify-items-center gap-x-8 gap-y-10 lg:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none motion-preset-blur-up-md motion-delay-[800ms] motion-duration-1000">
                         <template x-for="sponsor in shuffledSponsors" :key="sponsor.alt">
                             <a :href="sponsor.href" target="_blank">
                                 <img :src="sponsor.img" :alt="sponsor.alt" :class="sponsor.class" />
