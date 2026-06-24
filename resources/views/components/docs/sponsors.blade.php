@@ -49,9 +49,7 @@
                         { href: 'https://zapiet.com/?ref=pestphp', img: '/www/assets/sponsors/zapiet.svg', class: 'w-auto h-8' },
                         { href: 'https://loadforge.com/?ref=pestphp', img: '/www/assets/sponsors/loadforge.svg', class: 'w-auto h-5' },
                         { href: 'https://route4me.com/?ref=pestphp', img: '/www/assets/sponsors/route4me.svg', class: 'w-auto h-6' },
-                        { href: 'https://getnerdify.com/?ref=pestphp', img: '/www/assets/sponsors/nerdify.png', class: 'w-auto h-14' },
-                        { href: 'https://akaunting.com/?ref=pestphp', img: '/www/assets/sponsors/akaunting.svg', class: 'w-auto h-5' },
-                        { href: 'https://www.testmuai.com/?utm_medium=sponsor&utm_source=pest', img: '/www/assets/sponsors/testmu-ai.svg', class: 'w-auto h-5' }
+                        { href: 'https://getnerdify.com/?ref=pestphp', img: '/www/assets/sponsors/nerdify.png', class: 'w-auto h-14' }
                     ],
                     shuffledSponsors: [],
                     init() {
