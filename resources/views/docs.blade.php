@@ -5,7 +5,7 @@
                 <x-docs.sidebar>{!! $index !!}</x-docs.sidebar>
                 <div class="mx-auto">
                     <div class="lg:block hidden text-sm">
-                        <a href="https://github.com/pestphp/docs/edit/4.x/{{ $page }}.md">Edit this page →</a>
+                        <a href="https://github.com/pestphp/docs/edit/5.x/{{ $page }}.md">Edit this page →</a>
                     </div>
                     <div class="docs-main max-w-prose prose prose-invert DocSearch-content mx-auto relative w-full px-3 lg:px-0 mt-6 mb-20">
                         {!! $body !!}
