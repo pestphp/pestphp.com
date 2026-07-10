@@ -17,11 +17,11 @@
                     <h1>Editor Setup</h1>
 
                     <p>
-                        An editor plugin can significantly enhance the developer experience when working with Pest PHP. Although most editors have built-in support for Pest PHP, plugins can offer additional functionalities that can streamline and simplify the development process.
+                        An editor plugin can enhance your experience when working with Pest. While most editors offer built-in support for Pest, a dedicated plugin adds helpful functionality on top of your editor, streamlining your workflow.
                     </p>
 
                     <p>
-                        Currently, the PhpStorm team at JetBrains is maintaining the Pest Plugin for PhpStorm. It is installed by default since PhpStorm 2023.3.
+                        Currently, the PhpStorm team at JetBrains maintains the Pest plugin for PhpStorm, which has been installed by default since PhpStorm 2023.3.
                     </p>
 
                     <div class="mt-6 mb-12">
@@ -35,7 +35,7 @@
                     </div>
 
                     <p>
-                        In case you do not utilize PHPStorm, you may consider experimenting with the community-maintained plugin. Nevertheless, it's worth noting that this alternative may not offer the same level of user experience as the official PHPStorm plugin.
+                        If you do not use PhpStorm, you may wish to try one of the community-maintained plugins below. However, these alternatives may not offer the same experience as the official PhpStorm plugin.
                     </p>
 
                     <div class="space-y-6 mt-6">
