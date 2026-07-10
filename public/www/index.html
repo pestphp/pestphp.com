@@ -23,8 +23,8 @@
         <link rel="icon" href="/www/favicon.svg" type="image/svg+xml">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <script type="module" crossorigin src="/www/index.aff7addf.js"></script>
-      <link rel="stylesheet" href="/www/index-256e9765.css">
+      <script type="module" crossorigin src="/www/index.8e8a525b.js"></script>
+      <link rel="stylesheet" href="/www/index-b6f8ae90.css">
     </head>
     <body x-data="{ mobileMenuIsOpen: false }" class="relative w-full min-h-screen h-full text-white bg-[#040120] bg-top bg-no-repeat bg-pest">
         <div x-show="mobileMenuIsOpen" class="backdrop:bg-transparent lg:hidden z-50 relative">
@@ -178,7 +178,7 @@
         <main>
             <section id="hero" class="text-center pt-8 pb-12 lg:py-24 max-w-7xl px-6 lg:px-8 mx-auto">
                 <div class="mb-8 flex justify-center motion-preset-blur-up-lg motion-delay-[300ms] motion-duration-1000">
-                    <div class="relative rounded-full px-3 py-1 text-sm/6 text-white/90 ring-1 ring-white/10 hover:ring-white/20">Check the Creator's YouTube channel<span class="hidden sm:inline-block">&nbsp;— Nuno Maduro.</span> <a href="https://youtube.com/@nunomaduro?sub_confirmation=1" target="_blank" class="font-semibold text-pink-400"><span aria-hidden="true" class="absolute inset-0"></span>Watch now <span aria-hidden="true">→</span></a></div>
+                    <div class="relative rounded-full px-3 py-1 text-sm/6 font-medium text-white/90 ring-1 ring-white/10 hover:ring-white/20"><span class="font-semibold text-white">Pest 5 is now available</span><span class="hidden sm:inline-block">&nbsp;— our biggest release yet.</span> <a href="/docs/pest5-now-available" class="font-semibold text-pink-400"><span aria-hidden="true" class="absolute inset-0"></span>Read more <span aria-hidden="true">→</span></a></div>
                 </div>
 
                 <h1 class="mt-8 text-4xl sm:text-5xl/14 xl:text-6xl/15 tracking-tight font-title motion-preset-blur-up-lg motion-delay-[200ms] motion-duration-1000">The elegant testing framework<br class="hidden lg:block"> for PHP developers and
@@ -272,18 +272,19 @@
 
                 <div class="mt-10 grid grid-cols-1 gap-10 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
                     <div class="flex p-px lg:col-span-4">
-                        <div class="w-full overflow-hidden rounded-lg bg-white/10 outline outline-offset-10 outline-white/10 max-lg:rounded-t-4xl lg:rounded-tl-4xl">
+                        <div class="w-full overflow-hidden rounded-lg bg-white/10 outline outline-offset-10 outline-white/10 max-lg:rounded-t-4xl lg:rounded-tl-4xl" x-data="{ tab: 'browser' }">
                             <div class="relative min-h-90 w-full grow">
-                                <div class="absolute top-6 sm:top-10 right-0 bottom-0 left-6 sm:left-10 overflow-hidden rounded-tl-xl bg-gray-900/60 outline outline-white/10">
+                                <div class="absolute top-6 sm:top-10 right-0 bottom-0 left-6 sm:left-10 flex flex-col overflow-hidden rounded-tl-xl bg-gray-900/60 outline outline-white/10">
                                     <div class="flex bg-gray-900 outline outline-white/5">
                                         <div class="-mb-px flex text-sm/6 font-medium text-gray-400">
-                                            <div class="border-r border-b border-r-white/10 border-b-white/20 bg-white/5 px-4 py-2 text-white">BrowserTest.php</div>
-                                            <div class="border-r border-gray-600/10 px-4 py-2">FeatureTest.php</div>
-                                            <div class="border-r border-gray-600/10 px-4 py-2">UnitTest.php</div>
-                                            <div class="border-r border-gray-600/10 px-4 py-2">ArchTest.php</div>
+                                            <button type="button" @click="tab = 'browser'" :class="tab === 'browser' ? 'border-r border-b border-r-white/10 border-b-white/20 bg-white/5 px-4 py-2 text-white' : 'border-r border-gray-600/10 px-4 py-2 cursor-pointer hover:text-white'">BrowserTest.php</button>
+                                            <button type="button" @click="tab = 'feature'" :class="tab === 'feature' ? 'border-r border-b border-r-white/10 border-b-white/20 bg-white/5 px-4 py-2 text-white' : 'border-r border-gray-600/10 px-4 py-2 cursor-pointer hover:text-white'">FeatureTest.php</button>
+                                            <button type="button" @click="tab = 'unit'" :class="tab === 'unit' ? 'border-r border-b border-r-white/10 border-b-white/20 bg-white/5 px-4 py-2 text-white' : 'border-r border-gray-600/10 px-4 py-2 cursor-pointer hover:text-white'">UnitTest.php</button>
+                                            <button type="button" @click="tab = 'arch'" :class="tab === 'arch' ? 'border-r border-b border-r-white/10 border-b-white/20 bg-white/5 px-4 py-2 text-white' : 'border-r border-gray-600/10 px-4 py-2 cursor-pointer hover:text-white'">ArchTest.php</button>
                                         </div>
                                     </div>
-                                    <div class="px-4 pt-4 pb-14">
+                                    <div class="flex flex-1 flex-col justify-center px-4 py-3">
+<div x-show="tab === 'browser'">
 <pre class="text-gray-100 text-xs font-mono tracking-widest overflow-x-auto whitespace-pre leading-[19px]">
 <code><span class="text-gray-400">&lt;?php</span>
 
@@ -300,6 +301,50 @@
 <span class="text-gray-400">});</span>
 </code>
 </pre>
+</div>
+<div x-show="tab === 'feature'" x-cloak>
+<pre class="text-gray-100 text-xs font-mono tracking-widest overflow-x-auto whitespace-pre leading-[19px]">
+<code><span class="text-gray-400">&lt;?php</span>
+
+<span class="text-pink-400">it</span><span class="text-gray-400">(</span><span class="text-green-400">'creates a post'</span><span class="text-gray-400">,</span> <span class="text-blue-400">function</span> <span class="text-gray-400">()</span> <span class="text-gray-400">{</span>
+    <span class="text-blue-300">$user</span> <span class="text-gray-400">=</span> <span class="text-gray-100">User</span><span class="text-gray-400">::</span><span class="text-blue-400">factory</span><span class="text-gray-400">()-&gt;</span><span class="text-blue-400">create</span><span class="text-gray-400">();</span>
+
+    <span class="text-pink-400">$this</span><span class="text-gray-400">-&gt;</span><span class="text-blue-400">actingAs</span><span class="text-gray-400">(</span><span class="text-blue-300">$user</span><span class="text-gray-400">)</span>
+        <span class="text-gray-400">-&gt;</span><span class="text-blue-400">post</span><span class="text-gray-400">(</span><span class="text-green-400">'/posts'</span><span class="text-gray-400">,</span> <span class="text-gray-400">[</span><span class="text-green-400">'title'</span> <span class="text-gray-400">=&gt;</span> <span class="text-green-400">'Hello World'</span><span class="text-gray-400">])</span>
+        <span class="text-gray-400">-&gt;</span><span class="text-blue-400">assertRedirect</span><span class="text-gray-400">(</span><span class="text-green-400">'/posts'</span><span class="text-gray-400">);</span>
+
+    <span class="text-pink-400">expect</span><span class="text-gray-400">(</span><span class="text-blue-300">$user</span><span class="text-gray-400">-&gt;</span><span class="text-blue-400">posts</span><span class="text-gray-400">)-&gt;</span><span class="text-blue-400">toHaveCount</span><span class="text-gray-400">(</span><span class="text-yellow-300">1</span><span class="text-gray-400">);</span>
+<span class="text-gray-400">});</span>
+</code>
+</pre>
+</div>
+<div x-show="tab === 'unit'" x-cloak>
+<pre class="text-gray-100 text-xs font-mono tracking-widest overflow-x-auto whitespace-pre leading-[19px]">
+<code><span class="text-gray-400">&lt;?php</span>
+
+<span class="text-pink-400">it</span><span class="text-gray-400">(</span><span class="text-green-400">'performs sums'</span><span class="text-gray-400">,</span> <span class="text-blue-400">function</span> <span class="text-gray-400">()</span> <span class="text-gray-400">{</span>
+    <span class="text-pink-400">expect</span><span class="text-gray-400">(</span><span class="text-blue-400">sum</span><span class="text-gray-400">(</span><span class="text-yellow-300">1</span><span class="text-gray-400">,</span> <span class="text-yellow-300">2</span><span class="text-gray-400">))</span>
+        <span class="text-gray-400">-&gt;</span><span class="text-blue-400">toBe</span><span class="text-gray-400">(</span><span class="text-yellow-300">3</span><span class="text-gray-400">)</span>
+        <span class="text-gray-400">-&gt;</span><span class="text-blue-400">toBeInt</span><span class="text-gray-400">()</span>
+        <span class="text-gray-400">-&gt;</span><span class="text-blue-400">not</span><span class="text-gray-400">-&gt;</span><span class="text-blue-400">toBeString</span><span class="text-gray-400">();</span>
+<span class="text-gray-400">});</span>
+</code>
+</pre>
+</div>
+<div x-show="tab === 'arch'" x-cloak>
+<pre class="text-gray-100 text-xs font-mono tracking-widest overflow-x-auto whitespace-pre leading-[19px]">
+<code><span class="text-gray-400">&lt;?php</span>
+
+<span class="text-pink-400">arch</span><span class="text-gray-400">()-&gt;</span><span class="text-blue-400">preset</span><span class="text-gray-400">()-&gt;</span><span class="text-blue-400">laravel</span><span class="text-gray-400">();</span>
+<span class="text-pink-400">arch</span><span class="text-gray-400">()-&gt;</span><span class="text-blue-400">preset</span><span class="text-gray-400">()-&gt;</span><span class="text-blue-400">security</span><span class="text-gray-400">();</span>
+
+<span class="text-pink-400">arch</span><span class="text-gray-400">(</span><span class="text-green-400">'globals'</span><span class="text-gray-400">)</span>
+    <span class="text-gray-400">-&gt;</span><span class="text-blue-400">expect</span><span class="text-gray-400">(</span><span class="text-green-400">'App'</span><span class="text-gray-400">)</span>
+    <span class="text-gray-400">-&gt;</span><span class="text-blue-400">toUseStrictTypes</span><span class="text-gray-400">()</span>
+    <span class="text-gray-400">-&gt;</span><span class="text-blue-400">not</span><span class="text-gray-400">-&gt;</span><span class="text-blue-400">toUse</span><span class="text-gray-400">([</span><span class="text-green-400">'dd'</span><span class="text-gray-400">,</span> <span class="text-green-400">'dump'</span><span class="text-gray-400">,</span> <span class="text-green-400">'die'</span><span class="text-gray-400">]);</span>
+</code>
+</pre>
+</div>
                                     </div>
                                 </div>
                             </div>
@@ -416,9 +461,9 @@ at <span class="text-green-500">tests/MathTest.php:4</span>
                 </div>
 
                 <div class="mt-16 lg:mt-24">
-                    <blockquote class="mx-auto max-w-4xl">
-                        <p class="text-center text-3xl font-semibold text-white sm:text-4xl">
-                            <span class="text-gray-500">"</span>Pest is minimal, <span class="text-pink-500">distraction-free</span>,<br> and a joy to use.<span class="text-gray-500">"</span>
+                    <blockquote class="mx-auto max-w-5xl">
+                        <p class="text-center text-3xl font-semibold text-white sm:text-4xl text-balance">
+                            <span class="text-gray-500">"</span>Pest is minimal, <span class="text-pink-500">distraction-free</span>,<br class="sm:hidden"> and a joy to use.<span class="text-gray-500">"</span>
                         </p>
 
                         <div class="mt-8 flex items-center justify-center gap-4">
@@ -445,16 +490,17 @@ at <span class="text-green-500">tests/MathTest.php:4</span>
                                 <span class="size-2.5 rounded-full bg-white/15"></span>
                                 <span class="size-2.5 rounded-full bg-white/15"></span>
                             </div>
-<pre class="text-xs font-mono overflow-x-auto whitespace-pre leading-[19px] pb-5"><code><span class="text-blue-300">~/app</span> <span class="text-pink-400">❯</span> vendor/bin/pest --agent-browser=<span class="text-green-400">"visit('/')</span>
+<pre class="text-xs font-mono overflow-x-auto whitespace-pre leading-[19px] pb-5"><code><span class="text-blue-300">~/app</span> <span class="text-pink-400">❯</span> pest --agent-browser=<span class="text-green-400">"visit('/')</span>
       <span class="text-green-400">-&gt;assertSee('Welcome')"</span>
 
 <span class="text-green-950 bg-green-400 px-1 font-semibold">PASS</span>  visit / and see Welcome
 <span class="text-gray-400">Duration: 0.42s</span></code></pre>
                         </div>
-                        <div class="p-6 lg:p-8">
+                        <div class="flex flex-1 flex-col p-6 lg:p-8">
                             <h3 class="text-sm text-pink-400">Agent Browser</h3>
                             <p class="mt-2 text-lg font-medium tracking-tight text-white">One command to prove it works</p>
-                            <p class="mt-2 text-sm/6 text-gray-400">Your coding agent verifies a change end-to-end — driving a real browser <em class="not-italic text-white/80">and</em> asserting the backend side effects it triggered, like sent mail or queued jobs, all inside your real test suite. <a href="/docs/agent-browser" class="text-blue-300 underline-offset-4 hover:underline">Learn more →</a></p>
+                            <p class="mt-2 text-sm/6 text-gray-400">Your coding agent verifies a change end-to-end — driving a real browser <em class="not-italic text-white/80">and</em> asserting the backend side effects it triggered, like sent mail or queued jobs, all inside your real test suite.</p>
+                            <p class="mt-auto pt-6 text-left"><a href="/docs/agent-browser" class="text-blue-300 underline-offset-4 hover:underline">Learn more →</a></p>
                         </div>
                     </div>
 
@@ -471,10 +517,11 @@ at <span class="text-green-500">tests/MathTest.php:4</span>
     -&gt;<span class="text-blue-400">toBeSafe</span>()
     -&gt;<span class="text-blue-400">toPassJudge</span>(<span class="text-green-400">'Stays on topic'</span>);</code></pre>
                         </div>
-                        <div class="p-6 lg:p-8">
+                        <div class="flex flex-1 flex-col p-6 lg:p-8">
                             <h3 class="text-sm text-pink-400">AI Evals</h3>
                             <p class="mt-2 text-lg font-medium tracking-tight text-white">Score AI output from your suite</p>
-                            <p class="mt-2 text-sm/6 text-gray-400">Evaluate the quality of LLM agents with the same <code class="text-white/80">expect()</code> API you already know — combining deterministic checks with AI scorers like LLM-as-judge, semantic similarity, and safety. <a href="/docs/evals" class="text-blue-300 underline-offset-4 hover:underline">Learn more →</a></p>
+                            <p class="mt-2 text-sm/6 text-gray-400">Evaluate the quality of LLM agents with the same <code class="text-white/80">expect()</code> API you already know — combining deterministic checks with AI scorers like LLM-as-judge, semantic similarity, and safety.</p>
+                            <p class="mt-auto pt-6 text-left"><a href="/docs/evals" class="text-blue-300 underline-offset-4 hover:underline">Learn more →</a></p>
                         </div>
                     </div>
 
@@ -485,16 +532,17 @@ at <span class="text-green-500">tests/MathTest.php:4</span>
                                 <span class="size-2.5 rounded-full bg-white/15"></span>
                                 <span class="size-2.5 rounded-full bg-white/15"></span>
                             </div>
-<pre class="text-xs font-mono overflow-x-auto whitespace-pre leading-[19px] pb-5"><code><span class="text-blue-300">~/app</span> <span class="text-pink-400">❯</span> ./vendor/bin/pest --tia
+<pre class="text-xs font-mono overflow-x-auto whitespace-pre leading-[19px] pb-5"><code><span class="text-blue-300">~/app</span> <span class="text-pink-400">❯</span> pest --tia
 
 <span class="text-gray-100">Tests:</span>  <span class="text-green-400">774 passed</span> <span class="text-gray-400">(7 affected,</span>
         <span class="text-gray-400">765 replayed)</span>
 <span class="text-gray-100">Duration:</span> <span class="text-blue-300">0.74s</span></code></pre>
                         </div>
-                        <div class="p-6 lg:p-8">
+                        <div class="flex flex-1 flex-col p-6 lg:p-8">
                             <h3 class="text-sm text-pink-400">Tia Engine</h3>
                             <p class="mt-2 text-lg font-medium tracking-tight text-white">Only run the tests that matter</p>
-                            <p class="mt-2 text-sm/6 text-gray-400">Test Impact Analysis re-runs only the tests your change actually touched. A 15-second suite replays in under a second — instant feedback for you, and for the agents iterating alongside you. <a href="/docs/tia" class="text-blue-300 underline-offset-4 hover:underline">Learn more →</a></p>
+                            <p class="mt-2 text-sm/6 text-gray-400">Test Impact Analysis re-runs only the tests your change actually touched. A 15-second suite replays in under a second — instant feedback for you, and for the agents iterating alongside you.</p>
+                            <p class="mt-auto pt-6 text-left"><a href="/docs/tia" class="text-blue-300 underline-offset-4 hover:underline">Learn more →</a></p>
                         </div>
                     </div>
                 </div>
