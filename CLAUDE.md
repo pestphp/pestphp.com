@@ -146,17 +146,17 @@ Rule: a surface nested inside `zinc-800` drops back to `zinc-900`. Skeleton/plac
 ### Syntax highlighting (dark palette, all code panes)
 | Token | Class |
 |---|---|
-| Test declarators (`it`, `test`, `describe`) | `text-yellow-300` |
-| Function / method names (`visit`, `expect`, `toBe`, …) | `text-green-400` |
-| Strings | `text-green-400` |
-| Keywords (`function`) | `text-fuchsia-400` |
-| Method / object arrow (`->`) | `text-fuchsia-400` |
-| Variables (`$user`), namespaces (`App\Models\User`) | `text-zinc-300` (plain) |
-| Numbers | `text-yellow-400` |
-| Punctuation, comments, prompts | `text-zinc-500` |
-| Plain code text | `text-zinc-300` |
+| Function / method / test-fn names (`it`, `eval`, `arch`, `visit`, `expect`, `toBe`, …) | `text-green-400` |
+| Strings | `text-yellow-200` |
+| Keyword (`function`) + operators (`->`, `=`, `::`, `=>`) | `text-pink-400` |
+| Variables (`$user`, `$this`) | `text-zinc-100` |
+| Class names / namespaces (`Http`, `App\Models\User`) | `text-cyan-300` |
+| Named arguments (`tries:`) | `text-orange-300` |
+| Numbers | `text-violet-300` |
+| Properties after `->` (`email`, `posts`, `not`), punctuation | `text-zinc-300` (plain) |
+| Comments, prompts | `text-zinc-500` |
 
-The accent is **fuchsia** (`function` keyword + `->` arrows), everything callable and every string is **green**, `it`/`test`/`describe` get a **yellow** pop, variables stay plain. This applies to PHP code panes only — terminal-output blocks keep their own grammar (rose `//` / `→` / `agent` labels, green ✓, red ×/FAIL, §3 above), do **not** recolor those.
+The accent is **pink** (`function` keyword + every operator — `->`/`=`/`::`/`=>`), everything callable (incl. `it`/`eval`/`arch`) is **green**, strings are **yellow**, numbers **violet**, class/type names **cyan**, variables near-**white**, named args **orange**. This applies to PHP code panes only — terminal-output blocks keep their own grammar (rose `//` / `→` / `agent` labels, green ✓, red ×/FAIL, §3 above), do **not** recolor those.
 
 Code samples are hand-written HTML: each line is a `<div>`, indentation is literal `&nbsp;` (4 per level), blank lines are `<div>&nbsp;</div>`. No syntax-highlighter library — keep it that way; it guarantees pixel-exact output.
 
