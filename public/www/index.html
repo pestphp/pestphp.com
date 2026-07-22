@@ -240,7 +240,7 @@
                                 <div><span class="text-green-400">it</span>(<span class="text-yellow-200">'classifies sentiment'</span>, <span class="text-pink-400">function</span> () {</div>
                                 <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">expect</span>(<span class="text-cyan-300">SentimentAgent</span><span class="text-pink-400">::</span><span class="text-pink-400">class</span>)</div>
                                 <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-pink-400">-></span><span class="text-green-400">prompt</span>(<span class="text-yellow-200">'Is "I love Pest" positive?'</span>)</div>
-                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-pink-400">-></span><span class="text-green-400">toContain</span>(<span class="text-yellow-200">'positive'</span>)</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-pink-400">-></span><span class="text-green-400">toBeCorrect</span>()</div>
                                 <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-pink-400">-></span><span class="text-green-400">toSatisfy</span>(<span class="text-yellow-200">'answers in one word'</span>);</div>
                                 <div>});</div>
                             </div>
@@ -338,12 +338,12 @@
                                     <div><span class="text-zinc-500">$</span> ./vendor/bin/pest --tia</div>
                                     <div>&nbsp;</div>
                                     <div><span class="text-zinc-500">~</span> src/Button.tsx <span class="text-rose-400">changed</span></div>
-                                    <div><span class="text-rose-400">→</span> running <span class="font-bold text-zinc-100">2 affected tests</span><span class="text-zinc-500">, replaying 765 from cache</span></div>
+                                    <div><span class="text-rose-400">→</span> running <span class="font-bold text-zinc-100">9 affected tests</span><span class="text-zinc-500">, replaying 765 from cache</span></div>
                                     <div>&nbsp;</div>
                                     <div><span class="text-green-400">✓</span> it may login <span class="text-zinc-500">— 0.21s</span></div>
                                     <div><span class="text-green-400">✓</span> it may checkout <span class="text-zinc-500">— 0.18s</span></div>
                                     <div>&nbsp;</div>
-                                    <div>Tests:&nbsp;&nbsp;&nbsp; <span class="text-green-400">774 passed</span> <span class="text-zinc-500">(<span class="text-rose-400">7 affected</span>, 765 replayed)</span></div>
+                                    <div>Tests:&nbsp;&nbsp;&nbsp; <span class="text-green-400">774 passed</span> <span class="text-zinc-500">(<span class="text-rose-400">9 affected</span>, 765 replayed)</span></div>
                                     <div>Duration: <span class="text-green-400">0.74s</span></div>
                                 </div>
                             </div>
