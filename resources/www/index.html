@@ -1,39 +1,122 @@
 <!DOCTYPE html>
 <html lang="en" class="overflow-x-clip antialiased">
     <head>
-        <title>Pest | The elegant testing framework for PHP developers and AI agents</title>
-        <link href="https://pestphp.com/" rel="canonical">
-
-        <meta name="twitter:site" content="@pestphp">
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:creator" content="@pestphp">
-        <meta name="twitter:image:alt" content="Pest | The elegant testing framework for PHP developers and AI agents">
-
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Pest | The elegant testing framework for PHP developers and AI agents</title>
+        <meta name="description" content="Pest is the elegant PHP testing framework built for developers and AI agents — with browser testing, AI evals, an agent browser that verifies your coding agent's work end-to-end, and the Tia Engine for near-instant test runs.">
+        <link href="https://pestphp.com/" rel="canonical">
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
         <meta name="author" content="Nuno Maduro">
         <meta name="keywords" content="PHP, Pest, Testing Framework, AI agents, AI evals, agent browser, browser testing, test impact analysis">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Pest is the elegant PHP testing framework built for developers and AI agents — with browser testing, AI evals, an agent browser that verifies your coding agent's work end-to-end, and the Tia Engine for near-instant test runs.">
 
+        <!-- Icons & PWA -->
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+        <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+        <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
+        <link rel="icon" href="/favicon.ico" sizes="48x48">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+        <link rel="manifest" href="/site.webmanifest">
+        <meta name="theme-color" content="#18181b">
+        <meta name="color-scheme" content="dark">
+        <meta name="apple-mobile-web-app-title" content="Pest">
+
+        <!-- Open Graph -->
         <meta property="og:type" content="website">
+        <meta property="og:site_name" content="Pest">
+        <meta property="og:locale" content="en_US">
         <meta property="og:title" content="Pest | The elegant testing framework for PHP developers and AI agents">
         <meta property="og:description" content="Pest is the elegant PHP testing framework built for developers and AI agents — with browser testing, AI evals, an agent browser that verifies your coding agent's work end-to-end, and the Tia Engine for near-instant test runs.">
         <meta property="og:url" content="https://pestphp.com">
-        <meta property="og:image" content="https://pestphp.com/assets/img/og-v4.jpg">
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+        <meta property="og:image" content="https://pestphp.com/www/og.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:image:alt" content="Pest — the elegant testing framework for PHP developers and AI agents.">
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@pestphp">
+        <meta name="twitter:creator" content="@pestphp">
+        <meta name="twitter:title" content="Pest | The elegant testing framework for PHP developers and AI agents">
+        <meta name="twitter:description" content="Pest is the elegant PHP testing framework built for developers and AI agents — with browser testing, AI evals, an agent browser that verifies your coding agent's work end-to-end, and the Tia Engine for near-instant test runs.">
+        <meta name="twitter:image" content="https://pestphp.com/www/og.png">
+        <meta name="twitter:image:alt" content="Pest — the elegant testing framework for PHP developers and AI agents.">
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "SoftwareApplication",
+                    "name": "Pest",
+                    "applicationCategory": "DeveloperApplication",
+                    "operatingSystem": "PHP",
+                    "description": "The elegant testing framework for PHP developers and AI agents — with browser testing, AI evals, an agent browser, and near-instant test runs.",
+                    "url": "https://pestphp.com",
+                    "downloadUrl": "https://pestphp.com/docs/installation",
+                    "softwareVersion": "5",
+                    "license": "https://opensource.org/licenses/MIT",
+                    "image": "https://pestphp.com/www/og.png",
+                    "author": {
+                        "@type": "Person",
+                        "name": "Nuno Maduro",
+                        "url": "https://github.com/nunomaduro"
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "price": "0",
+                        "priceCurrency": "USD"
+                    }
+                },
+                {
+                    "@type": "WebSite",
+                    "name": "Pest",
+                    "url": "https://pestphp.com",
+                    "inLanguage": "en"
+                }
+            ]
+        }
+        </script>
     </head>
 
     <body x-data="{ mobileMenuIsOpen: false }" class="font-synthesis-none overflow-x-clip bg-zinc-900 font-sans text-zinc-200 antialiased selection:bg-rose-600 selection:text-white">
 
         <header class="sticky top-0 z-50 border-b border-zinc-700 bg-zinc-900/85 backdrop-blur-md">
             <nav aria-label="Main" class="h-15.5 container mx-auto flex items-center gap-7 px-5 sm:px-10">
-                <a aria-label="Pest" class="flex items-center gap-2" href="#">
-                    <svg aria-label="PEST" class="block h-7 w-auto fill-zinc-200" role="img" viewBox="0 0 381 100" xmlns="http://www.w3.org/2000/svg">
-                        <path clip-rule="evenodd" d="M16.607 27.51 22.994 0h85.181L93.484 63.272H36.697l-8.303 35.763H0l14.69-63.272h56.788l1.916-8.253zM295.574 0h85.181l-6.387 27.51h-39.752L318.01 99.035h-28.394l16.607-71.525h-73.824l-1.917 8.253h56.788l-6.387 27.51-1.916 8.252-6.387 27.51h-85.181l6.387-27.51h56.787l1.916-8.253h-56.787l6.387-27.51 1.916-8.252L210.392 0zm-93.7 0h-85.181l-6.387 27.51h85.181zm-25.34 35.763h-68.145l-6.387 27.51h68.145zm8.734 35.762h-85.182l-6.387 27.51h85.181z" fill-rule="evenodd" id="pest-wordmark" />
-                    </svg>
-                </a>
+                <div class="flex items-center gap-2" x-data="pestLogoMenu">
+                    <a aria-label="Pest" class="flex items-center gap-2" href="/" @contextmenu.prevent="openMenu($event)">
+                        <svg aria-label="PEST" class="block h-7 w-auto fill-zinc-200" role="img" viewBox="0 0 381 100" xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd" d="M16.607 27.51 22.994 0h85.181L93.484 63.272H36.697l-8.303 35.763H0l14.69-63.272h56.788l1.916-8.253zM295.574 0h85.181l-6.387 27.51h-39.752L318.01 99.035h-28.394l16.607-71.525h-73.824l-1.917 8.253h56.788l-6.387 27.51-1.916 8.252-6.387 27.51h-85.181l6.387-27.51h56.787l1.916-8.253h-56.787l6.387-27.51 1.916-8.252L210.392 0zm-93.7 0h-85.181l-6.387 27.51h85.181zm-25.34 35.763h-68.145l-6.387 27.51h68.145zm8.734 35.762h-85.182l-6.387 27.51h85.181z" fill-rule="evenodd" id="pest-wordmark" />
+                        </svg>
+                    </a>
+
+                    <!-- right-click brand menu -->
+                    <template x-teleport="body">
+                        <div x-show="open" x-cloak x-transition.opacity.duration.150ms
+                            @click.outside="open = false" @keydown.escape.window="open = false" @contextmenu.prevent.stop
+                            :style="`left:${x}px;top:${y}px`"
+                            class="fixed z-[100] w-56 overflow-hidden rounded-xl border border-zinc-700 bg-zinc-800 py-1.5 shadow-2xl shadow-black/40">
+                            <button type="button" @click="copy('logomark')" class="flex w-full items-center gap-3 px-3 py-2 text-left text-sm text-zinc-200 hover:bg-white/5">
+                                <svg class="size-4 shrink-0" viewBox="0 0 228 204" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M227.1,57.9C232.7,26,211.4,0,179.6,0H35.8L25.6,57.9h143.9l-3.4,19.3H22.2L0,204h57.6l12.1-69H156c31.8,0,62.1-26,67.7-57.9L227.1,57.9z"/></svg>
+                                Copy Logo as SVG
+                            </button>
+                            <button type="button" @click="copy('wordmark')" class="flex w-full items-center gap-3 px-3 py-2 text-left text-sm text-zinc-200 hover:bg-white/5">
+                                <svg class="size-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 7V5h16v2M9 5v14m-2 0h4" /></svg>
+                                Copy Wordmark as SVG
+                            </button>
+                            <div class="my-1.5 border-t border-zinc-700"></div>
+                            <a href="/brand" class="flex w-full items-center gap-3 px-3 py-2 text-left text-sm text-zinc-200 hover:bg-white/5">
+                                <svg class="size-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 3 3 7.5 12 12l9-4.5L12 3ZM3 12l9 4.5L21 12M3 16.5 12 21l9-4.5" /></svg>
+                                Brand Guidelines
+                            </a>
+                        </div>
+                    </template>
+                </div>
                 <div class="ml-2 hidden gap-6 lg:flex">
                     <a class="text-sm font-medium text-zinc-400 underline-offset-4 hover:underline" href="/docs">Documentation</a>
                     <a class="text-sm font-medium text-zinc-400 underline-offset-4 hover:underline" href="https://youtube.com/@nunomaduro">YouTube</a>
@@ -558,8 +641,88 @@
             </section>
         </main>
 
-        <footer class="container mx-auto px-5 pb-8 pt-8 sm:px-10">
-            <div class="flex flex-col items-center justify-between gap-4 text-xs text-zinc-400 sm:flex-row">
+        <footer class="container mx-auto px-5 pb-8 pt-16 sm:px-10">
+            <nav aria-label="Footer" class="columns-2 gap-x-6 lg:columns-3">
+                <div class="mb-10 break-inside-avoid">
+                    <h3 class="mb-4 flex items-center gap-2.5 font-mono text-2xs font-bold uppercase tracking-widest text-zinc-500"><span class="text-rose-500">//</span> what's new</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/pest5-now-available">Pest 5 Now Available</a></li>
+                    </ul>
+                </div>
+                <div class="mb-10 break-inside-avoid">
+                    <h3 class="mb-4 flex items-center gap-2.5 font-mono text-2xs font-bold uppercase tracking-widest text-zinc-500"><span class="text-rose-500">//</span> getting started</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/installation">Installation</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/editor-setup">Editor Setup</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/writing-tests">Writing Tests</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/expectations">Expectations</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/hooks">Hooks</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/datasets">Datasets</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/exceptions">Exceptions</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/filtering-tests">Filtering Tests</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/skipping-tests">Skipping Tests</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/optimizing-tests">Optimizing Tests</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/continuous-integration">Continuous Integration</a></li>
+                    </ul>
+                </div>
+                <div class="mb-10 break-inside-avoid">
+                    <h3 class="mb-4 flex items-center gap-2.5 font-mono text-2xs font-bold uppercase tracking-widest text-zinc-500"><span class="text-rose-500">//</span> digging deeper</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/configuring-tests">Configuring Tests</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/grouping-tests">Grouping Tests</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/global-hooks">Global Hooks</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/custom-helpers">Custom Helpers</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/custom-expectations">Custom Expectations</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/mocking">Mocking</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/snapshot-testing">Snapshot Testing</a></li>
+                        <li><a class="inline-flex items-center text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/browser-testing">Browser Testing<span class="text-3xs ml-1.5 rounded-full bg-rose-500 px-1.5 py-px font-mono font-bold uppercase tracking-wide text-white no-underline">new</span></a></li>
+                        <li><a class="inline-flex items-center text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/agent">Agent<span class="text-3xs ml-1.5 rounded-full bg-rose-500 px-1.5 py-px font-mono font-bold uppercase tracking-wide text-white no-underline">new</span></a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/arch-testing">Architecture Testing</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/stress-testing">Stress Testing</a></li>
+                        <li><a class="inline-flex items-center text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/evals">Evals<span class="text-3xs ml-1.5 rounded-full bg-rose-500 px-1.5 py-px font-mono font-bold uppercase tracking-wide text-white no-underline">new</span></a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/test-coverage">Test Coverage</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/type-coverage">Type Coverage</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/mutation-testing">Mutation Testing</a></li>
+                        <li><a class="inline-flex items-center text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/tia">Tia Engine<span class="text-3xs ml-1.5 rounded-full bg-rose-500 px-1.5 py-px font-mono font-bold uppercase tracking-wide text-white no-underline">new</span></a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/rector">Rector</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/phpstan">PHPStan</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/plugins">Plugins</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/team-management">Team Management</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/profanity">Profanity</a></li>
+                    </ul>
+                </div>
+                <div class="mb-10 break-inside-avoid">
+                    <h3 class="mb-4 flex items-center gap-2.5 font-mono text-2xs font-bold uppercase tracking-widest text-zinc-500"><span class="text-rose-500">//</span> advanced topics</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/cli-api-reference">CLI API Reference</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/test-dependencies">Test Dependencies</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/creating-plugins">Creating Plugins</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/higher-order-testing">Higher Order Testing</a></li>
+                    </ul>
+                </div>
+                <div class="mb-10 break-inside-avoid">
+                    <h3 class="mb-4 flex items-center gap-2.5 font-mono text-2xs font-bold uppercase tracking-widest text-zinc-500"><span class="text-rose-500">//</span> more</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/video-resources">Video Resources</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/support-policy">Support Policy</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/upgrade-guide">Upgrade Guide</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/migrating-from-phpunit-guide">Migration From PHPUnit Guide</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/community-guide">Community Guide</a></li>
+                    </ul>
+                </div>
+                <div class="mb-10 break-inside-avoid">
+                    <h3 class="mb-4 flex items-center gap-2.5 font-mono text-2xs font-bold uppercase tracking-widest text-zinc-500"><span class="text-rose-500">//</span> press</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/pest-v4-is-here-now-with-browser-testing">Pest v4 is Here! Now with Browser Testing</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/pest3-now-available">Pest v3 Now Available</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/announcing-stressless">Announcing Stressless</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/pest-spicy-summer-release">Pest's Spicy Summer Release</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/announcing-pest2">Announcing Pest 2.0</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-zinc-200 hover:underline" href="/docs/why-pest">Why Pest</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="mt-14 flex flex-col items-center justify-between gap-4 border-t border-zinc-700 pt-8 text-xs text-zinc-400 sm:flex-row">
                 <div>© 2026 PestPHP — A project by <a class="font-medium underline-offset-4 hover:underline" href="https://pinkary.com/@nunomaduro">Nuno Maduro</a>. Designed by <a class="font-medium underline-offset-4 hover:underline" href="https://nunoguerra.com/?ref=pestphp">Nuno Guerra</a>.</div>
                 <div class="flex items-center gap-5 font-mono">
                     <a class="underline-offset-4 hover:underline" href="/llms.txt">/llms.txt</a>

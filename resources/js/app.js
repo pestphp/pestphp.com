@@ -7,9 +7,11 @@ window.Alpine = Alpine
 import './clipboard';
 import Nav from './nav';
 import DarkMode from './darkmode';
+import LogoMenu from './brand';
 
 Alpine.data('offcanvasNav', Nav)
 Alpine.data('ToggleDark', DarkMode);
+Alpine.data('pestLogoMenu', LogoMenu);
 
 document.addEventListener('alpine:init', () => {
     Alpine.directive('tooltip', (el, { expression }) => {

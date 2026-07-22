@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\DocsController;
 use App\Http\Controllers\IDEPluginsController;
 use App\Http\Controllers\LlmsTxtController;
@@ -29,6 +30,8 @@ Route::group([
 
     Route::get('/llms.txt', [LlmsTxtController::class, 'index']);
     Route::get('/llms-full.txt', [LlmsTxtController::class, 'full']);
+
+    Route::get('/brand', BrandController::class)->name('brand');
 
     Route::get('/docs/editor-setup', IDEPluginsController::class)->name('ide-plugins');
     Route::get('/docs/{page}/llms.txt', [LlmsTxtController::class, 'page']);
