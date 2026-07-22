@@ -39,7 +39,7 @@
             <template x-for="sponsor in shuffledSponsors" :key="sponsor.img">
                 <li :class="sponsor.tier === 1 ? 'col-span-2' : ''">
                     <a :href="sponsor.href" target="_blank" rel="noopener" class="active:scale-96 flex h-16 items-center justify-center rounded-xl border border-zinc-700 bg-zinc-800 px-3 transition-[border-color,scale] hover:border-zinc-200/20">
-                        <img :src="sponsor.img" :class="sponsor.class" loading="lazy" />
+                        <img :src="sponsor.img" :class="sponsor.class" class="max-w-full object-contain" loading="lazy" />
                     </a>
                 </li>
             </template>

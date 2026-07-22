@@ -23,8 +23,8 @@
         <link rel="icon" href="/www/favicon.svg" type="image/svg+xml">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <script type="module" crossorigin src="/www/index.9e755881.js"></script>
-      <link rel="stylesheet" href="/www/index-fbc18b1b.css">
+      <script type="module" crossorigin src="/www/index.9f090512.js"></script>
+      <link rel="stylesheet" href="/www/index-0a907dde.css">
     </head>
 
     <body x-data="{ mobileMenuIsOpen: false }" class="font-synthesis-none overflow-x-clip bg-zinc-900 font-sans text-zinc-200 antialiased selection:bg-rose-600 selection:text-white">
@@ -105,7 +105,7 @@
                             The elegant<br>testing framework<br><span class="whitespace-nowrap">for PHP developers</span>
                             <span class="relative whitespace-nowrap italic text-rose-500 after:absolute after:inset-x-0 after:bottom-1.5 after:-z-10 after:h-2.5 after:bg-rose-950 after:content-['']">and AI agents.</span>
                         </h1>
-                        <p class="mb-7 max-w-[48ch] text-pretty text-lg text-zinc-400">Pest brings the joy of testing to PHP. Browser testing and AI evals are built in, and the agent browser lets your coding agents verify their own work.</p>
+                        <p class="mb-7 max-w-[48ch] text-pretty text-lg text-zinc-400">Pest brings the joy of testing to PHP — for you and your coding agents. Browser testing and AI evals are built in, and agents verify their own work, end to end.</p>
                         <div class="flex flex-wrap items-center gap-3">
                             <a class="active:scale-96 inline-flex items-center gap-2 rounded-xl bg-rose-500 px-4 py-2.5 text-sm font-semibold text-white transition-[background-color,scale] hover:bg-rose-600" href="/docs/installation">Start testing</a>
                             <a class="active:scale-96 inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-2.5 text-sm font-semibold transition-[border-color,scale] hover:border-white/30" href="https://github.com/pestphp/pest">Source code</a>
@@ -212,50 +212,24 @@
                 <span class="-right-1.25 -top-1.25 size-2.25 before:w-2.25 after:h-2.25 pointer-events-none absolute z-10 before:absolute before:left-0 before:top-1 before:h-px before:bg-rose-500 before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-rose-500 after:content-['']"></span>
                 <div class="grid items-stretch lg:grid-cols-[auto_1fr]">
                     <div class="flex items-center border-b border-zinc-700 px-5 py-6 font-mono text-xs uppercase tracking-widest text-zinc-400 sm:px-10 lg:border-b-0 lg:border-r">
-                        These companies sponsor<br>Pest Framework
+                        Backed by teams<br>who ship with Pest
                     </div>
                     <div class="mask-[linear-gradient(90deg,transparent,black_8%,black_92%,transparent)] relative overflow-hidden" x-data="{ sponsors: [
-                        { alt: 'CMS Max', href: 'https://cmsmax.com/?ref=pestphp', src: '/sponsors/cmsmax.png', h: 'h-6' },
-                        { alt: 'PhpStorm', href: 'https://jb.gg/nuno', src: '/sponsors/phpstorm.svg', h: 'h-5.5' },
-                        { alt: 'CodeRabbit', href: 'https://coderabbit.link/nunomaduro', src: '/sponsors/coderabbit.svg', h: 'h-6' },
-                        { alt: 'SerpApi', href: 'https://serpapi.com/?ref=nunomaduro', src: '/sponsors/serpapi.png', h: 'h-6' },
-                        { alt: 'Bento', href: 'https://bentonow.com/?ref=nunomaduro', src: '/sponsors/bento.svg', h: 'h-5' },
-                        { alt: 'Redberry', href: 'https://redberry.international/laravel-development/', src: '/sponsors/redberry.png', h: 'h-6' }
+                        { alt: 'CMS Max', href: 'https://cmsmax.com/?ref=pestphp', src: '/www/sponsors/cmsmax.png', h: 'h-6' },
+                        { alt: 'PhpStorm', href: 'https://jb.gg/nuno', src: '/www/sponsors/phpstorm.svg', h: 'h-5.5' },
+                        { alt: 'CodeRabbit', href: 'https://coderabbit.link/nunomaduro', src: '/www/sponsors/coderabbit.svg', h: 'h-6' },
+                        { alt: 'SerpApi', href: 'https://serpapi.com/?ref=nunomaduro', src: '/www/sponsors/serpapi.png', h: 'h-6' },
+                        { alt: 'Bento', href: 'https://bentonow.com/?ref=nunomaduro', src: '/www/sponsors/bento.svg', h: 'h-5' },
+                        { alt: 'Redberry', href: 'https://redberry.international/laravel-development/', src: '/www/sponsors/redberry.png', h: 'h-6' }
                     ].map(s => [Math.random(), s]).sort((a, b) => a[0] - b[0]).map(s => s[1]) }">
                         <div class="animate-marquee flex w-max hover:[animation-play-state:paused] motion-reduce:animate-none">
                             <template x-for="sponsor in sponsors" :key="sponsor.alt">
-                                <a class="flex items-center border-r border-zinc-700 px-12 py-7" :href="sponsor.href" target="_blank"><img :alt="sponsor.alt" class="w-auto" :class="sponsor.h" loading="lazy" :src="sponsor.src"></a>
+                                <a class="flex items-center border-r border-zinc-700 px-12 py-7" :href="sponsor.href" target="_blank"><img :alt="sponsor.alt" class="w-auto object-contain shrink-0" :class="sponsor.h" loading="lazy" :src="sponsor.src"></a>
                             </template>
                             <template x-for="sponsor in sponsors" :key="'clone-' + sponsor.alt">
-                                <div aria-hidden="true" class="flex items-center border-r border-zinc-700 px-12 py-7"><img alt="" class="w-auto" :class="sponsor.h" loading="lazy" :src="sponsor.src"></div>
+                                <div aria-hidden="true" class="flex items-center border-r border-zinc-700 px-12 py-7"><img alt="" class="w-auto object-contain shrink-0" :class="sponsor.h" loading="lazy" :src="sponsor.src"></div>
                             </template>
                         </div>
-                    </div>
-                </div>
-            </section>
-
-            <section aria-label="Built on" class="relative border-b border-zinc-700">
-                <span class="-top-1.25 size-2.25 before:w-2.25 after:h-2.25 -left-1.25 pointer-events-none absolute z-10 before:absolute before:left-0 before:top-1 before:h-px before:bg-rose-500 before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-rose-500 after:content-['']"></span>
-                <span class="-right-1.25 -top-1.25 size-2.25 before:w-2.25 after:h-2.25 pointer-events-none absolute z-10 before:absolute before:left-0 before:top-1 before:h-px before:bg-rose-500 before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-rose-500 after:content-['']"></span>
-                <span class="-bottom-1.25 size-2.25 before:w-2.25 after:h-2.25 -left-1.25 pointer-events-none absolute z-10 before:absolute before:left-0 before:top-1 before:h-px before:bg-rose-500 before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-rose-500 after:content-['']"></span>
-                <span class="-bottom-1.25 -right-1.25 size-2.25 before:w-2.25 after:h-2.25 pointer-events-none absolute z-10 before:absolute before:left-0 before:top-1 before:h-px before:bg-rose-500 before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-rose-500 after:content-['']"></span>
-                <div class="grid grid-cols-2 lg:grid-cols-[auto_repeat(4,1fr)]">
-                    <div class="py-5.5 text-2xs col-span-2 flex items-center border-b border-zinc-700 px-5 font-mono uppercase tracking-widest text-zinc-400 sm:px-10 lg:col-span-1 lg:border-b-0 lg:border-r">Built on</div>
-                    <div class="py-5.5 flex flex-col justify-center gap-0.5 border-r border-zinc-700 px-5 sm:px-6">
-                        <b class="font-display font-stretch-112% text-lg font-bold">PHP 8.4</b>
-                        <span class="text-xs-plus text-zinc-400">Latest language features</span>
-                    </div>
-                    <div class="py-5.5 flex flex-col justify-center gap-0.5 border-zinc-700 px-5 sm:px-6 lg:border-r">
-                        <b class="font-display font-stretch-112% text-lg font-bold">PHPUnit 13</b>
-                        <span class="text-xs-plus text-zinc-400">Rock-solid foundation</span>
-                    </div>
-                    <div class="py-5.5 flex flex-col justify-center gap-0.5 border-r border-zinc-700 px-5 sm:px-6">
-                        <b class="font-display font-stretch-112% text-lg font-bold">One-line upgrade</b>
-                        <span class="text-xs-plus text-zinc-400">From Pest 4, via composer.json</span>
-                    </div>
-                    <div class="py-5.5 flex flex-col justify-center gap-0.5 px-5 sm:px-6">
-                        <b class="font-display font-stretch-112% text-lg font-bold">Open source</b>
-                        <span class="text-xs-plus text-zinc-400">MIT, free forever</span>
                     </div>
                 </div>
             </section>
@@ -350,7 +324,7 @@
                             <span class="flex items-center gap-1.5 rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1.5 font-mono text-xs text-zinc-400" x-tooltip="Inspect stability and reliability under realistic or extreme load, tied to the expectation API."><svg class="size-3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 2 4.5 14H11l-1 8 8.5-12H12z"/></svg> stress</span>
                             <span class="flex items-center gap-1.5 rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1.5 font-mono text-xs text-zinc-400" x-tooltip="Measure the quality of AI output with LLM-as-judge, semantic similarity and trajectory scorers."><svg class="size-3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 3.5l1.8 4.7 4.7 1.8-4.7 1.8L12 16.5l-1.8-4.7-4.7-1.8 4.7-1.8zM19 16l.9 2.1L22 19l-2.1.9L19 22l-.9-2.1L16 19l2.1-.9z"/></svg> evals<span class="text-3xs -mr-1 rounded-full bg-rose-500 px-1.5 py-px font-bold uppercase tracking-wide text-white">new</span></span>
                             <span class="flex items-center gap-1.5 rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1.5 font-mono text-xs text-zinc-400" x-tooltip="Use the --profile flag to identify the slowest tests and optimize their execution."><svg class="size-3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 20h16M7 20v-6M12 20V9M17 20v-9"/></svg> profiling</span>
-                            <span class="flex items-center gap-1.5 rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1.5 font-mono text-xs text-zinc-400" x-tooltip="Measure the percentage of your code executed during testing to find untested paths."><svg class="size-3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12.3l2.4 2.4 4.6-5"/></svg> type coverage</span>
+                            <span class="flex items-center gap-1.5 rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1.5 font-mono text-xs text-zinc-400" x-tooltip="Measure how much of your code is covered by type declarations, surfacing untyped paths."><svg class="size-3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12.3l2.4 2.4 4.6-5"/></svg> type coverage</span>
                             <span class="flex items-center gap-1.5 rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1.5 font-mono text-xs text-zinc-400" x-tooltip="Test Impact Analysis re-runs only the tests affected by your latest changes — near-instant runs."><svg class="size-3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg> tia engine<span class="text-3xs -mr-1 rounded-full bg-rose-500 px-1.5 py-px font-bold uppercase tracking-wide text-white">new</span></span>
                         </div>
                         <div class="mt-auto px-6 pb-6 pt-5">
@@ -447,7 +421,7 @@
                             <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">expect</span>(<span class="text-cyan-300">SupportAgent</span><span class="text-pink-400">::</span>class)</div>
                             <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-pink-400">-></span><span class="text-green-400">prompt</span>(<span class="text-yellow-200">'How do I reset my password?'</span>)</div>
                             <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-pink-400">-></span><span class="text-green-400">repeat</span>(<span class="text-violet-300">50</span>)</div>
-                            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-pink-400">-></span><span class="text-green-400">toBeRelevant</span>()</div>
+                            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-pink-400">-></span><span class="text-green-400">toBeCorrect</span>()</div>
                             <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-pink-400">-></span><span class="text-green-400">toBeSafe</span>(<span class="text-violet-300">0.9</span>)</div>
                             <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-pink-400">-></span><span class="text-green-400">toSatisfy</span>(<span class="text-yellow-200">'Gives the password reset steps'</span>);</div>
                             <div>});</div>
@@ -495,11 +469,11 @@
                 <div class="gap-4.5 grid px-5 pt-14 sm:px-10 lg:grid-cols-4">
                     <div class="flex flex-col justify-center">
                         <h3 class="font-display font-stretch-112% text-balance text-lg font-bold">Loved by developers</h3>
-                        <p class="mt-1.5 text-pretty text-sm/relaxed text-zinc-400">Hear what the community has to say.</p>
+                        <p class="mt-1.5 text-pretty text-sm/relaxed text-zinc-400">Developers and their agents, shipping with Pest.</p>
                         <a class="mt-3 text-sm font-medium text-rose-500 underline-offset-4 hover:underline" href="https://github.com/pestphp/pest">View more on GitHub →</a>
                     </div>
                     <figure class="flex flex-col rounded-2xl border border-zinc-700 bg-zinc-800 p-6">
-                        <blockquote class="text-pretty text-sm/relaxed">“Pest is my daily driver. It makes testing enjoyable.”</blockquote>
+                        <blockquote class="text-pretty text-sm/relaxed">“Pest is minimal, distraction-free, and a joy to use.”</blockquote>
                         <figcaption class="mt-auto flex items-center gap-3 pt-5">
                             <img alt="Taylor Otwell" class="size-9 shrink-0 rounded-full outline-1 -outline-offset-1 outline-white/10" loading="lazy" src="https://github.com/taylorotwell.png?size=72">
                             <div class="leading-tight">
@@ -509,22 +483,22 @@
                         </figcaption>
                     </figure>
                     <figure class="flex flex-col rounded-2xl border border-zinc-700 bg-zinc-800 p-6">
-                        <blockquote class="text-pretty text-sm/relaxed">“The best testing experience I’ve ever had with PHP.”</blockquote>
+                        <blockquote class="text-pretty text-sm/relaxed">“Pest’s DX is unmatched. It just feels right.”</blockquote>
                         <figcaption class="mt-auto flex items-center gap-3 pt-5">
-                            <img alt="Mohamed Said" class="size-9 shrink-0 rounded-full outline-1 -outline-offset-1 outline-white/10" loading="lazy" src="https://github.com/themsaid.png?size=72">
+                            <img alt="Caleb Porzio" class="size-9 shrink-0 rounded-full outline-1 -outline-offset-1 outline-white/10" loading="lazy" src="/www/avatars/caleb.jpg">
                             <div class="leading-tight">
-                                <b class="block text-sm font-semibold">Mohamed Said</b>
-                                <span class="text-xs text-zinc-400">Spatie</span>
+                                <b class="block text-sm font-semibold">Caleb Porzio</b>
+                                <span class="text-xs text-zinc-400">Livewire</span>
                             </div>
                         </figcaption>
                     </figure>
                     <figure class="flex flex-col rounded-2xl border border-zinc-700 bg-zinc-800 p-6">
-                        <blockquote class="text-pretty text-sm/relaxed">“Pest’s DX is unmatched. It just feels right.”</blockquote>
+                        <blockquote class="text-pretty text-sm/relaxed">“Pest is the way.”</blockquote>
                         <figcaption class="mt-auto flex items-center gap-3 pt-5">
-                            <img alt="Caleb Porzio" class="size-9 shrink-0 rounded-full outline-1 -outline-offset-1 outline-white/10" loading="lazy" src="https://github.com/calebporzio.png?size=72">
+                            <img alt="Jeffrey Way" class="size-9 shrink-0 rounded-full outline-1 -outline-offset-1 outline-white/10" loading="lazy" src="/www/avatars/jeffrey.jpg">
                             <div class="leading-tight">
-                                <b class="block text-sm font-semibold">Caleb Porzio</b>
-                                <span class="text-xs text-zinc-400">Livewire</span>
+                                <b class="block text-sm font-semibold">Jeffrey Way</b>
+                                <span class="text-xs text-zinc-400">Laracasts Owner</span>
                             </div>
                         </figcaption>
                     </figure>
@@ -541,10 +515,10 @@
                             </div>
                         </div>
                         <div class="border-b lg:border-b-0 lg:border-r flex items-center gap-3.5 border-zinc-700 px-5 py-6 sm:px-8">
-                            <svg class="size-6 shrink-0 text-rose-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" stroke="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><circle cx="16.5" cy="10" r="2.4"/><path d="M3.5 19c.6-3 2.8-4.6 5.5-4.6S13.9 16 14.5 19M14.8 14.9c2.2.1 3.9 1.4 4.5 3.6"/></svg>
+                            <svg class="size-6 shrink-0 text-rose-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" stroke="currentColor" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="1.6"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="1.6"/><rect x="3.5" y="13" width="7.5" height="7.5" rx="1.6"/><rect x="13" y="13" width="7.5" height="7.5" rx="1.6"/></svg>
                             <div>
-                                <b class="font-display font-stretch-112% block text-xl font-bold leading-tight">16k+</b>
-                                <span class="text-xs-plus text-zinc-400">Dependents</span>
+                                <b class="font-display font-stretch-112% block text-xl font-bold leading-tight">60+</b>
+                                <span class="text-xs-plus text-zinc-400">Plugins</span>
                             </div>
                         </div>
                         <div class="border-r flex items-center gap-3.5 border-zinc-700 px-5 py-6 sm:px-8">

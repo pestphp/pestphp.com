@@ -344,3 +344,37 @@ Only **two breakpoints: `sm` (640px) and `lg` (1024px)**, mobile-first. `md`, `x
 - **Interactivity is inline Alpine** (§2): tabs, pointer spotlight, copy-to-clipboard, and the mobile menu are all `x-data`/`@`-handlers in `index.html`. The spotlight is gated to `(hover: hover)`; the marquee keeps `motion-reduce:animate-none`. Verify the browser console is error-free after any change.
 
 </design-system>
+
+<voice-and-tone>
+
+# Landing page voice & tone
+
+This is the *personality* layer for the landing page (`resources/www/`); design-system §9 is the *mechanical* layer (one `<em>` per heading, kicker syntax, terminal grammar). Follow both.
+
+The voice is distilled from three touchstones, **deliberately weighted**:
+
+- **Vercel (vercel.com) — the lead.** Forward-looking, agent-native, punchy. Parallel and recursive phrasing for emphasis. The future already ships.
+- **Resend (resend.com) — concision.** The category one-liner ("Pest is the … for …"), fragments over sentences, zero fluff.
+- **Laravel (laravel.com) — craft & joy.** Elegance is a feature; testing is a pleasure. The human developer is the heart, never displaced.
+
+**One-sentence identity:** Pest is an agent-native testing framework that PHP developers love to reach for. Agents are the amplifier, not an audience swap — write every line for a coding agent *and* the developer reading over its shoulder.
+
+## Pillars
+
+1. **Agent-native by default (Vercel — lead register).** Agents are first-class operators: they run the suite after every edit, verify their own changes end-to-end, and grade their own AI features. Address them matter-of-factly, never as a novelty. Favor recursive/parallel phrasing ("your agents verify their own work", "tests fast enough for an agent to run after every edit").
+2. **Forward-looking, proven now (Vercel).** State the future in the present tense, then back it with real terminal output or a number. Confidence, never speculation.
+3. **Still for PHP developers (Laravel).** The developer is never sidelined. Craft, elegance, and the "joy of testing" stay the emotional core — agents make that joy compound. Exactly one warm, human note per view. Warmth, never whimsy.
+4. **Category one-liner + concision (Resend).** Every section reduces to one declarative sentence. Fragments beat sentences. Cut every word that carries no weight.
+5. **Numbers are the proof.** "96%", "70M+", "under a second", "0 js errors" — specifics carry the claims, adjectives do not.
+
+## Do / Don't
+
+- Do: "A 15-second suite comes back in under a second — fast enough for an agent to run after every edit." Don't: "Blazing-fast tests that supercharge your workflow!"
+- Do: "Your agents verify their own work." Don't: "AI-powered testing for the future!"
+- Do: name the mechanism, then the payoff. Don't: superlatives, "simply/just/easily/powerful", exclamation marks, or hedges ("might", "could help").
+
+## Litmus test
+
+Before shipping a line: could Vercel ship its confidence? Is it as tight as Resend? Does it keep one note of Laravel craft? And would it read naturally to a coding agent? If not, rewrite.
+
+</voice-and-tone>
