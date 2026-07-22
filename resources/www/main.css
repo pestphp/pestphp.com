@@ -22,6 +22,53 @@
             transform: translateX(-50%);
         }
     }
+
+    /* page chrome: rails fade in via border-color (opacity on <main> would break the fixed crosshairs) */
+    --animate-border-in: border-in 1s ease-out backwards;
+
+    @keyframes border-in {
+        from {
+            border-color: transparent;
+        }
+    }
+
+    /* hero grid: neon streaks travel along grid lines, most of the cycle is idle.
+       Per-beam --beam-duration/--beam-delay; co-prime durations keep the pattern from ever repeating. */
+    --animate-beam-x: beam-x var(--beam-duration, 9s) linear var(--beam-delay, 0s) infinite backwards;
+
+    @keyframes beam-x {
+        0% { background-position-x: -160px; }
+        22%, 100% { background-position-x: calc(100% + 160px); }
+    }
+
+    --animate-beam-y: beam-y var(--beam-duration, 11s) linear var(--beam-delay, 0s) infinite backwards;
+
+    @keyframes beam-y {
+        0% { background-position-y: -160px; }
+        20%, 100% { background-position-y: calc(100% + 160px); }
+    }
+
+    /* hero intro: PEST wordmark flickers in CRT-style, then the overlay fades out */
+    --animate-crt-in: crt-in 0.6s linear forwards;
+
+    @keyframes crt-in {
+        0% { opacity: 0; filter: drop-shadow(8px 0 rgba(244, 63, 94, 0.7)) drop-shadow(-8px 0 rgba(34, 211, 238, 0.7)); }
+        15% { opacity: 1; }
+        30% { opacity: 0.15; }
+        45% { opacity: 1; filter: drop-shadow(4px 0 rgba(244, 63, 94, 0.5)) drop-shadow(-4px 0 rgba(34, 211, 238, 0.5)); }
+        60% { opacity: 0.15; }
+        75% { opacity: 1; }
+        100% { opacity: 1; filter: drop-shadow(0 0 rgba(244, 63, 94, 0)) drop-shadow(0 0 rgba(34, 211, 238, 0)); }
+    }
+
+    --animate-intro-out: intro-out 0.4s ease-out 0.9s forwards;
+
+    @keyframes intro-out {
+        to {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
 }
 
 @layer base {
