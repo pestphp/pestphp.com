@@ -53,9 +53,21 @@ button {
     padding: 2px 4px;
     box-shadow: 0 12px 30px -12px rgba(0, 0, 0, 0.6);
 }
-.tippy-box[data-theme~='pest'] .tippy-arrow {
-    color: var(--color-zinc-900);
-}
+/* bordered arrow: zinc-700 triangle behind (::after), zinc-900 fill on top (::before), 1px apart */
 .tippy-box[data-theme~='pest'][data-placement^='top'] > .tippy-arrow::before {
+    border-top-color: var(--color-zinc-900);
+    z-index: 1;
+}
+.tippy-box[data-theme~='pest'][data-placement^='top'] > .tippy-arrow::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    border: 8px solid transparent;
     border-top-color: var(--color-zinc-700);
+    border-bottom-width: 0;
+}
+
+[x-tooltip] {
+    cursor: help;
 }
