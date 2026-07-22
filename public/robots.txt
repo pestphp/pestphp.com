@@ -1,5 +1,7 @@
 User-agent: *
 Disallow:
 
+Sitemap: https://pestphp.com/sitemap.xml
+
 # LLM-friendly documentation
 llms-txt: https://pestphp.com/llms.txt

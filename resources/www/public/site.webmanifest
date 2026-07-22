@@ -1,0 +1,15 @@
+{
+    "name": "Pest",
+    "short_name": "Pest",
+    "description": "The elegant testing framework for PHP developers and AI agents.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#18181b",
+    "theme_color": "#18181b",
+    "icons": [
+        { "src": "favicon-192.png", "sizes": "192x192", "type": "image/png" },
+        { "src": "favicon-512.png", "sizes": "512x512", "type": "image/png" },
+        { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+        { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "maskable" }
+    ]
+}

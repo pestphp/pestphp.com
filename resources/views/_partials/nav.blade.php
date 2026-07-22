@@ -1,12 +1,36 @@
 <header class="sticky top-0 z-50 border-b border-zinc-700 bg-zinc-900/85 backdrop-blur-md">
     <nav aria-label="Main" class="h-15.5 mx-auto flex max-w-7xl items-center gap-3 px-5 sm:gap-6 sm:px-8">
-        <a aria-label="Home" class="flex shrink-0 items-center gap-2.5" href="/">
-            <span class="sr-only">Pest | The elegant PHP testing framework</span>
-            <svg aria-label="PEST" class="block h-7 w-auto fill-zinc-200" role="img" viewBox="0 0 381 100" xmlns="http://www.w3.org/2000/svg">
-                <path clip-rule="evenodd" d="M16.607 27.51 22.994 0h85.181L93.484 63.272H36.697l-8.303 35.763H0l14.69-63.272h56.788l1.916-8.253zM295.574 0h85.181l-6.387 27.51h-39.752L318.01 99.035h-28.394l16.607-71.525h-73.824l-1.917 8.253h56.788l-6.387 27.51-1.916 8.252-6.387 27.51h-85.181l6.387-27.51h56.787l1.916-8.253h-56.787l6.387-27.51 1.916-8.252L210.392 0zm-93.7 0h-85.181l-6.387 27.51h85.181zm-25.34 35.763h-68.145l-6.387 27.51h68.145zm8.734 35.762h-85.182l-6.387 27.51h85.181z" fill-rule="evenodd" id="pest-wordmark" />
-            </svg>
-            <span class="text-2xs hidden rounded-full border border-zinc-700 px-2 py-0.5 font-mono tracking-wide text-zinc-400 sm:inline-block">v{{ config('site.defaultVersion') }}</span>
-        </a>
+        <div class="flex shrink-0 items-center gap-2.5" x-data="pestLogoMenu">
+            <a aria-label="Home" class="flex items-center gap-2.5" href="/" @contextmenu.prevent="openMenu($event)">
+                <span class="sr-only">Pest | The elegant PHP testing framework</span>
+                <svg aria-label="PEST" class="block h-7 w-auto fill-zinc-200" role="img" viewBox="0 0 381 100" xmlns="http://www.w3.org/2000/svg">
+                    <path clip-rule="evenodd" d="M16.607 27.51 22.994 0h85.181L93.484 63.272H36.697l-8.303 35.763H0l14.69-63.272h56.788l1.916-8.253zM295.574 0h85.181l-6.387 27.51h-39.752L318.01 99.035h-28.394l16.607-71.525h-73.824l-1.917 8.253h56.788l-6.387 27.51-1.916 8.252-6.387 27.51h-85.181l6.387-27.51h56.787l1.916-8.253h-56.787l6.387-27.51 1.916-8.252L210.392 0zm-93.7 0h-85.181l-6.387 27.51h85.181zm-25.34 35.763h-68.145l-6.387 27.51h68.145zm8.734 35.762h-85.182l-6.387 27.51h85.181z" fill-rule="evenodd" id="pest-wordmark" />
+                </svg>
+                <span class="text-2xs hidden rounded-full border border-zinc-700 px-2 py-0.5 font-mono tracking-wide text-zinc-400 sm:inline-block">v{{ config('site.defaultVersion') }}</span>
+            </a>
+
+            {{-- right-click brand menu --}}
+            <template x-teleport="body">
+                <div x-show="open" x-cloak x-transition.opacity.duration.150ms
+                    @click.outside="open = false" @keydown.escape.window="open = false" @contextmenu.prevent.stop
+                    :style="`left:${x}px;top:${y}px`"
+                    class="fixed z-[100] w-56 overflow-hidden rounded-xl border border-zinc-700 bg-zinc-800 py-1.5 shadow-2xl shadow-black/40">
+                    <button type="button" @click="copy('logomark')" class="flex w-full items-center gap-3 px-3 py-2 text-left text-sm text-zinc-200 hover:bg-white/5">
+                        <svg class="size-4 shrink-0" viewBox="0 0 228 204" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M227.1,57.9C232.7,26,211.4,0,179.6,0H35.8L25.6,57.9h143.9l-3.4,19.3H22.2L0,204h57.6l12.1-69H156c31.8,0,62.1-26,67.7-57.9L227.1,57.9z"/></svg>
+                        Copy Logo as SVG
+                    </button>
+                    <button type="button" @click="copy('wordmark')" class="flex w-full items-center gap-3 px-3 py-2 text-left text-sm text-zinc-200 hover:bg-white/5">
+                        <svg class="size-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 7V5h16v2M9 5v14m-2 0h4" /></svg>
+                        Copy Wordmark as SVG
+                    </button>
+                    <div class="my-1.5 border-t border-zinc-700"></div>
+                    <a href="/brand" class="flex w-full items-center gap-3 px-3 py-2 text-left text-sm text-zinc-200 hover:bg-white/5">
+                        <svg class="size-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 3 3 7.5 12 12l9-4.5L12 3ZM3 12l9 4.5L21 12M3 16.5 12 21l9-4.5" /></svg>
+                        Brand Guidelines
+                    </a>
+                </div>
+            </template>
+        </div>
 
         <div class="ml-2 hidden gap-6 lg:flex">
             <a class="text-sm font-medium text-zinc-200 underline-offset-4 hover:underline" href="/docs">Documentation</a>

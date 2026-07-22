@@ -23,6 +23,7 @@
             <div class="flex items-center gap-5 font-mono">
                 <a class="underline-offset-4 hover:underline" href="/llms.txt">/llms.txt</a>
                 <a class="underline-offset-4 hover:underline" href="{{ config('site.github') }}" target="_blank" rel="noopener">/source</a>
+                <a class="underline-offset-4 hover:underline" href="/brand">/brand</a>
                 <a class="underline-offset-4 hover:underline" href="/docs">/docs</a>
             </div>
         </div>
