@@ -121,7 +121,7 @@
                         <div class="grid">
                             <div :class="tab === 'browser' ? '' : 'invisible opacity-0'" class="text-xs-plus col-start-1 row-start-1 overflow-x-auto whitespace-nowrap px-5 py-4 font-mono leading-[1.85] text-zinc-300 transition-opacity duration-200">
                                 <div><span class="text-green-400">it</span>(<span class="text-yellow-200">'may login'</span>, <span class="text-pink-400">function</span> () {</div>
-                                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-zinc-100">$user</span> <span class="text-pink-400">=</span> <span class="text-cyan-300">App\Models\User</span><span class="text-pink-400">::</span><span class="text-green-400">factory</span>()<span class="text-pink-400">-></span><span class="text-green-400">create</span>();</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-zinc-100">$user</span> <span class="text-pink-400">=</span> <span class="text-cyan-300">User</span><span class="text-pink-400">::</span><span class="text-green-400">factory</span>()<span class="text-pink-400">-></span><span class="text-green-400">create</span>();</div>
                                 <div>&nbsp;</div>
                                 <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">visit</span>(<span class="text-green-400">route</span>(<span class="text-yellow-200">'login'</span>))</div>
                                 <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-pink-400">-></span><span class="text-green-400">type</span>(<span class="text-yellow-200">'email'</span>, <span class="text-zinc-100">$user</span><span class="text-pink-400">-></span>email)</div>
@@ -152,12 +152,11 @@
                                 <div>});</div>
                             </div>
                             <div :class="tab === 'eval' ? '' : 'invisible opacity-0'" class="text-xs-plus col-start-1 row-start-1 overflow-x-auto whitespace-nowrap px-5 py-4 font-mono leading-[1.85] text-zinc-300 transition-opacity duration-200">
-                                <div><span class="text-green-400">eval</span>(<span class="text-yellow-200">'classifies sentiment'</span>, <span class="text-pink-400">function</span> () {</div>
-                                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-zinc-100">$response</span> <span class="text-pink-400">=</span> <span class="text-green-400">ai</span>(<span class="text-yellow-200">'Is "I love Pest" positive?'</span>);</div>
-                                <div>&nbsp;</div>
-                                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">expect</span>(<span class="text-zinc-100">$response</span>)</div>
+                                <div><span class="text-green-400">it</span>(<span class="text-yellow-200">'classifies sentiment'</span>, <span class="text-pink-400">function</span> () {</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">expect</span>(<span class="text-cyan-300">SentimentAgent</span><span class="text-pink-400">::</span><span class="text-pink-400">class</span>)</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-pink-400">-></span><span class="text-green-400">prompt</span>(<span class="text-yellow-200">'Is "I love Pest" positive?'</span>)</div>
                                 <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-pink-400">-></span><span class="text-green-400">toContain</span>(<span class="text-yellow-200">'positive'</span>)</div>
-                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-pink-400">-></span><span class="text-green-400">toPassGraded</span>(<span class="text-yellow-200">'answers in one word'</span>);</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-pink-400">-></span><span class="text-green-400">toSatisfy</span>(<span class="text-yellow-200">'answers in one word'</span>);</div>
                                 <div>});</div>
                             </div>
                             <div :class="tab === 'arch' ? '' : 'invisible opacity-0'" class="text-xs-plus col-start-1 row-start-1 overflow-x-auto whitespace-nowrap px-5 py-4 font-mono leading-[1.85] text-zinc-300 transition-opacity duration-200">
@@ -190,8 +189,8 @@
                                 <div>Tests:&nbsp;&nbsp;&nbsp; <span class="text-green-400">1 passed</span> <span class="text-zinc-500">(3 assertions)</span> · Duration: <span class="text-green-400">0.05s</span></div>
                             </div>
                             <div :class="tab === 'eval' ? '' : 'invisible opacity-0'" class="col-start-1 row-start-1 overflow-x-auto whitespace-nowrap transition-opacity duration-200">
-                                <div><span class="text-zinc-500">$</span> ./vendor/bin/pest</div>
-                                <div>&nbsp;&nbsp;<span class="bg-green-400 px-1.5 font-bold text-zinc-900">PASS</span>&nbsp; Tests\Eval\SentimentTest</div>
+                                <div><span class="text-zinc-500">$</span> ./vendor/bin/pest --evals</div>
+                                <div>&nbsp;&nbsp;<span class="bg-green-400 px-1.5 font-bold text-zinc-900">PASS</span>&nbsp; Tests\Evals\SentimentTest</div>
                                 <div>&nbsp;&nbsp;<span class="text-green-400">✓</span> it classifies sentiment <span class="text-zinc-500">— 1.24s</span></div>
                                 <div>Tests:&nbsp;&nbsp;&nbsp; <span class="text-green-400">1 passed</span> <span class="text-zinc-500">(2 assertions)</span> · Duration: <span class="text-green-400">1.31s</span></div>
                             </div>
@@ -213,20 +212,21 @@
                     <div class="flex items-center border-b border-zinc-700 px-5 py-6 font-mono text-xs uppercase tracking-widest text-zinc-400 sm:px-10 lg:border-b-0 lg:border-r">
                         These companies sponsor<br>Pest Framework
                     </div>
-                    <div class="mask-[linear-gradient(90deg,transparent,black_8%,black_92%,transparent)] relative overflow-hidden">
+                    <div class="mask-[linear-gradient(90deg,transparent,black_8%,black_92%,transparent)] relative overflow-hidden" x-data="{ sponsors: [
+                        { alt: 'CMS Max', href: 'https://cmsmax.com/?ref=pestphp', src: '/sponsors/cmsmax.png', h: 'h-6' },
+                        { alt: 'PhpStorm', href: 'https://jb.gg/nuno', src: '/sponsors/phpstorm.svg', h: 'h-5.5' },
+                        { alt: 'CodeRabbit', href: 'https://coderabbit.link/nunomaduro', src: '/sponsors/coderabbit.svg', h: 'h-6' },
+                        { alt: 'SerpApi', href: 'https://serpapi.com/?ref=nunomaduro', src: '/sponsors/serpapi.png', h: 'h-6' },
+                        { alt: 'Bento', href: 'https://bentonow.com/?ref=nunomaduro', src: '/sponsors/bento.svg', h: 'h-5' },
+                        { alt: 'Redberry', href: 'https://redberry.international/laravel-development/', src: '/sponsors/redberry.png', h: 'h-6' }
+                    ].map(s => [Math.random(), s]).sort((a, b) => a[0] - b[0]).map(s => s[1]) }">
                         <div class="animate-marquee flex w-max hover:[animation-play-state:paused] motion-reduce:animate-none">
-                            <a class="flex items-center border-r border-zinc-700 px-12 py-7" href="https://cmsmax.com/?ref=pestphp" target="_blank"><img alt="CMS Max" class="h-6 w-auto" loading="lazy" src="/sponsors/cmsmax.png"></a>
-                            <a class="flex items-center border-r border-zinc-700 px-12 py-7" href="https://jb.gg/nuno" target="_blank"><img alt="PhpStorm" class="h-5.5 w-auto" loading="lazy" src="/sponsors/phpstorm.svg"></a>
-                            <a class="flex items-center border-r border-zinc-700 px-12 py-7" href="https://coderabbit.link/nunomaduro" target="_blank"><img alt="CodeRabbit" class="h-6 w-auto" loading="lazy" src="/sponsors/coderabbit.svg"></a>
-                            <a class="flex items-center border-r border-zinc-700 px-12 py-7" href="https://serpapi.com/?ref=nunomaduro" target="_blank"><img alt="SerpApi" class="h-6 w-auto" loading="lazy" src="/sponsors/serpapi.png"></a>
-                            <a class="flex items-center border-r border-zinc-700 px-12 py-7" href="https://bentonow.com/?ref=nunomaduro" target="_blank"><img alt="Bento" class="h-5 w-auto" loading="lazy" src="/sponsors/bento.svg"></a>
-                            <a class="flex items-center border-r border-zinc-700 px-12 py-7" href="https://redberry.international/laravel-development/" target="_blank"><img alt="Redberry" class="h-6 w-auto" loading="lazy" src="/sponsors/redberry.png"></a>
-                            <div aria-hidden="true" class="flex items-center border-r border-zinc-700 px-12 py-7"><img alt="" class="h-6 w-auto" loading="lazy" src="/sponsors/cmsmax.png"></div>
-                            <div aria-hidden="true" class="flex items-center border-r border-zinc-700 px-12 py-7"><img alt="" class="h-5.5 w-auto" loading="lazy" src="/sponsors/phpstorm.svg"></div>
-                            <div aria-hidden="true" class="flex items-center border-r border-zinc-700 px-12 py-7"><img alt="" class="h-6 w-auto" loading="lazy" src="/sponsors/coderabbit.svg"></div>
-                            <div aria-hidden="true" class="flex items-center border-r border-zinc-700 px-12 py-7"><img alt="" class="h-6 w-auto" loading="lazy" src="/sponsors/serpapi.png"></div>
-                            <div aria-hidden="true" class="flex items-center border-r border-zinc-700 px-12 py-7"><img alt="" class="h-5 w-auto" loading="lazy" src="/sponsors/bento.svg"></div>
-                            <div aria-hidden="true" class="flex items-center border-r border-zinc-700 px-12 py-7"><img alt="" class="h-6 w-auto" loading="lazy" src="/sponsors/redberry.png"></div>
+                            <template x-for="sponsor in sponsors" :key="sponsor.alt">
+                                <a class="flex items-center border-r border-zinc-700 px-12 py-7" :href="sponsor.href" target="_blank"><img :alt="sponsor.alt" class="w-auto" :class="sponsor.h" loading="lazy" :src="sponsor.src"></a>
+                            </template>
+                            <template x-for="sponsor in sponsors" :key="'clone-' + sponsor.alt">
+                                <div aria-hidden="true" class="flex items-center border-r border-zinc-700 px-12 py-7"><img alt="" class="w-auto" :class="sponsor.h" loading="lazy" :src="sponsor.src"></div>
+                            </template>
                         </div>
                     </div>
                 </div>
@@ -548,7 +548,7 @@
                         <div class="border-r flex items-center gap-3.5 border-zinc-700 px-5 py-6 sm:px-8">
                             <svg class="size-6 shrink-0 text-rose-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 3.2 14.7 9l6.1.6-4.6 4.1 1.3 6-5.5-3.2L6.5 19.7l1.3-6L3.2 9.6 9.3 9z"/></svg>
                             <div>
-                                <b class="font-display font-stretch-112% block text-xl font-bold leading-tight">10k+</b>
+                                <b class="font-display font-stretch-112% block text-xl font-bold leading-tight">12k+</b>
                                 <span class="text-xs-plus text-zinc-400">GitHub Stars</span>
                             </div>
                         </div>
