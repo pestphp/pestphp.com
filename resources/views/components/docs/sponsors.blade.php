@@ -11,12 +11,13 @@
                     { href: 'https://coderabbit.link/nunomaduro', img: '/www/assets/sponsors/coderabbit.svg', class: 'h-9 w-auto', tier: 1 },
                     { href: 'https://serpapi.com/?ref=nunomaduro', img: '/www/assets/sponsors/serpapi.png', class: 'h-9 w-auto', tier: 1 },
                     { href: 'https://bentonow.com/?ref=nunomaduro', img: '/www/assets/sponsors/bento.svg', class: 'h-8 w-auto', tier: 1 },
-                    { href: 'https://cmsmax.com/?ref=pestphp', img: '/www/assets/sponsors/cmsmax.png', class: 'h-8 w-auto', tier: 1 },
+                    { href: 'https://cmsmax.com/?ref=nunomaduro', img: '/www/assets/sponsors/cmsmax.png', class: 'h-8 w-auto', tier: 1 },
                     { href: 'https://redberry.international/laravel-development/?utm_source=pest&utm_medium=banner&utm_campaign=pest_sponsorship', img: '/www/assets/sponsors/redberry.png', class: 'h-8 w-auto', tier: 1 },
-                    { href: 'https://zapiet.com/?ref=pestphp', img: '/www/assets/sponsors/zapiet.svg', class: 'h-7 w-auto', tier: 2 },
-                    { href: 'https://loadforge.com/?ref=pestphp', img: '/www/assets/sponsors/loadforge.svg', class: 'h-5 w-auto', tier: 2 },
-                    { href: 'https://route4me.com/?ref=pestphp', img: '/www/assets/sponsors/route4me.svg', class: 'h-6 w-auto', tier: 2 },
-                    { href: 'https://getnerdify.com/?ref=pestphp', img: '/www/assets/sponsors/nerdify.png', class: 'h-11 w-auto', tier: 2 }
+                    { href: 'https://typesense.org/?ref=nunomaduro', img: '/www/assets/sponsors/typesense.svg', class: 'h-8 w-auto', tier: 1 },
+                    { href: 'https://zapiet.com/?ref=nunomaduro', img: '/www/assets/sponsors/zapiet.svg', class: 'h-7 w-auto', tier: 2 },
+                    { href: 'https://loadforge.com/?ref=nunomaduro', img: '/www/assets/sponsors/loadforge.svg', class: 'h-5 w-auto', tier: 2 },
+                    { href: 'https://route4me.com/?ref=nunomaduro', img: '/www/assets/sponsors/route4me.svg', class: 'h-6 w-auto', tier: 2 },
+                    { href: 'https://getnerdify.com/?ref=nunomaduro', img: '/www/assets/sponsors/nerdify.png', class: 'h-11 w-auto', tier: 2 }
                 ],
                 shuffledSponsors: [],
                 shuffle(array) {

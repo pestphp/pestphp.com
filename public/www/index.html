@@ -298,12 +298,13 @@
                         Backed by teams<br>who ship with Pest
                     </div>
                     <div class="mask-[linear-gradient(90deg,transparent,black_8%,black_92%,transparent)] relative overflow-hidden" x-data="{ sponsors: [
-                        { alt: 'CMS Max', href: 'https://cmsmax.com/?ref=pestphp', src: '/www/sponsors/cmsmax.png', h: 'h-6' },
+                        { alt: 'CMS Max', href: 'https://cmsmax.com/?ref=nunomaduro', src: '/www/sponsors/cmsmax.png', h: 'h-6' },
                         { alt: 'PhpStorm', href: 'https://jb.gg/nuno', src: '/www/sponsors/phpstorm.svg', h: 'h-5.5' },
                         { alt: 'CodeRabbit', href: 'https://coderabbit.link/nunomaduro', src: '/www/sponsors/coderabbit.svg', h: 'h-6' },
                         { alt: 'SerpApi', href: 'https://serpapi.com/?ref=nunomaduro', src: '/www/sponsors/serpapi.png', h: 'h-6' },
                         { alt: 'Bento', href: 'https://bentonow.com/?ref=nunomaduro', src: '/www/sponsors/bento.svg', h: 'h-5' },
-                        { alt: 'Redberry', href: 'https://redberry.international/laravel-development/', src: '/www/sponsors/redberry.png', h: 'h-6' }
+                        { alt: 'Redberry', href: 'https://redberry.international/laravel-development/?utm_source=pest&utm_medium=banner&utm_campaign=pest_sponsorship', src: '/www/sponsors/redberry.png', h: 'h-6' },
+                        { alt: 'Typesense', href: 'https://typesense.org/?ref=nunomaduro', src: '/www/sponsors/typesense.svg', h: 'h-6' }
                     ].map(s => [Math.random(), s]).sort((a, b) => a[0] - b[0]).map(s => s[1]) }">
                         <div class="animate-marquee flex w-max hover:[animation-play-state:paused] motion-reduce:animate-none">
                             <template x-for="sponsor in sponsors" :key="sponsor.alt">
@@ -727,7 +728,7 @@
                 </div>
             </nav>
             <div class="mt-14 flex flex-col items-center justify-between gap-4 border-t border-zinc-700 pt-8 text-xs text-zinc-400 sm:flex-row">
-                <div class="font-mono">© 2026 PestPHP — A project by <a class="font-medium underline underline-offset-4 hover:no-underline" href="https://pinkary.com/@nunomaduro">Nuno Maduro</a>. Designed by <a class="font-medium underline-offset-4 underline hover:no-underline" href="https://nunoguerra.com/?ref=pestphp">Nuno Guerra</a>.</div>
+                <div class="font-mono">© 2026 PestPHP — A project by <a class="font-medium underline underline-offset-4 hover:no-underline" href="https://pinkary.com/@nunomaduro">Nuno Maduro</a>. Designed by <a class="font-medium underline-offset-4 underline hover:no-underline" href="https://nunoguerra.com/?ref=nunomaduro">Nuno Guerra</a>.</div>
                 <div class="flex items-center gap-5 font-mono">
                     <a class="underline-offset-4 hover:underline" href="/llms.txt">/llms.txt</a>
                     <a class="underline-offset-4 hover:underline" href="https://github.com/pestphp/pest">/source</a>
