@@ -146,13 +146,17 @@ Rule: a surface nested inside `zinc-800` drops back to `zinc-900`. Skeleton/plac
 ### Syntax highlighting (dark palette, all code panes)
 | Token | Class |
 |---|---|
-| Function / method names | `text-rose-400` |
+| Test declarators (`it`, `test`, `describe`) | `text-yellow-300` |
+| Function / method names (`visit`, `expect`, `toBe`, …) | `text-green-400` |
 | Strings | `text-green-400` |
-| Keywords (`function`) | `text-violet-400` |
-| Variables (`$user`, `expect`) | `text-blue-400` |
+| Keywords (`function`) | `text-fuchsia-400` |
+| Method / object arrow (`->`) | `text-fuchsia-400` |
+| Variables (`$user`), namespaces (`App\Models\User`) | `text-zinc-300` (plain) |
 | Numbers | `text-yellow-400` |
 | Punctuation, comments, prompts | `text-zinc-500` |
 | Plain code text | `text-zinc-300` |
+
+The accent is **fuchsia** (`function` keyword + `->` arrows), everything callable and every string is **green**, `it`/`test`/`describe` get a **yellow** pop, variables stay plain. This applies to PHP code panes only — terminal-output blocks keep their own grammar (rose `//` / `→` / `agent` labels, green ✓, red ×/FAIL, §3 above), do **not** recolor those.
 
 Code samples are hand-written HTML: each line is a `<div>`, indentation is literal `&nbsp;` (4 per level), blank lines are `<div>&nbsp;</div>`. No syntax-highlighter library — keep it that way; it guarantees pixel-exact output.
 

@@ -323,8 +323,8 @@
                             <div>&nbsp;</div>
                             <div><span class="inline-block w-4 select-none">&nbsp;</span><span class="mr-4 inline-block w-4 select-none text-right text-slate-500">1</span><span class="text-slate-500">&lt;?php</span></div>
                             <div><span class="inline-block w-4 select-none">&nbsp;</span><span class="mr-4 inline-block w-4 select-none text-right text-slate-500">2</span></div>
-                            <div><span class="inline-block w-4 select-none">&nbsp;</span><span class="mr-4 inline-block w-4 select-none text-right text-slate-500">3</span><span class="text-red-400">it</span>(<span class="text-green-400">'adds numbers'</span>, <span class="text-blue-400">function</span> () {</div>
-                            <div><span class="inline-block w-4 select-none font-bold text-red-500">→</span><span class="mr-4 inline-block w-4 select-none text-right text-slate-500">4</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-400">expect</span>(<span class="text-yellow-400">1</span> + <span class="text-yellow-400">1</span>)-><span class="text-blue-400">toBe</span>(<span class="text-yellow-400">3</span>);</div>
+                            <div><span class="inline-block w-4 select-none">&nbsp;</span><span class="mr-4 inline-block w-4 select-none text-right text-slate-500">3</span><span class="text-yellow-300">it</span>(<span class="text-green-400">'adds numbers'</span>, <span class="text-fuchsia-400">function</span> () {</div>
+                            <div><span class="inline-block w-4 select-none font-bold text-red-500">→</span><span class="mr-4 inline-block w-4 select-none text-right text-slate-500">4</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">expect</span>(<span class="text-yellow-400">1</span> + <span class="text-yellow-400">1</span>)<span class="text-fuchsia-400">-></span><span class="text-green-400">toBe</span>(<span class="text-yellow-400">3</span>);</div>
                             <div><span class="inline-block w-4 select-none">&nbsp;</span><span class="mr-4 inline-block w-4 select-none text-right text-slate-500">5</span>});</div>
                             <div>&nbsp;</div>
                             <div>Tests:&nbsp;&nbsp;&nbsp; <span class="text-red-400">1 failed</span><span class="text-slate-500">, 773 passed (2658 assertions)</span></div>
@@ -361,13 +361,13 @@
                     <article class="flex flex-col overflow-hidden rounded-2xl border border-zinc-700 bg-zinc-800 lg:col-span-3">
                         <div class="mx-4 mt-4 grid flex-1 gap-2 lg:grid-cols-2">
                             <div class="overflow-x-auto whitespace-nowrap rounded-[10px] bg-zinc-900 px-4 py-3.5 font-mono text-xs leading-[1.9] text-zinc-300">
-                                <div><span class="text-rose-400">it</span>(<span class="text-green-400">'may login'</span>, <span class="text-violet-400">function</span> () {</div>
-                                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-rose-400">visit</span>(<span class="text-green-400">'/login'</span>)</div>
-                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-400">type</span>(<span class="text-green-400">'email'</span>, <span class="text-green-400">'hi@example.com'</span>)</div>
-                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-400">type</span>(<span class="text-green-400">'password'</span>, <span class="text-green-400">'password'</span>)</div>
-                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-400">press</span>(<span class="text-green-400">'Continue'</span>)</div>
-                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-400">assertSee</span>(<span class="text-green-400">'Dashboard'</span>)</div>
-                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-400">assertNoJavascriptErrors</span>();</div>
+                                <div><span class="text-yellow-300">it</span>(<span class="text-green-400">'may login'</span>, <span class="text-fuchsia-400">function</span> () {</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">visit</span>(<span class="text-green-400">'/login'</span>)</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-fuchsia-400">-></span><span class="text-green-400">type</span>(<span class="text-green-400">'email'</span>, <span class="text-green-400">'hi@example.com'</span>)</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-fuchsia-400">-></span><span class="text-green-400">type</span>(<span class="text-green-400">'password'</span>, <span class="text-green-400">'password'</span>)</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-fuchsia-400">-></span><span class="text-green-400">press</span>(<span class="text-green-400">'Continue'</span>)</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-fuchsia-400">-></span><span class="text-green-400">assertSee</span>(<span class="text-green-400">'Dashboard'</span>)</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-fuchsia-400">-></span><span class="text-green-400">assertNoJavascriptErrors</span>();</div>
                                 <div>});</div>
                             </div>
                             <div class="flex flex-col overflow-hidden rounded-[10px] border border-zinc-700 bg-zinc-900">
@@ -441,13 +441,13 @@
 
                     <article class="flex flex-col overflow-hidden rounded-2xl border border-zinc-700 bg-zinc-800 lg:col-span-2">
                         <div class="mx-4 mt-4 overflow-x-auto whitespace-nowrap rounded-[10px] bg-zinc-900 px-4 py-3.5 font-mono text-xs leading-[1.9] text-zinc-300">
-                            <div><span class="text-rose-400">it</span>(<span class="text-green-400">'answers support questions'</span>, <span class="text-violet-400">function</span> () {</div>
-                            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-400">expect</span>(SupportAgent::class)</div>
-                            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-400">prompt</span>(<span class="text-green-400">'How do I reset my password?'</span>)</div>
-                            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-400">repeat</span>(<span class="text-yellow-400">50</span>)</div>
-                            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-400">toBeRelevant</span>()</div>
-                            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-400">toBeSafe</span>(<span class="text-yellow-400">0.9</span>)</div>
-                            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-400">toSatisfy</span>(<span class="text-green-400">'Gives the password reset steps'</span>);</div>
+                            <div><span class="text-yellow-300">it</span>(<span class="text-green-400">'answers support questions'</span>, <span class="text-fuchsia-400">function</span> () {</div>
+                            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">expect</span>(SupportAgent::class)</div>
+                            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-fuchsia-400">-></span><span class="text-green-400">prompt</span>(<span class="text-green-400">'How do I reset my password?'</span>)</div>
+                            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-fuchsia-400">-></span><span class="text-green-400">repeat</span>(<span class="text-yellow-400">50</span>)</div>
+                            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-fuchsia-400">-></span><span class="text-green-400">toBeRelevant</span>()</div>
+                            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-fuchsia-400">-></span><span class="text-green-400">toBeSafe</span>(<span class="text-yellow-400">0.9</span>)</div>
+                            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-fuchsia-400">-></span><span class="text-green-400">toSatisfy</span>(<span class="text-green-400">'Gives the password reset steps'</span>);</div>
                             <div>});</div>
                         </div>
                         <div class="text-2xs mx-4 mt-2 rounded-[10px] bg-zinc-900 px-4 py-4 font-mono">
