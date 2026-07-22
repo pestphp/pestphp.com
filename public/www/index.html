@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="antialiased font-sans min-h-screen h-full">
+<html lang="en" class="overflow-x-clip antialiased">
     <head>
         <title>Pest | The elegant testing framework for PHP developers and AI agents</title>
         <link href="https://pestphp.com/" rel="canonical">
@@ -12,8 +12,8 @@
         <meta charset="UTF-8">
         <meta name="author" content="Nuno Maduro">
         <meta name="keywords" content="PHP, Pest, Testing Framework, AI agents, AI evals, agent browser, browser testing, test impact analysis">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-        <meta name="description" content="Pest is the elegant PHP testing framework built for developers and AI agents — with browser testing, AI evals, an agent browser that verifies your coding agent's work end-to-end, and the Tia Engine for near-instant test runs." >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Pest is the elegant PHP testing framework built for developers and AI agents — with browser testing, AI evals, an agent browser that verifies your coding agent's work end-to-end, and the Tia Engine for near-instant test runs.">
 
         <meta property="og:type" content="website">
         <meta property="og:title" content="Pest | The elegant testing framework for PHP developers and AI agents">
@@ -23,591 +23,581 @@
         <link rel="icon" href="/www/favicon.svg" type="image/svg+xml">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <script type="module" crossorigin src="/www/index.8e8a525b.js"></script>
-      <link rel="stylesheet" href="/www/index-b6f8ae90.css">
+      <script type="module" crossorigin src="/www/index.0f35f42c.js"></script>
+      <link rel="stylesheet" href="/www/index-581607c4.css">
     </head>
-    <body x-data="{ mobileMenuIsOpen: false }" class="relative w-full min-h-screen h-full text-white bg-[#040120] bg-top bg-no-repeat bg-pest">
-        <div x-show="mobileMenuIsOpen" class="backdrop:bg-transparent lg:hidden z-50 relative">
-            <div tabindex="0" class="fixed inset-0 focus:outline-none">
-                <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900/50 backdrop-blur-xl px-6 py-14 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
-                    <div class="flex items-center justify-between">
-                        <a aria-label="Home" href="/" class="-m-1.5 p-1.5 shrink-0">
-                            <span class="sr-only">Pest | The elegant PHP testing framework</span>
-                            <svg class="h-10" alt="Pest Logo" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 381 100"><path fill="#fff" fill-rule="evenodd" d="M16.6067 27.5097 22.9939 0h56.7875c15.6811 0 25.5336 12.3165 22.0066 27.5097l-1.9167 8.2529c-3.5272 15.1932-19.099 27.5097-34.7805 27.5097H36.697l-8.3033 35.7624H0l14.6906-63.2721h56.787l1.9166-8.2529H16.6067ZM295.574 0h85.181c-3.528 15.1932-19.1 27.5097-34.781 27.5097h-11.358l-16.606 71.525h-28.394l16.607-71.525h-73.824l-1.917 8.2529h28.394c15.682 0 25.535 12.3165 22.007 27.5097l-1.916 8.2526c-3.527 15.1937-19.1 27.5098-34.781 27.5098h-56.787l6.387-27.5098h56.787l1.916-8.2526h-28.394c-15.681 0-25.533-12.3165-22.006-27.5097l1.916-8.2529C207.532 12.3165 223.105 0 238.786 0h56.788Zm-93.7 0h-85.181l-6.387 27.5097h85.181L201.874 0Zm-25.34 35.7626h-68.145l-6.387 27.5097h68.145l6.387-27.5097Zm8.734 35.7623h-85.182l-6.3867 27.5098H178.88l6.388-27.5098Z" clip-rule="evenodd"/></svg>
-                        </a>
 
-                        <button @click="mobileMenuIsOpen = false" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-400">
-                            <span class="sr-only">Close menu</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6"><path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" /></svg>
-                        </button>
-                    </div>
-                    <div class="mt-6 flow-root">
-                        <div class="-my-6 divide-y divide-white/10">
-                            <div class="space-y-2 py-6">
-                                <a href="/docs" class="-mx-3 flex items-center gap-1.5 rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-5" fill="none">
-                                        <path opacity="0.4" d="M15.0034 7.49802C15.0034 7.49802 15.5032 7.49802 16.003 8.49802C16.003 8.49802 17.5906 5.99802 19.0018 5.49802" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        <path opacity="0.4" d="M22.0005 6.99802C22.0005 9.75944 19.7627 11.998 17.0024 11.998C14.2421 11.998 12.0044 9.75944 12.0044 6.99802C12.0044 4.2366 14.2421 1.99802 17.0024 1.99802C19.7627 1.99802 22.0005 4.2366 22.0005 6.99802Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M7.00635 12.998H11.0048" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M7.00635 16.998H15.0032" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M10.46 2.02347C7.96254 1.91768 5.56423 2.2034 5.56423 2.2034C4.34586 2.29055 2.01097 2.97387 2.01099 6.96456C2.01101 10.9214 1.98516 15.7993 2.01099 17.744C2.01099 18.932 2.74632 21.7034 5.29148 21.8519C8.3851 22.0324 13.9575 22.0708 16.5143 21.8519C17.1986 21.8133 19.4772 21.2758 19.7656 18.7957C20.0644 16.2264 19.9929 14.8009 19.9929 14.3759" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                    Documentation
-                                </a>
-                                <a href="https://youtube.com/@nunomaduro" class="-mx-3 flex items-center gap-1.5 rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-5" fill="none">
-                                        <path d="M14.4531 12.8948C14.3016 13.5215 13.5857 13.9644 12.1539 14.8502C10.7697 15.7064 10.0777 16.1346 9.51993 15.9625C9.28934 15.8913 9.07925 15.7562 8.90982 15.57C8.5 15.1198 8.5 14.2465 8.5 12.5C8.5 10.7535 8.5 9.88018 8.90982 9.42995C9.07925 9.24381 9.28934 9.10868 9.51993 9.03753C10.0777 8.86544 10.7697 9.29357 12.1539 10.1498C13.5857 11.0356 14.3016 11.4785 14.4531 12.1052C14.5156 12.3639 14.5156 12.6361 14.4531 12.8948Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
-                                        <path d="M20.9977 11C21 11.4701 21 11.9693 21 12.5C21 16.9783 21 19.2175 19.6088 20.6088C18.2175 22 15.9783 22 11.5 22C7.02166 22 4.78249 22 3.39124 20.6088C2 19.2175 2 16.9783 2 12.5C2 8.02166 2 5.78249 3.39124 4.39124C4.78249 3 7.02166 3 11.5 3C12.0307 3 12.5299 3 13 3.00231" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                                        <path opacity="0.4" d="M18.5 2L18.7579 2.69703C19.0961 3.61102 19.2652 4.06802 19.5986 4.40139C19.932 4.73477 20.389 4.90387 21.303 5.24208L22 5.5L21.303 5.75792C20.389 6.09613 19.932 6.26524 19.5986 6.59861C19.2652 6.93198 19.0961 7.38898 18.7579 8.30297L18.5 9L18.2421 8.30297C17.9039 7.38898 17.7348 6.93198 17.4014 6.59861C17.068 6.26524 16.611 6.09613 15.697 5.75792L15 5.5L15.697 5.24208C16.611 4.90387 17.068 4.73477 17.4014 4.40139C17.7348 4.06802 17.9039 3.61102 18.2421 2.69703L18.5 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
-                                    </svg>
-                                    YouTube
-                                </a>
-                                <a href="https://github.com/sponsors/nunomaduro" class="-mx-3 flex items-center gap-1.5 rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-5" fill="none">
-                                        <path opacity="0.4" d="M8.39559 2.55196C9.8705 1.63811 11.1578 2.00638 11.9311 2.59299C12.2482 2.83351 12.4067 2.95378 12.5 2.95378C12.5933 2.95378 12.7518 2.83351 13.0689 2.59299C13.8422 2.00638 15.1295 1.63811 16.6044 2.55196C18.5401 3.75128 18.9781 7.7079 14.5133 11.046C13.6629 11.6818 13.2377 11.9996 12.5 11.9996C11.7623 11.9996 11.3371 11.6818 10.4867 11.046C6.02195 7.7079 6.45994 3.75128 8.39559 2.55196Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-                                        <path d="M4 14H6.39482C6.68897 14 6.97908 14.0663 7.24217 14.1936L9.28415 15.1816C9.54724 15.3089 9.83735 15.3751 10.1315 15.3751H11.1741C12.1825 15.3751 13 16.1662 13 17.142C13 17.1814 12.973 17.2161 12.9338 17.2269L10.3929 17.9295C9.93707 18.0555 9.449 18.0116 9.025 17.8064L6.84211 16.7503" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                        <path d="M13 16.5L17.5928 15.0889C18.407 14.8352 19.2871 15.136 19.7971 15.8423C20.1659 16.3529 20.0157 17.0842 19.4785 17.3942L11.9629 21.7305C11.4849 22.0063 10.9209 22.0736 10.3952 21.9176L4 20.0199" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
-                                    Sponsor
-                                </a>
-                            </div>
-                            <div class="py-6">
-                                <a href="https://github.com/pestphp/pest" target="_blank" class="isolate inline-flex rounded-md group">
-                                    <div class="relative inline-flex items-center gap-x-1.5 rounded-l-full bg-white/10 px-2 py-1.5 text-sm font-semibold text-white group-hover:bg-white/15 focus:z-10">
-                                        <svg class="size-5" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 0C7.16 0 0 7.16 0 16c0 7.08 4.58 13.06 10.94 15.18.8.14 1.1-.34 1.1-.76 0-.38-.02-1.64-.02-2.98-4.02.74-5.06-.98-5.38-1.88-.18-.46-.96-1.88-1.64-2.26-.56-.3-1.36-1.04-.02-1.06 1.26-.02 2.16 1.16 2.46 1.64 1.44 2.42 3.74 1.74 4.66 1.32.14-1.04.56-1.74 1.02-2.14-3.56-.4-7.28-1.78-7.28-7.9 0-1.74.62-3.18 1.64-4.3-.16-.4-.72-2.04.16-4.24 0 0 1.34-.42 4.4 1.64 1.28-.36 2.64-.54 4-.54 1.36 0 2.72.18 4 .54 3.06-2.08 4.4-1.64 4.4-1.64.88 2.2.32 3.84.16 4.24 1.02 1.12 1.64 2.54 1.64 4.3 0 6.14-3.74 7.5-7.3 7.9.58.5 1.08 1.46 1.08 2.96 0 2.14-.02 3.86-.02 4.4 0 .42.3.92 1.1.76A16.026 16.026 0 0 0 32 16c0-8.84-7.16-16-16-16Z" fill="currentColor"></path></svg>
-                                        GitHub
-                                    </div>
-                                    <span class="relative ml-px inline-flex items-center rounded-r-full bg-white/10 px-2.5 py-1.5 text-sm font-semibold text-white group-hover:bg-white/15 focus:z-10">+10k</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+    <body x-data="{ mobileMenuIsOpen: false }" class="font-synthesis-none overflow-x-clip bg-zinc-900 font-sans text-zinc-200 antialiased selection:bg-rose-600 selection:text-white">
+
+        <header class="sticky top-0 z-50 border-b border-zinc-700 bg-zinc-900/85 backdrop-blur-md">
+            <nav aria-label="Main" class="h-15.5 container mx-auto flex items-center gap-7 px-5 sm:px-10">
+                <a aria-label="Pest" class="flex items-center gap-2" href="#">
+                    <svg aria-label="PEST" class="block h-7 w-auto fill-zinc-200" role="img" viewBox="0 0 381 100" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd" d="M16.607 27.51 22.994 0h85.181L93.484 63.272H36.697l-8.303 35.763H0l14.69-63.272h56.788l1.916-8.253zM295.574 0h85.181l-6.387 27.51h-39.752L318.01 99.035h-28.394l16.607-71.525h-73.824l-1.917 8.253h56.788l-6.387 27.51-1.916 8.252-6.387 27.51h-85.181l6.387-27.51h56.787l1.916-8.253h-56.787l6.387-27.51 1.916-8.252L210.392 0zm-93.7 0h-85.181l-6.387 27.51h85.181zm-25.34 35.763h-68.145l-6.387 27.51h68.145zm8.734 35.762h-85.182l-6.387 27.51h85.181z" fill-rule="evenodd" id="pest-wordmark" />
+                    </svg>
+                </a>
+                <div class="ml-2 hidden gap-6 lg:flex">
+                    <a class="text-sm font-medium text-zinc-400 underline-offset-4 hover:underline" href="/docs">Documentation</a>
+                    <a class="text-sm font-medium text-zinc-400 underline-offset-4 hover:underline" href="https://youtube.com/@nunomaduro">YouTube</a>
+                    <a class="text-sm font-medium text-zinc-400 underline-offset-4 hover:underline" href="https://github.com/sponsors/nunomaduro">Sponsor</a>
                 </div>
-            </div>
-        </div>
-
-        <svg class="pointer-events-none fixed inset-0 -z-10 h-screen mix-blend-overlay opacity-80" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" preserveAspectRatio="none">
-            <defs>
-                <filter id="noise-filter">
-                    <feTurbulence type="turbulence" baseFrequency="1" numOctaves="1" stitchTiles="stitch" result="noise"></feTurbulence>
-                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" result="coloredNoise"></feColorMatrix>
-                </filter>
-            </defs>
-            <rect width="100%" height="100%" filter="url(#noise-filter)"></rect>
-        </svg>
-
-        <div class="pointer-events-none fixed inset-0 min-h-screen h-full -z-20 [mask-image:radial-gradient(ellipse_at_100%_100%,black_20%,transparent_80%)] opacity-90">
-            <div class="pointer-events-none absolute inset-0 overflow-hidden">
-                <div class="beam-background beam-animation absolute -inset-[20px] z-20 blur-[80px] filter"></div>
-            </div>
-        </div>
-
-        <header class="mx-auto max-w-7xl px-6 lg:px-8 py-8">
-            <div class="absolute inset-x-0 top-8 z-0">
-                <div class="border-t border-white/10"></div>
-                <div class="mt-2 border-t border-white/10"></div>
-            </div>
-
-            <div class="motion-preset-focus motion-duration-2000">
-                <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between py-6">
-                    <div class="flex items-center gap-4">
-                        <a aria-label="Home" href="/" class="-m-1.5 p-1.5 shrink-0">
-                            <span class="sr-only">Pest | The elegant PHP testing framework</span>
-                            <svg class="h-10 transition duration-100 ease-in-out hover:-rotate-2 hover:scale-104 hover:drop-shadow-2xl" alt="Pest Logo" alt="Pest Logo" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 381 100"><path fill="#fff" fill-rule="evenodd" d="M16.6067 27.5097 22.9939 0h56.7875c15.6811 0 25.5336 12.3165 22.0066 27.5097l-1.9167 8.2529c-3.5272 15.1932-19.099 27.5097-34.7805 27.5097H36.697l-8.3033 35.7624H0l14.6906-63.2721h56.787l1.9166-8.2529H16.6067ZM295.574 0h85.181c-3.528 15.1932-19.1 27.5097-34.781 27.5097h-11.358l-16.606 71.525h-28.394l16.607-71.525h-73.824l-1.917 8.2529h28.394c15.682 0 25.535 12.3165 22.007 27.5097l-1.916 8.2526c-3.527 15.1937-19.1 27.5098-34.781 27.5098h-56.787l6.387-27.5098h56.787l1.916-8.2526h-28.394c-15.681 0-25.533-12.3165-22.006-27.5097l1.916-8.2529C207.532 12.3165 223.105 0 238.786 0h56.788Zm-93.7 0h-85.181l-6.387 27.5097h85.181L201.874 0Zm-25.34 35.7626h-68.145l-6.387 27.5097h68.145l6.387-27.5097Zm8.734 35.7623h-85.182l-6.3867 27.5098H178.88l6.388-27.5098Z" clip-rule="evenodd"/></svg>
-                        </a>
-                    </div>
-
-                    <div class="flex lg:hidden">
-                        <button @click="mobileMenuIsOpen = true" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 uppercase text-sm">Menu</button>
-                    </div>
-
-                    <div class="hidden lg:flex lg:gap-x-8 items-center">
-                        <a href="/docs" class="cursor-pointer flex pointer-events-auto rounded-full w-full items-center text-sm h-8 pl-3.5 pr-3 text-white/50 bg-white/10 hover:bg-white/15 ring-1 ring-white/15 hover:ring-white/20 focus:outline-primary justify-between truncate gap-2 w-100">
-                            <div class="flex items-center gap-1.5">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="-ml-1.5 size-5" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20C13.125 20 15.078 19.2635 16.6177 18.0319L20.2929 21.7071C20.6834 22.0976 21.3166 22.0976 21.7071 21.7071C22.0976 21.3166 22.0976 20.6834 21.7071 20.2929L18.0319 16.6177C19.2635 15.078 20 13.125 20 11C20 6.02944 15.9706 2 11 2ZM4 11C4 7.13401 7.13401 4 11 4C14.866 4 18 7.13401 18 11C18 14.866 14.866 18 11 18C7.13401 18 4 14.866 4 11Z" fill="currentColor"></path></svg>
-                                <div class="truncate min-w-0">Search...</div>
-                            </div>
-                            <span class="flex-none text-xs font-semibold">⌘K</span>
-                        </a>
-
-                        <div class="lg:flex lg:gap-x-5">
-                            <a href="/docs" class="font-semibold text-white flex text-sm items-center gap-1.5 hover:text-pink-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-5" fill="none">
-                                    <path opacity="0.4" d="M15.0034 7.49802C15.0034 7.49802 15.5032 7.49802 16.003 8.49802C16.003 8.49802 17.5906 5.99802 19.0018 5.49802" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path opacity="0.4" d="M22.0005 6.99802C22.0005 9.75944 19.7627 11.998 17.0024 11.998C14.2421 11.998 12.0044 9.75944 12.0044 6.99802C12.0044 4.2366 14.2421 1.99802 17.0024 1.99802C19.7627 1.99802 22.0005 4.2366 22.0005 6.99802Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M7.00635 12.998H11.0048" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M7.00635 16.998H15.0032" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M10.46 2.02347C7.96254 1.91768 5.56423 2.2034 5.56423 2.2034C4.34586 2.29055 2.01097 2.97387 2.01099 6.96456C2.01101 10.9214 1.98516 15.7993 2.01099 17.744C2.01099 18.932 2.74632 21.7034 5.29148 21.8519C8.3851 22.0324 13.9575 22.0708 16.5143 21.8519C17.1986 21.8133 19.4772 21.2758 19.7656 18.7957C20.0644 16.2264 19.9929 14.8009 19.9929 14.3759" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                                Documentation
-                            </a>
-                            <a href="https://youtube.com/@nunomaduro" target="_blank" class="font-semibold text-white flex text-sm items-center gap-1.5 hover:text-pink-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-5" fill="none">
-                                    <path d="M14.4531 12.8948C14.3016 13.5215 13.5857 13.9644 12.1539 14.8502C10.7697 15.7064 10.0777 16.1346 9.51993 15.9625C9.28934 15.8913 9.07925 15.7562 8.90982 15.57C8.5 15.1198 8.5 14.2465 8.5 12.5C8.5 10.7535 8.5 9.88018 8.90982 9.42995C9.07925 9.24381 9.28934 9.10868 9.51993 9.03753C10.0777 8.86544 10.7697 9.29357 12.1539 10.1498C13.5857 11.0356 14.3016 11.4785 14.4531 12.1052C14.5156 12.3639 14.5156 12.6361 14.4531 12.8948Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
-                                    <path d="M20.9977 11C21 11.4701 21 11.9693 21 12.5C21 16.9783 21 19.2175 19.6088 20.6088C18.2175 22 15.9783 22 11.5 22C7.02166 22 4.78249 22 3.39124 20.6088C2 19.2175 2 16.9783 2 12.5C2 8.02166 2 5.78249 3.39124 4.39124C4.78249 3 7.02166 3 11.5 3C12.0307 3 12.5299 3 13 3.00231" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                                    <path opacity="0.4" d="M18.5 2L18.7579 2.69703C19.0961 3.61102 19.2652 4.06802 19.5986 4.40139C19.932 4.73477 20.389 4.90387 21.303 5.24208L22 5.5L21.303 5.75792C20.389 6.09613 19.932 6.26524 19.5986 6.59861C19.2652 6.93198 19.0961 7.38898 18.7579 8.30297L18.5 9L18.2421 8.30297C17.9039 7.38898 17.7348 6.93198 17.4014 6.59861C17.068 6.26524 16.611 6.09613 15.697 5.75792L15 5.5L15.697 5.24208C16.611 4.90387 17.068 4.73477 17.4014 4.40139C17.7348 4.06802 17.9039 3.61102 18.2421 2.69703L18.5 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
-                                </svg>
-                                YouTube
-                            </a>
-                            <a href="https://github.com/sponsors/nunomaduro" target="_blank" class="font-semibold text-white flex text-sm items-center gap-1.5 hover:text-pink-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-5" fill="none">
-                                    <path opacity="0.4" d="M8.39559 2.55196C9.8705 1.63811 11.1578 2.00638 11.9311 2.59299C12.2482 2.83351 12.4067 2.95378 12.5 2.95378C12.5933 2.95378 12.7518 2.83351 13.0689 2.59299C13.8422 2.00638 15.1295 1.63811 16.6044 2.55196C18.5401 3.75128 18.9781 7.7079 14.5133 11.046C13.6629 11.6818 13.2377 11.9996 12.5 11.9996C11.7623 11.9996 11.3371 11.6818 10.4867 11.046C6.02195 7.7079 6.45994 3.75128 8.39559 2.55196Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-                                    <path d="M4 14H6.39482C6.68897 14 6.97908 14.0663 7.24217 14.1936L9.28415 15.1816C9.54724 15.3089 9.83735 15.3751 10.1315 15.3751H11.1741C12.1825 15.3751 13 16.1662 13 17.142C13 17.1814 12.973 17.2161 12.9338 17.2269L10.3929 17.9295C9.93707 18.0555 9.449 18.0116 9.025 17.8064L6.84211 16.7503" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M13 16.5L17.5928 15.0889C18.407 14.8352 19.2871 15.136 19.7971 15.8423C20.1659 16.3529 20.0157 17.0842 19.4785 17.3942L11.9629 21.7305C11.4849 22.0063 10.9209 22.0736 10.3952 21.9176L4 20.0199" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                                Sponsor
-                            </a>
-                        </div>
-
-                        <a href="https://github.com/pestphp/pest" target="_blank" class="isolate inline-flex group rounded-3xl">
-                            <div class="relative inline-flex items-center gap-x-1.5 rounded-l-full bg-white/10 px-2 py-1.5 text-sm font-semibold text-white group-hover:bg-white/15 focus:z-10 border-y-1 border-l-1 border-white/5">
-                                <svg class="size-5" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 0C7.16 0 0 7.16 0 16c0 7.08 4.58 13.06 10.94 15.18.8.14 1.1-.34 1.1-.76 0-.38-.02-1.64-.02-2.98-4.02.74-5.06-.98-5.38-1.88-.18-.46-.96-1.88-1.64-2.26-.56-.3-1.36-1.04-.02-1.06 1.26-.02 2.16 1.16 2.46 1.64 1.44 2.42 3.74 1.74 4.66 1.32.14-1.04.56-1.74 1.02-2.14-3.56-.4-7.28-1.78-7.28-7.9 0-1.74.62-3.18 1.64-4.3-.16-.4-.72-2.04.16-4.24 0 0 1.34-.42 4.4 1.64 1.28-.36 2.64-.54 4-.54 1.36 0 2.72.18 4 .54 3.06-2.08 4.4-1.64 4.4-1.64.88 2.2.32 3.84.16 4.24 1.02 1.12 1.64 2.54 1.64 4.3 0 6.14-3.74 7.5-7.3 7.9.58.5 1.08 1.46 1.08 2.96 0 2.14-.02 3.86-.02 4.4 0 .42.3.92 1.1.76A16.026 16.026 0 0 0 32 16c0-8.84-7.16-16-16-16Z" fill="currentColor"></path></svg>
-                            </div>
-                            <span class="relative ml-px inline-flex items-center rounded-r-full bg-white/10 pr-2.5 pl-2 py-1.5 text-sm font-semibold text-white group-hover:bg-white/15 focus:z-10 border-y-1 border-r-1 border-white/5">+10k</span>
-                        </a>
-                    </div>
-                </nav>
-            </div>
-
-            <div class="absolute inset-x-0 top-28 z-0">
-                <div class="border-t border-white/10"></div>
-                <div class="mt-2 border-t border-white/10"></div>
-            </div>
+                <div class="ml-auto flex items-center gap-4">
+                    <a class="flex items-center gap-2 text-sm font-semibold text-zinc-200 transition-colors hover:text-rose-400" href="https://github.com/pestphp/pest" target="_blank">
+                        <svg class="size-4" fill="none" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd" d="M16 0C7.16 0 0 7.16 0 16c0 7.08 4.58 13.06 10.94 15.18.8.14 1.1-.34 1.1-.76 0-.38-.02-1.64-.02-2.98-4.02.74-5.06-.98-5.38-1.88-.18-.46-.96-1.88-1.64-2.26-.56-.3-1.36-1.04-.02-1.06 1.26-.02 2.16 1.16 2.46 1.64 1.44 2.42 3.74 1.74 4.66 1.32.14-1.04.56-1.74 1.02-2.14-3.56-.4-7.28-1.78-7.28-7.9 0-1.74.62-3.18 1.64-4.3-.16-.4-.72-2.04.16-4.24 0 0 1.34-.42 4.4 1.64 1.28-.36 2.64-.54 4-.54 1.36 0 2.72.18 4 .54 3.06-2.08 4.4-1.64 4.4-1.64.88 2.2.32 3.84.16 4.24 1.02 1.12 1.64 2.54 1.64 4.3 0 6.14-3.74 7.5-7.3 7.9.58.5 1.08 1.46 1.08 2.96 0 2.14-.02 3.86-.02 4.4 0 .42.3.92 1.1.76A16.026 16.026 0 0 0 32 16c0-8.84-7.16-16-16-16Z" fill-rule="evenodd" fill="currentColor"></path>
+                        </svg>
+                        10k+
+                    </a>
+                    <a class="hidden w-56 items-center gap-1 rounded-lg border border-zinc-700 bg-zinc-800 px-2 py-1.5 text-sm text-zinc-400 transition-colors hover:border-zinc-200/20 hover:text-zinc-200 sm:flex" href="/docs">
+                        <svg class="size-5" fill="none" stroke-linecap="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="7" />
+                            <path d="m20 20-3.5-3.5" />
+                        </svg>
+                        Search docs
+                        <kbd class="text-2xs ml-auto rounded-sm border border-zinc-700 bg-zinc-900 px-1 py-px font-sans">⌘K</kbd>
+                    </a>
+                    <button @click="mobileMenuIsOpen = true" aria-label="Open menu" class="active:scale-96 flex size-8 items-center justify-center text-zinc-400 transition hover:text-zinc-200 lg:hidden" type="button">
+                        <svg class="size-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M4 7h16M4 12h16M4 17h16" />
+                        </svg>
+                    </button>
+                </div>
+            </nav>
         </header>
 
-        <main>
-            <section id="hero" class="text-center pt-8 pb-12 lg:py-24 max-w-7xl px-6 lg:px-8 mx-auto">
-                <div class="mb-8 flex justify-center motion-preset-blur-up-lg motion-delay-[300ms] motion-duration-1000">
-                    <div class="relative rounded-full px-3 py-1 text-sm/6 font-medium text-white/90 ring-1 ring-white/10 hover:ring-white/20"><span class="font-semibold text-white">Pest 5 is now available</span><span class="hidden sm:inline-block">&nbsp;— our biggest release yet.</span> <a href="/docs/pest5-now-available" class="font-semibold text-pink-400"><span aria-hidden="true" class="absolute inset-0"></span>Read more <span aria-hidden="true">→</span></a></div>
+        <div x-show="mobileMenuIsOpen" x-cloak class="fixed inset-0 z-[60] lg:hidden" @keydown.escape.window="mobileMenuIsOpen = false">
+            <div class="fixed inset-0 bg-zinc-900/80 backdrop-blur-sm" @click="mobileMenuIsOpen = false"></div>
+            <div class="fixed inset-y-0 right-0 flex w-full max-w-xs flex-col overflow-y-auto border-l border-zinc-700 bg-zinc-900 px-6 py-5">
+                <div class="flex items-center justify-between">
+                    <span class="font-mono text-xs tracking-widest text-zinc-400"><span class="font-bold text-rose-500">//</span> menu</span>
+                    <button @click="mobileMenuIsOpen = false" aria-label="Close menu" class="active:scale-96 flex size-8 items-center justify-center text-zinc-400 transition hover:text-zinc-200" type="button">
+                        <svg class="size-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+                    </button>
                 </div>
+                <nav class="mt-8 flex flex-col gap-1">
+                    <a class="rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-300 transition-colors hover:bg-zinc-800 hover:text-zinc-100" href="/docs">Documentation</a>
+                    <a class="rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-300 transition-colors hover:bg-zinc-800 hover:text-zinc-100" href="https://youtube.com/@nunomaduro">YouTube</a>
+                    <a class="rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-300 transition-colors hover:bg-zinc-800 hover:text-zinc-100" href="https://github.com/sponsors/nunomaduro">Sponsor</a>
+                </nav>
+                <a class="active:scale-96 mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-rose-500 px-4 py-2.5 text-sm font-semibold text-white transition-[background-color,scale] hover:bg-rose-600" href="/docs/installation">Start testing</a>
+            </div>
+        </div>
 
-                <h1 class="mt-8 text-4xl sm:text-5xl/14 xl:text-6xl/15 tracking-tight font-title motion-preset-blur-up-lg motion-delay-[200ms] motion-duration-1000">The elegant testing framework<br class="hidden lg:block"> for PHP developers and
-                    <span class="relative whitespace-nowrap">
-                        <span class="text-pink-500">AI agents.</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 384 16" class="absolute bottom-0 left-0 w-full text-white/20 -z-10"><path fill="currentColor" d="M383 14c-9-4-23-5-34-6a1664 1664 0 0 0-105-6A1971 1971 0 0 0 3 8c-4 0-4 3 0 3l90-2a3205 3205 0 0 1 245 5c15 1 29 3 44 2 2 0 3-1 1-2Z"/></svg>
-                    </span>
-                </h1>
-                <p class="lg:text-lg font-medium text-white/80 mt-6 font-mono tracking-tight motion-preset-blur-up-lg motion-delay-[400ms] motion-duration-1000">Pest brings the joy of testing to PHP — with built-in browser testing, AI evals,<br class="hidden md:block"> and an agent browser that lets your coding agents verify their own work.</p>
-
-                <div class="mt-8 flex items-center justify-center gap-x-5 motion-preset-blur-up-lg motion-delay-[600ms] motion-duration-1000">
-                    <a class="z-1 inline-block text-sm rounded-4xl bg-pink-500 px-6 sm:px-8 py-2.5 font-semibold text-white hover:scale-105 transition duration-100 shadow-2xl" href="https://pestphp.com/docs/pest5-now-available">Start Testing</a>
-                    <a class="z-1 inline-block text-sm rounded-4xl bg-indigo-800 px-6 sm:px-8 py-2.5 font-semibold text-white hover:scale-105 transition duration-100 shadow-2xl" href="https://github.com/pestphp/pest" target="_blank">Source Code</a>
+        <main class="container relative mx-auto border-x border-zinc-700">
+            <div class="top-14.25 pointer-events-none fixed inset-x-0 z-10">
+                <div class="container relative mx-auto">
+                    <span class="size-2.25 before:w-2.25 after:h-2.25 absolute -left-1 top-px before:absolute before:left-0 before:top-1 before:h-px before:bg-rose-500 before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-rose-500 after:content-['']"></span>
+                    <span class="size-2.25 before:w-2.25 after:h-2.25 absolute -right-1 top-0 before:absolute before:left-0 before:top-1 before:h-px before:bg-rose-500 before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-rose-500 after:content-['']"></span>
                 </div>
-            </section>
+            </div>
 
-            <section id="partners" class="text-center py-8 sm:py-12 mx-auto max-w-7xl px-6 lg:px-8 motion-preset-blur-up-md motion-delay-[800ms] motion-duration-1000">
-                <p class="text-xs md:text-base uppercase font-thin font-mono tracking-widest text-white/40 motion-preset-blur-up-md motion-delay-[800ms] motion-duration-1000">These companies sponsor Pest Frameworks</p>
-                <div x-data="{
-                        sponsors: [
-                            { href: 'https://cmsmax.com/?ref=pestphp', img: '/www/assets/sponsors/cmsmax.png', alt: 'CMS Max', class: 'h-7 md:h-9 object-contain' },
-                            { href: 'https://jb.gg/nuno', img: '/www/assets/sponsors/phpstorm.svg', alt: 'PhpStorm', class: 'h-7 md:h-9 object-contain' },
-                            { href: 'https://coderabbit.link/nunomaduro', img: '/www/assets/sponsors/coderabbit.svg', alt: 'CodeRabbit', class: 'h-7 md:h-9 object-contain' },
-                            { href: 'https://serpapi.com/?ref=nunomaduro', img: '/www/assets/sponsors/serpapi.png', alt: 'SerpApi', class: 'h-6 md:h-8 object-contain' },
-                            { href: 'https://bentonow.com/?ref=nunomaduro', img: '/www/assets/sponsors/bento.svg', alt: 'Bento', class: 'h-5 md:h-7 object-contain' },
-                            { href: 'https://redberry.international/laravel-development/?utm_source=pest&utm_medium=banner&utm_campaign=pest_sponsorship', img: '/www/assets/sponsors/redberry.png?20082025', alt: 'Redberry', class: 'h-6 md:h-7 object-contain' }
-                        ],
-                        shuffledSponsors: [],
-                        init() {
-                            let array = [...this.sponsors];
-                            for (let i = array.length - 1; i > 0; i--) {
-                                const j = Math.floor(Math.random() * (i + 1));
-                                [array[i], array[j]] = [array[j], array[i]];
-                            }
-                            this.shuffledSponsors = array;
-                        }
-                    }"
-                    x-init="init()"
-                >
-                    <div class="mx-auto mt-10 grid max-w-lg grid-cols-2 items-center justify-items-center gap-x-8 gap-y-10 lg:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none motion-preset-blur-up-md motion-delay-[800ms] motion-duration-1000">
-                        <template x-for="sponsor in shuffledSponsors" :key="sponsor.alt">
-                            <a :href="sponsor.href" target="_blank">
-                                <img :src="sponsor.img" :alt="sponsor.alt" :class="sponsor.class" />
-                            </a>
-                        </template>
+            <section class="relative overflow-hidden" x-data="{ moveSpot(e) { if (!matchMedia('(hover: hover)').matches) return; const r = $el.getBoundingClientRect(); $refs.spotlight.style.setProperty('--spot-x', (e.clientX - r.left) + 'px'); $refs.spotlight.style.setProperty('--spot-y', (e.clientY - r.top) + 'px'); $refs.spotlight.style.opacity = 1; }, clearSpot() { $refs.spotlight.style.opacity = 0; } }" @pointermove="moveSpot($event)" @pointerleave="clearSpot()">
+                <div class="bg-size-[56px_56px] mask-[radial-gradient(ellipse_90%_80%_at_60%_20%,#000_30%,transparent_75%)] absolute inset-0 -mt-1 bg-[linear-gradient(var(--color-zinc-700)_1px,transparent_1px),linear-gradient(90deg,var(--color-zinc-700)_1px,transparent_1px)] opacity-50"></div>
+                <div class="bg-size-[56px_56px] mask-[radial-gradient(220px_circle_at_var(--spot-x,50%)_var(--spot-y,50%),#000,transparent),radial-gradient(ellipse_90%_80%_at_60%_20%,#000_30%,transparent_75%)] mask-intersect pointer-events-none absolute inset-0 -mt-1 bg-[linear-gradient(var(--color-rose-800)_1px,transparent_1px),linear-gradient(90deg,var(--color-rose-900)_1px,transparent_1px)] opacity-0 transition-opacity duration-300" x-ref="spotlight"></div>
+                <div class="relative grid items-center gap-12 px-5 pb-12 pt-14 sm:px-10 lg:grid-cols-[1.05fr_0.95fr] lg:pb-[72px] lg:pt-20">
+                    <div>
+                        <a href="/docs/pest5-now-available" class="flex items-center gap-2.5 font-mono text-xs tracking-widest text-zinc-400 transition-colors hover:text-zinc-200">
+                            <span class="font-bold text-rose-500">//</span> pest 5 — now available
+                        </a>
+                        <h1 class="font-display font-stretch-112% mb-4 mt-5 text-[clamp(30px,8.6vw,40px)] font-extrabold leading-[1.05] tracking-tight sm:text-[clamp(34px,4vw,50px)]">
+                            The elegant<br>testing framework<br><span class="whitespace-nowrap">for PHP developers</span>
+                            <span class="relative whitespace-nowrap italic text-rose-500 after:absolute after:inset-x-0 after:bottom-1.5 after:-z-10 after:h-2.5 after:bg-rose-950 after:content-['']">and AI agents.</span>
+                        </h1>
+                        <p class="mb-7 max-w-[48ch] text-pretty text-lg text-zinc-400">Pest brings the joy of testing to PHP. Browser testing and AI evals are built in, and the agent browser lets your coding agents verify their own work.</p>
+                        <div class="flex flex-wrap items-center gap-3">
+                            <a class="active:scale-96 inline-flex items-center gap-2 rounded-full bg-rose-500 px-4 py-2.5 text-sm font-semibold text-white transition-[background-color,scale] hover:bg-rose-600" href="/docs/installation">Start testing</a>
+                            <a class="active:scale-96 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2.5 text-sm font-semibold transition-[border-color,scale] hover:border-white/30" href="https://github.com/pestphp/pest">Source code</a>
+                        </div>
                     </div>
-                </div>
 
-                <div class="relative mx-auto max-w-4xl pt-8 will-change-transform overflow-hidden motion-preset-blur-up-md motion-delay-[1000ms] motion-duration-1000" style="mask-image: linear-gradient(to right, #0000, #000 10%, #000 90%, #0000)">
-                    <div
-                        x-data="{
-                            pxPerSecond: 50,
-                            duration: 1,
-                            items: [
-                                { href: 'https://zapiet.com/?ref=pestphp', src: '/www/assets/sponsors/zapiet.svg', alt: 'Zapiet', class: 'h-5' },
-                                { href: 'https://loadforge.com/?ref=pestphp', src: '/www/assets/sponsors/loadforge.svg', alt: 'Load Forge', class: 'h-5' },
-                                { href: 'https://route4me.com/pt?ref=pestphp', src: '/www/assets/sponsors/route4me.svg', alt: 'Route4Me', class: 'h-6' },
-                                { href: 'https://getnerdify.com/?ref=pestphp', src: '/www/assets/sponsors/nerdify.png', alt: 'Nerdify', class: 'h-14' },
-                            ],
-                            shuffled: [],
-                            init() {
-                                this.shuffled = this.items.slice().sort(() => Math.random() - 0.5)
-                                this.$nextTick(() => {
-                                    this.updateDuration()
-                                    new ResizeObserver(() => this.updateDuration()).observe(this.$refs.track)
-                                    this.$refs.track.addEventListener('load', () => this.updateDuration(), true)
-                                    window.addEventListener('resize', () => this.updateDuration(), { passive: true })
-                                })
-                            },
-                            updateDuration() {
-                                this.duration = Math.max(1, this.$refs.track.scrollWidth / this.pxPerSecond)
-                            }
-                        }"
-                        class="overflow-hidden"
-                    >
-                        <div x-ref="track" class="flex items-center w-max gap-x-12 backface-hidden will-change-transform" :style="`animation: marquee ${duration}s linear infinite`">
-                            <template x-for="s in shuffled" :key="s.alt + '-a'">
-                                <a :href="s.href" target="_blank"><img :src="s.src" :alt="s.alt" :class="s.class"></a>
-                            </template>
-                            <template x-for="s in shuffled" :key="s.alt + '-b'">
-                                <a :href="s.href" target="_blank"><img :src="s.src" :alt="s.alt" :class="s.class"></a>
-                            </template>
+                    <div class="relative overflow-hidden rounded-2xl border border-zinc-700 bg-zinc-800 shadow-[0_24px_60px_-30px_rgba(23,22,27,0.18)]" x-data="{ tab: 'browser' }">
+                        <div class="flex overflow-x-auto border-b border-zinc-700 px-2" role="tablist">
+                            <button @click="tab = 'browser'" :aria-selected="tab === 'browser'" class="cursor-pointer whitespace-nowrap border-b-2 border-transparent px-3 py-3 font-mono text-xs text-zinc-400 transition-colors hover:text-zinc-200 aria-selected:border-rose-500 aria-selected:text-zinc-200" role="tab" type="button">BrowserTest.php</button>
+                            <button @click="tab = 'feature'" :aria-selected="tab === 'feature'" class="cursor-pointer whitespace-nowrap border-b-2 border-transparent px-3 py-3 font-mono text-xs text-zinc-400 transition-colors hover:text-zinc-200 aria-selected:border-rose-500 aria-selected:text-zinc-200" role="tab" type="button">FeatureTest.php</button>
+                            <button @click="tab = 'unit'" :aria-selected="tab === 'unit'" class="cursor-pointer whitespace-nowrap border-b-2 border-transparent px-3 py-3 font-mono text-xs text-zinc-400 transition-colors hover:text-zinc-200 aria-selected:border-rose-500 aria-selected:text-zinc-200" role="tab" type="button">UnitTest.php</button>
+                            <button @click="tab = 'eval'" :aria-selected="tab === 'eval'" class="cursor-pointer whitespace-nowrap border-b-2 border-transparent px-3 py-3 font-mono text-xs text-zinc-400 transition-colors hover:text-zinc-200 aria-selected:border-rose-500 aria-selected:text-zinc-200" role="tab" type="button">EvalTest.php</button>
+                            <button @click="tab = 'arch'" :aria-selected="tab === 'arch'" class="cursor-pointer whitespace-nowrap border-b-2 border-transparent px-3 py-3 font-mono text-xs text-zinc-400 transition-colors hover:text-zinc-200 aria-selected:border-rose-500 aria-selected:text-zinc-200" role="tab" type="button">ArchTest.php</button>
+                        </div>
+                        <div class="grid">
+                            <div :class="tab === 'browser' ? '' : 'invisible opacity-0'" class="text-xs-plus col-start-1 row-start-1 overflow-x-auto whitespace-nowrap px-5 py-4 font-mono leading-[1.85] text-zinc-300 transition-opacity duration-200">
+                                <div><span class="text-rose-500">it</span>(<span class="text-emerald-600">'may login'</span>, <span class="text-violet-500">function</span> () {</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-600">$user</span> = App\Models\User::<span class="text-rose-500">factory</span>()-><span class="text-rose-500">create</span>();</div>
+                                <div>&nbsp;</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-rose-500">visit</span>(<span class="text-rose-500">route</span>(<span class="text-emerald-600">'login'</span>))</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-500">type</span>(<span class="text-emerald-600">'email'</span>, <span class="text-blue-600">$user</span>->email)</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-500">type</span>(<span class="text-emerald-600">'password'</span>, <span class="text-emerald-600">'password'</span>)</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-500">press</span>(<span class="text-emerald-600">'Continue'</span>)</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-500">assertSee</span>(<span class="text-emerald-600">'Dashboard'</span>);</div>
+                                <div>&nbsp;</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-600">$this</span>-><span class="text-rose-500">assertAuthenticatedAs</span>(<span class="text-blue-600">$user</span>);</div>
+                                <div>});</div>
+                            </div>
+                            <div :class="tab === 'feature' ? '' : 'invisible opacity-0'" class="text-xs-plus col-start-1 row-start-1 overflow-x-auto whitespace-nowrap px-5 py-4 font-mono leading-[1.85] text-zinc-300 transition-opacity duration-200">
+                                <div><span class="text-rose-500">it</span>(<span class="text-emerald-600">'creates a post'</span>, <span class="text-violet-500">function</span> () {</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-600">$user</span> = User::<span class="text-rose-500">factory</span>()-><span class="text-rose-500">create</span>();</div>
+                                <div>&nbsp;</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-600">$this</span>-><span class="text-rose-500">actingAs</span>(<span class="text-blue-600">$user</span>)</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-500">post</span>(<span class="text-emerald-600">'/posts'</span>, [<span class="text-emerald-600">'title'</span> => <span class="text-emerald-600">'Hello World'</span>])</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-500">assertRedirect</span>(<span class="text-emerald-600">'/posts'</span>);</div>
+                                <div>&nbsp;</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-rose-500">expect</span>(<span class="text-blue-600">$user</span>->posts)-><span class="text-rose-500">toHaveCount</span>(1);</div>
+                                <div>});</div>
+                            </div>
+                            <div :class="tab === 'unit' ? '' : 'invisible opacity-0'" class="text-xs-plus col-start-1 row-start-1 overflow-x-auto whitespace-nowrap px-5 py-4 font-mono leading-[1.85] text-zinc-300 transition-opacity duration-200">
+                                <div><span class="text-rose-500">it</span>(<span class="text-emerald-600">'performs sums'</span>, <span class="text-violet-500">function</span> () {</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-rose-500">expect</span>(<span class="text-rose-500">sum</span>(1, 2))</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-500">toBe</span>(3)</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-500">toBeInt</span>()</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;->not-><span class="text-rose-500">toBeString</span>();</div>
+                                <div>});</div>
+                            </div>
+                            <div :class="tab === 'eval' ? '' : 'invisible opacity-0'" class="text-xs-plus col-start-1 row-start-1 overflow-x-auto whitespace-nowrap px-5 py-4 font-mono leading-[1.85] text-zinc-300 transition-opacity duration-200">
+                                <div><span class="text-rose-500">eval</span>(<span class="text-emerald-600">'classifies sentiment'</span>, <span class="text-violet-500">function</span> () {</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-600">$response</span> = <span class="text-rose-500">ai</span>(<span class="text-emerald-600">'Is "I love Pest" positive?'</span>);</div>
+                                <div>&nbsp;</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-rose-500">expect</span>(<span class="text-blue-600">$response</span>)</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-500">toContain</span>(<span class="text-emerald-600">'positive'</span>)</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-500">toPassGraded</span>(<span class="text-emerald-600">'answers in one word'</span>);</div>
+                                <div>});</div>
+                            </div>
+                            <div :class="tab === 'arch' ? '' : 'invisible opacity-0'" class="text-xs-plus col-start-1 row-start-1 overflow-x-auto whitespace-nowrap px-5 py-4 font-mono leading-[1.85] text-zinc-300 transition-opacity duration-200">
+                                <div><span class="text-rose-500">arch</span>()-><span class="text-rose-500">preset</span>()-><span class="text-rose-500">laravel</span>();</div>
+                                <div><span class="text-rose-500">arch</span>()-><span class="text-rose-500">preset</span>()-><span class="text-rose-500">security</span>();</div>
+                                <div>&nbsp;</div>
+                                <div><span class="text-rose-500">arch</span>(<span class="text-emerald-600">'globals'</span>)</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-500">expect</span>(<span class="text-emerald-600">'App'</span>)</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-500">toUseStrictTypes</span>()</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;->not-><span class="text-rose-500">toUse</span>([<span class="text-emerald-600">'dd'</span>, <span class="text-emerald-600">'dump'</span>, <span class="text-emerald-600">'die'</span>]);</div>
+                            </div>
+                        </div>
+                        <div class="mx-4 mb-4 grid rounded-[10px] bg-zinc-900 px-4 py-3.5 font-mono text-xs leading-[1.9] text-zinc-300">
+                            <div :class="tab === 'browser' ? '' : 'invisible opacity-0'" class="col-start-1 row-start-1 overflow-x-auto whitespace-nowrap transition-opacity duration-200">
+                                <div><span class="text-zinc-500">$</span> ./vendor/bin/pest</div>
+                                <div>&nbsp;&nbsp;<span class="bg-green-400 px-1.5 font-bold text-zinc-900">PASS</span>&nbsp; Tests\Browser\AuthenticationTest</div>
+                                <div>&nbsp;&nbsp;<span class="text-green-400">✓</span> it may login <span class="text-zinc-500">— 0.38s</span></div>
+                                <div>Tests:&nbsp;&nbsp;&nbsp; <span class="text-green-400">1 passed</span> <span class="text-zinc-500">(3 assertions)</span> · Duration: <span class="text-green-400">0.42s</span></div>
+                            </div>
+                            <div :class="tab === 'feature' ? '' : 'invisible opacity-0'" class="col-start-1 row-start-1 overflow-x-auto whitespace-nowrap transition-opacity duration-200">
+                                <div><span class="text-zinc-500">$</span> ./vendor/bin/pest</div>
+                                <div>&nbsp;&nbsp;<span class="bg-green-400 px-1.5 font-bold text-zinc-900">PASS</span>&nbsp; Tests\Feature\PostTest</div>
+                                <div>&nbsp;&nbsp;<span class="text-green-400">✓</span> it creates a post <span class="text-zinc-500">— 0.11s</span></div>
+                                <div>Tests:&nbsp;&nbsp;&nbsp; <span class="text-green-400">1 passed</span> <span class="text-zinc-500">(2 assertions)</span> · Duration: <span class="text-green-400">0.14s</span></div>
+                            </div>
+                            <div :class="tab === 'unit' ? '' : 'invisible opacity-0'" class="col-start-1 row-start-1 overflow-x-auto whitespace-nowrap transition-opacity duration-200">
+                                <div><span class="text-zinc-500">$</span> ./vendor/bin/pest</div>
+                                <div>&nbsp;&nbsp;<span class="bg-green-400 px-1.5 font-bold text-zinc-900">PASS</span>&nbsp; Tests\Unit\MathTest</div>
+                                <div>&nbsp;&nbsp;<span class="text-green-400">✓</span> it performs sums <span class="text-zinc-500">— 0.02s</span></div>
+                                <div>Tests:&nbsp;&nbsp;&nbsp; <span class="text-green-400">1 passed</span> <span class="text-zinc-500">(3 assertions)</span> · Duration: <span class="text-green-400">0.05s</span></div>
+                            </div>
+                            <div :class="tab === 'eval' ? '' : 'invisible opacity-0'" class="col-start-1 row-start-1 overflow-x-auto whitespace-nowrap transition-opacity duration-200">
+                                <div><span class="text-zinc-500">$</span> ./vendor/bin/pest</div>
+                                <div>&nbsp;&nbsp;<span class="bg-green-400 px-1.5 font-bold text-zinc-900">PASS</span>&nbsp; Tests\Eval\SentimentTest</div>
+                                <div>&nbsp;&nbsp;<span class="text-green-400">✓</span> it classifies sentiment <span class="text-zinc-500">— 1.24s</span></div>
+                                <div>Tests:&nbsp;&nbsp;&nbsp; <span class="text-green-400">1 passed</span> <span class="text-zinc-500">(2 assertions)</span> · Duration: <span class="text-green-400">1.31s</span></div>
+                            </div>
+                            <div :class="tab === 'arch' ? '' : 'invisible opacity-0'" class="col-start-1 row-start-1 overflow-x-auto whitespace-nowrap transition-opacity duration-200">
+                                <div><span class="text-zinc-500">$</span> ./vendor/bin/pest</div>
+                                <div>&nbsp;&nbsp;<span class="bg-green-400 px-1.5 font-bold text-zinc-900">PASS</span>&nbsp; Tests\ArchTest</div>
+                                <div>&nbsp;&nbsp;<span class="text-green-400">✓</span> globals <span class="text-zinc-500">— 0.06s</span></div>
+                                <div>Tests:&nbsp;&nbsp;&nbsp; <span class="text-green-400">3 passed</span> <span class="text-zinc-500">(14 assertions)</span> · Duration: <span class="text-green-400">0.09s</span></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="why" class="py-14 md:py-24 mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8 overflow-hidden">
-                <p class="text-center text-xs md:text-base uppercase font-thin font-mono tracking-widest text-white/40">Test with Confidence</p>
-                <h2 class="text-center mx-auto mt-2 max-w-2xl text-2xl tracking-tight text-balance text-white sm:text-5xl font-title">Why developers choose Pest?</h2>
-
-                <div class="mt-10 grid grid-cols-1 gap-10 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
-                    <div class="flex p-px lg:col-span-4">
-                        <div class="w-full overflow-hidden rounded-lg bg-white/10 outline outline-offset-10 outline-white/10 max-lg:rounded-t-4xl lg:rounded-tl-4xl" x-data="{ tab: 'browser' }">
-                            <div class="relative min-h-90 w-full grow">
-                                <div class="absolute top-6 sm:top-10 right-0 bottom-0 left-6 sm:left-10 flex flex-col overflow-hidden rounded-tl-xl bg-gray-900/60 outline outline-white/10">
-                                    <div class="flex bg-gray-900 outline outline-white/5">
-                                        <div class="-mb-px flex text-sm/6 font-medium text-gray-400">
-                                            <button type="button" @click="tab = 'browser'" :class="tab === 'browser' ? 'border-r border-b border-r-white/10 border-b-white/20 bg-white/5 px-4 py-2 text-white' : 'border-r border-gray-600/10 px-4 py-2 cursor-pointer hover:text-white'">BrowserTest.php</button>
-                                            <button type="button" @click="tab = 'feature'" :class="tab === 'feature' ? 'border-r border-b border-r-white/10 border-b-white/20 bg-white/5 px-4 py-2 text-white' : 'border-r border-gray-600/10 px-4 py-2 cursor-pointer hover:text-white'">FeatureTest.php</button>
-                                            <button type="button" @click="tab = 'unit'" :class="tab === 'unit' ? 'border-r border-b border-r-white/10 border-b-white/20 bg-white/5 px-4 py-2 text-white' : 'border-r border-gray-600/10 px-4 py-2 cursor-pointer hover:text-white'">UnitTest.php</button>
-                                            <button type="button" @click="tab = 'arch'" :class="tab === 'arch' ? 'border-r border-b border-r-white/10 border-b-white/20 bg-white/5 px-4 py-2 text-white' : 'border-r border-gray-600/10 px-4 py-2 cursor-pointer hover:text-white'">ArchTest.php</button>
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-1 flex-col justify-center px-4 py-3">
-<div x-show="tab === 'browser'">
-<pre class="text-gray-100 text-xs font-mono tracking-widest overflow-x-auto whitespace-pre leading-[19px]">
-<code><span class="text-gray-400">&lt;?php</span>
-
-<span class="text-pink-400">it</span><span class="text-gray-400">(</span><span class="text-green-400">'may login'</span><span class="text-gray-400">,</span> <span class="text-blue-400">function</span> <span class="text-gray-400">()</span> <span class="text-gray-400">{</span>
-    <span class="text-blue-300">$user</span> <span class="text-gray-400">=</span> <span class="text-gray-100">App\Models\User</span><span class="text-gray-400">::</span><span class="text-blue-400">factory</span><span class="text-gray-400">()-&gt;</span><span class="text-blue-400">create</span><span class="text-gray-400">();</span>
-
-    <span class="text-pink-400">visit</span><span class="text-gray-400">(</span><span class="text-blue-400">route</span><span class="text-gray-400">(</span><span class="text-green-400">'login'</span><span class="text-gray-400">))</span>
-        <span class="text-gray-400">-&gt;</span><span class="text-blue-400">type</span><span class="text-gray-400">(</span><span class="text-green-400">'email'</span><span class="text-gray-400">,</span> <span class="text-blue-300">$user</span><span class="text-gray-400">-&gt;</span><span class="text-blue-400">email</span><span class="text-gray-400">)</span>
-        <span class="text-gray-400">-&gt;</span><span class="text-blue-400">type</span><span class="text-gray-400">(</span><span class="text-green-400">'password'</span><span class="text-gray-400">,</span> <span class="text-green-400">'password'</span><span class="text-gray-400">)</span>
-        <span class="text-gray-400">-&gt;</span><span class="text-blue-400">press</span><span class="text-gray-400">(</span><span class="text-green-400">'Continue'</span><span class="text-gray-400">)</span>
-        <span class="text-gray-400">-&gt;</span><span class="text-blue-400">assertSee</span><span class="text-gray-400">(</span><span class="text-green-400">'Dashboard'</span><span class="text-gray-400">);</span>
-
-    <span class="text-pink-400">$this</span><span class="text-gray-400">-&gt;</span><span class="text-blue-400">assertAuthenticatedAs</span><span class="text-gray-400">(</span><span class="text-blue-300">$user</span><span class="text-gray-400">);</span>
-<span class="text-gray-400">});</span>
-</code>
-</pre>
-</div>
-<div x-show="tab === 'feature'" x-cloak>
-<pre class="text-gray-100 text-xs font-mono tracking-widest overflow-x-auto whitespace-pre leading-[19px]">
-<code><span class="text-gray-400">&lt;?php</span>
-
-<span class="text-pink-400">it</span><span class="text-gray-400">(</span><span class="text-green-400">'creates a post'</span><span class="text-gray-400">,</span> <span class="text-blue-400">function</span> <span class="text-gray-400">()</span> <span class="text-gray-400">{</span>
-    <span class="text-blue-300">$user</span> <span class="text-gray-400">=</span> <span class="text-gray-100">User</span><span class="text-gray-400">::</span><span class="text-blue-400">factory</span><span class="text-gray-400">()-&gt;</span><span class="text-blue-400">create</span><span class="text-gray-400">();</span>
-
-    <span class="text-pink-400">$this</span><span class="text-gray-400">-&gt;</span><span class="text-blue-400">actingAs</span><span class="text-gray-400">(</span><span class="text-blue-300">$user</span><span class="text-gray-400">)</span>
-        <span class="text-gray-400">-&gt;</span><span class="text-blue-400">post</span><span class="text-gray-400">(</span><span class="text-green-400">'/posts'</span><span class="text-gray-400">,</span> <span class="text-gray-400">[</span><span class="text-green-400">'title'</span> <span class="text-gray-400">=&gt;</span> <span class="text-green-400">'Hello World'</span><span class="text-gray-400">])</span>
-        <span class="text-gray-400">-&gt;</span><span class="text-blue-400">assertRedirect</span><span class="text-gray-400">(</span><span class="text-green-400">'/posts'</span><span class="text-gray-400">);</span>
-
-    <span class="text-pink-400">expect</span><span class="text-gray-400">(</span><span class="text-blue-300">$user</span><span class="text-gray-400">-&gt;</span><span class="text-blue-400">posts</span><span class="text-gray-400">)-&gt;</span><span class="text-blue-400">toHaveCount</span><span class="text-gray-400">(</span><span class="text-yellow-300">1</span><span class="text-gray-400">);</span>
-<span class="text-gray-400">});</span>
-</code>
-</pre>
-</div>
-<div x-show="tab === 'unit'" x-cloak>
-<pre class="text-gray-100 text-xs font-mono tracking-widest overflow-x-auto whitespace-pre leading-[19px]">
-<code><span class="text-gray-400">&lt;?php</span>
-
-<span class="text-pink-400">it</span><span class="text-gray-400">(</span><span class="text-green-400">'performs sums'</span><span class="text-gray-400">,</span> <span class="text-blue-400">function</span> <span class="text-gray-400">()</span> <span class="text-gray-400">{</span>
-    <span class="text-pink-400">expect</span><span class="text-gray-400">(</span><span class="text-blue-400">sum</span><span class="text-gray-400">(</span><span class="text-yellow-300">1</span><span class="text-gray-400">,</span> <span class="text-yellow-300">2</span><span class="text-gray-400">))</span>
-        <span class="text-gray-400">-&gt;</span><span class="text-blue-400">toBe</span><span class="text-gray-400">(</span><span class="text-yellow-300">3</span><span class="text-gray-400">)</span>
-        <span class="text-gray-400">-&gt;</span><span class="text-blue-400">toBeInt</span><span class="text-gray-400">()</span>
-        <span class="text-gray-400">-&gt;</span><span class="text-blue-400">not</span><span class="text-gray-400">-&gt;</span><span class="text-blue-400">toBeString</span><span class="text-gray-400">();</span>
-<span class="text-gray-400">});</span>
-</code>
-</pre>
-</div>
-<div x-show="tab === 'arch'" x-cloak>
-<pre class="text-gray-100 text-xs font-mono tracking-widest overflow-x-auto whitespace-pre leading-[19px]">
-<code><span class="text-gray-400">&lt;?php</span>
-
-<span class="text-pink-400">arch</span><span class="text-gray-400">()-&gt;</span><span class="text-blue-400">preset</span><span class="text-gray-400">()-&gt;</span><span class="text-blue-400">laravel</span><span class="text-gray-400">();</span>
-<span class="text-pink-400">arch</span><span class="text-gray-400">()-&gt;</span><span class="text-blue-400">preset</span><span class="text-gray-400">()-&gt;</span><span class="text-blue-400">security</span><span class="text-gray-400">();</span>
-
-<span class="text-pink-400">arch</span><span class="text-gray-400">(</span><span class="text-green-400">'globals'</span><span class="text-gray-400">)</span>
-    <span class="text-gray-400">-&gt;</span><span class="text-blue-400">expect</span><span class="text-gray-400">(</span><span class="text-green-400">'App'</span><span class="text-gray-400">)</span>
-    <span class="text-gray-400">-&gt;</span><span class="text-blue-400">toUseStrictTypes</span><span class="text-gray-400">()</span>
-    <span class="text-gray-400">-&gt;</span><span class="text-blue-400">not</span><span class="text-gray-400">-&gt;</span><span class="text-blue-400">toUse</span><span class="text-gray-400">([</span><span class="text-green-400">'dd'</span><span class="text-gray-400">,</span> <span class="text-green-400">'dump'</span><span class="text-gray-400">,</span> <span class="text-green-400">'die'</span><span class="text-gray-400">]);</span>
-</code>
-</pre>
-</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="p-6 lg:p-10">
-                                <h3 class="text-sm text-gray-400">Cleaner syntax</h3>
-                                <p class="mt-2 text-lg font-medium tracking-tight text-white">Syntax you can fall in love with</p>
-                                <p class="mt-2 max-w-lg text-sm/6 text-gray-400">Pest brings a modern, expressive syntax that makes writing tests more enjoyable, more readable, and easier to maintain over time.</p>
-                            </div>
-                        </div>
+            <section aria-label="Partners" class="relative border-y border-zinc-700">
+                <span class="-top-1.25 size-2.25 before:w-2.25 after:h-2.25 -left-1.25 pointer-events-none absolute z-10 before:absolute before:left-0 before:top-1 before:h-px before:bg-rose-500 before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-rose-500 after:content-['']"></span>
+                <span class="-right-1.25 -top-1.25 size-2.25 before:w-2.25 after:h-2.25 pointer-events-none absolute z-10 before:absolute before:left-0 before:top-1 before:h-px before:bg-rose-500 before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-rose-500 after:content-['']"></span>
+                <div class="grid items-stretch lg:grid-cols-[auto_1fr]">
+                    <div class="flex items-center border-b border-zinc-700 px-5 py-6 font-mono text-xs uppercase tracking-widest text-zinc-400 sm:px-10 lg:border-b-0 lg:border-r">
+                        These companies sponsor<br>Pest Framework
                     </div>
-                    <div class="flex p-px lg:col-span-2">
-                        <div class="w-full overflow-hidden rounded-lg bg-white/10 outline outline-offset-10 outline-white/10 lg:rounded-tr-4xl relative">
-                            <div class="relative min-h-90 w-full grow">
-                                <div class="absolute top-6 lg:top-10 right-0 bottom-0 left-6 lg:left-10 overflow-hidden rounded-tl-xl bg-gray-900/60 outline outline-white/10">
-<pre class="text-gray-100 text-xs font-mono tracking-tight overflow-x-auto whitespace-pre leading-[19px] pl-4">
-<code>
-<span class="text-red-950 bg-red-500 p-1 font-semibold">FAIL</span> Tests\MathTest
-<div class="flex items-center"><span class="text-red-500 text-lg">×</span> it adds numbers</div>
-<hr class="border-red-500 -mt-1">
-<span class="text-red-950 bg-red-500 p-1 font-semibold">FAILED</span> Tests\MathTest <span class="text-gray-400">&gt;</span> adds numbers
-<div class="font-bold mt-2">Failed asserting that <span class="text-yellow-300">2</span> is identical to <span class="text-yellow-300">3</span>.</div>
-at <span class="text-green-500">tests/MathTest.php:4</span>
-
-     <span class="text-gray-500">1</span>  <span class="text-gray-400">&lt;?php</span>
-     <span class="text-gray-500">2</span>
-     <span class="text-gray-500">3</span>  <span class="text-pink-400">it</span>(<span class="text-green-400">'adds numbers'</span>, <span class="text-blue-400">function</span> () {
-<span class="text-red-500 font-bold text-base">→</span>   <span class="text-gray-500 ml-1">4</span>      <span class="text-blue-300">expect</span>(<span class="text-yellow-300">1</span> + <span class="text-yellow-300">1</span>)-><span class="text-blue-300">toBe</span>(<span class="text-yellow-300">3</span>);
-     <span class="text-gray-500">5</span>  });
-</code>
-</pre>
-                                </div>
-                            </div>
-                            <div class="p-6 lg:p-10">
-                                <h3 class="text-sm text-gray-400">Readable Failures</h3>
-                                <p class="mt-2 text-lg font-medium tracking-tight text-white">Stunning error messages</p>
-                                <p class="mt-2 max-w-lg text-sm/6 text-gray-400">Understand test failures at a glance with clear, beautifully formatted output.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex p-px lg:col-span-2">
-                        <div class="w-full overflow-hidden rounded-lg bg-white/10 outline outline-offset-10 outline-white/10 lg:rounded-bl-4xl group">
-                            <div class="relative h-85 overflow-hidden">
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" viewBox="0 0 510 460"><defs><path id="c" fill="#fff" d="m79.6439 256.839 2.8567-28.097 56.3314-7.182c15.555-1.983 26.887 8.989 25.309 24.506l-.857 8.429c-1.578 15.517-15.467 29.704-31.022 31.687l-28.166 3.591-3.714 36.526-28.1656 3.591 6.5705-64.622 56.3311-7.182.857-8.429-56.3311 7.182Zm273.2481-62.57 84.497-10.773c-1.578 15.517-15.467 29.704-31.023 31.688L395.1 216.62l-7.427 73.051-28.166 3.591 7.427-73.051-16.899 2.154-56.332 7.182-.857 8.429 28.166-3.591c15.556-1.983 26.887 8.989 25.309 24.506l-.857 8.429c-1.577 15.518-15.467 29.704-31.022 31.687l-56.332 7.182 2.857-28.096 56.331-7.182.857-8.429-28.166 3.591c-15.555 1.983-26.886-8.988-25.309-24.506l.858-8.429c1.577-15.517 15.467-29.704 31.022-31.687l56.332-7.182Zm-92.947 11.85-84.497 10.773-2.857 28.097 84.497-10.773 2.857-28.097Zm-20.614 38.68-67.598 8.619-2.856 28.096 67.597-8.618 2.857-28.097Zm13.186 34.371-84.497 10.773-2.857 28.097 84.497-10.773 2.857-28.097Z" clip-rule="evenodd" style="transform-box:fill-box;transform-origin:center"/></defs><g class="animate-[float_1s_ease-in-out_infinite]" filter="url(#a)"><path fill="url(#b)" fill-opacity=".1" d="M169.424 72.2469C309.441-30.1757 465.377-55.2042 517.715 16.3446c52.339 71.5489-18.74 212.5834-158.757 315.0054C218.94 433.774 63.0037 458.801 10.6654 387.252-41.6725 315.703 29.4057 174.67 169.424 72.2469Z"/></g><g fill="#fff"><path fill-opacity=".9" d="M447.428 115.879c8.308-3.842 17.269-1.467 22.186 5.952.256.387.151.908-.235 1.165-.387.257-.91.151-1.167-.235-4.434-6.691-12.483-8.866-20.077-5.354-.421.195-.921.011-1.116-.411-.195-.421-.012-.921.409-1.117Z"/><path fill-opacity=".9" d="M461.606 107.28c5.783 1.547 10.921 5.338 14.989 11.179.266.381.172.907-.21 1.172-.381.265-.904.172-1.17-.209-3.88-5.571-8.705-9.088-14.044-10.516-5.338-1.428-11.275-.79-17.418 2.1-.42.197-.921.017-1.119-.403-.197-.42-.017-.922.404-1.12 6.441-3.03 12.785-3.75 18.568-2.203Z"/><path fill-opacity=".6" d="m457.455 121.834.479.155c.941.231 2.468 1.189 3.257 4.231l-.002-.001 1.888 6.906c.431 1.268.621 3.042-.132 4.423-.397.728-1.043 1.314-1.968 1.622-.903.3-2.018.319-3.357.037-.009-.002-.019-.005-.027-.007l-4.231-1.029c-.014-.004-.027-.007-.041-.012l-4.22-1.258-.021-.005c-1.3-.424-2.253-.995-2.88-1.704-.643-.728-.899-1.556-.872-2.38.051-1.562 1.103-3.002 2.044-3.896l5.105-5.064c2.092-2.127 3.822-2.291 4.786-2.07l.192.052Zm-.512 1.603c-.222-.066-1.409-.297-3.273 1.601l-.007.008-5.105 5.064-.014.015h-.002c-.829.784-1.503 1.836-1.533 2.742-.013.413.105.818.452 1.211.363.411 1.016.85 2.141 1.217h-.002l4.16 1.24 4.205 1.025c1.157.243 1.951.19 2.481.014.51-.17.823-.466 1.022-.831.433-.794.377-2.033.008-3.101-.006-.017-.011-.035-.016-.053l-1.895-6.937-.004-.011c-.674-2.599-1.832-2.973-2.041-3.021-.024-.005-.048-.013-.071-.021l-.506-.162Zm-3.117 9.629.013-.049c.12-.449.582-.716 1.03-.596.449.121.716.582.596 1.03l-.013.05c-.12.448-.582.715-1.031.595-.448-.12-.715-.581-.595-1.03Zm.87-3.253.657-2.457c.121-.449.582-.715 1.031-.595.448.12.715.581.595 1.03l-.657 2.457c-.121.448-.582.715-1.03.595-.449-.12-.715-.581-.596-1.03Z"/></g><g fill="#fff"><path fill-opacity=".5" d="M185.287 139.102c0-4.182-3.39-7.572-7.572-7.572-4.181 0-7.571 3.39-7.571 7.572s3.39 7.572 7.571 7.572c4.182 0 7.572-3.39 7.572-7.572Zm-7.557 2.524c.465 0 .841.377.841.841 0 .465-.376.842-.841.842h-.015c-.464 0-.841-.377-.841-.842 0-.464.377-.841.841-.841h.015Zm-.856-2.524v-3.365c0-.465.377-.841.841-.841.465 0 .842.376.842.841v3.365c0 .465-.377.841-.842.841-.464 0-.841-.376-.841-.841Zm10.096 0c0 5.111-4.144 9.255-9.255 9.255-5.111 0-9.254-4.144-9.254-9.255 0-5.111 4.143-9.254 9.254-9.254s9.255 4.143 9.255 9.254Z"/><path fill-opacity=".9" d="M155.34 130.689c0-.68-.254-1.414-.537-1.781l-1.709-1.911v-.002c-.38-.423-.715-.791-.953-1.125-.22-.309-.398-.641-.472-1.032l-.025-.173c-.049-.468.063-.884.235-1.282.164-.377.414-.809.699-1.303l.831-1.441c.304-.527.568-.988.828-1.337.275-.367.599-.687 1.06-.874.462-.188.918-.186 1.371-.114.429.068.937.214 1.52.38h.001l2.028.57c.57.128 1.166.053 1.688-.212l.514-.296c.45-.29.797-.715.989-1.216l.549-1.641.256-.751c.083-.231.164-.442.25-.628.181-.39.415-.748.794-1.022.379-.274.793-.383 1.221-.432.405-.046.899-.045 1.464-.045h1.876c.564 0 1.059-.001 1.464.045.428.049.842.158 1.221.432.379.274.613.632.794 1.022.172.371.327.842.506 1.379h-.002l.551 1.641.079.186c.201.42.515.777.908 1.03l.515.296c.521.265 1.117.34 1.687.212l2.029-.57c.584-.166 1.093-.312 1.522-.38.453-.072.909-.074 1.37.114.462.187.786.507 1.06.874.261.349.525.81.829 1.337l.831 1.441c.285.494.535.926.698 1.303.165.38.272.777.239 1.22.003.196-.039.369-.084.498-.058.165-.139.322-.222.461-.166.278-.392.569-.621.843-.446.534-1.047 1.161-1.412 1.571-.308.347-.84.38-1.188.071-.347-.309-.377-.841-.069-1.188.444-.499.943-1.012 1.377-1.532.211-.252.371-.465.47-.631.034-.055.051-.098.063-.125l.01-.082c.007-.075.001-.188-.107-.437-.117-.269-.309-.604-.613-1.132l-.83-1.441c-.324-.563-.531-.92-.718-1.17-.173-.232-.274-.292-.347-.322-.072-.029-.186-.055-.471-.01-.308.049-.706.16-1.33.337h-.001l-2.053.578-.039.01c-.965.223-1.978.096-2.859-.356l-.036-.02-.567-.327-.033-.02c-.756-.484-1.337-1.198-1.658-2.036l-.007-.016-.006-.018-.562-1.678v-.002c-.191-.573-.313-.937-.436-1.201-.113-.243-.192-.322-.253-.366-.06-.044-.16-.093-.425-.123-.289-.033-.671-.035-1.274-.035h-1.876c-.604 0-.986.002-1.274.035-.266.03-.365.079-.425.123-.061.044-.14.123-.254.366-.122.264-.244.628-.435 1.201v.002l-.562 1.678-.006.018-.007.016c-.322.838-.902 1.552-1.658 2.036l-.033.02-.567.327-.036.02c-.881.452-1.894.579-2.859.356l-.04-.01-2.052-.578h-.002c-.624-.177-1.021-.288-1.329-.337-.285-.045-.399-.02-.471.01-.073.03-.174.09-.347.322-.187.25-.394.607-.718 1.17l-.83 1.441c-.304.528-.497.863-.613 1.132-.108.249-.115.362-.107.437l.043.148c.028.064.074.146.153.257.169.238.426.526.833.979l.001.002 1.736 1.94.016.018.017.022c.561.71.907 1.839.907 2.834-.001.996-.346 2.124-.907 2.835l-.033.039-1.736 1.941-.001.001c-.407.452-.664.739-.833.978-.157.221-.188.33-.196.406-.008.076-.001.189.107.437.116.269.309.603.613 1.13l.83 1.443c.324.563.531.92.718 1.17.173.232.274.293.347.322.072.03.186.055.471.01.308-.049.705-.16 1.329-.337h.002l2.052-.578.04-.01c.845-.195 1.726-.123 2.524.202l.335.155.036.019.567.327.033.02c.661.423 1.19 1.022 1.526 1.727l.132.309.007.016.006.018.562 1.678v.002c.188.566.319.945.439 1.214.062.139.106.218.135.26l.031.041.079.054c.032.02.074.042.134.064.128.047.368.107.763.095.464-.014.851.351.866.815.014.465-.351.854-.815.868-.595.018-1.052-.072-1.399-.2-.172-.064-.31-.135-.419-.201-.054-.033-.099-.064-.134-.089-.019-.013-.053-.036-.061-.042-.354-.256-.563-.632-.718-.981-.16-.359-.317-.823-.498-1.368v-.001l-.549-1.642c-.192-.501-.539-.926-.989-1.216l-.514-.295c-.522-.265-1.118-.341-1.688-.212l-2.028.571-.001-.001c-.583.165-1.091.313-1.52.381-.396.063-.795.072-1.198-.053l-.173-.06c-.462-.188-.785-.509-1.06-.876-.26-.349-.524-.809-.828-1.336l-.831-1.441c-.285-.494-.535-.926-.699-1.303-.172-.398-.284-.814-.235-1.282.05-.468.246-.851.497-1.204.238-.336.573-.706.954-1.129l1.713-1.918c.281-.369.532-1.097.532-1.773Z"/><path fill-opacity=".9" d="M162.16 130.594c0-3.748 3.172-6.591 6.626-6.637h.011c.89 0 1.678.123 2.45.422.765.298 1.472.754 2.22 1.363.36.293.415.822.122 1.183-.294.36-.825.415-1.185.121-.666-.542-1.22-.885-1.767-1.097-.539-.21-1.112-.309-1.833-.309-2.603.037-4.961 2.198-4.961 4.954 0 1.559.451 2.505 1.37 3.569.304.351.264.883-.087 1.186-.351.304-.883.265-1.186-.087-1.14-1.318-1.78-2.642-1.78-4.668Z"/></g><g fill="#fff"><path fill-opacity=".9" d="M307.532 151.243c.463.033.812.436.778.9l-.303 4.195c-.067.927.631 1.733 1.557 1.8l3.357.242c.463.034.812.436.778.9-.033.463-.436.812-.899.778l-13.426-.969c-.464-.034-.812-.437-.779-.9.034-.464.436-.812.9-.779l3.356.243c.927.067 1.733-.63 1.8-1.557l.303-4.196c.033-.463.436-.812.9-.778l1.678.121Z"/><path fill-opacity=".9" d="M323.547 139.747c.173-2.397.295-4.111.214-5.426-.08-1.29-.35-2.068-.866-2.664-.515-.595-1.246-.975-2.511-1.239-1.29-.269-3.004-.395-5.401-.568l-13.426-.97c-2.397-.173-4.111-.295-5.426-.214-1.29.08-2.069.35-2.664.866-.595.515-.975 1.246-1.239 2.511-.269 1.29-.395 3.004-.568 5.401l-.243 3.356c-.173 2.398-.295 4.112-.214 5.427.08 1.29.351 2.068.866 2.663.515.596 1.246.975 2.512 1.24 1.289.269 3.003.394 5.4.568l13.426.969c2.397.173 4.112.295 5.426.214 1.29-.079 2.069-.35 2.664-.865.596-.515.975-1.247 1.239-2.512.269-1.289.395-3.003.568-5.4l.243-3.357Zm1.436 3.478c-.17 2.349-.302 4.196-.599 5.622-.303 1.45-.8 2.588-1.786 3.441-.986.853-2.184 1.182-3.662 1.273-1.454.089-3.3-.046-5.65-.215l-13.426-.97c-2.35-.17-4.197-.301-5.622-.599-1.45-.303-2.589-.8-3.442-1.786-.852-.985-1.181-2.183-1.272-3.662-.09-1.454.045-3.3.215-5.65l.243-3.356c.169-2.35.301-4.197.598-5.623.303-1.45.8-2.588 1.786-3.441.986-.853 2.184-1.181 3.662-1.272 1.454-.09 3.301.045 5.65.215l13.426.97c2.35.169 4.197.301 5.623.599 1.45.302 2.588.8 3.441 1.785.853.986 1.181 2.184 1.272 3.662.09 1.454-.045 3.301-.215 5.65l-.242 3.357Z"/><path fill-opacity=".6" d="M307.271 145.321c.044-.618-.217-1.141-.585-1.167l-.011-.001c-.368-.026-.701.453-.746 1.071-.045.618.217 1.14.584 1.167l.012.001c.367.026.701-.453.746-1.071Z"/><path fill-opacity=".6" d="m306.575 136.273-.323 4.475c-.044.618.217 1.141.584 1.167.368.027.701-.453.746-1.07l.323-4.476c.045-.618-.217-1.14-.584-1.167-.367-.026-.701.453-.746 1.071Z"/></g><g fill="#fff"><path fill-opacity=".9" d="m41.6204 193.64-2.7824-13.17c-.0961-.455.1946-.901.6492-.997.4546-.096.901.194.9971.649l2.7824 13.17c.0961.455-.1946.901-.6492.997-.4546.096-.901-.194-.9971-.649Z"/><path fill-opacity=".9" d="m61.3736 189.467-1.3912-6.585c-.4968-2.352-.8539-4.033-1.2955-5.274-.4334-1.217-.9086-1.891-1.5685-2.32-.6598-.43-1.4678-.592-2.7566-.496-1.3136.098-2.9955.451-5.3469.948l-.1737.037c.2813.184.6079.376.961.566.5283.285 1.0819.555 1.5817.801.4782.236.948.468 1.2453.656.3927.248.5099.767.262 1.16-.2481.393-.7677.51-1.1606.262-.2044-.129-.5787-.316-1.0909-.569-.4905-.241-1.0748-.527-1.6365-.83-.5577-.3-1.1276-.636-1.5824-.987-.2278-.176-.4477-.371-.6273-.585-.1748-.207-.3519-.481-.422-.812-.07-.332-.0187-.654.0572-.914.0779-.268.2-.536.3373-.789.274-.504.6594-1.042 1.0477-1.543.3911-.504.8101-1.001 1.161-1.421.3664-.437.6328-.761.7676-.961.259-.386.7816-.489 1.1673-.23.3857.259.4887.782.2299 1.167-.196.292-.5317.695-.8737 1.104-.3576.427-.7546.898-1.1225 1.372-.2459.317-.4669.625-.6499.907l.1737-.037c2.3048-.487 4.116-.872 5.5686-.98 1.477-.11 2.7086.053 3.8008.764s1.7395 1.771 2.236 3.167c.4883 1.372.8692 3.184 1.3562 5.489l1.3912 6.585c.0961.455-.1946.901-.6492.997-.4546.096-.901-.194-.9971-.649Z"/><path fill-opacity=".6" d="M45.607 196.238c-.2881-1.364-1.6273-2.236-2.9911-1.948-1.3639.289-2.2359 1.628-1.9477 2.992.2881 1.363 1.6273 2.235 2.9911 1.947 1.3638-.288 2.2359-1.627 1.9477-2.991Zm1.6463-.348c.4802 2.273-.9731 4.505-3.2462 4.986-2.273.48-4.505-.974-4.9852-3.247-.4803-2.273.9731-4.505 3.2462-4.985 2.273-.48 4.505.973 4.9852 3.246Z"/><path fill-opacity=".9" d="M41.4351 176.482c-.2881-1.364-1.6273-2.236-2.9911-1.947-1.3638.288-2.2359 1.627-1.9477 2.991.2881 1.364 1.6273 2.236 2.9911 1.947 1.3639-.288 2.2359-1.627 1.9477-2.991Zm1.6463-.348c.4803 2.274-.9731 4.506-3.2462 4.986-2.273.48-4.505-.973-4.9852-3.246-.4802-2.274.9731-4.505 3.2462-4.986 2.273-.48 4.505.973 4.9852 3.246Z"/><path fill-opacity=".9" d="M65.3648 192.064c-.2881-1.363-1.6273-2.236-2.9911-1.947-1.3638.288-2.2359 1.627-1.9477 2.991.2881 1.364 1.6273 2.236 2.9911 1.947 1.3638-.288 2.2359-1.627 1.9477-2.991Zm1.6463-.347c.4802 2.273-.9731 4.505-3.2462 4.985-2.273.48-4.505-.973-4.9852-3.246-.4802-2.273.9731-4.505 3.2462-4.986 2.273-.48 4.505.973 4.9852 3.247Z"/></g><g fill="#fff" style="transform:translateY(5px)"><path fill-opacity=".9" d="M81.8332 397.714c-.4541-3.764-.7871-6.503-1.3208-8.561-.5276-2.035-1.2227-3.28-2.322-4.143-1.0993-.862-2.4741-1.241-4.5757-1.27-2.1261-.029-4.8657.299-8.6299.753-3.7642.454-6.5031.787-8.5614 1.321-2.0345.527-3.2797 1.223-4.1423 2.322-.8626 1.099-1.2417 2.474-1.2703 4.576-.0289 2.126.299 4.865.7531 8.63.4541 3.764.7871 6.503 1.3208 8.561.5276 2.034 1.2228 3.28 2.322 4.142 1.0993.863 2.4741 1.242 4.5757 1.271 2.1262.028 4.8657-.299 8.6299-.754.8867-.107 1.7183-.206 2.5005-.305.4609-.057.8823.269.9403.729.0579.461-.2684.882-.729.941-.7872.099-1.6242.199-2.5103.306-3.7166.448-6.588.796-8.8535.765-2.29-.031-4.0871-.448-5.5922-1.629-1.5051-1.181-2.3376-2.828-2.9124-5.044-.5686-2.194-.9139-5.065-1.3623-8.782-.4484-3.717-.7959-6.588-.7652-8.853.0311-2.29.4482-4.088 1.6293-5.593s2.8274-2.337 5.0443-2.912c2.1932-.569 5.0648-.914 8.7815-1.362 3.7167-.449 6.588-.796 8.8535-.766 2.29.032 4.087.449 5.5922 1.63 1.5051 1.181 2.3377 2.827 2.9125 5.044.5686 2.193.9139 5.065 1.3622 8.781.1069.887.2085 1.723.2996 2.512.053.461-.2786.878-.7399.931-.4615.054-.8784-.278-.9318-.74-.0905-.783-.1914-1.614-.2984-2.501Z"/><path fill-opacity=".6" d="M79.0961 403.129c.3493-.042.6879.138.8488.451l.5712 1.113c.7843 1.527 1.0739 2.051 1.5193 2.4.4454.35 1.0229.506 2.6928.905l1.2168.29c.3421.082.5972.368.6393.717.0421.35-.1376.688-.4504.849l-1.1128.571c-1.5272.785-2.0509 1.074-2.4004 1.52-.3495.445-.5062 1.023-.9049 2.692l-.2901 1.217c-.082.342-.368.597-.7173.64-.3494.042-.6879-.138-.8488-.451l-.5712-1.113c-.7844-1.527-1.074-2.051-1.5194-2.4-.4453-.35-1.0229-.506-2.6927-.905l-1.2168-.29c-.3421-.082-.5972-.368-.6393-.717-.0422-.35.1376-.688.4504-.849l1.1128-.571c1.5272-.785 2.0509-1.074 2.4004-1.52.3494-.445.5062-1.023.9048-2.692l.2902-1.217.0397-.124c.1144-.279.3719-.479.6776-.516Zm.3899 3.232c-.2515.998-.4955 1.74-.9787 2.356-.4831.616-1.1458 1.029-2.0554 1.511.998.251 1.7401.495 2.3558.978.6154.483 1.0293 1.145 1.5106 2.054.2513-.997.4959-1.739.9788-2.354s1.1449-1.029 2.0538-1.511c-.9972-.251-1.7387-.495-2.3541-.978-.6157-.484-1.0292-1.146-1.5108-2.056Z"/><path fill-opacity=".9" d="m82.064 392.603.2016 1.67-31.7399 3.829-.2015-1.67 31.7398-3.829Z"/><path fill-opacity=".9" d="M57.1507 389.675c.4613-.056.8804.273.936.734.0557.462-.2732.881-.7345.936l-.0146.002c-.4613.056-.8804-.273-.9361-.734-.0556-.462.2732-.881.7345-.936l.0147-.002Z"/><path fill-opacity=".9" d="M63.8304 388.87c.4613-.056.8804.273.936.735.0557.461-.2732.88-.7345.936l-.0146.001c-.4613.056-.8804-.273-.9361-.734-.0556-.461.2732-.88.7345-.936l.0147-.002Z"/></g><path fill="#fff" fill-opacity=".9" d="M224.614 387.968c0-.725-.002-1.453 0-2.152.002-1.302.698-2.241 1.507-2.932.782-.668 1.792-1.204 2.565-1.654 1.71-.999 3.074-2.607 3.7-4.526.122-.374.027-.715-.237-.997-.278-.298-.745-.518-1.281-.518-.506 0-1.032.222-1.614.633-.588.415-1.127.944-1.702 1.476-.204.188-.406.343-.583.456-2.703 1.723-6.279-.331-6.279-3.406 0-3.052 3.522-5.095 6.216-3.441.634.333 1.148.771 1.551 1.215.751.825 1.589 1.385 2.422 1.385.551 0 1.031-.223 1.32-.531.273-.292.374-.647.25-1.037-1.031-3.221-4.079-5.56-7.682-5.56-.759 0-1.296.107-1.627.203-.166.049-.282.094-.348.124-.034.014-.055.026-.065.031l.005-.003c-.312.187-.709.152-.984-.088-.275-.239-.365-.63-.222-.966l3.602-8.403c.415-1.028-.336-2.119-1.382-2.12-.56 0-1.08.322-1.337.843l-4.84 9.833c-.205.416-.708.588-1.125.383-.417-.205-.589-.709-.385-1.126l.668-1.355v-5.413c-.001-.875-.696-1.563-1.525-1.563-.83 0-1.525.688-1.525 1.563v12.018c0 .465-.377.842-.842.842-.464 0-.841-.377-.841-.842v-5.608c0-.875-.695-1.563-1.525-1.563-.829 0-1.525.688-1.525 1.563v8.614l.023.79c.106 1.838.578 3.639 1.39 5.29l.49.995c.824 1.674 1.252 3.519 1.252 5.388v2.159c0 .465-.376.842-.841.842-.465 0-.841-.377-.841-.842v-2.159c0-1.613-.37-3.203-1.08-4.645l-.49-.996c-.977-1.986-1.515-4.163-1.579-6.379l-.006-.443v-8.614c0-1.78 1.423-3.245 3.207-3.245.554 0 1.073.141 1.525.389v-3.554c0-1.78 1.424-3.245 3.208-3.245 1.783 0 3.207 1.465 3.207 3.245v1.993l2.49-5.058c.535-1.087 1.636-1.782 2.847-1.782 2.279 0 3.789 2.334 2.943 4.431l-.006.018-2.93 6.831c.301-.035.639-.059 1.014-.059 4.347 0 8.033 2.824 9.284 6.73.332 1.038.016 2.016-.625 2.7-.078.084-.163.162-.251.237.07.063.139.127.204.195.631.677.94 1.645.606 2.669-.762 2.336-2.409 4.263-4.451 5.455-.871.508-1.686.941-2.319 1.482-.607.519-.917 1.031-.919 1.654-.001.697 0 1.42 0 2.15 0 .465-.376.842-.841.842-.465 0-.841-.377-.841-.842Zm-2.241-13.62c0 1.764 2.121 2.986 3.688 1.988.085-.054.21-.146.349-.274l.867-.8c.316-.282.654-.565 1.006-.814.051-.035.102-.07.155-.105-.472-.33-.884-.715-1.225-1.089-.297-.327-.66-.631-1.089-.856-.021-.011-.041-.024-.061-.037-1.567-.998-3.69.223-3.69 1.987Z"/><g fill="#fff" style="transform:translateY(5px)"><path fill-opacity=".9" d="M350.664 366.915v-4.284c0-2.562-.001-4.557.184-6.132.188-1.596.576-2.864 1.425-3.931.459-.578 1.003-1.09 1.613-1.52 1.12-.789 2.446-1.148 4.123-1.323 1.664-.173 3.774-.172 6.499-.172.464 0 .841.377.841.841 0 .465-.377.841-.841.841-2.762 0-4.768.001-6.325.163-1.543.161-2.542.474-3.327 1.027-.482.339-.908.74-1.265 1.19-.578.726-.903 1.646-1.072 3.081-.171 1.454-.172 3.333-.172 5.935v4.284c0 2.503 0 4.341.097 5.802.096 1.453.283 2.477.632 3.357 1.174 2.962 3.666 5.319 6.849 6.436 1.946.683 4.415.695 9.784.695 3.097 0 4.431-.011 5.47-.376 1.725-.606 3.068-1.88 3.699-3.47.179-.454.283-.997.337-1.81.054-.82.054-1.857.054-3.293v-1.146c0-.465.376-.842.841-.842.465 0 .841.377.841.842v1.146c0 1.414.001 2.515-.057 3.404-.059.895-.181 1.634-.452 2.318-.819 2.067-2.545 3.68-4.706 4.438-1.378.484-3.072.472-6.027.472-5.227 0-8.056.012-10.341-.79-3.618-1.271-6.493-3.964-7.856-7.403-.44-1.111-.646-2.33-.748-3.866-.101-1.53-.1-3.433-.1-5.914Z"/><path fill-opacity=".6" d="M379.83 355.49c.438-.155.919.075 1.075.512.155.438-.075.92-.513 1.075-.449.159-.967.501-1.517.983-.541.474-1.067 1.043-1.533 1.602-.464.556-.858 1.089-1.137 1.484-.139.197-.248.359-.322.47-.037.055-.065.098-.084.126-.009.014-.017.025-.021.031-.002.004-.003.007-.003.009l-.002.001c-.163.256-.45.403-.753.388-.303-.015-.574-.192-.71-.463-.37-.742-.703-1.037-.87-1.149-.085-.056-.138-.073-.147-.076.002.001.007.003.013.004.008.001.018.001.03.001.006.001.013.002.02.002h.023s.001 0 .001-.002c-.464 0-.841-.375-.841-.839 0-.465.377-.842.841-.842v.436c.001-.433.001-.436.002-.436h.028c.01.001.022.001.034.002.025.002.054.004.086.008.063.009.14.025.227.05.174.05.385.138.616.292.231.154.473.367.716.659.266-.363.592-.791.962-1.234.499-.598 1.087-1.238 1.715-1.789.62-.544 1.325-1.044 2.064-1.305Z"/><path fill-opacity=".6" d="M384.318 358.807c0-4.182-3.39-7.572-7.571-7.572-4.182 0-7.572 3.39-7.572 7.572s3.39 7.572 7.572 7.572c4.181 0 7.571-3.39 7.571-7.572Zm1.683 0c0 5.111-4.143 9.255-9.254 9.255s-9.255-4.144-9.255-9.255c0-5.111 4.144-9.254 9.255-9.254 5.111 0 9.254 4.143 9.254 9.254Z"/><path fill-opacity=".9" d="M361.882 378.438c0-.301.013-.612.026-.91.015-.304.029-.595.035-.884.012-.584-.014-1.091-.128-1.518-.182-.678-.711-1.207-1.389-1.389-.427-.114-.934-.14-1.518-.128-.29.006-.58.02-.884.034-.298.014-.609.027-.91.027-3.562-.001-6.45-2.888-6.45-6.45 0-.464.377-.841.841-.841.465 0 .842.377.842.841 0 2.633 2.134 4.767 4.767 4.767.258 0 .534-.011.833-.025.292-.013.61-.029.926-.036.629-.013 1.327.009 1.989.186 1.258.337 2.241 1.32 2.578 2.578.177.662.199 1.36.186 1.988-.007.317-.023.635-.037.927-.013.299-.024.575-.024.833 0 2.633 2.134 4.767 4.767 4.767.464 0 .841.377.841.842 0 .464-.377.841-.841.841-3.562 0-6.45-2.888-6.45-6.45Z"/></g><g fill="#fff" style="transform:translateY(5px)"><path fill-opacity=".9" d="M460.043 287.662c.329-.328.861-.328 1.19 0l6.73 6.731c.329.328.329.861 0 1.19-.328.328-.861.328-1.189 0l-6.731-6.731c-.328-.328-.328-.861 0-1.19Z"/><path fill-opacity=".9" d="M439.605 279.844c0-6.969 5.651-12.619 12.62-12.619.465 0 .841.376.841.841 0 .465-.376.841-.841.841-6.04 0-10.937 4.897-10.937 10.937 0 6.041 4.897 10.937 10.937 10.937 6.041 0 10.937-4.896 10.937-10.937 0-.464.377-.841.842-.841.464 0 .841.377.841.841 0 6.97-5.65 12.62-12.62 12.62-6.969 0-12.62-5.65-12.62-12.62Z"/><path fill-opacity=".6" d="M459.797 265.543c.352 0 .666.219.789.549l.433 1.173c.596 1.61.821 2.165 1.221 2.565.401.4.955.625 2.565 1.221l1.174.434c.329.122.548.437.548.788 0 .352-.219.667-.548.789l-1.174.434c-1.61.596-2.164.821-2.565 1.221-.4.4-.625.955-1.221 2.565l-.433 1.173c-.123.33-.437.549-.789.549-.352 0-.666-.219-.789-.549l-.434-1.173c-.595-1.61-.82-2.165-1.221-2.565-.4-.4-.954-.625-2.565-1.221l-1.173-.434c-.33-.122-.549-.437-.549-.789 0-.351.219-.666.549-.788l1.173-.434c1.611-.596 2.165-.821 2.565-1.221.401-.4.626-.955 1.221-2.565l.434-1.173.054-.119c.147-.262.427-.43.735-.43Zm0 3.255c-.369.961-.7 1.668-1.254 2.222-.553.553-1.261.884-2.221 1.253.96.37 1.668.701 2.221 1.254.553.553.885 1.26 1.254 2.22.369-.96.701-1.667 1.254-2.22.553-.553 1.26-.885 2.22-1.254-.96-.368-1.667-.7-2.22-1.253-.554-.554-.885-1.261-1.254-2.222Z"/></g><use xlink:href="#c" clip-rule="evenodd" style="transform-box:fill-box;transform-origin:center" transform="scale(.9)"/><use xlink:href="#c" fill-rule="evenodd" class="absolute opacity-50" clip-rule="evenodd" style="animation:ping-small 2s ease-in-out infinite;transform-origin:center;transform-box:fill-box"/><defs><linearGradient id="b" x1="169.423" x2="358.958" y1="72.2472" y2="331.351" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset="1" stop-color="#583EDC"/></linearGradient><filter id="a" width="661.461" height="572.484" x="-66.5391" y="-84.4434" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_1241_451" stdDeviation="30"/><feTurbulence baseFrequency="0.0099999997764825821 0.0099999997764825821" numOctaves="3" result="noise" seed="6622" stitchTiles="stitch" type="fractalNoise"/><feComponentTransfer in="noise" result="coloredNoise1"><feFuncR intercept="-.5" slope="2" type="linear"/><feFuncG intercept="-.5" slope="2" type="linear"/><feFuncB intercept="-.5" slope="2" type="linear"/><feFuncA tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" type="discrete"/></feComponentTransfer><feComposite in="coloredNoise1" in2="effect1_foregroundBlur_1241_451" operator="in" result="noise1Clipped"/><feComponentTransfer in="noise1Clipped" result="color1"><feFuncA tableValues="0 0.15" type="table"/></feComponentTransfer><feMerge result="effect2_noise_1241_451"><feMergeNode in="effect1_foregroundBlur_1241_451"/><feMergeNode in="color1"/></feMerge></filter></defs></svg>
-                            </div>
-                            <div class="p-6 lg:p-10">
-                                <h3 class="text-sm text-gray-400">All-in-one Framework</h3>
-                                <p class="mt-2 text-lg font-medium tracking-tight text-white">Everything you need to test your app</p>
-                                <p class="mt-2 max-w-lg text-sm/6 text-gray-400">All the testing features you need, built into one elegant framework.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex p-px lg:col-span-4">
-                        <div class="w-full overflow-hidden rounded-lg bg-white/10 outline outline-offset-10 outline-white/10 max-lg:rounded-b-4xl lg:rounded-br-4xl">
-                            <div
-                                x-data="{ x: 50, dragging: false }"
-                                x-init="() => {
-                                    const handleWidth = 40;
-                                    const getX = (e) => e.clientX ?? e.touches?.[0]?.clientX ?? e.changedTouches?.[0]?.clientX;
-
-                                    const update = (e) => {
-                                        if (!dragging) return;
-                                        const clientX = getX(e);
-                                        if (clientX == null) return;
-
-                                        const rect = $refs.stage.getBoundingClientRect();
-                                        x = Math.min(100, Math.max(0, (((clientX - rect.left) - (handleWidth / 2)) / rect.width) * 100));
-
-                                        if (e.type?.startsWith?.('touch')) e.preventDefault?.();
-                                    };
-
-                                    const stop = () => { dragging = false; };
-
-                                    window.addEventListener('mousemove', update, { passive: true });
-                                    window.addEventListener('mouseup', stop, { passive: true });
-                                    window.addEventListener('touchmove', update, { passive: false });
-                                    window.addEventListener('touchend', stop, { passive: true });
-                                    window.addEventListener('touchcancel', stop, { passive: true });
-                                }"
-                                class="relative w-full grow h-85 overflow-hidden select-none"
-                            >
-                                <div class="mt-6 lg:mt-10 ml-6 lg:ml-10 h-full w-full">
-                                    <div x-ref="stage" class="relative h-full w-full overflow-hidden rounded-t-xl bg-gray-950/10 outline outline-gray-950/10">
-                                        <div class="absolute top-0 bottom-0 z-10 w-1 bg-pink-400" :style="{ left: `${x}%`, transform: 'translateX(-50%)' }"></div>
-                                        <div
-                                            :style="{ left: `${x}%` }"
-                                            @mousedown.prevent="dragging = true"
-                                            @touchstart.prevent="dragging = true"
-                                            class="absolute z-20 flex size-10 -translate-x-1/2 -translate-y-1/2 cursor-ew-resize items-center justify-center rounded-full bg-pink-500 top-1/2 -mt-5 touch-none"
-                                            title="Drag to understand the browser testing"
-                                        >
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="size-5.5"><path fill="currentColor" fill-rule="evenodd" d="M1 12c0-.5523.44772-1 1-1h20c.5523 0 1 .4477 1 1s-.4477 1-1 1H2c-.55228 0-1-.4477-1-1Z" clip-rule="evenodd"/><path fill="currentColor" fill-rule="evenodd" d="M5.70709 8.29288c.39053.39052.39055 1.02368.00003 1.41421L3.41421 12.0001l2.29288 2.2928c.39053.3905.39055 1.0237.00003 1.4142-.39051.3905-1.02368.3905-1.41421 0l-3-2.9999A.99982.99982 0 0 1 1 12.0001c0-.2652.10535-.5195.29288-.7071l3-3.00009c.39052-.39053 1.02368-.39055 1.41421-.00003Z" clip-rule="evenodd"/><path fill="currentColor" fill-rule="evenodd" d="M18.2929 8.29288c.3905-.39052 1.0237-.3905 1.4142.00003l3 3.00009a.99993.99993 0 0 1 0 1.4142l-3 2.9999c-.3905.3905-1.0237.3905-1.4142 0-.3905-.3905-.3905-1.0237 0-1.4142l2.2929-2.2928-2.2929-2.29301c-.3905-.39053-.3905-1.02369 0-1.41421Z" clip-rule="evenodd"/></svg>
-                                            <div class="absolute inset-1 rounded-full bg-pink-500 animate-ping"></div>
-                                        </div>
-
-                                        {{-- AFTER --}}
-                                        <img src="/www/assets/after.png" class="absolute inset-0 h-full max-w-none lg:w-full lg:h-auto pointer-events-none" alt="pestphp browser testing">
-
-                                        {{-- BEFORE --}}
-                                        <div class="absolute inset-0 pointer-events-none" :style="`clip-path: inset(0 calc(100% - ${x}%) 0 0)`">
-                                            <img src="/www/assets/before.png" class="absolute inset-0 h-full max-w-none lg:w-full lg:h-auto" alt="pestphp browser testing">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="p-6 lg:p-10">
-                                <h3 class="text-sm text-gray-400">Modern Browser Testing</h3>
-                                <p class="mt-2 text-lg font-medium tracking-tight text-white">Run Browser Tests with Pest</p>
-                                <p class="mt-2 max-w-lg text-sm/6 text-gray-400">Write end-to-end browser tests in Pest using Playwright, with no separate test suite required. Enjoy a unified, modern testing experience.</p>
-                            </div>
+                    <div class="mask-[linear-gradient(90deg,transparent,black_8%,black_92%,transparent)] relative overflow-hidden">
+                        <div class="animate-marquee flex w-max hover:[animation-play-state:paused] motion-reduce:animate-none">
+                            <a class="flex items-center border-r border-zinc-700 px-12 py-7" href="https://cmsmax.com/?ref=pestphp" target="_blank"><img alt="CMS Max" class="h-6 w-auto" loading="lazy" src="/www/sponsors/cmsmax.png"></a>
+                            <a class="flex items-center border-r border-zinc-700 px-12 py-7" href="https://jb.gg/nuno" target="_blank"><img alt="PhpStorm" class="h-5.5 w-auto" loading="lazy" src="/www/sponsors/phpstorm.svg"></a>
+                            <a class="flex items-center border-r border-zinc-700 px-12 py-7" href="https://coderabbit.link/nunomaduro" target="_blank"><img alt="CodeRabbit" class="h-6 w-auto" loading="lazy" src="/www/sponsors/coderabbit.svg"></a>
+                            <a class="flex items-center border-r border-zinc-700 px-12 py-7" href="https://serpapi.com/?ref=nunomaduro" target="_blank"><img alt="SerpApi" class="h-6 w-auto" loading="lazy" src="/www/sponsors/serpapi.png"></a>
+                            <a class="flex items-center border-r border-zinc-700 px-12 py-7" href="https://bentonow.com/?ref=nunomaduro" target="_blank"><img alt="Bento" class="h-5 w-auto" loading="lazy" src="/www/sponsors/bento.svg"></a>
+                            <a class="flex items-center border-r border-zinc-700 px-12 py-7" href="https://redberry.international/laravel-development/" target="_blank"><img alt="Redberry" class="h-6 w-auto" loading="lazy" src="/www/sponsors/redberry.png"></a>
+                            <div aria-hidden="true" class="flex items-center border-r border-zinc-700 px-12 py-7"><img alt="" class="h-6 w-auto" loading="lazy" src="/www/sponsors/cmsmax.png"></div>
+                            <div aria-hidden="true" class="flex items-center border-r border-zinc-700 px-12 py-7"><img alt="" class="h-5.5 w-auto" loading="lazy" src="/www/sponsors/phpstorm.svg"></div>
+                            <div aria-hidden="true" class="flex items-center border-r border-zinc-700 px-12 py-7"><img alt="" class="h-6 w-auto" loading="lazy" src="/www/sponsors/coderabbit.svg"></div>
+                            <div aria-hidden="true" class="flex items-center border-r border-zinc-700 px-12 py-7"><img alt="" class="h-6 w-auto" loading="lazy" src="/www/sponsors/serpapi.png"></div>
+                            <div aria-hidden="true" class="flex items-center border-r border-zinc-700 px-12 py-7"><img alt="" class="h-5 w-auto" loading="lazy" src="/www/sponsors/bento.svg"></div>
+                            <div aria-hidden="true" class="flex items-center border-r border-zinc-700 px-12 py-7"><img alt="" class="h-6 w-auto" loading="lazy" src="/www/sponsors/redberry.png"></div>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <div class="mt-16 lg:mt-24">
-                    <blockquote class="mx-auto max-w-5xl">
-                        <p class="text-center text-3xl font-semibold text-white sm:text-4xl text-balance">
-                            <span class="text-gray-500">"</span>Pest is minimal, <span class="text-pink-500">distraction-free</span>,<br class="sm:hidden"> and a joy to use.<span class="text-gray-500">"</span>
-                        </p>
+            <section aria-label="Built on" class="relative border-b border-zinc-700">
+                <span class="-top-1.25 size-2.25 before:w-2.25 after:h-2.25 -left-1.25 pointer-events-none absolute z-10 before:absolute before:left-0 before:top-1 before:h-px before:bg-rose-500 before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-rose-500 after:content-['']"></span>
+                <span class="-right-1.25 -top-1.25 size-2.25 before:w-2.25 after:h-2.25 pointer-events-none absolute z-10 before:absolute before:left-0 before:top-1 before:h-px before:bg-rose-500 before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-rose-500 after:content-['']"></span>
+                <span class="-bottom-1.25 size-2.25 before:w-2.25 after:h-2.25 -left-1.25 pointer-events-none absolute z-10 before:absolute before:left-0 before:top-1 before:h-px before:bg-rose-500 before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-rose-500 after:content-['']"></span>
+                <span class="-bottom-1.25 -right-1.25 size-2.25 before:w-2.25 after:h-2.25 pointer-events-none absolute z-10 before:absolute before:left-0 before:top-1 before:h-px before:bg-rose-500 before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-rose-500 after:content-['']"></span>
+                <div class="grid grid-cols-2 lg:grid-cols-[auto_repeat(4,1fr)]">
+                    <div class="py-5.5 text-2xs col-span-2 flex items-center border-b border-zinc-700 px-5 font-mono uppercase tracking-widest text-zinc-400 sm:px-10 lg:col-span-1 lg:border-b-0 lg:border-r">Built on</div>
+                    <div class="py-5.5 flex flex-col justify-center gap-0.5 border-r border-zinc-700 px-5 sm:px-6">
+                        <b class="font-display font-stretch-112% text-lg font-bold">PHP 8.4</b>
+                        <span class="text-xs-plus text-zinc-400">Latest language features</span>
+                    </div>
+                    <div class="py-5.5 flex flex-col justify-center gap-0.5 border-zinc-700 px-5 sm:px-6 lg:border-r">
+                        <b class="font-display font-stretch-112% text-lg font-bold">PHPUnit 13</b>
+                        <span class="text-xs-plus text-zinc-400">Rock-solid foundation</span>
+                    </div>
+                    <div class="py-5.5 flex flex-col justify-center gap-0.5 border-r border-zinc-700 px-5 sm:px-6">
+                        <b class="font-display font-stretch-112% text-lg font-bold">One-line upgrade</b>
+                        <span class="text-xs-plus text-zinc-400">From Pest 4, via composer.json</span>
+                    </div>
+                    <div class="py-5.5 flex flex-col justify-center gap-0.5 px-5 sm:px-6">
+                        <b class="font-display font-stretch-112% text-lg font-bold">Open source</b>
+                        <span class="text-xs-plus text-zinc-400">MIT, free forever</span>
+                    </div>
+                </div>
+            </section>
 
-                        <div class="mt-8 flex items-center justify-center gap-4">
-                            <img class="w-[73px] shrink-0 rounded-full" src="/www/assets/taylor-otwell.jpg">
+            <section class="relative" id="why">
+                <div class="pt-19 px-5 pb-10 sm:px-10">
+                    <div class="flex items-center gap-2.5 font-mono text-xs tracking-widest text-zinc-400">
+                        <span class="font-bold text-rose-500">//</span> test with confidence
+                    </div>
+                    <h2 class="font-display font-stretch-112% mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">Why developers <em class="text-rose-500">choose Pest?</em></h2>
+                </div>
+                <div class="gap-4.5 pb-19 grid px-5 sm:px-10 lg:grid-cols-5">
+                    <article class="flex flex-col overflow-hidden rounded-2xl border border-zinc-700 bg-zinc-800 lg:col-span-3">
+                        <div class="mx-4 mt-4 flex flex-1 flex-col gap-2">
+                            <div class="rounded-[10px] bg-zinc-900 px-4 py-3.5">
+                                <div class="text-2xs mb-3 flex items-center gap-2 font-mono text-zinc-500">
+                                    <span class="text-rose-400">//</span>
+                                    <span>tia — test impact analysis</span>
+                                </div>
+                                <div class="overflow-x-auto whitespace-nowrap font-mono text-xs leading-[1.9] text-zinc-300">
+                                    <div><span class="text-zinc-500">$</span> ./vendor/bin/pest --tia</div>
+                                    <div>&nbsp;</div>
+                                    <div><span class="text-zinc-500">~</span> src/Button.tsx <span class="text-rose-400">changed</span></div>
+                                    <div><span class="text-rose-400">→</span> running <span class="font-bold text-zinc-100">2 affected tests</span><span class="text-zinc-500">, replaying 765 from cache</span></div>
+                                    <div>&nbsp;</div>
+                                    <div><span class="text-green-400">✓</span> it may login <span class="text-zinc-500">— 0.21s</span></div>
+                                    <div><span class="text-green-400">✓</span> it may checkout <span class="text-zinc-500">— 0.18s</span></div>
+                                    <div>&nbsp;</div>
+                                    <div>Tests:&nbsp;&nbsp;&nbsp; <span class="text-green-400">774 passed</span> <span class="text-zinc-500">(<span class="text-rose-400">7 affected</span>, 765 replayed)</span></div>
+                                    <div>Duration: <span class="text-green-400">0.74s</span></div>
+                                </div>
+                            </div>
+                            <div class="text-2xs rounded-[10px] bg-zinc-900 px-4 py-5 font-mono">
+                                <div class="mb-3 text-zinc-500"><span class="text-rose-400">//</span> suite duration — full run vs tia</div>
+                                <div class="flex items-center gap-3">
+                                    <span class="w-20 shrink-0 text-zinc-400">pest</span>
+                                    <div class="h-1.5 flex-1 overflow-hidden rounded-full bg-zinc-800">
+                                        <div class="h-full w-full rounded-full bg-zinc-600"></div>
+                                    </div>
+                                    <span class="w-10 shrink-0 text-right text-zinc-400">15.2s</span>
+                                </div>
+                                <div class="mt-2 flex items-center gap-3">
+                                    <span class="w-20 shrink-0 font-semibold text-zinc-100">pest --tia</span>
+                                    <div class="h-1.5 flex-1 overflow-hidden rounded-full bg-zinc-800">
+                                        <div class="h-full w-[5%] min-w-1.5 rounded-full bg-green-500"></div>
+                                    </div>
+                                    <span class="w-10 shrink-0 text-right font-semibold text-green-400">0.74s</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-auto px-6 pb-6 pt-5">
+                            <div class="text-2xs mb-2 font-mono tracking-widest text-rose-500">// tia engine</div>
+                            <h3 class="font-display font-stretch-112% mb-1.5 text-balance text-lg font-bold">Only run the tests that matter</h3>
+                            <p class="text-pretty text-sm/relaxed text-zinc-400">Test Impact Analysis maps your whole suite to the code each test depends on, so a change to one file re-runs only the tests it can break. A 15-second suite comes back in under a second, fast enough for an agent to run it after every edit.</p>
+                        </div>
+                    </article>
+
+                    <article class="flex flex-col overflow-hidden rounded-2xl border border-zinc-700 bg-zinc-800 lg:col-span-2">
+                        <div class="mx-4 mt-4 flex-1 overflow-x-auto whitespace-nowrap rounded-[10px] bg-zinc-900 p-4 font-mono text-xs leading-[1.9] text-slate-200">
+                            <div><span class="rounded-xs text-2xs bg-red-500 px-2 py-px font-bold text-zinc-900">FAIL</span>&nbsp; Tests\MathTest</div>
+                            <div><span class="text-red-400">×</span> it adds numbers</div>
+                            <hr class="my-3.5 border-red-500">
+                            <div><span class="rounded-xs text-2xs bg-red-500 px-2 py-px font-bold text-zinc-900">FAILED</span>&nbsp; Tests\MathTest <span class="text-slate-500">&gt;</span> adds numbers</div>
+                            <div class="font-bold">Failed asserting that <span class="text-yellow-400">2</span> is identical to <span class="text-yellow-400">3</span>.</div>
+                            <div>&nbsp;</div>
+                            <div><span class="text-slate-500">at</span> <span class="text-green-400">tests/MathTest.php:4</span></div>
+                            <div>&nbsp;</div>
+                            <div><span class="inline-block w-4 select-none">&nbsp;</span><span class="mr-4 inline-block w-4 select-none text-right text-slate-500">1</span><span class="text-slate-500">&lt;?php</span></div>
+                            <div><span class="inline-block w-4 select-none">&nbsp;</span><span class="mr-4 inline-block w-4 select-none text-right text-slate-500">2</span></div>
+                            <div><span class="inline-block w-4 select-none">&nbsp;</span><span class="mr-4 inline-block w-4 select-none text-right text-slate-500">3</span><span class="text-red-400">it</span>(<span class="text-green-400">'adds numbers'</span>, <span class="text-blue-400">function</span> () {</div>
+                            <div><span class="inline-block w-4 select-none font-bold text-red-500">→</span><span class="mr-4 inline-block w-4 select-none text-right text-slate-500">4</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-400">expect</span>(<span class="text-yellow-400">1</span> + <span class="text-yellow-400">1</span>)-><span class="text-blue-400">toBe</span>(<span class="text-yellow-400">3</span>);</div>
+                            <div><span class="inline-block w-4 select-none">&nbsp;</span><span class="mr-4 inline-block w-4 select-none text-right text-slate-500">5</span>});</div>
+                            <div>&nbsp;</div>
+                            <div>Tests:&nbsp;&nbsp;&nbsp; <span class="text-red-400">1 failed</span><span class="text-slate-500">, 773 passed (2658 assertions)</span></div>
+                            <div>Duration: <span class="text-slate-200">4.18s</span></div>
+                        </div>
+                        <div class="mt-auto px-6 pb-6 pt-5">
+                            <div class="text-2xs mb-2 font-mono tracking-widest text-rose-500">// readable failures</div>
+                            <h3 class="font-display font-stretch-112% mb-1.5 text-balance text-lg font-bold">Failures that explain themselves</h3>
+                            <p class="text-pretty text-sm/relaxed text-zinc-400">A failed test prints the assertion, the diff and the exact line of code in your terminal. Most of the time you know the fix before you open the editor.</p>
+                        </div>
+                    </article>
+
+                    <article class="flex flex-col overflow-hidden rounded-2xl border border-zinc-700 bg-zinc-800 lg:col-span-2">
+                        <div class="flex flex-wrap gap-3 px-6 pt-6">
+                            <span class="flex items-center gap-1.5 rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1.5 font-mono text-xs text-zinc-400" x-tooltip="Run your test suite concurrently across CPU processes to dramatically cut run time."><svg class="size-3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 4v16M12 4v16M18 4v16"/></svg> parallel</span>
+                            <span class="flex items-center gap-1.5 rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1.5 font-mono text-xs text-zinc-400" x-tooltip="Measure the percentage of your code executed during testing to find untested paths."><svg class="size-3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 3l7 3v5.5c0 4.2-3 7.3-7 9.5-4-2.2-7-5.3-7-9.5V6z"/></svg> coverage</span>
+                            <span class="flex items-center gap-1.5 rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1.5 font-mono text-xs text-zinc-400" x-tooltip="Write elegant browser tests with parallel support and first-class Laravel integration."><svg class="size-3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" stroke="currentColor" viewBox="0 0 24 24"><rect height="14" rx="2" width="18" x="3" y="5"/><path d="M3 9h18"/></svg> browser testing<span class="text-3xs -mr-1 rounded-full bg-rose-500 px-1.5 py-px font-bold uppercase tracking-wide text-white">new</span></span>
+                            <span class="flex items-center gap-1.5 rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1.5 font-mono text-xs text-zinc-400" x-tooltip="Assert your codebase follows architectural rules — namespaces, dependencies and conventions."><svg class="size-3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" stroke="currentColor" viewBox="0 0 24 24"><rect height="6.5" width="6.5" x="4" y="13.5"/><rect height="6.5" width="6.5" x="13.5" y="13.5"/><rect height="6.5" width="6.5" x="8.75" y="4"/></svg> architecture</span>
+                            <span class="flex items-center gap-1.5 rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1.5 font-mono text-xs text-zinc-400" x-tooltip="Compare output against a stored snapshot to catch unexpected changes over time."><svg class="size-3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" stroke="currentColor" viewBox="0 0 24 24"><rect height="12" rx="2" width="18" x="3" y="8"/><path d="M8.5 8l1.5-3h4l1.5 3"/><circle cx="12" cy="13.5" r="3"/></svg> snapshot</span>
+                            <span class="flex items-center gap-1.5 rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1.5 font-mono text-xs text-zinc-400" x-tooltip="Introduce small code changes to verify your tests actually catch the regressions."><svg class="size-3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" stroke="currentColor" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M6 8v8M18 8c0 4.5-4.5 5.5-8.5 6"/></svg> mutation</span>
+                            <span class="flex items-center gap-1.5 rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1.5 font-mono text-xs text-zinc-400" x-tooltip="Inspect stability and reliability under realistic or extreme load, tied to the expectation API."><svg class="size-3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 2 4.5 14H11l-1 8 8.5-12H12z"/></svg> stress</span>
+                            <span class="flex items-center gap-1.5 rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1.5 font-mono text-xs text-zinc-400" x-tooltip="Measure the quality of AI output with LLM-as-judge, semantic similarity and trajectory scorers."><svg class="size-3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 3.5l1.8 4.7 4.7 1.8-4.7 1.8L12 16.5l-1.8-4.7-4.7-1.8 4.7-1.8zM19 16l.9 2.1L22 19l-2.1.9L19 22l-.9-2.1L16 19l2.1-.9z"/></svg> evals<span class="text-3xs -mr-1 rounded-full bg-rose-500 px-1.5 py-px font-bold uppercase tracking-wide text-white">new</span></span>
+                            <span class="flex items-center gap-1.5 rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1.5 font-mono text-xs text-zinc-400" x-tooltip="Use the --profile flag to identify the slowest tests and optimize their execution."><svg class="size-3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 20h16M7 20v-6M12 20V9M17 20v-9"/></svg> profiling</span>
+                            <span class="flex items-center gap-1.5 rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1.5 font-mono text-xs text-zinc-400" x-tooltip="Measure the percentage of your code executed during testing to find untested paths."><svg class="size-3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12.3l2.4 2.4 4.6-5"/></svg> type coverage</span>
+                            <span class="flex items-center gap-1.5 rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1.5 font-mono text-xs text-zinc-400" x-tooltip="Test Impact Analysis re-runs only the tests affected by your latest changes — near-instant runs."><svg class="size-3.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg> tia engine<span class="text-3xs -mr-1 rounded-full bg-rose-500 px-1.5 py-px font-bold uppercase tracking-wide text-white">new</span></span>
+                        </div>
+                        <div class="mt-auto px-6 pb-6 pt-5">
+                            <div class="text-2xs mb-2 font-mono tracking-widest text-rose-500">// all-in-one framework</div>
+                            <h3 class="font-display font-stretch-112% mb-1.5 text-balance text-lg font-bold">Everything you need to test your app</h3>
+                            <p class="text-pretty text-sm/relaxed text-zinc-400">Parallel execution, coverage, mutation and snapshots ship in the box. You install Pest once and stop assembling a toolchain.</p>
+                        </div>
+                    </article>
+
+                    <article class="flex flex-col overflow-hidden rounded-2xl border border-zinc-700 bg-zinc-800 lg:col-span-3">
+                        <div class="mx-4 mt-4 grid flex-1 gap-2 lg:grid-cols-2">
+                            <div class="overflow-x-auto whitespace-nowrap rounded-[10px] bg-zinc-900 px-4 py-3.5 font-mono text-xs leading-[1.9] text-zinc-300">
+                                <div><span class="text-rose-400">it</span>(<span class="text-green-400">'may login'</span>, <span class="text-violet-400">function</span> () {</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-rose-400">visit</span>(<span class="text-green-400">'/login'</span>)</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-400">type</span>(<span class="text-green-400">'email'</span>, <span class="text-green-400">'hi@example.com'</span>)</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-400">type</span>(<span class="text-green-400">'password'</span>, <span class="text-green-400">'password'</span>)</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-400">press</span>(<span class="text-green-400">'Continue'</span>)</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-400">assertSee</span>(<span class="text-green-400">'Dashboard'</span>)</div>
+                                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-400">assertNoJavascriptErrors</span>();</div>
+                                <div>});</div>
+                            </div>
+                            <div class="flex flex-col overflow-hidden rounded-[10px] border border-zinc-700 bg-zinc-900">
+                                <div class="flex items-center gap-1.5 border-b border-zinc-700 bg-zinc-900 px-3 py-2">
+                                    <i class="size-2 rounded-full bg-zinc-700"></i>
+                                    <i class="size-2 rounded-full bg-zinc-700"></i>
+                                    <i class="size-2 rounded-full bg-zinc-700"></i>
+                                    <span class="text-3xs ml-1.5 flex-1 rounded-md border border-zinc-700 bg-zinc-800 px-2.5 py-0.5 font-mono text-zinc-400">your-app.test/dashboard</span>
+                                </div>
+                                <div class="flex-1 p-3">
+                                    <div class="flex items-center gap-2">
+                                        <span class="h-2 w-12 rounded-sm bg-zinc-700"></span>
+                                        <span class="h-2 w-9 rounded-sm bg-zinc-700"></span>
+                                        <span class="ml-auto size-5 rounded-full bg-zinc-700"></span>
+                                    </div>
+                                    <div class="mt-2 flex items-center gap-3">
+                                        <span class="rounded-xs px-0.5 text-sm font-bold ring-2 ring-green-500/70">Dashboard</span>
+                                        <span class="text-3xs rounded-full bg-green-600 px-2 py-0.5 font-mono font-bold text-white">✓ assertSee('Dashboard')</span>
+                                    </div>
+                                    <div class="mt-3 grid grid-cols-3 gap-2">
+                                        <div class="rounded-lg border border-zinc-700 bg-zinc-800 p-2">
+                                            <div class="h-1.5 w-8 rounded-sm bg-zinc-700"></div>
+                                            <div class="mt-2 h-2.5 w-12 rounded-sm bg-zinc-600"></div>
+                                        </div>
+                                        <div class="rounded-lg border border-zinc-700 bg-zinc-800 p-2">
+                                            <div class="h-1.5 w-8 rounded-sm bg-zinc-700"></div>
+                                            <div class="mt-2 h-2.5 w-12 rounded-sm bg-zinc-600"></div>
+                                        </div>
+                                        <div class="rounded-lg border border-zinc-700 bg-zinc-800 p-2">
+                                            <div class="h-1.5 w-8 rounded-sm bg-zinc-700"></div>
+                                            <div class="mt-2 h-2.5 w-12 rounded-sm bg-zinc-600"></div>
+                                        </div>
+                                        <div class="col-span-2 rounded-lg border border-zinc-700 bg-zinc-800 p-2">
+                                            <div class="h-1.5 w-8 rounded-sm bg-zinc-700"></div>
+                                            <div class="mt-2 h-2.5 w-12 rounded-sm bg-zinc-600"></div>
+                                        </div>
+                                        <div class="rounded-lg border border-zinc-700 bg-zinc-800 p-2">
+                                            <div class="h-1.5 w-8 rounded-sm bg-zinc-700"></div>
+                                            <div class="mt-2 h-2.5 w-12 rounded-sm bg-zinc-600"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-auto px-6 pb-6 pt-5">
+                            <div class="text-2xs mb-2 font-mono tracking-widest text-rose-500">// modern browser testing</div>
+                            <h3 class="font-display font-stretch-112% mb-1.5 text-balance text-lg font-bold">Run browser tests with Pest</h3>
+                            <p class="text-pretty text-sm/relaxed text-zinc-400">Browser tests are plain Pest tests. Playwright drives a real browser while you keep the syntax and the suite you already have.</p>
+                        </div>
+                    </article>
+
+                    <article class="flex flex-col overflow-hidden rounded-2xl border border-zinc-700 bg-zinc-800 lg:col-span-3">
+                        <div class="mx-4 mt-4 flex-1 overflow-x-auto whitespace-nowrap rounded-[10px] bg-zinc-900 px-4 py-3.5 font-mono text-xs leading-[1.9] text-zinc-300">
+                            <div><span class="text-zinc-500">$</span> pest --agent=<span class="text-green-400">'visit("/checkout")->assertNoJavascriptErrors();'</span></div>
+                            <div><span class="text-green-400">✓</span> verify <span class="text-zinc-500">— page loaded · 0 js errors · 0 console warnings</span></div>
+                            <div>&nbsp;</div>
+                            <div><span class="text-rose-400">agent</span> <span class="text-zinc-500">→</span> checking the fix on mobile…</div>
+                            <div><span class="text-zinc-500">$</span> pest --agent=<span class="text-green-400">'visit("/checkout")->on()->mobile()->screenshot(filename: "checkout");'</span></div>
+                            <div><span class="text-green-400">✓</span> verify <span class="text-zinc-500">— layout stable · screenshot saved to .pest/screenshots</span></div>
+                            <div>&nbsp;</div>
+                            <div><span class="text-rose-400">agent</span> <span class="text-zinc-500">→</span> verifying the backend too…</div>
+                            <div><span class="text-zinc-500">$</span> pest --agent=<span class="text-green-400">'$order = \App\Models\Order::factory()->create(); expect($order->total)->toBeGreaterThan(0);'</span></div>
+                            <div><span class="text-green-400">✓</span> verify <span class="text-zinc-500">— 1 passed (1 assertion)</span></div>
+                        </div>
+                        <div class="mt-auto px-6 pb-6 pt-5">
+                            <div class="text-2xs mb-2 font-mono tracking-widest text-rose-500">// agent browser</div>
+                            <h3 class="font-display font-stretch-112% mb-1.5 text-balance text-lg font-bold">Your agents verify their own work</h3>
+                            <p class="text-pretty text-sm/relaxed text-zinc-400">A coding agent can check its own change against your live app with one short CLI command: visit the page, assert on what rendered, save a screenshot as proof. Each probe runs as an isolated, throwaway test, so nothing extra lands in your suite.</p>
+                        </div>
+                    </article>
+
+                    <article class="flex flex-col overflow-hidden rounded-2xl border border-zinc-700 bg-zinc-800 lg:col-span-2">
+                        <div class="mx-4 mt-4 overflow-x-auto whitespace-nowrap rounded-[10px] bg-zinc-900 px-4 py-3.5 font-mono text-xs leading-[1.9] text-zinc-300">
+                            <div><span class="text-rose-400">it</span>(<span class="text-green-400">'answers support questions'</span>, <span class="text-violet-400">function</span> () {</div>
+                            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-400">expect</span>(SupportAgent::class)</div>
+                            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-400">prompt</span>(<span class="text-green-400">'How do I reset my password?'</span>)</div>
+                            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-400">repeat</span>(<span class="text-yellow-400">50</span>)</div>
+                            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-400">toBeRelevant</span>()</div>
+                            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-400">toBeSafe</span>(<span class="text-yellow-400">0.9</span>)</div>
+                            <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-><span class="text-rose-400">toSatisfy</span>(<span class="text-green-400">'Gives the password reset steps'</span>);</div>
+                            <div>});</div>
+                        </div>
+                        <div class="text-2xs mx-4 mt-2 rounded-[10px] bg-zinc-900 px-4 py-4 font-mono">
+                            <div class="mb-2 flex items-center justify-between text-zinc-500">
+                                <span><span class="text-rose-400">//</span> pest --evals — 50 samples</span>
+                                <span class="font-semibold text-green-400">96%</span>
+                            </div>
+                            <div class="h-1.5 overflow-hidden rounded-full bg-zinc-800">
+                                <div class="h-full w-[96%] rounded-full bg-green-500"></div>
+                            </div>
+                        </div>
+                        <div class="mt-auto px-6 pb-6 pt-5">
+                            <div class="text-2xs mb-2 font-mono tracking-widest text-rose-500">// ai evals</div>
+                            <h3 class="font-display font-stretch-112% mb-1.5 text-balance text-lg font-bold">Eval your LLM features like code</h3>
+                            <p class="text-pretty text-sm/relaxed text-zinc-400">Evals are ordinary Pest tests. Assert exact strings where the answer is fixed, and let AI scorers grade relevance or safety where it is not. When a prompt regresses, CI fails.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section aria-label="Community" class="relative border-t border-zinc-700" id="community">
+                <span class="-left-1.25 -top-1.25 size-2.25 before:w-2.25 after:h-2.25 pointer-events-none absolute z-10 before:absolute before:left-0 before:top-1 before:h-px before:bg-rose-500 before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-rose-500 after:content-['']"></span>
+                <span class="-right-1.25 -top-1.25 size-2.25 before:w-2.25 after:h-2.25 pointer-events-none absolute z-10 before:absolute before:left-0 before:top-1 before:h-px before:bg-rose-500 before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-rose-500 after:content-['']"></span>
+                <div class="pt-19 px-5 pb-10 sm:px-10">
+                    <div class="flex items-center gap-2.5 font-mono text-xs tracking-widest text-zinc-400">
+                        <span class="font-bold text-rose-500">//</span> community
+                    </div>
+                    <h2 class="font-display font-stretch-112% mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">Works <em class="text-rose-500">beautifully</em> with your stack.</h2>
+                </div>
+                <div class="gap-4.5 grid grid-cols-2 px-5 sm:grid-cols-4 sm:px-10">
+                    <a class="active:scale-96 group flex items-center justify-center gap-2.5 rounded-xl border border-zinc-700 bg-zinc-800 px-4 py-4 transition-[border-color,scale] hover:border-zinc-200/20" href="https://laravel.com" target="_blank"><img alt="Laravel" class="size-7 object-contain" loading="lazy" src="/www/logos/laravel.svg"><span class="whitespace-nowrap text-sm font-semibold text-zinc-400 transition-colors group-hover:text-zinc-200">Laravel</span></a>
+                    <a class="active:scale-96 group flex items-center justify-center gap-2.5 rounded-xl border border-zinc-700 bg-zinc-800 px-4 py-4 transition-[border-color,scale] hover:border-zinc-200/20" href="https://symfony.com" target="_blank"><img alt="Symfony" class="size-7 object-contain" loading="lazy" src="/www/logos/symfony.svg"><span class="whitespace-nowrap text-sm font-semibold text-zinc-400 transition-colors group-hover:text-zinc-200">Symfony</span></a>
+                    <a class="active:scale-96 group flex items-center justify-center gap-2.5 rounded-xl border border-zinc-700 bg-zinc-800 px-4 py-4 transition-[border-color,scale] hover:border-zinc-200/20" href="https://codeigniter.com" target="_blank"><img alt="CodeIgniter" class="size-7 object-contain" loading="lazy" src="/www/logos/codeigniter.svg"><span class="whitespace-nowrap text-sm font-semibold text-zinc-400 transition-colors group-hover:text-zinc-200">CodeIgniter</span></a>
+                    <a class="active:scale-96 group flex items-center justify-center gap-2.5 rounded-xl border border-zinc-700 bg-zinc-800 px-4 py-4 transition-[border-color,scale] hover:border-zinc-200/20" href="https://statamic.com" target="_blank"><img alt="Statamic" class="size-7 object-contain" loading="lazy" src="/www/logos/statamic.svg"><span class="whitespace-nowrap text-sm font-semibold text-zinc-400 transition-colors group-hover:text-zinc-200">Statamic</span></a>
+                    <a class="active:scale-96 group flex items-center justify-center gap-2.5 rounded-xl border border-zinc-700 bg-zinc-800 px-4 py-4 transition-[border-color,scale] hover:border-zinc-200/20" href="https://wordpress.org" target="_blank"><img alt="WordPress" class="size-7 object-contain invert" loading="lazy" src="/www/logos/wordpress.svg"><span class="whitespace-nowrap text-sm font-semibold text-zinc-400 transition-colors group-hover:text-zinc-200">WordPress</span></a>
+                    <a class="active:scale-96 group flex items-center justify-center gap-2.5 rounded-xl border border-zinc-700 bg-zinc-800 px-4 py-4 transition-[border-color,scale] hover:border-zinc-200/20" href="https://livewire.laravel.com" target="_blank"><img alt="Livewire" class="size-7 object-contain" loading="lazy" src="/www/logos/livewire.svg"><span class="whitespace-nowrap text-sm font-semibold text-zinc-400 transition-colors group-hover:text-zinc-200">Livewire</span></a>
+                    <a class="active:scale-96 group flex items-center justify-center gap-2.5 rounded-xl border border-zinc-700 bg-zinc-800 px-4 py-4 transition-[border-color,scale] hover:border-zinc-200/20" href="https://drupal.org" target="_blank"><img alt="Drupal" class="size-7 object-contain" loading="lazy" src="/www/logos/drupal.svg"><span class="whitespace-nowrap text-sm font-semibold text-zinc-400 transition-colors group-hover:text-zinc-200">Drupal</span></a>
+                    <a class="active:scale-96 group flex items-center justify-center gap-2.5 rounded-xl border border-zinc-700 bg-zinc-800 px-4 py-4 transition-[border-color,scale] hover:border-zinc-200/20" href="https://inertiajs.com" target="_blank"><img alt="Inertia" class="size-7 object-contain invert" loading="lazy" src="/www/logos/inertia.svg"><span class="whitespace-nowrap text-sm font-semibold text-zinc-400 transition-colors group-hover:text-zinc-200">Inertia</span></a>
+                </div>
+                <div class="mt-5 px-5 sm:px-10">
+                    <a class="text-sm font-medium text-zinc-400 underline-offset-4 hover:underline" href="/docs">…and many more →</a>
+                </div>
+                <div class="gap-4.5 grid px-5 pt-14 sm:px-10 lg:grid-cols-4">
+                    <div class="flex flex-col justify-center">
+                        <h3 class="font-display font-stretch-112% text-balance text-lg font-bold">Loved by developers</h3>
+                        <p class="mt-1.5 text-pretty text-sm/relaxed text-zinc-400">Hear what the community has to say.</p>
+                        <a class="mt-3 text-sm font-medium text-rose-500 underline-offset-4 hover:underline" href="https://github.com/pestphp/pest">View more on GitHub →</a>
+                    </div>
+                    <figure class="flex flex-col rounded-2xl border border-zinc-700 bg-zinc-800 p-6">
+                        <blockquote class="text-pretty text-sm/relaxed">“Pest is my daily driver. It makes testing enjoyable.”</blockquote>
+                        <figcaption class="mt-auto flex items-center gap-3 pt-5">
+                            <img alt="Taylor Otwell" class="size-9 shrink-0 rounded-full outline-1 -outline-offset-1 outline-white/10" loading="lazy" src="https://github.com/taylorotwell.png?size=72">
+                            <div class="leading-tight">
+                                <b class="block text-sm font-semibold">Taylor Otwell</b>
+                                <span class="text-xs text-zinc-400">Creator of Laravel</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+                    <figure class="flex flex-col rounded-2xl border border-zinc-700 bg-zinc-800 p-6">
+                        <blockquote class="text-pretty text-sm/relaxed">“The best testing experience I’ve ever had with PHP.”</blockquote>
+                        <figcaption class="mt-auto flex items-center gap-3 pt-5">
+                            <img alt="Mohamed Said" class="size-9 shrink-0 rounded-full outline-1 -outline-offset-1 outline-white/10" loading="lazy" src="https://github.com/themsaid.png?size=72">
+                            <div class="leading-tight">
+                                <b class="block text-sm font-semibold">Mohamed Said</b>
+                                <span class="text-xs text-zinc-400">Spatie</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+                    <figure class="flex flex-col rounded-2xl border border-zinc-700 bg-zinc-800 p-6">
+                        <blockquote class="text-pretty text-sm/relaxed">“Pest’s DX is unmatched. It just feels right.”</blockquote>
+                        <figcaption class="mt-auto flex items-center gap-3 pt-5">
+                            <img alt="Caleb Porzio" class="size-9 shrink-0 rounded-full outline-1 -outline-offset-1 outline-white/10" loading="lazy" src="https://github.com/calebporzio.png?size=72">
+                            <div class="leading-tight">
+                                <b class="block text-sm font-semibold">Caleb Porzio</b>
+                                <span class="text-xs text-zinc-400">Livewire</span>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="relative mt-14 border-t border-zinc-700">
+                    <span class="-left-1.25 -top-1.25 size-2.25 before:w-2.25 after:h-2.25 pointer-events-none absolute z-10 before:absolute before:left-0 before:top-1 before:h-px before:bg-rose-500 before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-rose-500 after:content-['']"></span>
+                    <span class="-right-1.25 -top-1.25 size-2.25 before:w-2.25 after:h-2.25 pointer-events-none absolute z-10 before:absolute before:left-0 before:top-1 before:h-px before:bg-rose-500 before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-rose-500 after:content-['']"></span>
+                    <div class="grid grid-cols-2 lg:grid-cols-4">
+                        <div class="border-b border-r lg:border-b-0 flex items-center gap-3.5 border-zinc-700 px-5 py-6 sm:px-8">
+                            <svg class="size-6 shrink-0 text-rose-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
                             <div>
-                                <cite class="font-medium not-italic text-white">Taylor Otwell</cite>
-                                <p class="text-sm text-gray-400">Creator of Laravel</p>
+                                <b class="font-display font-stretch-112% block text-xl font-bold leading-tight">70M+</b>
+                                <span class="text-xs-plus text-zinc-400">Downloads</span>
                             </div>
                         </div>
-                    </blockquote>
-                </div>
-            </section>
-
-            <section id="agents" class="py-14 md:py-24 mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8 overflow-hidden">
-                <p class="text-center text-xs md:text-base uppercase font-thin font-mono tracking-widest text-white/40">Testing for the age of AI</p>
-                <h2 class="text-center mx-auto mt-2 max-w-2xl text-2xl tracking-tight text-balance text-white sm:text-5xl font-title">Built for developers <span class="text-pink-500">and their agents</span></h2>
-                <p class="mx-auto mt-6 max-w-2xl text-center text-base/7 text-gray-400">AI coding agents are great at writing code, yet terrible at knowing whether it works. Pest closes that loop — giving your agents a single command to verify their changes, a way to evaluate AI output, and a feedback cycle fast enough to keep up.</p>
-
-                <div class="mt-10 grid grid-cols-1 gap-6 sm:mt-16 lg:grid-cols-3">
-                    <div class="flex flex-col overflow-hidden rounded-4xl bg-white/10 outline outline-white/10">
-                        <div class="border-b border-white/5 bg-gray-900/60 px-5 pt-4">
-                            <div class="mb-3 flex items-center gap-1.5">
-                                <span class="size-2.5 rounded-full bg-white/15"></span>
-                                <span class="size-2.5 rounded-full bg-white/15"></span>
-                                <span class="size-2.5 rounded-full bg-white/15"></span>
+                        <div class="border-b lg:border-b-0 lg:border-r flex items-center gap-3.5 border-zinc-700 px-5 py-6 sm:px-8">
+                            <svg class="size-6 shrink-0 text-rose-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" stroke="currentColor" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><circle cx="16.5" cy="10" r="2.4"/><path d="M3.5 19c.6-3 2.8-4.6 5.5-4.6S13.9 16 14.5 19M14.8 14.9c2.2.1 3.9 1.4 4.5 3.6"/></svg>
+                            <div>
+                                <b class="font-display font-stretch-112% block text-xl font-bold leading-tight">16k+</b>
+                                <span class="text-xs-plus text-zinc-400">Dependents</span>
                             </div>
-<pre class="text-xs font-mono overflow-x-auto whitespace-pre leading-[19px] pb-5"><code><span class="text-blue-300">~/app</span> <span class="text-pink-400">❯</span> pest --agent-browser=<span class="text-green-400">"visit('/')</span>
-      <span class="text-green-400">-&gt;assertSee('Welcome')"</span>
-
-<span class="text-green-950 bg-green-400 px-1 font-semibold">PASS</span>  visit / and see Welcome
-<span class="text-gray-400">Duration: 0.42s</span></code></pre>
                         </div>
-                        <div class="flex flex-1 flex-col p-6 lg:p-8">
-                            <h3 class="text-sm text-pink-400">Agent Browser</h3>
-                            <p class="mt-2 text-lg font-medium tracking-tight text-white">One command to prove it works</p>
-                            <p class="mt-2 text-sm/6 text-gray-400">Your coding agent verifies a change end-to-end — driving a real browser <em class="not-italic text-white/80">and</em> asserting the backend side effects it triggered, like sent mail or queued jobs, all inside your real test suite.</p>
-                            <p class="mt-auto pt-6 text-left"><a href="/docs/agent-browser" class="text-blue-300 underline-offset-4 hover:underline">Learn more →</a></p>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col overflow-hidden rounded-4xl bg-white/10 outline outline-white/10">
-                        <div class="border-b border-white/5 bg-gray-900/60 px-5 pt-4">
-                            <div class="mb-3 flex items-center gap-1.5">
-                                <span class="size-2.5 rounded-full bg-white/15"></span>
-                                <span class="size-2.5 rounded-full bg-white/15"></span>
-                                <span class="size-2.5 rounded-full bg-white/15"></span>
+                        <div class="border-r flex items-center gap-3.5 border-zinc-700 px-5 py-6 sm:px-8">
+                            <svg class="size-6 shrink-0 text-rose-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 3.2 14.7 9l6.1.6-4.6 4.1 1.3 6-5.5-3.2L6.5 19.7l1.3-6L3.2 9.6 9.3 9z"/></svg>
+                            <div>
+                                <b class="font-display font-stretch-112% block text-xl font-bold leading-tight">10k+</b>
+                                <span class="text-xs-plus text-zinc-400">GitHub Stars</span>
                             </div>
-<pre class="text-xs font-mono overflow-x-auto whitespace-pre leading-[19px] pb-5"><code><span class="text-pink-400">expect</span>(<span class="text-gray-100">SupportAgent</span>::<span class="text-blue-400">class</span>)
-    -&gt;<span class="text-blue-400">prompt</span>(<span class="text-green-400">'Can I get a refund?'</span>)
-    -&gt;<span class="text-blue-400">toBeRelevant</span>()
-    -&gt;<span class="text-blue-400">toBeSafe</span>()
-    -&gt;<span class="text-blue-400">toPassJudge</span>(<span class="text-green-400">'Stays on topic'</span>);</code></pre>
                         </div>
-                        <div class="flex flex-1 flex-col p-6 lg:p-8">
-                            <h3 class="text-sm text-pink-400">AI Evals</h3>
-                            <p class="mt-2 text-lg font-medium tracking-tight text-white">Score AI output from your suite</p>
-                            <p class="mt-2 text-sm/6 text-gray-400">Evaluate the quality of LLM agents with the same <code class="text-white/80">expect()</code> API you already know — combining deterministic checks with AI scorers like LLM-as-judge, semantic similarity, and safety.</p>
-                            <p class="mt-auto pt-6 text-left"><a href="/docs/evals" class="text-blue-300 underline-offset-4 hover:underline">Learn more →</a></p>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col overflow-hidden rounded-4xl bg-white/10 outline outline-white/10">
-                        <div class="border-b border-white/5 bg-gray-900/60 px-5 pt-4">
-                            <div class="mb-3 flex items-center gap-1.5">
-                                <span class="size-2.5 rounded-full bg-white/15"></span>
-                                <span class="size-2.5 rounded-full bg-white/15"></span>
-                                <span class="size-2.5 rounded-full bg-white/15"></span>
+                        <div class="flex items-center gap-3.5 border-zinc-700 px-5 py-6 sm:px-8">
+                            <svg class="size-6 shrink-0 text-rose-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 3v12"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+                            <div>
+                                <b class="font-display font-stretch-112% block text-xl font-bold leading-tight">300+</b>
+                                <span class="text-xs-plus text-zinc-400">Contributors</span>
                             </div>
-<pre class="text-xs font-mono overflow-x-auto whitespace-pre leading-[19px] pb-5"><code><span class="text-blue-300">~/app</span> <span class="text-pink-400">❯</span> pest --tia
-
-<span class="text-gray-100">Tests:</span>  <span class="text-green-400">774 passed</span> <span class="text-gray-400">(7 affected,</span>
-        <span class="text-gray-400">765 replayed)</span>
-<span class="text-gray-100">Duration:</span> <span class="text-blue-300">0.74s</span></code></pre>
-                        </div>
-                        <div class="flex flex-1 flex-col p-6 lg:p-8">
-                            <h3 class="text-sm text-pink-400">Tia Engine</h3>
-                            <p class="mt-2 text-lg font-medium tracking-tight text-white">Only run the tests that matter</p>
-                            <p class="mt-2 text-sm/6 text-gray-400">Test Impact Analysis re-runs only the tests your change actually touched. A 15-second suite replays in under a second — instant feedback for you, and for the agents iterating alongside you.</p>
-                            <p class="mt-auto pt-6 text-left"><a href="/docs/tia" class="text-blue-300 underline-offset-4 hover:underline">Learn more →</a></p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="pt-16 mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8 overflow-hidden">
-                <div class="mx-auto max-w-3xl text-center">
-                    <p class="text-xs md:text-base uppercase font-thin font-mono tracking-widest text-white/40">All about Pest</p>
-                    <h2 class="text-center mx-auto mt-2 max-w-2xl text-4xl tracking-tight text-balance text-white sm:text-5xl font-title">Frequently asked questions</h2>
-                    <p class="mt-6 text-base/7 text-gray-400">Get quick answers to the most common questions about Pest. Learn how it compares to PHPUnit, how to migrate your existing tests, what features are included, and who’s behind the project — all in one place.</p>
+            <section aria-label="Get started" class="relative border-y border-zinc-700">
+                <span class="-left-1.25 -top-1.25 size-2.25 before:w-2.25 after:h-2.25 pointer-events-none absolute z-10 before:absolute before:left-0 before:top-1 before:h-px before:bg-rose-500 before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-rose-500 after:content-['']"></span>
+                <span class="-right-1.25 -top-1.25 size-2.25 before:w-2.25 after:h-2.25 pointer-events-none absolute z-10 before:absolute before:left-0 before:top-1 before:h-px before:bg-rose-500 before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-rose-500 after:content-['']"></span>
+                <div class="bg-size-[56px_56px] mask-[radial-gradient(ellipse_70%_90%_at_50%_45%,#000_30%,transparent_75%)] absolute inset-0 bg-[linear-gradient(var(--color-zinc-700)_1px,transparent_1px),linear-gradient(90deg,var(--color-zinc-700)_1px,transparent_1px)] opacity-50"></div>
+                <div class="relative mx-auto flex max-w-2xl flex-col items-center px-5 py-20 text-center lg:py-24">
+                    <h2 class="font-display font-stretch-112% text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">Bring back the joy of testing. <em class="text-rose-500">Again.</em></h2>
+                    <p class="mt-4 text-pretty text-lg text-zinc-400">The biggest release of Pest yet — for most suites, a one-line upgrade.</p>
+                    <button x-data="{ copied: false }" @click="navigator.clipboard.writeText('composer require pestphp/pest --dev'); copied = true; setTimeout(() => copied = false, 2000)" class="group mt-8 flex max-w-full cursor-pointer items-center gap-3 rounded-full border border-zinc-700 bg-zinc-800 py-2.5 pl-5 pr-4 font-mono text-xs transition-colors hover:border-zinc-200/20 sm:text-sm" type="button">
+                        <span class="truncate"><span class="text-zinc-500">$</span> composer require pestphp/pest --dev</span>
+                        <span x-text="copied ? 'copied!' : 'copy'" class="text-2xs rounded-full border border-zinc-700 px-2 py-0.5 text-zinc-400 transition-colors group-hover:text-zinc-200">copy</span>
+                    </button>
+                    <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+                        <a class="active:scale-96 inline-flex items-center gap-2 rounded-full bg-rose-500 px-4 py-2.5 text-sm font-semibold text-white transition-[background-color,scale] hover:bg-rose-600" href="/docs/installation">Read the installation guide</a>
+                        <a class="active:scale-96 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2.5 text-sm font-semibold backdrop-blur-sm transition-[border-color,scale] hover:border-white/30" href="/docs/pest5-now-available">See everything in Pest 5</a>
+                    </div>
                 </div>
-                <div class="mt-20">
-                    <dl class="space-y-16 sm:grid sm:grid-cols-2 sm:space-y-0 sm:gap-x-6 sm:gap-y-16 lg:gap-x-10">
-                        <div>
-                            <dt class="text-base/7 font-semibold text-white">Is everything on Pest free?</dt>
-                            <dd class="mt-2 text-base/7 text-gray-400"><span class="text-sky-300 font-medium">Yes</span>, Pest is an open-source testing framework, and all of its features and functionalities are available for free. Pest is released under the <a href="https://opensource.org/licenses/MIT" target="_blank" class="decoration-gray-400 hover:no-underline underline-offset-4 underline">MIT license</a>, which means you can use it, even in commercial projects. Additionally, Pest's extensive documentation, editor integrations, and community-developed plugins are also available for free.</dd>
-                        </div>
-                        <div>
-                            <dt class="text-base/7 font-semibold text-white">Who maintains Pest?</dt>
-                            <dd class="mt-2 text-base/7 text-gray-400"><span class="text-sky-300 font-medium">Pest has a team of more than a dozen maintainers</span> who are committed to developing and enhancing the framework. The team is spread across different regions and countries, making it a diverse and inclusive community.</dd>
-                        </div>
-                        <div>
-                            <dt class="text-base/7 font-semibold text-white">How does Pest differ from PHPUnit?</dt>
-                            <dd class="mt-2 text-base/7 text-gray-400"><span class="text-sky-300 font-medium">Pest is built on top of PHPUnit</span>, and builds on it with a set of powerful features. With Pest, you have access to an expressive API — inspired by Ruby's RSpec and Jest — that makes it convenient to write elegant tests quickly. In addition, Pest's console output is beautifully formatted, so you may spot any issues at a glance. Beyond that, Pest also includes built-in parallel testing, coverage, watch mode, architecture testing, native profiling tools, snapshot testing, and beautiful documentation.</dd>
-                        </div>
-                        <div>
-                            <dt class="text-base/7 font-semibold text-white">Do I need to rewrite all my PHPUnit tests for Pest?</dt>
-                            <dd class="mt-2 text-base/7 text-gray-400"><span class="text-sky-300 font-medium">No need to rewrite your PHPUnit tests for Pest.</span> Pest is designed to be progressive. You can start using Pest's features immediately after installation. However, if you want to migrate to Pest's intuitive API, community-developed migration tools are available that can do the job in as little as 3 seconds.</dd>
-                        </div>
-                        <div>
-                            <dt class="text-base/7 font-semibold text-white">Can AI coding agents use Pest?</dt>
-                            <dd class="mt-2 text-base/7 text-gray-400"><span class="text-sky-300 font-medium">Yes — Pest is built for agents as well as people.</span> The <a href="/docs/agent-browser" class="decoration-gray-400 hover:no-underline underline-offset-4 underline">Agent Browser</a> gives your coding agent a single command to verify a change end-to-end, driving a real browser and asserting backend side effects inside your real suite. And with <a href="/docs/evals" class="decoration-gray-400 hover:no-underline underline-offset-4 underline">Evals</a>, you can score the quality of LLM output — LLM-as-judge, semantic similarity, safety, and more — using the same <span class="font-mono text-sm">expect()</span> API.</dd>
-                        </div>
-                        <div>
-                            <dt class="text-base/7 font-semibold text-white">Do I need to use AI to enjoy Pest?</dt>
-                            <dd class="mt-2 text-base/7 text-gray-400"><span class="text-sky-300 font-medium">Not at all.</span> Pest is, first and foremost, an elegant testing framework for people. The AI and agent features are entirely optional — reach for them when you want to, and ignore them completely if you don't. Everything that made Pest a joy to use is still front and center.</dd>
-                        </div>
-                    </dl>
-                </div>
+                <span class="-bottom-1.25 size-2.25 before:w-2.25 after:h-2.25 -left-1.25 pointer-events-none absolute z-10 before:absolute before:left-0 before:top-1 before:h-px before:bg-rose-500 before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-rose-500 after:content-['']"></span>
+                <span class="-bottom-1.25 -right-1.25 size-2.25 before:w-2.25 after:h-2.25 pointer-events-none absolute z-10 before:absolute before:left-0 before:top-1 before:h-px before:bg-rose-500 before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-rose-500 after:content-['']"></span>
             </section>
         </main>
 
-        <footer class="relative mt-24">
-            <div class="absolute inset-x-0 top-0 z-0">
-                <div class="border-t border-white/10"></div>
-                <div class="mt-2 border-t border-white/10"></div>
-            </div>
-
-            <div class="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
-                <div class="flex justify-center gap-x-8 md:order-2">
-                    <a href="https://x.com/enunomaduro" target="_blank" class="text-gray-400 hover:text-white">
-                        <span class="sr-only">X</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-6" fill="none"><path d="M8 3H3L10.5484 13.4516L16 21H21L13.4516 10.5484L8 3Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path opacity="0.4" d="M3 21L10.5484 13.4516M21 3L13.4516 10.5484" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                    </a>
-                    <a href="https://github.com/pestphp/pest" target="_blank" class="text-gray-400 hover:text-white">
-                        <span class="sr-only">GitHub</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-6" fill="none"><path opacity="0.4" d="M10 20.5675C6.57143 21.7248 3.71429 20.5675 2 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10 22V18.7579C10 18.1596 10.1839 17.6396 10.4804 17.1699C10.6838 16.8476 10.5445 16.3904 10.1771 16.2894C7.13394 15.4528 5 14.1077 5 9.64606C5 8.48611 5.38005 7.39556 6.04811 6.4464C6.21437 6.21018 6.29749 6.09208 6.31748 5.9851C6.33746 5.87813 6.30272 5.73852 6.23322 5.45932C5.95038 4.32292 5.96871 3.11619 6.39322 2.02823C6.39322 2.02823 7.27042 1.74242 9.26698 2.98969C9.72282 3.27447 9.95075 3.41686 10.1515 3.44871C10.3522 3.48056 10.6206 3.41384 11.1573 3.28041C11.8913 3.09795 12.6476 3 13.5 3C14.3524 3 15.1087 3.09795 15.8427 3.28041C16.3794 3.41384 16.6478 3.48056 16.8485 3.44871C17.0493 3.41686 17.2772 3.27447 17.733 2.98969C19.7296 1.74242 20.6068 2.02823 20.6068 2.02823C21.0313 3.11619 21.0496 4.32292 20.7668 5.45932C20.6973 5.73852 20.6625 5.87813 20.6825 5.9851C20.7025 6.09207 20.7856 6.21019 20.9519 6.4464C21.6199 7.39556 22 8.48611 22 9.64606C22 14.1077 19.8661 15.4528 16.8229 16.2894C16.4555 16.3904 16.3162 16.8476 16.5196 17.1699C16.8161 17.6396 17 18.1596 17 18.7579V22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                    </a>
-                    <a href="https://youtube.com/@nunomaduro" target="_blank" class="text-gray-400 hover:text-white">
-                        <span class="sr-only">YouTube</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-6.5" fill="none"><path d="M12 20.5C13.8097 20.5 15.5451 20.3212 17.1534 19.9934C19.1623 19.5839 20.1668 19.3791 21.0834 18.2006C22 17.0221 22 15.6693 22 12.9635V11.0365C22 8.33073 22 6.97787 21.0834 5.79937C20.1668 4.62088 19.1623 4.41613 17.1534 4.00662C15.5451 3.67877 13.8097 3.5 12 3.5C10.1903 3.5 8.45489 3.67877 6.84656 4.00662C4.83766 4.41613 3.83321 4.62088 2.9166 5.79937C2 6.97787 2 8.33073 2 11.0365V12.9635C2 15.6693 2 17.0221 2.9166 18.2006C3.83321 19.3791 4.83766 19.5839 6.84656 19.9934C8.45489 20.3212 10.1903 20.5 12 20.5Z" stroke="currentColor" stroke-width="1.5"></path><path opacity="0.4" d="M15.9621 12.3129C15.8137 12.9187 15.0241 13.3538 13.4449 14.2241C11.7272 15.1705 10.8684 15.6438 10.1728 15.4615C9.9372 15.3997 9.7202 15.2911 9.53799 15.1438C9 14.7089 9 13.8059 9 12C9 10.1941 9 9.29112 9.53799 8.85618C9.7202 8.70886 9.9372 8.60029 10.1728 8.53854C10.8684 8.35621 11.7272 8.82945 13.4449 9.77593C15.0241 10.6462 15.8137 11.0813 15.9621 11.6871C16.0126 11.8933 16.0126 12.1067 15.9621 12.3129Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg>
-                    </a>
+        <footer class="container mx-auto px-5 pb-8 pt-8 sm:px-10">
+            <div class="flex flex-col items-center justify-between gap-4 text-xs text-zinc-400 sm:flex-row">
+                <div>© 2026 PestPHP — A project by <a class="font-medium underline-offset-4 hover:underline" href="https://pinkary.com/@nunomaduro">Nuno Maduro</a>. Designed by <a class="font-medium underline-offset-4 hover:underline" href="https://nunoguerra.com/?ref=pestphp">Nuno Guerra</a>.</div>
+                <div class="flex items-center gap-5 font-mono">
+                    <a class="underline-offset-4 hover:underline" href="/llms.txt">/llms.txt</a>
+                    <a class="underline-offset-4 hover:underline" href="https://github.com/pestphp/pest">/source</a>
+                    <a class="underline-offset-4 hover:underline" href="/docs">/docs</a>
                 </div>
-                <p class="mt-8 text-center text-sm/6 text-gray-400 md:order-1 md:mt-0">&copy; 2026 PestPHP – A project by <a href="https://pinkary.com/@nunomaduro" target="_blank" class="underline underline-offset-4 hover:no-underline">Nuno Maduro</a>.<br class="sm:hidden"> Designed by <a href="https://nunoguerra.com/?ref=pestphp" target="_blank" class="underline underline-offset-4 hover:no-underline">Nuno Guerra</a>.</p>
             </div>
+            <svg aria-hidden="true" class="mt-10 h-auto w-full fill-white/10" viewBox="0 0 381 100" xmlns="http://www.w3.org/2000/svg">
+                <use href="#pest-wordmark" />
+            </svg>
         </footer>
 
         

@@ -1,19 +1,22 @@
-<button onclick="scrollToTop()" id="scrollToTopBtn" class="fixed bottom-10 right-10 z-50 backdrop-blur-sm bg-white/20 hover:bg-white/40 rounded-full size-10 text-xl" title="Go to top">↑</button>
+<button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top" aria-label="Scroll to top" class="active:scale-96 fixed bottom-8 right-8 z-50 hidden size-10 items-center justify-center rounded-full border border-zinc-700 bg-zinc-800/90 text-zinc-400 backdrop-blur-md transition-colors hover:border-zinc-200/20 hover:text-zinc-200">
+    <svg class="size-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+        <path d="M12 19V5M5 12l7-7 7 7" />
+    </svg>
+</button>
 
-<script>    
+<script>
     window.scrollFunction = f => {
-      var scrollToTopBtn = document.getElementById("scrollToTopBtn");
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        scrollToTopBtn.style.display = "block";
-      } else {
-        scrollToTopBtn.style.display = "none";
-      }
+        var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+            scrollToTopBtn.style.display = "flex";
+        } else {
+            scrollToTopBtn.style.display = "none";
+        }
     };
 
     window.onscroll = f => scrollFunction();
-    
+
     window.scrollToTop = f => {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
-    </script>
+</script>

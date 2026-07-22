@@ -15,16 +15,17 @@ A **standalone static Vite project** at `resources/www/`, completely separate fr
 | Path | What it is |
 |---|---|
 | `resources/www/index.html` | The **entire** landing page markup. Static HTML; interactivity via Alpine `x-data` attributes. This is the file you edit to change the homepage. |
-| `resources/www/main.css` | Tailwind v4 entry: `@import 'tailwindcss'`, `@plugin 'tailwindcss-motion'`, the `@theme` design tokens, custom `@keyframes` (marquee, beams, ping). **Design tokens go here.** |
-| `resources/www/main.js` | JS entry. Imports `main.css`, boots Alpine.js + tippy.js (registers an `x-tooltip` directive). Add landing-page behavior here. |
-| `resources/www/public/` | Static assets served as-is: `favicon.svg`, `og*.png/jpg`, `assets/`. |
+| `resources/www/main.css` | Tailwind v4 entry: `@import 'tailwindcss'`, `@plugin 'tailwindcss-motion'`, the Google-Fonts `@import` (Archivo + Instrument Sans + JetBrains Mono), the `@theme` design tokens, and the `marquee` `@keyframes`. **Design tokens go here.** |
+| `resources/www/main.js` | JS entry. Imports `main.css`, boots Alpine.js + tippy.js (registers an `x-tooltip` directive, currently unused). Page interactivity (tabs, spotlight, copy, mobile menu) lives inline as Alpine `x-data`/`@`-handlers in `index.html`, not here. |
+| `resources/www/public/` | Static assets served as-is: `favicon.svg`, `og*.png/jpg`, `assets/`, `sponsors/` (marquee logos), `logos/` (stack tiles). |
 | `resources/www/mockups/` | Working directory for mockup assets. |
 | `resources/www/package.json`, `vite.config.js` | Its **own** npm project (Vite 4, Alpine, tippy, tailwindcss-motion, Tailwind v4). `base: 'www'`, builds to `../../public/www`. |
 
 - **Dev**: `cd resources/www && npm install && npm run dev`.
 - **Build**: `cd resources/www && npm run build` → writes to `public/www/`.
-- **Served by**: `routes/web.php` → `Route::get('/')` returns `file_get_contents(public_path('www/index.html'))`. It serves the **built artifact**, so changes to `resources/www/` do **not** appear at `/` until you build.
-- **`public/www/`** = generated output (hashed `*.css`/`*.js`, `index.html`, assets). Never hand-edit; it is overwritten by every build.
+- **Served by**: `routes/web.php` → `Route::get('/')` returns `file_get_contents(public_path('www/index.html'))`. It serves the **built artifact**, so changes to `resources/www/` do **not** appear at `/` until you build. Iterate on the dev server (`npm run dev`, at `http://localhost:<port>/www`), then build and re-verify.
+- **`public/www/`** = generated output (hashed `*.css`/`*.js`, `index.html`, and copies of everything in `resources/www/public/`). Never hand-edit; it is overwritten by every build.
+- **Asset paths**: reference public assets root-absolute in the source (`/logos/x.svg`, `/sponsors/x.png`, `/assets/x.png`). Vite's `base: 'www'` rewrites them to `/www/…` at build so they resolve when the page is served at `/`. In dev both `/logos/x.svg` and `/www/logos/x.svg` resolve. Below-the-fold `<img>`s use `loading="lazy"`.
 
 ## 2. Documentation — `/docs/{page}`
 
@@ -49,7 +50,7 @@ Laravel + Blade, driven by markdown. A different pipeline entirely.
 - `config/site.php` — site title, default docs version, and related site config.
 - `resources/img/` — legacy site imagery (`bg-head*`, `pattern.svg`, `bg-pest-4.jpg`).
 - `resources/lang/` — translations.
-- `redesign.md` (repo root) — the brand/redesign brief. **Note:** it describes an earlier "evolution" direction (keep Exo font, purple/indigo beam hero). The `<design-system>` below is the **current, authoritative** visual direction for the landing page and supersedes `redesign.md` where they conflict.
+- `redesign.md` (repo root) — an **outdated** brand brief describing an earlier direction (Exo font, purple/indigo beam hero). Ignore it; the `<design-system>` below is the authoritative visual direction for the landing page and is what is actually shipped.
 
 ## 5. Rule of thumb
 
@@ -63,7 +64,7 @@ Laravel + Blade, driven by markdown. A different pipeline entirely.
 
 # Pest 5 Design System — "Blueprint Terminal"
 
-This is the complete visual specification for the **landing page** (`resources/www/`). It is self-contained on purpose: use it to add elements that belong, build new sections, or migrate the design without opening the reference implementation. Every value below is a real value, not an approximation. It was authored from the Pest 5 prototype and is the source of truth for the homepage redesign.
+This is the complete visual specification for the **landing page** (`resources/www/`), and the spec the shipped `index.html` already implements. It is self-contained on purpose: use it to add elements that belong or build new sections without diffing the whole file. Every value below is a real value, not an approximation.
 
 **The theme is dark-only.** All values below are the canonical dark values. Write them as plain (unprefixed) classes — do **not** add light-mode counterparts or `dark:` variants. If any copied markup carries `dark:` pairs, keep only the dark value.
 
@@ -79,11 +80,11 @@ The design language is a **developer blueprint**: an engineering drawing of a te
   - **Tabs** (code panel): `x-data="{ tab: 'browser' }"`, tab buttons `@click="tab = 'browser'"` + `:aria-selected="tab === 'browser'"`, panes `x-show="tab === 'browser'"` (or toggle `invisible opacity-0` classes with `:class` to preserve height — see §6.7).
   - **Pointer spotlight**: `@pointermove` on the hero sets CSS vars `--spot-x/--spot-y`; gate to `(hover: hover)` before binding.
   - **Copy button**: `x-data="{ copied: false }"`, `@click="navigator.clipboard.writeText('composer require pestphp/pest --dev'); copied = true; setTimeout(() => copied = false, 2000)"`, label `x-text="copied ? 'copied!' : 'copy'"`.
-- **Fonts** — the current landing uses Exo; this design **replaces** it. Load in `resources/www/main.css` (`@import`) or via `<link>` in `index.html`, and set the `@theme` tokens:
+- **Fonts** — loaded via a Google-Fonts `@import` at the top of `resources/www/main.css`, mapped to the `@theme` tokens below:
   - **Archivo** (display) — needs the width axis: `family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900`. Headings always use `font-stretch-112%`.
   - **JetBrains Mono** (mono) — weights 400/500/700 + italics.
-  - **Instrument Sans** (body) — weights 400/500/600. Self-host or load from Google Fonts.
-- Tokens to add to `resources/www/main.css`:
+  - **Instrument Sans** (body) — weights 400/500/600.
+- Tokens in `resources/www/main.css`:
 
 ```css
 @theme {
@@ -295,13 +296,13 @@ The PEST wordmark is one SVG path (`viewBox="0 0 381 100"`), defined once in the
 - **Copy-to-clipboard**: `navigator.clipboard.writeText(...)`, swap label to "copied!", restore after 2000ms.
 - Status dots are static (`size-1.5 rounded-full bg-green-500`) — no pulsing.
 
-## 8. Responsive rules (needed for the migration)
+## 8. Responsive rules
 
 Only **two breakpoints: `sm` (640px) and `lg` (1024px)**, mobile-first. `md`, `xl`, `2xl` are never used — keep it that way.
 
 - **Padding**: `px-5` → `sm:px-10` on every content block. Cell padding `px-5 sm:px-6` or `px-5 sm:px-8`.
 - **Hero**: single column stack (`gap-12`) → `lg:grid-cols-[1.05fr_0.95fr]`. H1 uses viewport clamps: `text-[clamp(30px,8.6vw,40px)]` then `sm:text-[clamp(34px,4vw,50px)]` — the *only* fluid type on the page. Watch `whitespace-nowrap` spans in H1: phrases must fit 320px at the clamp minimum.
-- **Header**: nav links `hidden lg:flex`; search box `hidden sm:flex` (fixed `w-56`); logo + GitHub + theme control always visible.
+- **Header**: nav links `hidden lg:flex`; search box `hidden sm:flex` (fixed `w-56`); logo + GitHub always visible. There is **no theme toggle** (dark-only). Below `lg`, a hamburger (`lg:hidden`) opens a slide-in mobile menu driven by `x-data="{ mobileMenuIsOpen: false }"` on `<body>` — it carries the nav links (Documentation/YouTube/Sponsor) that are otherwise hidden.
 - **Bento**: 1 column → `lg:grid-cols-5` with `lg:col-span-3`/`lg:col-span-2`. Inside the browser-testing card, media splits `lg:grid-cols-2`.
 - **Fact strip (Built on)**: `grid-cols-2` with the label cell `col-span-2 border-b` → at `lg`: `lg:grid-cols-[auto_repeat(4,1fr)]`, label becomes `lg:col-span-1 lg:border-b-0 lg:border-r`. Cells alternate `border-r` (kept on mobile 2-col) and `lg:border-r` (only for 4-col). When adding cells, re-derive which need `border-r` vs `lg:border-r` for both layouts.
 - **Stats strip**: `grid-cols-2 lg:grid-cols-4`; per-cell borders are data-driven: cell 1 `border-b border-r lg:border-b-0`, cell 2 `border-b lg:border-b-0 lg:border-r`, cell 3 `border-r`, cell 4 none.
@@ -327,17 +328,15 @@ Only **two breakpoints: `sm` (640px) and `lg` (1024px)**, mobile-first. `md`, `x
 4. Content: `px-5 sm:px-10 pb-19`, grid with `gap-4.5`, cards per §6.5.
 5. Any code/terminal content follows §6.4 grammar and the §3 syntax palette.
 6. Check 320px, 640px, 1024px: paddings switch, grids collapse, nothing overflows.
-7. New assets → `resources/www/public/` (SVG preferred, stroke style per §6.11; logos white/light for the dark canvas). Rebuild to see changes at `/`.
+7. New assets → `resources/www/public/` (SVG preferred, stroke style per §6.11). Rebuild to see changes at `/`.
 
-## 11. Migration into `resources/www` (this repo)
+## 11. Build, serve & gotchas
 
-1. **Tokens & keyframes** → add the `@theme` block and `marquee` keyframes from §2 to `resources/www/main.css`. Tailwind v4 is already present (`mask-*`, `font-stretch-*`, `aria-*`, `size-*` are v4-era utilities). Remove the Exo `@import` and `--font-title` if the old hero is fully replaced.
-2. **Fonts** → add Archivo (with the `wdth` axis!), JetBrains Mono, and Instrument Sans via `@import` in `main.css` or `<link>` in `index.html`, plus the two `fonts.gstatic.com`/`googleapis.com` preconnects.
-3. **Markup** → the whole landing page is one static `resources/www/index.html`. Replace the current `<body>` (currently `bg-[#040120]`, Exo, Alpine mobile menu) with the frame from §5. There is no Blade here — repeat blocks literally or with Alpine `x-for`.
-4. **Interactivity** → express tabs, spotlight, and copy as Alpine (§2). Alpine + tippy are already booted in `main.js`; add nothing new unless needed.
-5. **Dark-only** → write dark values as plain classes; do not add `dark:` variants or a theme toggle. `bg-zinc-900` on `<body>`; drop any light backgrounds.
-6. **Wordmark** → keep the header `<svg id="pest-wordmark">` so the footer `<use href="#pest-wordmark">` watermark resolves (same document).
-7. **Build & verify** → `cd resources/www && npm run build` (outputs to `public/www/`), then load `/`. Remember: `/` serves the built artifact, not the source.
-8. **Assets** → put images/OG in `resources/www/public/`; they land in `public/www/` on build.
+- **Loop**: edit `resources/www/` → check on the dev server → `npm run build` → confirm the built page still matches (the `/` route serves `public/www/index.html`, not the source).
+- **Dark-only**: write dark values as plain classes; never add `dark:` variants or a theme toggle. `<body>` is `bg-zinc-900`.
+- **Wordmark**: keep the header `<svg id="pest-wordmark">` — the footer watermark is a `<use href="#pest-wordmark">` and only resolves because both live in the same `index.html`.
+- **Logo colors on the dark canvas**: brand-colored SVGs (Laravel red, Drupal blue, CodeIgniter orange, Statamic lime, Livewire pink, Symfony white, sponsor logos) render **as-is — do not `invert`**. Only truly-black/`currentColor` glyphs (WordPress, Inertia) get `invert` to flip them white. Inverting an already-white logo turns it black (invisible) — the classic mistake here.
+- **No page-level horizontal scroll**: `<html>` carries `overflow-x-clip` to absorb the ~4px bleed from the decorative corner crosshair marks (fixed-positioned marks escape `<body>` clipping). Keep it.
+- **Interactivity is inline Alpine** (§2): tabs, pointer spotlight, copy-to-clipboard, and the mobile menu are all `x-data`/`@`-handlers in `index.html`. The spotlight is gated to `(hover: hover)`; the marquee keeps `motion-reduce:animate-none`. Verify the browser console is error-free after any change.
 
 </design-system>

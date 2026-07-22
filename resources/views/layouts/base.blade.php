@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="antialiased font-sans min-h-screen h-full">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-full min-h-screen overflow-x-clip font-sans antialiased">
 
 <head>
     <title>{{ $title = empty($title) ? config('site.title') : "{$title} | ".config('site.title') }}</title>

@@ -1,19 +1,22 @@
 <x-app-layout layout="app" title='IDE plugins' description="Pest has IDE plugins for PhpStorm and VSCode.">
     <main role="main" class="w-full flex-auto">
-        <section class="documentation">
-            <div class="max-w-5xl mx-auto px-4 lg:px-4 xl:px-6 lg:flex lg:flex-row">
+        <div class="relative mx-auto min-h-[70vh] max-w-7xl border-x border-zinc-700">
+            <span class="crosshair -left-1 top-px"></span>
+            <span class="crosshair -right-1 top-px"></span>
 
-                <x-docs.sidebar>
-                    {!! $index !!}
-                </x-docs.sidebar>
+            <div class="lg:grid lg:grid-cols-[15rem_minmax(0,1fr)_15rem]">
+                <x-docs.sidebar>{!! $index !!}</x-docs.sidebar>
 
-                <div class="docs-main max-w-prose DocSearch-content mx-auto lg:mr-0 relative w-full px-3 lg:px-0 mt-6 mb-20">
-                    <div class="w-100 lg:block absolute top-0 right-0 hidden h-8 mt-2 text-sm">
-                        <a href="https://github.com/pestphp/pestphp.com/edit/next/resources/views/ide.blade.php">
-                            Edit this page →
-                        </a>
+                <div class="min-w-0 px-5 py-10 sm:px-10 lg:border-x lg:border-zinc-700">
+                    <div class="mb-8 flex items-center gap-2.5 font-mono text-xs tracking-widest text-zinc-500">
+                        <span class="font-bold text-rose-500">//</span>
+                        <span>docs</span>
+                        <span class="text-zinc-600">/</span>
+                        <span class="text-zinc-400">editor-setup</span>
+                        <a class="ml-auto hidden text-zinc-400 underline-offset-4 hover:text-rose-400 hover:underline lg:inline" href="https://github.com/pestphp/pestphp.com/edit/next/resources/views/ide.blade.php" target="_blank" rel="noopener">edit this page →</a>
                     </div>
 
+                    <article class="docs-main prose prose-invert max-w-none">
                     <h1>Editor Setup</h1>
 
                     <p>
@@ -72,8 +75,11 @@
                     </div>
 
                     {!! $body !!}
+                    </article>
                 </div>
+
+                <x-docs.sponsors />
             </div>
-        </section>
+        </div>
     </main>
 </x-app-layout>

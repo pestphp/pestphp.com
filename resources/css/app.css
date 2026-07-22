@@ -1,151 +1,596 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap');
 @import 'tailwindcss';
 @import '@docsearch/css/dist/style.css';
 @plugin "@tailwindcss/typography";
 
+/* ==========================================================================
+   Pest 5 — "Blueprint Terminal" design system, documentation edition.
+   Shares the tokens, palette and motifs of the landing page (resources/www),
+   adjusted for long-form docs: readable prose, a blueprint sidebar and
+   terminal-styled code blocks. Dark-only — no `dark:` variants.
+   ========================================================================== */
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-display: 'Archivo', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    --text-3xs: 9px;
+    --text-3xs--line-height: 1.4;
+    --text-2xs: 11px;
+    --text-2xs--line-height: 1.4;
+    --text-xs-plus: 12.5px;
+    --text-xs-plus--line-height: 1.4;
+}
+
 @layer base {
-    html{height:100%;-webkit-tap-highlight-color:transparent}
-    body{min-height:100%}
-    [x-cloak]{display:none}
-}
-
-button { @apply cursor-pointer; }
-::selection { @apply bg-purple-500 text-white; }
-.scrollbar::-webkit-scrollbar { width: 8px; }
-.scrollbar::-webkit-scrollbar-track { @apply bg-gray-600; }
-.scrollbar::-webkit-scrollbar-thumb { @apply bg-gray-500; }
-.scrollbar::-webkit-scrollbar-thumb:hover { @apply bg-gray-600; }
-
-.bg-pest{background-image:url('../img/bg-pest-4.jpg')}
-.beam-background{background-image:linear-gradient(120deg,rgba(34,102,200,.5),rgba(255,255,255,.1));background-image:repeating-linear-gradient(120deg,#1f2937 0,#1f2937 8%,rgba(131,141,155,.1) 4%,transparent 1%,rgba(2,72,172,.6) 5%,#1f2937 12%),repeating-linear-gradient(-60deg,#d1d5db 0,#d1d5db 80%,rgba(209,213,219,.7) 2%,#9ca3af 3%,#9ca3af 4.5%,rgba(209,213,219,.5) 5%);background-size:300%,200%;background-position:50% 80%,5% 50%}
-.beam-animation{animation:animate-beams 100s linear infinite;}
-
-@keyframes animate-beams {
-    0% {
-        background-position: 0% 0%, 100% 100%;
+    html {
+        height: 100%;
+        -webkit-tap-highlight-color: transparent;
     }
-    100% {
-        background-position: 150% 100%, -100% -50%;
+    body {
+        min-height: 100%;
+    }
+    [x-cloak] {
+        display: none;
     }
 }
 
-[data-tippy-root]{max-width:calc(100vw - 10px)}
-.tippy-box[data-animation=fade][data-state=hidden]{opacity:0}
-.tippy-box{ @apply bg-blue-950; text-align:center;position:relative;color:#fff;border-radius:8px;font-size:13px;line-height:1.4;white-space:normal;outline:0;transition-property:transform,visibility,opacity}
-.tippy-box[data-placement^=top]>.tippy-arrow{bottom:0}
-.tippy-box[data-placement^=top]>.tippy-arrow:before{bottom:-6px;left:0;border-width:8px 8px 0;border-top-color:initial;transform-origin:center top}
-.tippy-box[data-placement^=bottom]>.tippy-arrow{top:0}
-.tippy-box[data-placement^=bottom]>.tippy-arrow:before{top:-6px;left:0;border-width:0 8px 8px;border-bottom-color:initial;transform-origin:center bottom}
-.tippy-box[data-placement^=left]>.tippy-arrow{right:0}
-.tippy-box[data-placement^=left]>.tippy-arrow:before{border-width:8px 0 8px 8px;border-left-color:initial;right:-6px;transform-origin:center left}
-.tippy-box[data-placement^=right]>.tippy-arrow{left:0}
-.tippy-box[data-placement^=right]>.tippy-arrow:before{left:-6px;border-width:8px 8px 8px 0;border-right-color:initial;transform-origin:center right}
-.tippy-box[data-inertia][data-state=visible]{transition-timing-function:cubic-bezier(.54,1.5,.38,1.11)}
-.tippy-arrow{width:16px;height:16px; @apply text-blue-950;}
-.tippy-arrow:before{content:"";position:absolute;border-color:transparent;border-style:solid}
-.tippy-content{position:relative;padding:5px 9px;z-index:1}
+button {
+    @apply cursor-pointer;
+}
 
+::selection {
+    @apply bg-rose-600 text-white;
+}
 
+/* Scrollbars ------------------------------------------------------------- */
+.scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+.scrollbar::-webkit-scrollbar-track {
+    @apply bg-zinc-900;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-zinc-700;
+}
+.scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-zinc-600;
+}
+
+/* ==========================================================================
+   Crosshair registration marks (reusable helper)
+   ========================================================================== */
+.crosshair {
+    @apply pointer-events-none absolute z-10;
+    width: 9px;
+    height: 9px;
+}
+.crosshair::before {
+    content: '';
+    @apply absolute left-0 top-1 h-px w-full bg-rose-500;
+}
+.crosshair::after {
+    content: '';
+    @apply absolute left-1 top-0 h-full w-px bg-rose-500;
+}
+
+/* ==========================================================================
+   DocSearch — blueprint theme
+   ========================================================================== */
 :root {
-  --docsearch-container-background: rgba(0, 0, 0, 0.2);
-  --docsearch-primary-color: #382aac;
-  --docsearch-modal-background:rgba(18, 4, 69, 1);
-  --docsearch-highlight-color:rgba(247, 51, 155, 0.9);
-  --docsearch-searchbox-focus-background:rgba(18, 33, 100, 0.9);
-  --docsearch-footer-shadow:rgba(18, 33, 100, 0.9);
-  --docsearch-footer-background:rgba(18, 33, 100, 0.9);
-  --docsearch-hit-color: rgba(0, 0, 0, 0.9);
-  --docsearch-muted-color:rgba(0, 0, 0, 0.6);
-  --docsearch-logo-color: #ffffff;
-  --docsearch-text-color:#ffffff;
+    --docsearch-container-background: rgba(9, 9, 11, 0.7);
+    --docsearch-primary-color: #f43f5e; /* rose-500 */
+    --docsearch-modal-background: #18181b; /* zinc-900 */
+    --docsearch-modal-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.7);
+    --docsearch-highlight-color: #f43f5e; /* rose-500 */
+    --docsearch-searchbox-background: #27272a; /* zinc-800 */
+    --docsearch-searchbox-focus-background: #27272a;
+    --docsearch-searchbox-shadow: inset 0 0 0 1px #f43f5e;
+    --docsearch-hit-background: #27272a; /* zinc-800 */
+    --docsearch-hit-shadow: none;
+    --docsearch-hit-color: #e4e4e7; /* zinc-200 */
+    --docsearch-hit-active-color: #ffffff;
+    --docsearch-footer-background: #18181b;
+    --docsearch-footer-shadow: inset 0 1px 0 0 #3f3f46;
+    --docsearch-muted-color: #a1a1aa; /* zinc-400 */
+    --docsearch-logo-color: #f43f5e;
+    --docsearch-text-color: #e4e4e7;
+    --docsearch-key-gradient: linear-gradient(#3f3f46, #27272a);
+    --docsearch-key-shadow: none;
 }
 
-/* code highlights */
-
-li code,p code{border-radius:3px;padding:1px 5px;background-color: var(--tw-prose-pre-bg);color:#fff}
-pre{display:flex;border-radius:.5rem;position:relative;}
-pre .copyBtn{position:absolute;display:flex;right:8px;top:10px;height:1.5rem;width:1.5rem;--tw-text-opacity:1;color:rgb(63 63 70 / var(--tw-text-opacity));outline:2px solid transparent;outline-offset:2px}
-pre .copyBtn:active,pre .copyBtn:focus,pre .copyBtn:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}
-pre code{display:flex;flex:1 1 0%;border-radius:.5rem;--tw-text-opacity:1!important;color:rgb(255 255 255 / var(--tw-text-opacity))!important}
-pre code{font-size:.9em;line-height:2;font-family:Menlo,ui-monospace,SFMono-Regular,Monaco,Consolas,Liberation Mono,Courier New,monospace}
-pre code.torchlight{display:block;overflow-x:auto;padding-top:1rem;padding-bottom:1rem;padding-right:1rem;background:transparent !important;}
-pre code.torchlight::-webkit-scrollbar{height:.25rem}
-pre code.torchlight::-webkit-scrollbar-track{--tw-bg-opacity:1;background-color:rgb(39 39 42 / var(--tw-bg-opacity))}
-pre code.torchlight::-webkit-scrollbar-thumb{border-radius:.25rem;--tw-bg-opacity:1;background-color:rgb(113 113 122 / var(--tw-bg-opacity))}
-pre code.torchlight::-webkit-scrollbar-thumb:hover{--tw-bg-opacity:1;background-color:rgb(161 161 170 / var(--tw-bg-opacity))}
-pre code.torchlight .line:before, pre code.torchlight .line:after, code:after, code:before{content:""}
-pre code.torchlight .line-number,pre code.torchlight .summary-caret{margin-right:1rem}
-pre code.torchlight .line-number{display:none}
-
-/* search overwrites */
-[id=docsearch] {width: 100%;}
-@media (min-width: 768px) {
-    [id=docsearch] {width: auto;}
+.DocSearch-Container {
+    @apply backdrop-blur-sm;
 }
-.DocSearch-Container { @apply backdrop-blur-sm }
-.DocSearch-Screen-Icon { display:none }
-.DocSearch-Help, .DocSearch-Label { color: rgba(255, 255, 255, 0.6) !important}
-.DocSearch-Form { @apply rounded-xl z-50 relative }
-.DocSearch-Button { @apply cursor-pointer flex pointer-events-auto rounded-full flex-1 items-center font-normal text-sm h-8 pl-3 pr-1.5 md:pl-3.5! md:pr-3! text-white/50! bg-white/10 hover:bg-white/15 ring-1 ring-white/15 hover:ring-white/20! shadow-none! justify-between truncate gap-2 ; }
-.DocSearch-Button .DocSearch-Search-Icon { @apply -ml-1.5 size-5 text-white/50!; }
-.DocSearch-Button-Container { @apply flex items-center }
-.DocSearch-Button-Keys {min-width:0}
-.DocSearch-Button-Key{background:0 0;padding:0;color:rgba(255, 255, 255, 0.6);top:auto;box-shadow:none;width:auto;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";margin-right:.125rem}
-.DocSearch-Modal{ @apply text-white shadow-2xl rounded-xl }
-.DocSearch-Hit a{ @apply shadow-none}
-.DocSearch-Button-Placeholder{ @apply text-sm }
-.DocSearch-Help { @apply text-white text-base }
-.DocSearch-Title { @apply text-xl mb-3 }
-.DocSearch-Input { @apply placeholder:text-white/50 }
-
-/* documentation */
-.docs-main a{color:#ec4899;text-decoration:underline}
-.docs-main a:hover{color:#ec4899;text-decoration:none;}
-.docs-main h1,.docs-main h2,.docs-main h3,.docs-main h4,.docs-main h5,.docs-main h6{overflow-wrap:break-word;word-break:break-word}
-.docs-main h1 a,.docs-main h2 a,.docs-main h3 a,.docs-main h4 a,.docs-main h5 a,.docs-main h6 a{color:#111827}
-.docs-main h1 a.heading-permalink,.docs-main h2 a.heading-permalink,.docs-main h3 a.heading-permalink,.docs-main h4 a.heading-permalink,.docs-main h5 a.heading-permalink,.docs-main h6 a.heading-permalink{color:#111827;text-decoration:none}
-.docs-main h1{margin-top:0}
-.docs-main h1 a.heading-permalink{display:none}
-.docs-main h2{font-weight:700;font-size:2.25rem;line-height:2.5rem;display:flex;align-items:baseline}
-.docs-main h2 a.heading-permalink{opacity:0;position:absolute;font-weight:400;margin-left:-27px;padding-right:10px;font-size:32px;text-decoration:none}
-.docs-main h2 a.heading-permalink:hover,.docs-main h2:hover a.heading-permalink{opacity:1}
-.docs-main h3{font-weight:500;font-size:1.875rem;line-height:2.25rem;display:flex;align-items:baseline}
-.docs-main h3 a.heading-permalink{opacity:0;position:absolute;font-weight:400;margin-left:-27px;padding-right:10px;font-size:28px;text-decoration:none}
-.docs-main h3 a.heading-permalink:hover,.docs-main h3:hover a.heading-permalink{opacity:1}
-.docs-main blockquote{border-left-width:4px;border-color:#ec4899;font-weight:400;margin:2rem 0;padding-left:.75rem;color:#fff;}
-.docs-main p{margin:.5rem 0;overflow-wrap:break-word;word-break:break-word}
-@media (min-width:768px){
-    .docs-main p{margin:1.25rem 0}
+.DocSearch-Modal {
+    @apply rounded-2xl border border-zinc-700 text-zinc-200 shadow-2xl;
 }
-.docs-main .collection-method-list ul{list-style:none;column-count:1}
-@media (min-width:1024px){
-    .docs-main .collection-method-list ul{column-count:2;column-gap:.5em}
+.DocSearch-Form {
+    @apply relative z-50 rounded-xl;
 }
-.docs-main .collection-method-list ul li a{display:block;text-decoration:none}
-.docs-main .collection-method-list ul li a code{border-radius:3px;padding:1px 5px;}
-.docs-main .content-list ul{list-style:none}
-.docs-main .content-list ul li:before,.docs-main .content-list ul:not(:first-of-type) li:before{content:"◯";position:absolute;font-size:10px;margin-top:.6em;margin-left:-25px}
-.docs-main ol,.docs-main ul{list-style-position:inside}
-.docs-main ol li p,.docs-main ul li p{display:inline-block}
-.docs-main #toc ul,.docs-main h1+ul{margin:0;padding:0;margin-bottom:4rem}
-.docs-main #toc ul li,.docs-main h1+ul li{display:block;margin-bottom:.5rem}
-.docs-main #toc ul li a,.docs-main h1+ul li a{position:relative;color:#4b5563;text-decoration:none;font-weight:500;font-size:.89em!important}
-.docs-main #toc ul li a::before,.docs-main h1+ul li a::before{content:"- "}
-.docs-main #toc ul ul,.docs-main h1+ul ul{padding:0;margin:.5rem 0 0}
-.docs-main #toc ul ul li,.docs-main h1+ul ul li{padding-left:1.5rem}
-.docs-main #toc ul ul li a,.docs-main h1+ul ul li a{font-weight:400;text-decoration:none!important}
-.docs-main iframe{max-width:100%;height:auto;aspect-ratio:16/9}
-.docs-main pre+.code-snippet{margin-top:1rem}
-.docs-main .code-snippet{display:block;flex:1 1 0%;border-radius:.5rem;padding-top:1.5rem;padding-bottom:1.5rem;color:#fff;overflow-x:auto;scrollbar-width:thin;scrollbar-color:#6b7280 #1f2937}
-.docs-main .code-snippet::-webkit-scrollbar{height:.25rem}
-.docs-main .code-snippet::-webkit-scrollbar-track{background:#1f2937}
-.docs-main .code-snippet::-webkit-scrollbar-thumb{background-color:#6b7280;border-radius:9999px}
-.docs-main .code-snippet:hover::-webkit-scrollbar-thumb{background-color:#9ca3af}
-.docs-main .code-snippet img{--line-height:29.6px;max-width:inherit;height:calc(var(--line-height) * var(--lines));padding-left:1.25rem;padding-right:1.25rem}
+.DocSearch-Hit a {
+    @apply rounded-lg border border-zinc-700 shadow-none;
+}
+.DocSearch-Screen-Icon {
+    display: none;
+}
 
-.docs-nav ul h2, .docs-nav h2{margin-bottom:1rem;font-size:.75rem;line-height:1rem;font-weight:700;color:rgba(255,255,255,.75);text-transform:uppercase;letter-spacing:.05em}
-.docs-nav ul li{margin-bottom:.25rem}
-.docs-nav ul li>:not(template)+:not(template){margin-top:.75rem;margin-bottom:3rem}
-.docs-nav ul li a{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-weight:400;display:flex;align-items:center;padding-top:.375rem;padding-bottom:.375rem;font-size:.875rem;line-height:1.25rem;color:rgba(255,255,255,.8);border-radius:.375rem;text-decoration:none}
-.docs-nav ul li a:focus,.docs-nav ul li a:hover{text-decoration:underline;color:#fff}
-.docs-nav ul li .active a{text-decoration:underline;color:#fff;font-weight:700}
-.docs-nav ul li li>:not(template)+:not(template){margin-top:0;margin-bottom:0}
+/* The launcher button in the header */
+[id='docsearch'] {
+    width: 100%;
+}
+@media (min-width: 640px) {
+    [id='docsearch'] {
+        width: auto;
+    }
+}
+.DocSearch-Button {
+    @apply flex h-9 w-full cursor-pointer items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800 px-2.5 font-medium text-zinc-400 transition-colors sm:w-56;
+    margin: 0;
+}
+.DocSearch-Button:hover,
+.DocSearch-Button:focus {
+    @apply border-zinc-200/20 text-zinc-200 shadow-none;
+    background: var(--color-zinc-800);
+}
+.DocSearch-Button .DocSearch-Search-Icon {
+    @apply size-4 text-zinc-500;
+}
+.DocSearch-Button-Container {
+    @apply flex items-center gap-2;
+}
+.DocSearch-Button-Placeholder {
+    @apply text-sm;
+    padding: 0;
+}
+.DocSearch-Button-Keys {
+    @apply ml-auto flex min-w-0 items-center gap-0.5;
+}
+.DocSearch-Button-Key {
+    @apply rounded-sm border border-zinc-700 bg-zinc-900 px-1 py-px font-sans text-zinc-400;
+    top: auto;
+    box-shadow: none;
+    background: var(--color-zinc-900);
+    width: auto;
+    height: auto;
+    margin: 0;
+    font-size: 11px;
+}
+
+/* ==========================================================================
+   Code — inline chips + terminal blocks
+   ========================================================================== */
+
+/* Inline code */
+.docs-main :not(pre) > code {
+    @apply rounded-md border border-zinc-700 bg-zinc-800 px-1.5 py-0.5 font-mono text-[0.85em] font-normal text-zinc-200;
+}
+/* Kill Tailwind Typography's backtick pseudo-elements */
+.docs-main code::before,
+.docs-main code::after {
+    content: '' !important;
+}
+
+/* Fenced code blocks — terminal wells */
+.docs-main pre {
+    @apply relative my-6 flex overflow-hidden rounded-[10px] border border-zinc-700 bg-zinc-900;
+}
+.docs-main pre code {
+    @apply flex flex-1 overflow-x-auto bg-transparent p-0 font-mono text-zinc-300;
+    font-size: 0.85em;
+    line-height: 1.9;
+    color: var(--color-zinc-300);
+}
+.docs-main pre code.torchlight {
+    @apply block overflow-x-auto px-5 py-4;
+    background: transparent !important;
+}
+.docs-main pre code.torchlight::-webkit-scrollbar {
+    height: 0.4rem;
+}
+.docs-main pre code.torchlight::-webkit-scrollbar-track {
+    @apply bg-zinc-900;
+}
+.docs-main pre code.torchlight::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-zinc-700;
+}
+.docs-main pre code.torchlight::-webkit-scrollbar-thumb:hover {
+    @apply bg-zinc-600;
+}
+/* Non-torchlight (plain) code blocks still get comfortable padding */
+.docs-main pre code:not(.torchlight) {
+    @apply px-5 py-4;
+}
+.docs-main pre code.torchlight .line-number,
+.docs-main pre code.torchlight .summary-caret {
+    margin-right: 1rem;
+}
+.docs-main pre code.torchlight .line-number {
+    display: none;
+}
+
+/* Copy-to-clipboard button injected by clipboard.js */
+.docs-main pre .copyBtn {
+    @apply absolute right-2.5 top-2.5 flex size-6 items-center justify-center text-zinc-600 transition-colors;
+}
+.docs-main pre .copyBtn:hover,
+.docs-main pre .copyBtn:focus,
+.docs-main pre .copyBtn:active {
+    @apply text-zinc-200;
+}
+
+/* Image-based terminal snapshots */
+.docs-main .code-snippet {
+    @apply my-6 block flex-1 overflow-x-auto rounded-[10px] border border-zinc-700 bg-zinc-900 py-5;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-zinc-700) var(--color-zinc-900);
+}
+.docs-main pre + .code-snippet {
+    @apply mt-4;
+}
+.docs-main .code-snippet::-webkit-scrollbar {
+    height: 0.4rem;
+}
+.docs-main .code-snippet::-webkit-scrollbar-track {
+    @apply bg-zinc-900;
+}
+.docs-main .code-snippet::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-zinc-700;
+}
+.docs-main .code-snippet:hover::-webkit-scrollbar-thumb {
+    @apply bg-zinc-600;
+}
+.docs-main .code-snippet img {
+    --line-height: 29.6px;
+    max-width: inherit;
+    height: calc(var(--line-height) * var(--lines));
+    @apply px-5;
+}
+
+/* ==========================================================================
+   Terminal snapshots — hand-authored HTML that reproduces the Pest CLI
+   output the docs used to ship as raster images. Same card as .code-snippet.
+   ========================================================================== */
+.docs-main .terminal {
+    --t-green: #a2d86e;
+    --t-red: #f08a8a;
+    --t-amber: #f4c26b;
+    --t-yellow: #fcdf5f;
+    --t-blue: #82aaff;
+    --t-violet: #c99bf5;
+    --t-rose: #f68aa0;
+    --t-sky: #7ec8f0;
+    --t-white: #e6e6e9;
+    --t-gray: #8f8f95;
+    --t-dim: #5f5f66;
+
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    line-height: 1.9;
+    color: var(--t-gray);
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-zinc-700) var(--color-zinc-900);
+    @apply my-6 rounded-[10px] border border-zinc-700 bg-zinc-900 px-5.5 py-5 font-mono text-[13px];
+}
+.docs-main .terminal::-webkit-scrollbar {
+    height: 0.4rem;
+}
+.docs-main .terminal::-webkit-scrollbar-track {
+    @apply bg-zinc-900;
+}
+.docs-main .terminal::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-zinc-700;
+}
+.docs-main .terminal:hover::-webkit-scrollbar-thumb {
+    @apply bg-zinc-600;
+}
+.docs-main .terminal .l {
+    min-height: 1.9em;
+}
+.docs-main .terminal .white {
+    color: var(--t-white);
+}
+.docs-main .terminal .gray {
+    color: var(--t-gray);
+}
+.docs-main .terminal .dim {
+    color: var(--t-dim);
+}
+.docs-main .terminal .green {
+    color: var(--t-green);
+}
+.docs-main .terminal .red {
+    color: var(--t-red);
+}
+.docs-main .terminal .amber {
+    color: var(--t-amber);
+}
+.docs-main .terminal .yellow {
+    color: var(--t-yellow);
+}
+.docs-main .terminal .blue {
+    color: var(--t-blue);
+}
+.docs-main .terminal .violet {
+    color: var(--t-violet);
+}
+.docs-main .terminal .rose {
+    color: var(--t-rose);
+}
+.docs-main .terminal .b {
+    font-weight: 700;
+}
+/* status chips */
+.docs-main .terminal .chip {
+    padding: 0 6px;
+    font-weight: 700;
+    border-radius: 1px;
+}
+.docs-main .terminal .pass {
+    background: var(--t-green);
+    color: #18181b;
+}
+.docs-main .terminal .fail {
+    background: var(--t-red);
+    color: #ffffff;
+}
+.docs-main .terminal .warn {
+    background: var(--t-amber);
+    color: #ffffff;
+}
+.docs-main .terminal .todo {
+    background: var(--t-sky);
+    color: #ffffff;
+}
+/* dotted leader rows (coverage / profile) */
+.docs-main .terminal .row {
+    display: flex;
+    align-items: baseline;
+}
+.docs-main .terminal .lead {
+    flex: 1;
+    margin: 0 8px;
+    min-width: 24px;
+    border-bottom: 1px dotted var(--t-dim);
+    transform: translateY(-4px);
+}
+/* horizontal rule inside terminal */
+.docs-main .terminal .hr {
+    margin: 8px 0;
+    border: 0;
+    border-top: 1px solid var(--color-zinc-700);
+}
+.docs-main .terminal .hr-red {
+    border-top-color: #7f3a3a;
+}
+/* code gutter (failure output) — continuous vertical rule beside line numbers */
+.docs-main .terminal .cl {
+    display: flex;
+}
+.docs-main .terminal .mk {
+    flex: none;
+    width: 1.4em;
+    text-align: left;
+    user-select: none;
+}
+.docs-main .terminal .ln {
+    flex: none;
+    width: 1.4em;
+    padding-right: 0.85em;
+    text-align: right;
+    color: var(--t-dim);
+    user-select: none;
+}
+.docs-main .terminal .src {
+    padding-left: 0.85em;
+    white-space: pre;
+    border-left: 1px solid var(--t-dim);
+}
+
+/* ==========================================================================
+   Documentation content — prose (Tailwind Typography, retuned to blueprint)
+   ========================================================================== */
+.docs-main {
+    --tw-prose-invert-body: var(--color-zinc-300);
+    --tw-prose-invert-headings: var(--color-zinc-100);
+    --tw-prose-invert-lead: var(--color-zinc-400);
+    --tw-prose-invert-links: var(--color-rose-400);
+    --tw-prose-invert-bold: var(--color-zinc-100);
+    --tw-prose-invert-counters: var(--color-zinc-500);
+    --tw-prose-invert-bullets: var(--color-zinc-600);
+    --tw-prose-invert-hr: var(--color-zinc-700);
+    --tw-prose-invert-quotes: var(--color-zinc-200);
+    --tw-prose-invert-quote-borders: var(--color-rose-500);
+    --tw-prose-invert-captions: var(--color-zinc-500);
+    --tw-prose-invert-code: var(--color-zinc-100);
+    --tw-prose-invert-pre-code: var(--color-zinc-300);
+    --tw-prose-invert-pre-bg: var(--color-zinc-900);
+    --tw-prose-invert-th-borders: var(--color-zinc-700);
+    --tw-prose-invert-td-borders: var(--color-zinc-700);
+}
+
+/* Headings use the display grotesque, stretched, per the design system */
+.docs-main h1,
+.docs-main h2,
+.docs-main h3,
+.docs-main h4,
+.docs-main h5,
+.docs-main h6 {
+    font-family: var(--font-display);
+    font-stretch: 112%;
+    letter-spacing: -0.02em;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+.docs-main h1 {
+    @apply mb-8 mt-0 text-4xl font-extrabold leading-[1.05] text-zinc-100 sm:text-[2.75rem];
+}
+.docs-main h2 {
+    @apply relative mb-4 mt-14 text-3xl font-extrabold text-zinc-100;
+}
+.docs-main h3 {
+    @apply relative mb-3 mt-10 text-xl font-bold text-zinc-100;
+}
+.docs-main h4 {
+    @apply relative mb-2 mt-8 text-lg font-bold text-zinc-100;
+}
+
+/* Heading permalinks (# anchor) — rose, revealed on hover */
+.docs-main h1 a.heading-permalink {
+    display: none;
+}
+.docs-main :is(h2, h3, h4) a.heading-permalink {
+    @apply absolute font-mono font-normal text-rose-500 no-underline opacity-0 transition-opacity;
+    left: -1.1em;
+    padding-right: 0.4em;
+}
+.docs-main :is(h2, h3, h4):hover a.heading-permalink,
+.docs-main :is(h2, h3, h4) a.heading-permalink:focus {
+    @apply opacity-100;
+}
+
+/* Links */
+.docs-main a {
+    @apply font-medium text-rose-400 underline underline-offset-4 transition-colors;
+    text-decoration-thickness: 1px;
+}
+.docs-main a:hover {
+    @apply text-rose-300 no-underline;
+}
+
+/* Body copy */
+.docs-main p {
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* Blockquotes — rose rail callout */
+.docs-main blockquote {
+    @apply my-8 rounded-r-lg border-l-2 border-rose-500 bg-zinc-800/40 py-1 pl-4 font-normal not-italic text-zinc-300;
+}
+.docs-main blockquote p:first-of-type::before,
+.docs-main blockquote p:last-of-type::after {
+    content: '';
+}
+
+/* Tables */
+.docs-main table {
+    @apply my-6 w-full overflow-hidden text-sm;
+}
+.docs-main thead th {
+    @apply font-mono text-xs uppercase tracking-widest text-zinc-400;
+}
+
+/* Horizontal rules */
+.docs-main hr {
+    @apply my-12 border-zinc-700;
+}
+
+/* Table-of-contents (top-of-page index list) & method lists ------------- */
+.docs-main .collection-method-list ul {
+    list-style: none;
+    column-count: 1;
+    @apply pl-0;
+}
+@media (min-width: 1024px) {
+    .docs-main .collection-method-list ul {
+        column-count: 2;
+        column-gap: 1.5em;
+    }
+}
+.docs-main .collection-method-list ul li a {
+    @apply block no-underline;
+}
+.docs-main .collection-method-list ul li a code {
+    @apply text-zinc-300;
+}
+
+.docs-main .content-list ul {
+    list-style: none;
+    @apply pl-0;
+}
+.docs-main .content-list ul li {
+    @apply relative pl-6;
+}
+.docs-main .content-list ul li::before {
+    content: '';
+    @apply absolute left-1 top-[0.7em] size-1.5 rounded-full border border-rose-500;
+}
+
+.docs-main #toc ul,
+.docs-main h1 + ul {
+    @apply mb-16 mt-2 pl-0;
+    list-style: none;
+}
+.docs-main #toc ul li,
+.docs-main h1 + ul li {
+    @apply mb-0 block;
+}
+.docs-main #toc ul li a,
+.docs-main h1 + ul li a {
+    @apply relative block py-1 font-mono text-sm font-normal text-zinc-400 no-underline transition-colors;
+}
+.docs-main #toc ul li a:hover,
+.docs-main h1 + ul li a:hover {
+    @apply text-rose-400;
+}
+.docs-main #toc ul li a::before,
+.docs-main h1 + ul li a::before {
+    content: '// ';
+    @apply text-rose-500;
+}
+.docs-main #toc ul ul,
+.docs-main h1 + ul ul {
+    @apply my-1 pl-5;
+}
+.docs-main #toc ul ul li a::before,
+.docs-main h1 + ul ul li a::before {
+    content: '- ';
+    @apply text-zinc-600;
+}
+
+.docs-main iframe {
+    @apply my-6 rounded-[10px] border border-zinc-700;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+}
+
+/* ==========================================================================
+   Documentation sidebar navigation (.docs-nav)
+   ========================================================================== */
+.docs-nav ul {
+    list-style: none;
+    @apply pl-0;
+}
+
+/* Section labels — mono, uppercase, // prefixed */
+.docs-nav h2 {
+    @apply mb-3 mt-8 flex items-center font-mono text-2xs font-bold uppercase tracking-widest text-zinc-500;
+}
+.docs-nav ul li:first-child h2,
+.docs-nav h2:first-child {
+    @apply mt-0;
+}
+.docs-nav h2::before {
+    content: '// ';
+    @apply mr-1 text-rose-500;
+}
+
+.docs-nav ul li {
+    @apply mb-0.5;
+}
+.docs-nav ul li a {
+    @apply flex items-center rounded-md border-l border-transparent py-1.5 pl-3 font-sans text-sm font-normal text-zinc-400 no-underline transition-colors;
+}
+.docs-nav ul li a:focus,
+.docs-nav ul li a:hover {
+    @apply border-zinc-700 text-zinc-200;
+}
+.docs-nav ul li.active a {
+    @apply border-rose-500 font-semibold text-zinc-100;
+}
