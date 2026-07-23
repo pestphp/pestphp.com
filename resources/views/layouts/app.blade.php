@@ -14,7 +14,7 @@
 
     <footer class="mx-auto max-w-7xl border-t border-zinc-700 px-5 pb-8 pt-10 sm:px-8">
         <div class="flex flex-col items-center justify-between gap-4 text-xs text-zinc-400 sm:flex-row">
-            <div>
+            <div class="font-mono">
                 &copy; {{ date('Y') }} PestPHP — A project by
                 <a class="font-medium underline-offset-4 hover:underline" href="https://pinkary.com/@nunomaduro" target="_blank" rel="noopener">Nuno Maduro</a>.
                 Designed by
