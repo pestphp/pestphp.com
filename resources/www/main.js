@@ -40,5 +40,13 @@ document.addEventListener('alpine:init', () => {
     }));
 });
 
+// Remember the scroll position across refreshes: the inline <head> script adds
+// `no-intro` on <html> when the page reloads scrolled past the hero, so the
+// enter animations (header, rails, grid, intro) only play at the top.
+try { sessionStorage.removeItem('pest-scroll') } catch (e) {}
+addEventListener('pagehide', () => {
+    try { sessionStorage.setItem('pest-scroll', scrollY) } catch (e) {}
+})
+
 window.Alpine = Alpine
 Alpine.start()
