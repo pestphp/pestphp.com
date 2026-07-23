@@ -30,7 +30,7 @@
             </template>
         </div>
         <div class="ml-2 hidden gap-6 lg:flex">
-            <a class="text-sm font-medium text-white underline-offset-4 hover:underline" href="/docs">Documentation</a>
+            <a class="text-sm font-medium text-white underline underline-offset-4" href="/docs">Documentation</a>
             <a class="text-sm font-medium text-zinc-400 underline-offset-4 hover:underline" href="https://youtube.com/@nunomaduro">YouTube</a>
             <a class="text-sm font-medium text-zinc-400 underline-offset-4 hover:underline" href="https://github.com/sponsors/nunomaduro">Sponsor</a>
         </div>
