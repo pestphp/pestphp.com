@@ -48,6 +48,16 @@
         20%, 100% { background-position-y: calc(100% + 160px); }
     }
 
+    /* footer watermark: a neon segment traces the letter outlines.
+       Offset shifts by exactly one dash period (40 + 360) per cycle, so the loop is seamless. */
+    --animate-trace: trace 6s linear infinite;
+
+    @keyframes trace {
+        to {
+            stroke-dashoffset: -400;
+        }
+    }
+
     /* hero intro: PEST wordmark flickers in CRT-style, then the overlay fades out */
     --animate-crt-in: crt-in 0.6s linear forwards;
 
@@ -117,4 +127,14 @@ button {
 
 [x-tooltip] {
     cursor: help;
+}
+
+/* refresh while scrolled past the hero: skip the intro and every enter animation
+   (set as `no-intro` on <html> by the inline head script, pre-paint) */
+.no-intro [class*='motion-preset'],
+.no-intro .animate-border-in {
+    animation: none !important;
+}
+.no-intro .animate-intro-out {
+    display: none;
 }
