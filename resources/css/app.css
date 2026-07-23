@@ -570,10 +570,9 @@ button {
 
 /* Section labels — mono, uppercase, // prefixed */
 .docs-nav h2 {
-    @apply mb-3 mt-8 flex items-center font-mono text-2xs font-bold uppercase tracking-widest text-zinc-500;
+    @apply mb-3 mt-9 flex items-center font-mono text-2xs font-bold uppercase tracking-widest text-zinc-500;
 }
-.docs-nav ul li:first-child h2,
-.docs-nav h2:first-child {
+.docs-nav > ul > li:first-child > h2 {
     @apply mt-0;
 }
 .docs-nav h2::before {
@@ -582,15 +581,15 @@ button {
 }
 
 .docs-nav ul li {
-    @apply mb-0.5;
+    @apply mb-1;
 }
 .docs-nav ul li a {
-    @apply flex items-center rounded-md border-l border-transparent py-1.5 pl-3 font-sans text-sm font-normal text-zinc-400 no-underline transition-colors;
+    @apply flex items-center py-1 font-sans text-sm font-normal text-zinc-400 no-underline underline-offset-4 transition-colors;
 }
 .docs-nav ul li a:focus,
 .docs-nav ul li a:hover {
-    @apply border-zinc-700 text-zinc-200;
+    @apply text-white underline;
 }
 .docs-nav ul li.active a {
-    @apply border-rose-500 font-semibold text-zinc-100;
+    @apply font-semibold text-white underline;
 }
