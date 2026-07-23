@@ -35,7 +35,7 @@
         }" x-init="init()">
             <template :key="sponsor.img" x-for="sponsor in shuffledSponsors">
                 <li :class="sponsor.tier === 1 ? 'col-span-2' : ''">
-                    <a :href="sponsor.href" class="active:scale-96 flex h-16 items-center justify-center rounded-xl border border-zinc-700 bg-zinc-800 px-3 transition-[border-color,scale] hover:border-zinc-200/20" rel="noopener" target="_blank">
+                    <a :href="sponsor.href" class="active:scale-96 flex h-16 items-center justify-center rounded-xl border border-zinc-700 bg-zinc-800 px-3 hover:border-zinc-600" rel="noopener" target="_blank">
                         <img :class="sponsor.class" :src="sponsor.img" class="max-w-full object-contain" loading="lazy" />
                     </a>
                 </li>
