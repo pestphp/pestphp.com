@@ -38,14 +38,14 @@
 
     @keyframes beam-x {
         0% { background-position-x: -160px; }
-        22%, 100% { background-position-x: calc(100% + 160px); }
+        30%, 100% { background-position-x: calc(100% + 160px); }
     }
 
     --animate-beam-y: beam-y var(--beam-duration, 11s) linear var(--beam-delay, 0s) infinite backwards;
 
     @keyframes beam-y {
         0% { background-position-y: -160px; }
-        20%, 100% { background-position-y: calc(100% + 160px); }
+        28%, 100% { background-position-y: calc(100% + 160px); }
     }
 
     /* footer watermark: a neon segment traces the letter outlines.
