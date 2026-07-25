@@ -36,16 +36,17 @@
        Per-beam --beam-duration/--beam-delay; co-prime durations keep the pattern from ever repeating. */
     --animate-beam-x: beam-x var(--beam-duration, 9s) linear var(--beam-delay, 0s) infinite backwards;
 
+    /* transform-only so the compositor animates them — background-position repaints every frame and starves the marquee */
     @keyframes beam-x {
-        0% { background-position-x: -160px; }
-        30%, 100% { background-position-x: calc(100% + 160px); }
+        0% { transform: translateX(0); }
+        30%, 100% { transform: translateX(calc(100vw + 320px)); }
     }
 
     --animate-beam-y: beam-y var(--beam-duration, 11s) linear var(--beam-delay, 0s) infinite backwards;
 
     @keyframes beam-y {
-        0% { background-position-y: -160px; }
-        28%, 100% { background-position-y: calc(100% + 160px); }
+        0% { transform: translateY(0); }
+        28%, 100% { transform: translateY(calc(100vh + 320px)); }
     }
 
     /* footer watermark: a neon segment traces the letter outlines.
