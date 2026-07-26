@@ -12,7 +12,7 @@
 
     {{ $slot }}
 
-    <footer class="mx-auto max-w-7xl border-t border-zinc-700 px-5 pb-8 pt-10 sm:px-8">
+    <footer class="container mx-auto border-t border-zinc-700 px-5 pb-8 pt-10 sm:px-8">
         <div class="flex flex-col items-center justify-between gap-4 text-xs text-zinc-400 sm:flex-row">
             <div class="font-mono">
                 &copy; {{ date('Y') }} PestPHP — A project by

@@ -1,9 +1,9 @@
 <x-app-layout :description="$matter['description']" :title="$matter['title']" layout="app">
     <main class="w-full flex-auto" role="main">
-        <div class="relative mx-auto min-h-[70vh] max-w-7xl border-x border-zinc-700">
+        <div class="relative container mx-auto min-h-[70vh] border-x border-zinc-700">
             {{-- crosshair registration marks: fixed pair riding under the sticky header, as on the landing --}}
             <div class="top-14.25 pointer-events-none fixed inset-x-0 z-10">
-                <div class="relative mx-auto max-w-7xl">
+                <div class="container relative mx-auto">
                     <span class="crosshair -left-1 top-px"></span>
                     <span class="crosshair -right-1 top-px"></span>
                 </div>

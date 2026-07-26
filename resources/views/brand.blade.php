@@ -17,7 +17,7 @@
                 setTimeout(() => { if (this.copied === id) this.copied = null }, 2000);
             },
         }">
-        <div class="relative mx-auto max-w-7xl border-x border-zinc-700">
+        <div class="relative container mx-auto border-x border-zinc-700">
             <span class="crosshair -left-1 top-px"></span>
             <span class="crosshair -right-1 top-px"></span>
 
