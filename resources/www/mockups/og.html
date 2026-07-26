@@ -1,170 +1,63 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<!--
+    og:image source (1200×630) — edit here, preview by opening this file in a browser.
+    Styled with Tailwind v4 (browser build via CDN), matching the site's design tokens.
+
+    Export to PNG and publish:
+        npx -y playwright@1.60.0 screenshot --viewport-size=1200,630 --wait-for-timeout=6000 \
+            "file://$PWD/resources/www/mockups/og.html" resources/www/public/og.png
+        cd resources/www && npm run build
+
+    The page <head> already points og:image / twitter:image at /www/og.png.
+-->
+<html class="bg-zinc-900">
 <head>
 <meta charset="utf-8">
-<title>Pest OG image — render at exactly 1200×630</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap');
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-html, body { width: 1200px; height: 630px; overflow: hidden; }
-
-body {
-    background: #18181b; /* zinc-900 */
-    color: #e4e4e7;      /* zinc-200 */
-    font-family: 'Archivo', system-ui, sans-serif;
-    position: relative;
-    -webkit-font-smoothing: antialiased;
-}
-
-/* Blueprint grid — stronger than the site (opacity .7) so it survives compression,
-   radial mask keeps it away from the crop-prone edges. */
-.grid-bg {
-    position: absolute;
-    inset: 0;
-    background-image:
-        linear-gradient(#52525b 1px, transparent 1px),
-        linear-gradient(90deg, #52525b 1px, transparent 1px);
-    background-size: 56px 56px;
-    background-position: 28px 27px;
-    opacity: .55;
-    -webkit-mask-image: radial-gradient(ellipse 85% 90% at 55% 40%, #000 25%, transparent 78%);
-    mask-image: radial-gradient(ellipse 85% 90% at 55% 40%, #000 25%, transparent 78%);
-}
-
-/* Inset frame — 44px safe margin so rounded corners / platform crops never clip it */
-.frame {
-    position: absolute;
-    inset: 44px;
-    border: 1px solid #3f3f46; /* zinc-700 */
-}
-
-/* Crosshair registration marks, slightly bolder than the site (2px strokes) */
-.mark { position: absolute; width: 15px; height: 15px; }
-.mark::before { content: ''; position: absolute; left: 0; top: 6.5px; width: 15px; height: 2px; background: #f43f5e; }
-.mark::after  { content: ''; position: absolute; left: 6.5px; top: 0; width: 2px; height: 15px; background: #f43f5e; }
-.mark.tl { left: -8px; top: -8px; }
-.mark.tr { right: -8px; top: -8px; }
-.mark.bl { left: -8px; bottom: -8px; }
-.mark.br { right: -8px; bottom: -8px; }
-
-.content {
-    position: absolute;
-    inset: 44px;
-    display: flex;
-    align-items: center;
-    gap: 48px;
-    padding: 0 56px;
-}
-
-.left { flex: 1 1 auto; min-width: 0; }
-
-/* Wordmark — larger for thumbnail legibility */
-.wordmark { display: block; height: 56px; width: auto; fill: #e4e4e7; margin-bottom: 34px; }
-
-.kicker {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 16px;
-    letter-spacing: .1em;
-    color: #a1a1aa; /* zinc-400 */
-    margin-bottom: 20px;
-}
-.kicker b { color: #f43f5e; font-weight: 700; }
-
-h1 {
-    font-weight: 800;
-    font-stretch: 112%;
-    font-size: 47px;
-    line-height: 1.08;
-    letter-spacing: -.025em;
-    color: #e4e4e7;
-}
-h1 .line { white-space: nowrap; }
-h1 em {
-    font-style: italic;
-    color: #f43f5e; /* rose-500 */
-    position: relative;
-    white-space: nowrap;
-}
-h1 em .bar {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 5px;
-    height: 13px;
-    background: #4c0519; /* rose-950 */
-    z-index: -1;
-}
-
-/* Terminal card — fills the previously-empty right half */
-.card {
-    flex: 0 0 400px;
-    background: #27272a;               /* zinc-800 */
-    border: 1px solid #3f3f46;         /* zinc-700 */
-    border-radius: 16px;
-    padding: 14px;
-}
-.term {
-    background: #18181b;               /* zinc-900 well */
-    border-radius: 10px;
-    padding: 22px 24px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 15px;
-    line-height: 2.05;
-    color: #d4d4d8;                    /* zinc-300 */
-    white-space: nowrap;
-}
-.dim     { color: #71717a; }           /* zinc-500 */
-.ok      { color: #4ade80; }           /* green-400 */
-.rose    { color: #fb7185; }           /* rose-400 */
-.pass {
-    background: #4ade80;
-    color: #18181b;
-    font-weight: 700;
-    padding: 1px 8px;
+<title>Pest og:image — 1200×630</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap">
+<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss">
+@theme {
+    --font-display: 'Archivo', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 </style>
 </head>
-<body>
-    <div class="grid-bg"></div>
+<body class="relative h-[630px] w-[1200px] overflow-hidden bg-zinc-900">
+    <!-- blueprint grid, radial fade -->
+    <div class="bg-size-[56px_56px] absolute inset-0 opacity-50 bg-[linear-gradient(var(--color-zinc-700)_1px,transparent_1px),linear-gradient(90deg,var(--color-zinc-700)_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_90%_90%_at_55%_30%,#000_30%,transparent_78%)]"></div>
 
-    <div class="frame">
-        <span class="mark tl"></span>
-        <span class="mark tr"></span>
-        <span class="mark bl"></span>
-        <span class="mark br"></span>
+    <!-- hairline frame + rose crosshairs -->
+    <div class="absolute inset-10 border-2 border-zinc-700"></div>
+    <span class="absolute left-[32px] top-[32px] size-[18px] before:absolute before:left-0 before:top-2 before:h-0.5 before:w-[18px] before:bg-rose-500 before:content-[''] after:absolute after:left-2 after:top-0 after:h-[18px] after:w-0.5 after:bg-rose-500 after:content-['']"></span>
+    <span class="absolute right-[32px] top-[32px] size-[18px] before:absolute before:left-0 before:top-2 before:h-0.5 before:w-[18px] before:bg-rose-500 before:content-[''] after:absolute after:left-2 after:top-0 after:h-[18px] after:w-0.5 after:bg-rose-500 after:content-['']"></span>
+    <span class="absolute bottom-[32px] left-[32px] size-[18px] before:absolute before:left-0 before:top-2 before:h-0.5 before:w-[18px] before:bg-rose-500 before:content-[''] after:absolute after:left-2 after:top-0 after:h-[18px] after:w-0.5 after:bg-rose-500 after:content-['']"></span>
+    <span class="absolute bottom-[32px] right-[32px] size-[18px] before:absolute before:left-0 before:top-2 before:h-0.5 before:w-[18px] before:bg-rose-500 before:content-[''] after:absolute after:left-2 after:top-0 after:h-[18px] after:w-0.5 after:bg-rose-500 after:content-['']"></span>
+
+    <!-- left column: wordmark, kicker, headline -->
+    <div class="absolute left-[100px] top-[128px]">
+        <svg class="block h-auto w-[208px] fill-zinc-50" viewBox="0 0 381 100" xmlns="http://www.w3.org/2000/svg">
+            <path clip-rule="evenodd" fill-rule="evenodd" d="M16.607 27.51 22.994 0h85.181L93.484 63.272H36.697l-8.303 35.763H0l14.69-63.272h56.788l1.916-8.253zM295.574 0h85.181l-6.387 27.51h-39.752L318.01 99.035h-28.394l16.607-71.525h-73.824l-1.917 8.253h56.788l-6.387 27.51-1.916 8.252-6.387 27.51h-85.181l6.387-27.51h56.787l1.916-8.253h-56.787l6.387-27.51 1.916-8.252L210.392 0zm-93.7 0h-85.181l-6.387 27.51h85.181zm-25.34 35.763h-68.145l-6.387 27.51h68.145zm8.734 35.762h-85.182l-6.387 27.51h85.181z"/>
+        </svg>
+        <div class="mt-10 font-mono text-[20px] tracking-[0.16em] text-zinc-400"><b class="mr-2.5 font-bold text-rose-500">//</b>pest 5 — now available</div>
+        <h1 class="font-display font-stretch-112% mt-[26px] text-[48px] font-extrabold leading-[1.09] tracking-[-0.02em] text-zinc-50">
+            The elegant<br>testing framework<br>for PHP developers<br>
+            <span class="relative z-0 whitespace-nowrap italic text-rose-500 after:absolute after:inset-x-0 after:bottom-[5px] after:-z-10 after:h-[13px] after:bg-rose-950 after:content-['']">and AI agents.</span>
+        </h1>
     </div>
 
-    <div class="content">
-        <div class="left">
-            <svg class="wordmark" viewBox="0 0 381 100" xmlns="http://www.w3.org/2000/svg">
-                <path clip-rule="evenodd" fill-rule="evenodd" d="M16.607 27.51 22.994 0h85.181L93.484 63.272H36.697l-8.303 35.763H0l14.69-63.272h56.788l1.916-8.253zM295.574 0h85.181l-6.387 27.51h-39.752L318.01 99.035h-28.394l16.607-71.525h-73.824l-1.917 8.253h56.788l-6.387 27.51-1.916 8.252-6.387 27.51h-85.181l6.387-27.51h56.787l1.916-8.253h-56.787l6.387-27.51 1.916-8.252L210.392 0zm-93.7 0h-85.181l-6.387 27.51h85.181zm-25.34 35.763h-68.145l-6.387 27.51h68.145zm8.734 35.762h-85.182l-6.387 27.51h85.181z"/>
-            </svg>
-
-            <div class="kicker"><b>//</b> pest 5 now available</div>
-
-            <h1>
-                <span class="line">The elegant testing</span><br>
-                <span class="line">framework for PHP</span><br>
-                <span class="line">developers</span><br>
-                <em><span class="bar"></span>and AI agents.</em>
-            </h1>
-        </div>
-
-        <div class="card">
-            <div class="term">
-                <div><span class="dim">$</span> ./vendor/bin/pest</div>
-                <div>&nbsp;</div>
-                <div>&nbsp;&nbsp;<span class="pass">PASS</span>&nbsp; Tests\Feature\PostTest</div>
-                <div>&nbsp;&nbsp;<span class="ok">✓</span> it creates a post <span class="dim">— 0.11s</span></div>
-                <div>&nbsp;&nbsp;<span class="ok">✓</span> it updates a post <span class="dim">— 0.09s</span></div>
-                <div>&nbsp;&nbsp;<span class="ok">✓</span> it deletes a post <span class="dim">— 0.05s</span></div>
-                <div>&nbsp;</div>
-                <div>Tests:&nbsp;&nbsp;&nbsp;&nbsp;<span class="ok">3 passed</span> <span class="dim">(8 assertions)</span></div>
-                <div>Duration: <span class="ok">0.14s</span></div>
-            </div>
-        </div>
+    <!-- terminal card -->
+    <div class="absolute right-[110px] top-[110px] w-[440px] rounded-2xl border border-zinc-700 bg-zinc-950/80 px-8 py-[30px] font-mono text-[18.5px] leading-[2.05] text-zinc-300 outline outline-zinc-500/45 outline-offset-[14px] shadow-[0_0_0_14px_var(--color-zinc-800)] backdrop-blur-xl">
+        <div><span class="text-zinc-500">$</span> ./vendor/bin/pest <span class="text-rose-400">--tia</span></div>
+        <div class="h-[22px]"></div>
+        <div><span class="rounded-[2px] bg-green-400 px-[9px] py-[2px] font-bold text-zinc-900">PASS</span>&nbsp; Tests\Feature\PostTest</div>
+        <div><span class="text-green-400">✓</span> it creates a post <span class="text-zinc-500">— 0.11s</span></div>
+        <div><span class="text-green-400">✓</span> it updates a post <span class="text-zinc-500">— 0.09s</span></div>
+        <div><span class="text-green-400">✓</span> it deletes a post <span class="text-zinc-500">— 0.05s</span></div>
+        <div><span class="text-green-400">✓</span> it publishes a post <span class="text-zinc-500">— 0.38s</span></div>
+        <div class="h-[22px]"></div>
+        <div class="whitespace-nowrap">Tests: &nbsp;&nbsp;&nbsp;<span class="text-green-400">4 passed</span> <span class="text-zinc-500">(11 assertions)</span></div>
+        <div>Duration: <span class="text-green-400">0.63s</span></div>
     </div>
 </body>
 </html>
