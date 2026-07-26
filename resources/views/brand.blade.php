@@ -17,13 +17,18 @@
         },
     }">
         <div class="container relative mx-auto border-x border-zinc-700">
-            <span class="crosshair -left-1 top-px"></span>
-            <span class="crosshair -right-1 top-px"></span>
+            {{-- crosshair registration marks: fixed pair riding under the sticky header, as on the landing --}}
+            <div class="top-14.25 pointer-events-none fixed inset-x-0 z-10">
+                <div class="container relative mx-auto">
+                    <span class="crosshair -left-1 top-px"></span>
+                    <span class="crosshair -right-1 top-px"></span>
+                </div>
+            </div>
 
             {{-- ============================================================= --}}
             {{-- Heading --}}
             {{-- ============================================================= --}}
-            <section class="pt-19 relative px-5 pb-10 sm:px-10">
+            <section class="relative px-5 py-12 sm:px-10">
                 <div class="flex items-center gap-2.5 font-mono text-xs tracking-widest text-zinc-400">
                     <span class="font-bold text-rose-500">//</span> brand
                 </div>
@@ -55,8 +60,8 @@
             {{-- ============================================================= --}}
             @foreach ($assets as $group)
                 <section class="pb-19 relative border-t border-zinc-700 px-5 pt-16 sm:px-10">
-                    <span class="crosshair -left-1 -top-1"></span>
-                    <span class="crosshair -right-1 -top-1"></span>
+                    <span class="crosshair -left-1.25 -top-1.25"></span>
+                    <span class="crosshair -right-1.25 -top-1.25"></span>
 
                     <div class="text-2xs mb-2 font-mono tracking-widest text-rose-500">// {{ $group['kind'] }}</div>
                     <h2 class="font-display font-stretch-112% text-2xl font-extrabold tracking-tight">{{ $group['label'] }}</h2>
@@ -91,8 +96,8 @@
             {{-- Clearspace --}}
             {{-- ============================================================= --}}
             <section class="pb-19 relative border-t border-zinc-700 px-5 pt-16 sm:px-10">
-                <span class="crosshair -left-1 -top-1"></span>
-                <span class="crosshair -right-1 -top-1"></span>
+                <span class="crosshair -left-1.25 -top-1.25"></span>
+                <span class="crosshair -right-1.25 -top-1.25"></span>
 
                 <div class="text-2xs mb-2 font-mono tracking-widest text-rose-500">// breathing room</div>
                 <h2 class="font-display font-stretch-112% text-2xl font-extrabold tracking-tight">Clearspace</h2>
@@ -115,8 +120,8 @@
             {{-- Palette --}}
             {{-- ============================================================= --}}
             <section class="pb-19 relative border-t border-zinc-700 px-5 pt-16 sm:px-10">
-                <span class="crosshair -left-1 -top-1"></span>
-                <span class="crosshair -right-1 -top-1"></span>
+                <span class="crosshair -left-1.25 -top-1.25"></span>
+                <span class="crosshair -right-1.25 -top-1.25"></span>
 
                 <div class="text-2xs mb-2 font-mono tracking-widest text-rose-500">// palette</div>
                 <h2 class="font-display font-stretch-112% text-2xl font-extrabold tracking-tight">Colors</h2>
@@ -141,8 +146,8 @@
             {{-- Usage --}}
             {{-- ============================================================= --}}
             <section class="pb-19 relative border-t border-zinc-700 px-5 pt-16 sm:px-10">
-                <span class="crosshair -left-1 -top-1"></span>
-                <span class="crosshair -right-1 -top-1"></span>
+                <span class="crosshair -left-1.25 -top-1.25"></span>
+                <span class="crosshair -right-1.25 -top-1.25"></span>
 
                 <div class="text-2xs mb-2 font-mono tracking-widest text-rose-500">// guidelines</div>
                 <h2 class="font-display font-stretch-112% text-2xl font-extrabold tracking-tight">Do &amp; don't</h2>
@@ -172,6 +177,9 @@
                     </div>
                 </div>
             </section>
+
+            <span class="crosshair -left-1.25 -bottom-1.25"></span>
+            <span class="crosshair -right-1.25 -bottom-1.25"></span>
         </div>
     </main>
 </x-app-layout>
