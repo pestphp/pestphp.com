@@ -22,6 +22,16 @@
     --text-2xs--line-height: 1.4;
     --text-xs-plus: 12.5px;
     --text-xs-plus--line-height: 1.4;
+
+    /* footer watermark: a neon segment traces the letter outlines (mirrors the landing).
+       Offset shifts by exactly one dash period (40 + 360) per cycle, so the loop is seamless. */
+    --animate-trace: trace 6s linear infinite;
+
+    @keyframes trace {
+        to {
+            stroke-dashoffset: -400;
+        }
+    }
 }
 
 @layer base {

@@ -29,6 +29,7 @@
         </div>
         <svg aria-hidden="true" class="mt-10 h-auto w-full fill-white/10" viewBox="0 0 381 100" xmlns="http://www.w3.org/2000/svg">
             <use href="#pest-wordmark" />
+            <use href="#pest-wordmark" class="animate-trace motion-reduce:hidden fill-none stroke-rose-500/60 drop-shadow-[0_0_4px_var(--color-rose-500)] [stroke-dasharray:40_360] stroke-[0.3]" />
         </svg>
     </footer>
 
