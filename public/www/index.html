@@ -83,8 +83,8 @@
         }
         </script>
         <script>try { if (+sessionStorage.getItem('pest-scroll') > 100) document.documentElement.classList.add('no-intro'); } catch (e) {}</script>
-      <script type="module" crossorigin src="/www/index.48204f6f.js"></script>
-      <link rel="stylesheet" href="/www/index-8f73b8af.css">
+      <script type="module" crossorigin src="/www/index.21598db5.js"></script>
+      <link rel="stylesheet" href="/www/index-f5ace063.css">
     </head>
 
     <body x-data="{ mobileMenuIsOpen: false }" class="font-synthesis-none overflow-x-clip bg-zinc-900 font-sans text-zinc-200 antialiased selection:bg-rose-600 selection:text-white">
@@ -177,7 +177,7 @@
                 </div>
             </div>
 
-            <section class="relative" x-data="{ moveSpot(e) { if (!matchMedia('(hover: hover)').matches) return; const r = $refs.spotlight.getBoundingClientRect(); $refs.spotlight.style.setProperty('--spot-x', (e.clientX - r.left) + 'px'); $refs.spotlight.style.setProperty('--spot-y', (e.clientY - r.top) + 'px'); $refs.spotlight.style.opacity = 1; }, clearSpot() { $refs.spotlight.style.opacity = 0; } }" @pointermove="moveSpot($event)" @pointerleave="clearSpot()">
+            <section class="relative" x-data="{ moveSpot(e) { if (!matchMedia('(hover: hover)').matches) return; const r = $refs.spotlight.getBoundingClientRect(); $refs.spotlight.style.setProperty('--spot-x', (e.clientX - r.left) + 'px'); $refs.spotlight.style.setProperty('--spot-y', (e.clientY - r.top) + 'px'); $refs.spotlight.style.opacity = 1; }, clearSpot() { $refs.spotlight.style.opacity = 0; }, syncSpot() { if (!$refs.developers || !$refs.wordSpot) return; const w = $refs.developers.getBoundingClientRect(); const g = $refs.wordSpot.getBoundingClientRect(); $refs.wordSpot.style.setProperty('--spot-x', (w.left - g.left + w.width / 2) + 'px'); $refs.wordSpot.style.setProperty('--spot-y', (w.top - g.top + w.height / 2 + 49) + 'px'); } }" x-init="$nextTick(() => { syncSpot(); document.fonts && document.fonts.ready.then(() => syncSpot()) })" @resize.window="syncSpot()" @animationend="syncSpot()" @pointermove="moveSpot($event)" @pointerleave="clearSpot()">
                 <div class="motion-preset-fade motion-duration-1000 lg:motion-delay-[1100ms] motion-reduce:animate-none bg-size-[56px_56px] mask-[radial-gradient(ellipse_90%_80%_at_60%_20%,#000_30%,transparent_75%)] absolute inset-0 -mt-15.5 bg-[linear-gradient(var(--color-zinc-700)_1px,transparent_1px),linear-gradient(90deg,var(--color-zinc-700)_1px,transparent_1px)] opacity-50 overflow-hidden" x-data x-init="[...$el.querySelectorAll('[data-beam]')].forEach(b => { const c = b.cloneNode(); c.style.setProperty('--beam-delay', (3 * Math.random()).toFixed(1) + 's'); $el.appendChild(c) }); $el.querySelectorAll('[data-beam]').forEach(b => { const roll = () => { const h = b.dataset.beam === 'x'; const lines = Math.floor((h ? $el.clientHeight : $el.clientWidth) / 56); b.style[h ? 'top' : 'left'] = 56 * (1 + Math.floor(Math.random() * (lines - 1))) + 'px'; b.style.setProperty('--beam-duration', (1 + 2 * Math.random()).toFixed(1) + 's'); b.style.animationDirection = Math.random() < 0.5 ? 'reverse' : 'normal'; }; roll(); b.addEventListener('animationiteration', roll) })">
                     <span data-beam="x" class="animate-beam-x motion-reduce:hidden absolute -left-40 w-40 top-28 h-px bg-[linear-gradient(90deg,transparent,var(--color-rose-500),transparent)] drop-shadow-[0_0_6px_var(--color-rose-500)] [--beam-duration:7s]"></span>
                     <span data-beam="x" class="animate-beam-x motion-reduce:hidden absolute -left-40 w-40 top-56 h-px bg-[linear-gradient(90deg,transparent,var(--color-rose-500),transparent)] drop-shadow-[0_0_6px_var(--color-rose-500)] [--beam-duration:11s] [--beam-delay:2.7s]"></span>
@@ -195,6 +195,7 @@
                     <span data-beam="y" class="animate-beam-y motion-reduce:hidden absolute -top-40 h-40 left-28 w-px bg-[linear-gradient(180deg,transparent,var(--color-rose-500),transparent)] drop-shadow-[0_0_6px_var(--color-rose-500)] [--beam-duration:10s] [--beam-delay:3s]"></span>
                 </div>
                 <div class="bg-size-[56px_56px] mask-[radial-gradient(220px_circle_at_var(--spot-x,50%)_var(--spot-y,50%),#000,transparent),radial-gradient(ellipse_90%_80%_at_60%_20%,#000_30%,transparent_75%)] mask-intersect pointer-events-none absolute inset-0 -mt-15.5 bg-[linear-gradient(var(--color-rose-800)_1px,transparent_1px),linear-gradient(90deg,var(--color-rose-900)_1px,transparent_1px)] opacity-0 transition-opacity duration-300" x-ref="spotlight"></div>
+                <div class="motion-preset-fade motion-duration-1000 lg:motion-delay-[1100ms] motion-reduce:animate-none bg-size-[56px_56px] mask-[radial-gradient(220px_circle_at_var(--spot-x,-999px)_var(--spot-y,-999px),#000,transparent),radial-gradient(ellipse_90%_80%_at_60%_20%,#000_30%,transparent_75%)] mask-intersect pointer-events-none absolute inset-0 -mt-15.5 bg-[linear-gradient(var(--color-rose-700)_1px,transparent_1px),linear-gradient(90deg,var(--color-rose-700)_1px,transparent_1px)]" x-ref="wordSpot"></div>
                 <div aria-hidden="true" class="animate-intro-out pointer-events-none absolute inset-0 hidden items-center justify-center lg:flex motion-reduce:lg:hidden">
                     <div class="relative w-160">
                         <svg class="animate-crt-in h-auto w-full fill-zinc-200 opacity-0" viewBox="0 0 381 100" xmlns="http://www.w3.org/2000/svg"><use href="#pest-wordmark" /></svg>
@@ -207,7 +208,7 @@
                             <span class="font-bold text-rose-500">//</span> pest 5 — now available
                         </a>
                         <h1 class="motion-preset-slide-up motion-delay-100 lg:motion-delay-[1200ms] motion-reduce:animate-none font-display font-stretch-112% mb-4 mt-5 text-[clamp(30px,8.6vw,40px)] font-extrabold leading-[1.05] tracking-tight sm:text-[clamp(34px,4vw,50px)]">
-                            The elegant<br>testing framework<br><span class="whitespace-nowrap">for PHP developers</span>
+                            The elegant<br>testing framework<br><span class="whitespace-nowrap">for PHP <span x-ref="developers">developers</span></span>
                             <span class="relative whitespace-nowrap italic text-rose-500 after:absolute after:inset-x-0 after:bottom-1.5 after:-z-10 after:h-2.5 after:bg-rose-950 after:content-['']">and AI agents.</span>
                         </h1>
                         <p class="motion-preset-slide-up motion-delay-200 lg:motion-delay-[1300ms] motion-reduce:animate-none mb-7 max-w-[48ch] text-pretty text-lg text-zinc-400">Pest brings the joy of testing to PHP — for you and your coding agents. Browser testing and AI evals are built in, and agents verify their own work, end to end.</p>
