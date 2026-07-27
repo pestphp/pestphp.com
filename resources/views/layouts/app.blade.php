@@ -17,15 +17,15 @@
         <div class="flex flex-col items-center justify-between gap-4 text-xs text-zinc-400 sm:flex-row">
             <div class="font-mono">
                 &copy; {{ date('Y') }} PestPHP — A project by
-                <a class="font-medium underline-offset-4 hover:underline" href="https://pinkary.com/@nunomaduro" target="_blank" rel="noopener">Nuno Maduro</a>.
+                <a class="font-medium underline-offset-4 transition-colors hover:text-white hover:underline" href="https://pinkary.com/@nunomaduro" target="_blank" rel="noopener">Nuno Maduro</a>.
                 Designed by
-                <a class="font-medium underline-offset-4 hover:underline" href="https://nunoguerra.com/?ref=pestphp" target="_blank" rel="noopener">Nuno Guerra</a>.
+                <a class="font-medium underline-offset-4 transition-colors hover:text-white hover:underline" href="https://nunoguerra.com/?ref=pestphp" target="_blank" rel="noopener">Nuno Guerra</a>.
             </div>
             <div class="flex items-center gap-5 font-mono">
-                <a class="underline-offset-4 hover:underline" href="/llms.txt">/llms.txt</a>
-                <a class="underline-offset-4 hover:underline" href="{{ config('site.github') }}" target="_blank" rel="noopener">/source</a>
-                <a class="underline-offset-4 hover:underline" href="/brand">/brand</a>
-                <a class="underline-offset-4 hover:underline" href="/docs">/docs</a>
+                <a class="underline-offset-4 transition-colors hover:text-white hover:underline" href="/llms.txt">/llms.txt</a>
+                <a class="underline-offset-4 transition-colors hover:text-white hover:underline" href="{{ config('site.github') }}" target="_blank" rel="noopener">/source</a>
+                <a class="underline-offset-4 transition-colors hover:text-white hover:underline" href="/brand">/brand</a>
+                <a class="underline-offset-4 transition-colors hover:text-white hover:underline" href="/docs">/docs</a>
             </div>
         </div>
         <svg aria-hidden="true" class="mt-10 h-auto w-full fill-white/10" viewBox="0 0 381 100" xmlns="http://www.w3.org/2000/svg">
