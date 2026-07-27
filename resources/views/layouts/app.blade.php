@@ -14,7 +14,7 @@
     {{ $slot }}
 
     <footer class="container mx-auto border-t border-zinc-700 px-5 pb-8 pt-10 sm:px-8">
-        <div class="flex flex-col items-center justify-between gap-4 text-xs text-zinc-400 sm:flex-row">
+        <div class="flex flex-col items-start justify-between gap-4 text-xs text-zinc-400 sm:flex-row sm:items-center">
             <div class="font-mono">
                 &copy; {{ date('Y') }} PestPHP — A project by
                 <a class="font-medium underline-offset-4 transition-colors hover:text-white hover:underline" href="https://pinkary.com/@nunomaduro" target="_blank" rel="noopener">Nuno Maduro</a>.
