@@ -5,3 +5,7 @@ it('serve various pages without errors', function () {
 
     $response->assertNoSmoke();
 });
+
+it('serves pages in markdown format', function () {
+    visit('/docs/installation.md')->assertNoSmoke();
+});

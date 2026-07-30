@@ -27,6 +27,9 @@ class DocsController extends Controller
             return redirect()->route('docs', [self::DEFAULT_PAGE]);
         }
 
+        $isMarkdown = str($page)->endsWith('.md');
+        $page = str($page)->replace('.md', '')->toString();
+
         if (! $docs->exists(config('site.defaultVersion'), $page) || in_array($page, self::EXCLUDED)) {
             abort(404);
         }
@@ -42,6 +45,10 @@ class DocsController extends Controller
         $matter = $document['matter'];
         $markdown = $document['markdown'];
         $body = $document['html'];
+
+        if ($isMarkdown) {
+            return response($markdown, 200, ['Content-Type' => 'text/plain']);
+        }
 
         return view('docs', compact('body', 'matter', 'markdown', 'page', 'index'));
     }
