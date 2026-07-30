@@ -25,7 +25,7 @@
         x-transition:leave="transition ease-in-out duration-200 transform"
         x-transition:leave-start="translate-x-0"
         x-transition:leave-end="translate-x-full"
-        class="fixed inset-y-0 right-0 z-50 flex w-full max-w-xs flex-col overflow-y-auto border-l border-zinc-700 bg-zinc-900 px-6 py-5 lg:sticky lg:inset-auto lg:top-15.5 lg:z-0 lg:h-[calc(100vh-3.875rem)] lg:max-w-none lg:translate-x-0 lg:border-l-0 lg:bg-transparent lg:px-5 lg:py-8"
+        class="scrollbar-ghost fixed inset-y-0 right-0 z-50 flex w-full max-w-xs flex-col overflow-y-auto border-l border-zinc-700 bg-zinc-900 px-6 py-5 lg:sticky lg:inset-auto lg:top-15.5 lg:z-0 lg:h-[calc(100vh-3.875rem)] lg:max-w-none lg:translate-x-0 lg:border-l-0 lg:bg-transparent lg:px-5 lg:py-8"
     >
         {{-- mobile drawer header --}}
         <div class="mb-6 flex items-center justify-between lg:hidden">

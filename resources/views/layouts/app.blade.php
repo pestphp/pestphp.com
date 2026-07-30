@@ -1,5 +1,5 @@
 <x-app-layout layout="base" :title="$title" :description="$description"
-    class="min-h-screen bg-zinc-900 font-sans text-zinc-200 antialiased selection:bg-rose-600 selection:text-white"
+    class="min-h-screen overflow-x-clip bg-zinc-900 font-sans text-zinc-200 antialiased selection:bg-rose-600 selection:text-white"
     x-data="offcanvasNav">
 
     <x-slot name="head">

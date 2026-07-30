@@ -1,5 +1,5 @@
 <aside class="hidden lg:block">
-    <div class="lg:top-15.5 overflow-y-auto px-5 py-8 lg:sticky lg:h-[calc(100vh-3.875rem)]">
+    <div class="scrollbar-ghost lg:top-15.5 overflow-y-auto px-5 py-8 lg:sticky lg:h-[calc(100vh-3.875rem)]">
         <div class="text-2xs mb-4 flex items-center gap-2.5 font-mono font-bold uppercase tracking-widest text-zinc-500">
             <span class="text-rose-500">//</span> partners
         </div>
