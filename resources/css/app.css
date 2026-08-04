@@ -59,11 +59,11 @@
     --font-display: 'Archivo', system-ui, sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
-    --text-3xs: 9px;
+    --text-3xs: 0.5625rem;
     --text-3xs--line-height: 1.4;
-    --text-2xs: 11px;
+    --text-2xs: 0.6875rem;
     --text-2xs--line-height: 1.4;
-    --text-xs-plus: 12.5px;
+    --text-xs-plus: 0.78125rem;
     --text-xs-plus--line-height: 1.4;
 
     /* footer watermark: a neon segment traces the letter outlines (mirrors the landing).
@@ -81,9 +81,20 @@
     html {
         height: 100%;
         -webkit-tap-highlight-color: transparent;
+
+        /* Fluid root — mirrors resources/www/main.css; see the note there. */
+        font-size: clamp(1rem, 0.8889vw, 2.8rem);
+
+        scrollbar-width: thin;
+        scrollbar-color: var(--color-rose-500) transparent;
     }
     body {
         min-height: 100%;
+    }
+    /* scrollbar-color inherits, scrollbar-width does not — without this every inner scroll
+       pane keeps a 16px native gutter that merely happens to be tinted rose. */
+    * {
+        scrollbar-width: thin;
     }
     [x-cloak] {
         display: none;
@@ -99,6 +110,36 @@ button {
 }
 
 /* Scrollbars ------------------------------------------------------------- */
+
+/* Ghost scrollbar — for the sticky nav rails (sidebar, partners). The gutter stays
+   reserved, so revealing the thumb on hover costs no reflow. The ::-webkit-* rules are
+   the fallback for Safari < 18.2; browsers with scrollbar-color ignore them. */
+.scrollbar-ghost {
+    scrollbar-color: transparent transparent;
+}
+.scrollbar-ghost:hover,
+.scrollbar-ghost:focus-within {
+    scrollbar-color: var(--color-rose-500) transparent;
+}
+.scrollbar-ghost::-webkit-scrollbar {
+    width: 0.375rem;
+    height: 0.375rem;
+}
+.scrollbar-ghost::-webkit-scrollbar-track {
+    background: transparent;
+}
+.scrollbar-ghost::-webkit-scrollbar-thumb {
+    @apply rounded-full;
+    background: transparent;
+}
+.scrollbar-ghost:hover::-webkit-scrollbar-thumb,
+.scrollbar-ghost:focus-within::-webkit-scrollbar-thumb {
+    background: var(--color-rose-500);
+}
+.scrollbar-ghost::-webkit-scrollbar-thumb:hover {
+    background: var(--color-rose-400);
+}
+
 .scrollbar::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -107,10 +148,10 @@ button {
     @apply bg-zinc-900;
 }
 .scrollbar::-webkit-scrollbar-thumb {
-    @apply rounded-full bg-zinc-700;
+    @apply rounded-full bg-rose-500;
 }
 .scrollbar::-webkit-scrollbar-thumb:hover {
-    @apply bg-zinc-600;
+    @apply bg-rose-400;
 }
 
 /* ==========================================================================
@@ -118,8 +159,10 @@ button {
    ========================================================================== */
 .crosshair {
     @apply pointer-events-none absolute z-10;
-    width: 9px;
-    height: 9px;
+    /* rem to match the rem offsets in ::before / ::after — a px box would deform as the
+       root scales. Same value as the landing's `size-2.25`. */
+    width: 0.5625rem;
+    height: 0.5625rem;
 }
 .crosshair::before {
     content: '';
@@ -248,10 +291,10 @@ button {
     @apply bg-zinc-900;
 }
 .docs-main pre code.torchlight::-webkit-scrollbar-thumb {
-    @apply rounded-full bg-zinc-700;
+    @apply rounded-full bg-rose-500;
 }
 .docs-main pre code.torchlight::-webkit-scrollbar-thumb:hover {
-    @apply bg-zinc-600;
+    @apply bg-rose-400;
 }
 /* Non-torchlight (plain) code blocks still get comfortable padding */
 .docs-main pre code:not(.torchlight) {
@@ -279,7 +322,7 @@ button {
 .docs-main .code-snippet {
     @apply my-6 block flex-1 overflow-x-auto rounded-[10px] border border-zinc-700 bg-zinc-900 py-5;
     scrollbar-width: thin;
-    scrollbar-color: var(--color-zinc-700) var(--color-zinc-900);
+    scrollbar-color: var(--color-rose-500) var(--color-zinc-900);
 }
 .docs-main pre + .code-snippet {
     @apply mt-4;
@@ -291,13 +334,13 @@ button {
     @apply bg-zinc-900;
 }
 .docs-main .code-snippet::-webkit-scrollbar-thumb {
-    @apply rounded-full bg-zinc-700;
+    @apply rounded-full bg-rose-500;
 }
 .docs-main .code-snippet:hover::-webkit-scrollbar-thumb {
-    @apply bg-zinc-600;
+    @apply bg-rose-400;
 }
 .docs-main .code-snippet img {
-    --line-height: 29.6px;
+    --line-height: 1.85rem;
     max-width: inherit;
     height: calc(var(--line-height) * var(--lines));
     @apply px-5;
@@ -326,7 +369,7 @@ button {
     line-height: 1.9;
     color: var(--t-gray);
     scrollbar-width: thin;
-    scrollbar-color: var(--color-zinc-700) var(--color-zinc-900);
+    scrollbar-color: var(--color-rose-500) var(--color-zinc-900);
     @apply my-6 rounded-[10px] border border-zinc-700 bg-zinc-900 px-5.5 py-5 font-mono text-[13px];
 }
 .docs-main .terminal::-webkit-scrollbar {
@@ -336,10 +379,10 @@ button {
     @apply bg-zinc-900;
 }
 .docs-main .terminal::-webkit-scrollbar-thumb {
-    @apply rounded-full bg-zinc-700;
+    @apply rounded-full bg-rose-500;
 }
 .docs-main .terminal:hover::-webkit-scrollbar-thumb {
-    @apply bg-zinc-600;
+    @apply bg-rose-400;
 }
 .docs-main .terminal .l {
     min-height: 1.9em;

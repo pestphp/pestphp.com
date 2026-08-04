@@ -51,11 +51,11 @@
     --font-display: 'Archivo', system-ui, sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
-    --text-3xs: 9px;
+    --text-3xs: 0.5625rem;
     --text-3xs--line-height: 1.4;
-    --text-2xs: 11px;
+    --text-2xs: 0.6875rem;
     --text-2xs--line-height: 1.4;
-    --text-xs-plus: 12.5px;
+    --text-xs-plus: 0.78125rem;
     --text-xs-plus--line-height: 1.4;
 
     --animate-marquee: marquee 30s linear infinite;
@@ -82,14 +82,14 @@
     /* transform-only so the compositor animates them — background-position repaints every frame and starves the marquee */
     @keyframes beam-x {
         0% { transform: translateX(0); }
-        30%, 100% { transform: translateX(calc(100vw + 320px)); }
+        30%, 100% { transform: translateX(calc(100vw + 20rem)); }
     }
 
     --animate-beam-y: beam-y var(--beam-duration, 11s) linear var(--beam-delay, 0s) infinite backwards;
 
     @keyframes beam-y {
         0% { transform: translateY(0); }
-        28%, 100% { transform: translateY(calc(100vh + 320px)); }
+        28%, 100% { transform: translateY(calc(100vh + 20rem)); }
     }
 
     /* footer watermark: a neon segment traces the letter outlines.
@@ -129,9 +129,25 @@
     html {
         height: 100%;
         -webkit-tap-highlight-color: transparent;
+
+        /* Fluid root: the design is rem-based throughout (Tailwind v4 emits spacing as
+           calc(var(--spacing) * n)), so this one line scales type, spacing, radii and the
+           blueprint grid together. Bounds are rem, not px, so a reader who raised their
+           browser font size keeps that preference. Breakpoints are unaffected: rem inside
+           a media query resolves against the initial font size, so sm:/lg: still fire at
+           640/1024 CSS px — only the scale grows, the layout never reflows. */
+        font-size: clamp(1rem, 0.8889vw, 2.8rem);
+
+        scrollbar-width: thin;
+        scrollbar-color: var(--color-rose-500) transparent;
     }
     body {
         min-height: 100%;
+    }
+    /* scrollbar-color inherits, scrollbar-width does not — without this the tab bar and
+       code panes keep a 16px native gutter that merely happens to be tinted rose. */
+    * {
+        scrollbar-width: thin;
     }
     [x-cloak] {
         display: none;
@@ -140,6 +156,36 @@
 
 button {
     @apply cursor-pointer;
+}
+
+/* Ghost scrollbar — for navigation chrome (the tab bar). The gutter stays reserved, so
+   revealing the thumb on hover costs no reflow. Code panes keep a visible bar on purpose:
+   there it is the affordance that says "this scrolls". The ::-webkit-* rules are the
+   fallback for Safari < 18.2; browsers with scrollbar-color ignore them. */
+.scrollbar-ghost {
+    scrollbar-color: transparent transparent;
+}
+.scrollbar-ghost:hover,
+.scrollbar-ghost:focus-within {
+    scrollbar-color: var(--color-rose-500) transparent;
+}
+.scrollbar-ghost::-webkit-scrollbar {
+    width: 0.375rem;
+    height: 0.375rem;
+}
+.scrollbar-ghost::-webkit-scrollbar-track {
+    background: transparent;
+}
+.scrollbar-ghost::-webkit-scrollbar-thumb {
+    @apply rounded-full;
+    background: transparent;
+}
+.scrollbar-ghost:hover::-webkit-scrollbar-thumb,
+.scrollbar-ghost:focus-within::-webkit-scrollbar-thumb {
+    background: var(--color-rose-500);
+}
+.scrollbar-ghost::-webkit-scrollbar-thumb:hover {
+    background: var(--color-rose-400);
 }
 
 /* tippy.js — "pest" blueprint tooltip theme (dark, mono, hairline border) */
