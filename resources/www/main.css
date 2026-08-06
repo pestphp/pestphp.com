@@ -125,6 +125,42 @@
     }
 }
 
+:root {
+    color-scheme: dark;
+
+    --theme-bg: var(--color-zinc-900);
+    --theme-fg: var(--color-zinc-200);
+    --theme-muted: var(--color-zinc-400);
+    --theme-border: var(--color-zinc-700);
+    --theme-surface-raised: var(--color-zinc-800);
+    --theme-surface-inset: var(--color-zinc-900);
+    --theme-overlay: rgba(24, 24, 27, 0.8);
+    --theme-accent: var(--color-rose-500);
+    --theme-accent-hover: var(--color-rose-600);
+    --theme-accent-contrast: var(--color-white);
+    --theme-code-text: var(--color-zinc-300);
+    --theme-grid-line: var(--color-zinc-700);
+    --theme-shadow: rgb(0 0 0 / 0.4);
+}
+
+html.light {
+    color-scheme: light;
+
+    --theme-bg: var(--color-white);
+    --theme-fg: var(--color-zinc-950);
+    --theme-muted: var(--color-zinc-600);
+    --theme-border: var(--color-zinc-200);
+    --theme-surface-raised: var(--color-zinc-50);
+    --theme-surface-inset: var(--color-zinc-100);
+    --theme-overlay: rgb(250 250 250 / 0.82);
+    --theme-accent: var(--color-rose-500);
+    --theme-accent-hover: var(--color-rose-600);
+    --theme-accent-contrast: var(--color-white);
+    --theme-code-text: var(--color-zinc-800);
+    --theme-grid-line: var(--color-zinc-200);
+    --theme-shadow: rgb(24 24 27 / 0.12);
+}
+
 @layer base {
     html {
         height: 100%;
