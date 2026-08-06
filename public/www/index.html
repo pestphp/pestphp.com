@@ -84,8 +84,8 @@
         }
         </script>
         <script>try { if (+sessionStorage.getItem('pest-scroll') > 100) document.documentElement.classList.add('no-intro'); } catch (e) {}</script>
-      <script type="module" crossorigin src="/www/index.208c84e2.js"></script>
-      <link rel="stylesheet" href="/www/index-b9e95284.css">
+      <script type="module" crossorigin src="/www/index.74b69963.js"></script>
+      <link rel="stylesheet" href="/www/index-e20ebfb9.css">
     </head>
 
     <body x-data="{ mobileMenuIsOpen: false }" class="font-synthesis-none overflow-x-clip bg-zinc-900 font-sans text-zinc-200 antialiased selection:bg-rose-600 selection:text-white">
@@ -321,16 +321,21 @@
                     <div class="flex items-center border-b border-zinc-700 px-5 py-6 font-mono text-xs uppercase tracking-widest text-zinc-400 sm:px-10 lg:border-b-0 lg:border-r">
                         Backed by teams<br>who ship with Pest
                     </div>
-                    <div class="mask-[linear-gradient(90deg,transparent,black_8%,black_92%,transparent)] relative overflow-hidden" x-data="{ sponsors: [
-                        { alt: 'CMS Max', href: 'https://cmsmax.com/?ref=nunomaduro', src: '/www/sponsors/cmsmax.png', h: 'h-6' },
-                        { alt: 'PhpStorm', href: 'https://jb.gg/nuno', src: '/www/sponsors/phpstorm.svg', h: 'h-5.5' },
-                        { alt: 'CodeRabbit', href: 'https://coderabbit.link/nunomaduro', src: '/www/sponsors/coderabbit.svg', h: 'h-6' },
-                        { alt: 'SerpApi', href: 'https://serpapi.com/?ref=nunomaduro', src: '/www/sponsors/serpapi.png', h: 'h-6' },
-                        { alt: 'Bento', href: 'https://bentonow.com/?ref=nunomaduro', src: '/www/sponsors/bento.svg', h: 'h-5' },
-                        { alt: 'Redberry', href: 'https://redberry.international/laravel-development/?utm_source=pest&utm_medium=banner&utm_campaign=pest_sponsorship', src: '/www/sponsors/redberry.png', h: 'h-6' },
-                        { alt: 'Typesense', href: 'https://typesense.org/?ref=nunomaduro', src: '/www/sponsors/typesense.svg', h: 'h-6' },
-                        { alt: 'Pixel', href: 'https://wearepixel.com.au/?ref=nunomaduro', src: '/www/sponsors/pixel.svg', h: 'h-6' }
-                    ].map(s => [Math.random(), s]).sort((a, b) => a[0] - b[0]).map(s => s[1]) }">
+                    <div class="mask-[linear-gradient(90deg,transparent,black_8%,black_92%,transparent)] relative overflow-hidden" x-data="{ shuffle: list => list.map(s => [Math.random(), s]).sort((a, b) => a[0] - b[0]).map(s => s[1]), all: [
+                        { alt: 'CMS Max', href: 'https://cmsmax.com/?ref=nunomaduro', src: '/www/assets/sponsors/cmsmax.png', h: 'h-6', tier: 1 },
+                        { alt: 'PhpStorm', href: 'https://jb.gg/nuno', src: '/www/assets/sponsors/phpstorm.svg', h: 'h-5.5', tier: 1 },
+                        { alt: 'CodeRabbit', href: 'https://coderabbit.link/nunomaduro', src: '/www/assets/sponsors/coderabbit.svg', h: 'h-6', tier: 1 },
+                        { alt: 'SerpApi', href: 'https://serpapi.com/?ref=nunomaduro', src: '/www/assets/sponsors/serpapi.png', h: 'h-6', tier: 1 },
+                        { alt: 'Bento', href: 'https://bentonow.com/?ref=nunomaduro', src: '/www/assets/sponsors/bento.svg', h: 'h-5', tier: 1 },
+                        { alt: 'Redberry', href: 'https://redberry.international/laravel-development/?utm_source=pest&utm_medium=banner&utm_campaign=pest_sponsorship', src: '/www/assets/sponsors/redberry.png', h: 'h-6', tier: 1 },
+                        { alt: 'Typesense', href: 'https://typesense.org/?ref=nunomaduro', src: '/www/assets/sponsors/typesense.svg', h: 'h-6', tier: 1 },
+                        { alt: 'Pixel', href: 'https://wearepixel.com.au/?ref=nunomaduro', src: '/www/assets/sponsors/pixel.svg', h: 'h-6', tier: 1 },
+                        { alt: 'TestMu AI', href: 'https://www.testmuai.com/?ref=nunomaduro', src: '/www/assets/sponsors/testmu.svg', h: 'h-7', tier: 2 },
+                        { alt: 'Zapiet', href: 'https://zapiet.com/?ref=nunomaduro', src: '/www/assets/sponsors/zapiet.svg', h: 'h-6', tier: 2 },
+                        { alt: 'LoadForge', href: 'https://loadforge.com/?ref=nunomaduro', src: '/www/assets/sponsors/loadforge.svg', h: 'h-5', tier: 2 },
+                        { alt: 'Route4Me', href: 'https://route4me.com/?ref=nunomaduro', src: '/www/assets/sponsors/route4me.svg', h: 'h-6', tier: 2 },
+                        { alt: 'Nerdify', href: 'https://getnerdify.com/?ref=nunomaduro', src: '/www/assets/sponsors/nerdify.png', h: 'h-9', tier: 2 }
+                    ], sponsors: [], init() { this.sponsors = [...this.shuffle(this.all.filter(s => s.tier === 1)), ...this.shuffle(this.all.filter(s => s.tier === 2))] } }">
                         <div class="animate-marquee flex w-max hover:[animation-play-state:paused] motion-reduce:animate-none">
                             <template x-for="sponsor in sponsors" :key="sponsor.alt">
                                 <a class="flex items-center border-r border-zinc-700 px-12 py-7" :href="sponsor.href" target="_blank"><img :alt="sponsor.alt" class="w-auto object-contain shrink-0" :class="sponsor.h" loading="lazy" :src="sponsor.src"></a>

@@ -14,6 +14,7 @@
                 { href: 'https://redberry.international/laravel-development/?utm_source=pest&utm_medium=banner&utm_campaign=pest_sponsorship', img: '/www/assets/sponsors/redberry.png', class: 'h-5 w-auto', tier: 1 },
                 { href: 'https://typesense.org/?ref=nunomaduro', img: '/www/assets/sponsors/typesense.svg', class: 'h-7 w-auto', tier: 1 },
                 { href: 'https://wearepixel.com.au/?ref=nunomaduro', img: '/www/assets/sponsors/pixel.svg', class: 'h-5 w-auto', tier: 1 },
+                { href: 'https://www.testmuai.com/?ref=nunomaduro', img: '/www/assets/sponsors/testmu.svg', class: 'h-7 w-auto', tier: 2 },
                 { href: 'https://zapiet.com/?ref=nunomaduro', img: '/www/assets/sponsors/zapiet.svg', class: 'h-6 w-auto', tier: 2 },
                 { href: 'https://loadforge.com/?ref=nunomaduro', img: '/www/assets/sponsors/loadforge.svg', class: 'h-4 w-auto', tier: 2 },
                 { href: 'https://route4me.com/?ref=nunomaduro', img: '/www/assets/sponsors/route4me.svg', class: 'h-6 w-auto', tier: 2 },
