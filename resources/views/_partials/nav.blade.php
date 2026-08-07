@@ -51,6 +51,21 @@
                 Search docs
                 <kbd class="text-2xs ml-auto rounded-sm border border-zinc-700 bg-zinc-900 px-1 py-px font-sans">⌘K</kbd>
             </button>
+            <div x-data="ToggleDark">
+                <button @click="toggle()" :aria-label="`Theme: ${mode}. Switch to ${nextMode} theme`" :aria-pressed="isSystem ? 'mixed' : isLight" aria-label="Theme: dark. Switch to light theme" aria-pressed="false" class="active:scale-96 flex size-8 items-center justify-center text-zinc-400 transition hover:text-zinc-200" type="button">
+                    <svg x-show="isLight" x-cloak aria-hidden="true" class="size-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" stroke="currentColor" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="3.5" />
+                        <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42" />
+                    </svg>
+                    <svg x-show="isDark" aria-hidden="true" class="size-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5a8.5 8.5 0 1 0 12 12Z" />
+                    </svg>
+                    <svg x-show="isSystem" x-cloak aria-hidden="true" class="size-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" stroke="currentColor" viewBox="0 0 24 24">
+                        <rect x="3" y="4" width="18" height="13" rx="2" />
+                        <path d="M8 21h8M12 17v4" />
+                    </svg>
+                </button>
+            </div>
             <button @click.prevent="toggle()" aria-label="Toggle Documentation Navigation" class="active:scale-96 flex size-8 items-center justify-center text-zinc-400 transition hover:text-zinc-200 lg:hidden" type="button">
                 <svg class="size-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" stroke="currentColor" viewBox="0 0 24 24">
                     <path d="M4 7h16M4 12h16M4 17h16" />
