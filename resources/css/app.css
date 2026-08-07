@@ -77,6 +77,46 @@
     }
 }
 
+:root {
+    color-scheme: dark;
+
+    --theme-bg: var(--color-zinc-900);
+    --theme-fg: var(--color-zinc-200);
+    --theme-muted: var(--color-zinc-400);
+    --theme-border: var(--color-zinc-700);
+    --theme-surface-raised: var(--color-zinc-800);
+    --theme-surface-inset: var(--color-zinc-900);
+    --theme-overlay: rgb(24 24 27 / 0.8);
+    --theme-accent: var(--color-rose-500);
+    --theme-accent-hover: var(--color-rose-600);
+    --theme-accent-contrast: var(--color-white);
+    --theme-code-bg: var(--color-zinc-900);
+    --theme-code-text: var(--color-zinc-300);
+    --theme-prose-body: var(--color-zinc-300);
+    --theme-prose-heading: var(--color-zinc-100);
+    --theme-prose-link: var(--color-rose-400);
+}
+
+html.light {
+    color-scheme: light;
+
+    --theme-bg: var(--color-white);
+    --theme-fg: var(--color-zinc-950);
+    --theme-muted: var(--color-zinc-600);
+    --theme-border: var(--color-zinc-200);
+    --theme-surface-raised: var(--color-zinc-50);
+    --theme-surface-inset: var(--color-zinc-100);
+    --theme-overlay: rgb(250 250 250 / 0.82);
+    --theme-accent: var(--color-rose-500);
+    --theme-accent-hover: var(--color-rose-600);
+    --theme-accent-contrast: var(--color-white);
+    --theme-code-bg: var(--color-zinc-100);
+    --theme-code-text: var(--color-zinc-800);
+    --theme-prose-body: var(--color-zinc-700);
+    --theme-prose-heading: var(--color-zinc-950);
+    --theme-prose-link: var(--color-rose-700);
+}
+
 @layer base {
     html {
         height: 100%;
