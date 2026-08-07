@@ -342,11 +342,11 @@
                 </div>
             </section>
 
-            <section aria-label="Partners" class="motion-preset-fade motion-delay-500 lg:motion-delay-[1600ms] motion-reduce:animate-none relative border-y border-zinc-700">
-                <span class="-top-1.25 size-2.25 before:w-2.25 after:h-2.25 -left-1.25 pointer-events-none absolute z-10 before:absolute before:left-0 before:top-1 before:h-px before:bg-rose-500 before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-rose-500 after:content-['']"></span>
-                <span class="-right-1.25 -top-1.25 size-2.25 before:w-2.25 after:h-2.25 pointer-events-none absolute z-10 before:absolute before:left-0 before:top-1 before:h-px before:bg-rose-500 before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-rose-500 after:content-['']"></span>
+            <section aria-label="Partners" class="motion-preset-fade motion-delay-500 lg:motion-delay-[1600ms] motion-reduce:animate-none relative border-y border-[var(--theme-border)] bg-[var(--theme-bg)]">
+                <span class="-top-1.25 size-2.25 before:w-2.25 after:h-2.25 -left-1.25 pointer-events-none absolute z-10 before:absolute before:left-0 before:top-1 before:h-px before:bg-[var(--theme-accent)] before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-[var(--theme-accent)] after:content-['']"></span>
+                <span class="-right-1.25 -top-1.25 size-2.25 before:w-2.25 after:h-2.25 pointer-events-none absolute z-10 before:absolute before:left-0 before:top-1 before:h-px before:bg-[var(--theme-accent)] before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-[var(--theme-accent)] after:content-['']"></span>
                 <div class="grid items-stretch lg:grid-cols-[auto_1fr]">
-                    <div class="flex items-center border-b border-zinc-700 px-5 py-6 font-mono text-xs uppercase tracking-widest text-zinc-400 sm:px-10 lg:border-b-0 lg:border-r">
+                    <div class="flex items-center border-b border-[var(--theme-border)] px-5 py-6 font-mono text-xs uppercase tracking-widest text-[var(--theme-muted)] sm:px-10 lg:border-b-0 lg:border-r">
                         Backed by teams<br>who ship with Pest
                     </div>
                     <div class="mask-[linear-gradient(90deg,transparent,black_8%,black_92%,transparent)] relative overflow-hidden" x-data="{ shuffle: list => list.map(s => [Math.random(), s]).sort((a, b) => a[0] - b[0]).map(s => s[1]), all: [
@@ -366,16 +366,16 @@
                     ], sponsors: [], init() { this.sponsors = [...this.shuffle(this.all.filter(s => s.tier === 1)), ...this.shuffle(this.all.filter(s => s.tier === 2))] } }">
                         <div class="animate-marquee flex w-max hover:[animation-play-state:paused] motion-reduce:animate-none">
                             <template x-for="sponsor in sponsors" :key="sponsor.alt">
-                                <a class="flex items-center border-r border-zinc-700 px-12 py-7" :href="sponsor.href" target="_blank"><img :alt="sponsor.alt" class="w-auto object-contain shrink-0" :class="sponsor.h" loading="lazy" :src="sponsor.src"></a>
+                                <a class="flex items-center border-r border-[var(--theme-border)] px-12 py-7" :href="sponsor.href" target="_blank"><img :alt="sponsor.alt" class="w-auto shrink-0 object-contain opacity-[var(--theme-partner-logo-opacity)] [filter:var(--theme-partner-logo-filter)]" :class="sponsor.h" loading="lazy" :src="sponsor.src"></a>
                             </template>
                             <template x-for="sponsor in sponsors" :key="'clone-' + sponsor.alt">
-                                <div aria-hidden="true" class="flex items-center border-r border-zinc-700 px-12 py-7"><img alt="" class="w-auto object-contain shrink-0" :class="sponsor.h" loading="lazy" :src="sponsor.src"></div>
+                                <div aria-hidden="true" class="flex items-center border-r border-[var(--theme-border)] px-12 py-7"><img alt="" class="w-auto shrink-0 object-contain opacity-[var(--theme-partner-logo-opacity)] [filter:var(--theme-partner-logo-filter)]" :class="sponsor.h" loading="lazy" :src="sponsor.src"></div>
                             </template>
                         </div>
                     </div>
                 </div>
-                <span class="-bottom-1.25 size-2.25 before:w-2.25 after:h-2.25 -left-1.25 pointer-events-none absolute z-10 before:absolute before:left-0 before:top-1 before:h-px before:bg-rose-500 before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-rose-500 after:content-['']"></span>
-                <span class="-bottom-1.25 -right-1.25 size-2.25 before:w-2.25 after:h-2.25 pointer-events-none absolute z-10 before:absolute before:left-0 before:top-1 before:h-px before:bg-rose-500 before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-rose-500 after:content-['']"></span>
+                <span class="-bottom-1.25 size-2.25 before:w-2.25 after:h-2.25 -left-1.25 pointer-events-none absolute z-10 before:absolute before:left-0 before:top-1 before:h-px before:bg-[var(--theme-accent)] before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-[var(--theme-accent)] after:content-['']"></span>
+                <span class="-bottom-1.25 -right-1.25 size-2.25 before:w-2.25 after:h-2.25 pointer-events-none absolute z-10 before:absolute before:left-0 before:top-1 before:h-px before:bg-[var(--theme-accent)] before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-[var(--theme-accent)] after:content-['']"></span>
             </section>
 
             <section class="motion-preset-fade motion-delay-[600ms] lg:motion-delay-[1700ms] motion-reduce:animate-none relative" id="why">

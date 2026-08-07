@@ -163,6 +163,8 @@
     --theme-hero-spotlight: var(--color-rose-800);
     --theme-hero-spotlight-subtle: var(--color-rose-900);
     --theme-hero-scanline: rgb(24 24 27 / 0.45);
+    --theme-partner-logo-filter: none;
+    --theme-partner-logo-opacity: 1;
 }
 
 html.light {
@@ -203,6 +205,8 @@ html.light {
     --theme-hero-spotlight: color-mix(in srgb, var(--color-rose-500) 55%, transparent);
     --theme-hero-spotlight-subtle: color-mix(in srgb, var(--color-rose-500) 35%, transparent);
     --theme-hero-scanline: rgb(24 24 27 / 0.08);
+    --theme-partner-logo-filter: brightness(0) saturate(100%);
+    --theme-partner-logo-opacity: 0.75;
 }
 
 @layer base {
