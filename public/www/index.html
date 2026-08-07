@@ -89,13 +89,13 @@
       <link rel="stylesheet" href="/www/index-ba7b869f.css">
     </head>
 
-    <body x-data="{ mobileMenuIsOpen: false }" class="font-synthesis-none overflow-x-clip bg-zinc-900 font-sans text-zinc-200 antialiased selection:bg-rose-600 selection:text-white">
+    <body x-data="{ mobileMenuIsOpen: false }" class="font-synthesis-none overflow-x-clip bg-[var(--theme-bg)] font-sans text-[var(--theme-fg)] antialiased selection:bg-rose-600 selection:text-white">
 
-        <header class="motion-preset-fade lg:motion-delay-[1100ms] motion-reduce:animate-none sticky top-0 z-50 border-b border-zinc-700 bg-zinc-900/85 backdrop-blur-md">
+        <header class="motion-preset-fade lg:motion-delay-[1100ms] motion-reduce:animate-none sticky top-0 z-50 border-b border-[var(--theme-border)] bg-[var(--theme-overlay)] backdrop-blur-md">
             <nav aria-label="Main" class="h-15.5 container mx-auto flex items-center gap-7 px-5 sm:px-10">
                 <div class="flex items-center gap-2" x-data="pestLogoMenu">
                     <a aria-label="Pest" class="flex items-center gap-2" href="/" @contextmenu.prevent="openMenu($event)">
-                        <svg aria-label="PEST" class="block h-7 w-auto fill-zinc-200" role="img" viewBox="0 0 381 100" xmlns="http://www.w3.org/2000/svg">
+                        <svg aria-label="PEST" class="block h-7 w-auto fill-[var(--theme-fg)]" role="img" viewBox="0 0 381 100" xmlns="http://www.w3.org/2000/svg">
                             <path clip-rule="evenodd" d="M16.607 27.51 22.994 0h85.181L93.484 63.272H36.697l-8.303 35.763H0l14.69-63.272h56.788l1.916-8.253zM295.574 0h85.181l-6.387 27.51h-39.752L318.01 99.035h-28.394l16.607-71.525h-73.824l-1.917 8.253h56.788l-6.387 27.51-1.916 8.252-6.387 27.51h-85.181l6.387-27.51h56.787l1.916-8.253h-56.787l6.387-27.51 1.916-8.252L210.392 0zm-93.7 0h-85.181l-6.387 27.51h85.181zm-25.34 35.763h-68.145l-6.387 27.51h68.145zm8.734 35.762h-85.182l-6.387 27.51h85.181z" fill-rule="evenodd" id="pest-wordmark" />
                         </svg>
                     </a>
@@ -105,17 +105,17 @@
                         <div x-show="open" x-cloak x-transition.opacity.duration.150ms
                             @click.outside="open = false" @keydown.escape.window="open = false" @contextmenu.prevent.stop
                             :style="`left:${x}px;top:${y}px`"
-                            class="fixed z-[100] w-56 overflow-hidden rounded-xl border border-zinc-700 bg-zinc-800 py-1.5 shadow-2xl shadow-black/40">
-                            <button type="button" @click="copy('logomark')" class="flex w-full items-center gap-3 px-3 py-2 text-left text-sm text-zinc-200 hover:bg-white/5">
+                            class="fixed z-[100] w-56 overflow-hidden rounded-xl border border-[var(--theme-border)] bg-[var(--theme-surface-raised)] py-1.5 text-[var(--theme-fg)] shadow-2xl shadow-[color:var(--theme-shadow)]">
+                            <button type="button" @click="copy('logomark')" class="flex w-full items-center gap-3 px-3 py-2 text-left text-sm hover:bg-[var(--theme-surface-inset)]">
                                 <svg class="size-4 shrink-0" fill="none" viewBox="0 0 240 220" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M36.844 61.111 51.014 0H240l-32.594 140.556H81.417L62.995 220H0L32.593 79.445h125.989l4.252-18.334z"/></svg>
                                 Copy Logo as SVG
                             </button>
-                            <button type="button" @click="copy('wordmark')" class="flex w-full items-center gap-3 px-3 py-2 text-left text-sm text-zinc-200 hover:bg-white/5">
+                            <button type="button" @click="copy('wordmark')" class="flex w-full items-center gap-3 px-3 py-2 text-left text-sm hover:bg-[var(--theme-surface-inset)]">
                                 <svg class="size-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 7V5h16v2M9 5v14m-2 0h4" /></svg>
                                 Copy Wordmark as SVG
                             </button>
-                            <div class="my-1.5 border-t border-zinc-700"></div>
-                            <a href="/brand" class="flex w-full items-center gap-3 px-3 py-2 text-left text-sm text-zinc-200 hover:bg-white/5">
+                            <div class="my-1.5 border-t border-[var(--theme-border)]"></div>
+                            <a href="/brand" class="flex w-full items-center gap-3 px-3 py-2 text-left text-sm hover:bg-[var(--theme-surface-inset)]">
                                 <svg class="size-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 3 3 7.5 12 12l9-4.5L12 3ZM3 12l9 4.5L21 12M3 16.5 12 21l9-4.5" /></svg>
                                 Brand Guidelines
                             </a>
@@ -123,26 +123,26 @@
                     </template>
                 </div>
                 <div class="ml-2 hidden gap-6 lg:flex">
-                    <a class="text-sm font-medium text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="/docs">Documentation</a>
-                    <a class="text-sm font-medium text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="https://youtube.com/@nunomaduro">YouTube</a>
-                    <a class="text-sm font-medium text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="https://github.com/sponsors/nunomaduro">Sponsor</a>
+                    <a class="text-sm font-medium text-[var(--theme-muted)] underline-offset-4 transition-colors hover:text-[var(--theme-fg)] hover:underline" href="/docs">Documentation</a>
+                    <a class="text-sm font-medium text-[var(--theme-muted)] underline-offset-4 transition-colors hover:text-[var(--theme-fg)] hover:underline" href="https://youtube.com/@nunomaduro">YouTube</a>
+                    <a class="text-sm font-medium text-[var(--theme-muted)] underline-offset-4 transition-colors hover:text-[var(--theme-fg)] hover:underline" href="https://github.com/sponsors/nunomaduro">Sponsor</a>
                 </div>
                 <div class="ml-auto flex items-center gap-4">
-                    <a class="flex items-center gap-2 text-sm font-semibold text-zinc-200 transition-colors hover:text-rose-400" href="https://github.com/pestphp/pest" target="_blank">
+                    <a class="flex items-center gap-2 text-sm font-semibold text-[var(--theme-fg)] transition-colors hover:text-[var(--theme-accent)]" href="https://github.com/pestphp/pest" target="_blank">
                         <svg class="size-4" fill="none" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                             <path clip-rule="evenodd" d="M16 0C7.16 0 0 7.16 0 16c0 7.08 4.58 13.06 10.94 15.18.8.14 1.1-.34 1.1-.76 0-.38-.02-1.64-.02-2.98-4.02.74-5.06-.98-5.38-1.88-.18-.46-.96-1.88-1.64-2.26-.56-.3-1.36-1.04-.02-1.06 1.26-.02 2.16 1.16 2.46 1.64 1.44 2.42 3.74 1.74 4.66 1.32.14-1.04.56-1.74 1.02-2.14-3.56-.4-7.28-1.78-7.28-7.9 0-1.74.62-3.18 1.64-4.3-.16-.4-.72-2.04.16-4.24 0 0 1.34-.42 4.4 1.64 1.28-.36 2.64-.54 4-.54 1.36 0 2.72.18 4 .54 3.06-2.08 4.4-1.64 4.4-1.64.88 2.2.32 3.84.16 4.24 1.02 1.12 1.64 2.54 1.64 4.3 0 6.14-3.74 7.5-7.3 7.9.58.5 1.08 1.46 1.08 2.96 0 2.14-.02 3.86-.02 4.4 0 .42.3.92 1.1.76A16.026 16.026 0 0 0 32 16c0-8.84-7.16-16-16-16Z" fill-rule="evenodd" fill="currentColor"></path>
                         </svg>
                         12k+
                     </a>
-                    <a class="hidden w-56 items-center gap-1 rounded-lg border border-zinc-700 bg-zinc-800 px-2 py-1.5 text-sm text-zinc-400 transition-colors hover:border-zinc-200/20 hover:text-zinc-200 sm:flex" href="/docs">
+                    <a class="hidden w-56 items-center gap-1 rounded-lg border border-[var(--theme-border)] bg-[var(--theme-surface-raised)] px-2 py-1.5 text-sm text-[var(--theme-muted)] transition-colors hover:border-[var(--theme-muted)] hover:text-[var(--theme-fg)] sm:flex" href="/docs">
                         <svg class="size-5" fill="none" stroke-linecap="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24">
                             <circle cx="11" cy="11" r="7" />
                             <path d="m20 20-3.5-3.5" />
                         </svg>
                         Search docs
-                        <kbd class="text-2xs ml-auto rounded-sm border border-zinc-700 bg-zinc-900 px-1 py-px font-sans">⌘K</kbd>
+                        <kbd class="text-2xs ml-auto rounded-sm border border-[var(--theme-border)] bg-[var(--theme-surface-inset)] px-1 py-px font-sans">⌘K</kbd>
                     </a>
-                    <button @click="$store.theme.toggle()" :aria-label="`Theme: ${$store.theme.mode}. Switch to ${$store.theme.nextMode} theme`" :aria-pressed="$store.theme.mode === 'system' ? 'mixed' : $store.theme.mode === 'light'" aria-label="Theme: dark. Switch to light theme" aria-pressed="false" class="active:scale-96 hidden size-8 items-center justify-center text-zinc-400 transition hover:text-zinc-200 lg:flex" type="button">
+                    <button @click="$store.theme.toggle()" :aria-label="`Theme: ${$store.theme.mode}. Switch to ${$store.theme.nextMode} theme`" :aria-pressed="$store.theme.mode === 'system' ? 'mixed' : $store.theme.mode === 'light'" aria-label="Theme: dark. Switch to light theme" aria-pressed="false" class="active:scale-96 hidden size-8 items-center justify-center text-[var(--theme-muted)] transition hover:text-[var(--theme-fg)] lg:flex" type="button">
                         <svg x-show="$store.theme.mode === 'light'" x-cloak aria-hidden="true" class="size-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" stroke="currentColor" viewBox="0 0 24 24">
                             <circle cx="12" cy="12" r="3.5" />
                             <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42" />
@@ -155,7 +155,7 @@
                             <path d="M8 21h8M12 17v4" />
                         </svg>
                     </button>
-                    <button @click="mobileMenuIsOpen = true" aria-label="Open menu" class="active:scale-96 flex size-8 items-center justify-center text-zinc-400 transition hover:text-zinc-200 lg:hidden" type="button">
+                    <button @click="mobileMenuIsOpen = true" aria-label="Open menu" class="active:scale-96 flex size-8 items-center justify-center text-[var(--theme-muted)] transition hover:text-[var(--theme-fg)] lg:hidden" type="button">
                         <svg class="size-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" stroke="currentColor" viewBox="0 0 24 24">
                             <path d="M4 7h16M4 12h16M4 17h16" />
                         </svg>
@@ -165,22 +165,22 @@
         </header>
 
         <div x-show="mobileMenuIsOpen" x-cloak class="fixed inset-0 z-[60] lg:hidden" @keydown.escape.window="mobileMenuIsOpen = false">
-            <div class="fixed inset-0 bg-zinc-900/80 backdrop-blur-sm" @click="mobileMenuIsOpen = false"></div>
-            <div class="fixed inset-y-0 right-0 flex w-full max-w-xs flex-col overflow-y-auto border-l border-zinc-700 bg-zinc-900 px-6 py-5">
+            <div class="fixed inset-0 bg-[var(--theme-overlay)] backdrop-blur-sm" @click="mobileMenuIsOpen = false"></div>
+            <div class="fixed inset-y-0 right-0 flex w-full max-w-xs flex-col overflow-y-auto border-l border-[var(--theme-border)] bg-[var(--theme-bg)] px-6 py-5">
                 <div class="flex items-center justify-between">
-                    <span class="font-mono text-xs tracking-widest text-zinc-400"><span class="font-bold text-rose-500">//</span> menu</span>
-                    <button @click="mobileMenuIsOpen = false" aria-label="Close menu" class="active:scale-96 flex size-8 items-center justify-center text-zinc-400 transition hover:text-zinc-200" type="button">
+                    <span class="font-mono text-xs tracking-widest text-[var(--theme-muted)]"><span class="font-bold text-[var(--theme-accent)]">//</span> menu</span>
+                    <button @click="mobileMenuIsOpen = false" aria-label="Close menu" class="active:scale-96 flex size-8 items-center justify-center text-[var(--theme-muted)] transition hover:text-[var(--theme-fg)]" type="button">
                         <svg class="size-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" stroke="currentColor" viewBox="0 0 24 24">
                             <path d="M6 18 18 6M6 6l12 12" />
                         </svg>
                     </button>
                 </div>
                 <nav class="mt-8 flex flex-col gap-1">
-                    <a class="rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-300 transition-colors hover:bg-zinc-800 hover:text-zinc-100" href="/docs">Documentation</a>
-                    <a class="rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-300 transition-colors hover:bg-zinc-800 hover:text-zinc-100" href="https://youtube.com/@nunomaduro">YouTube</a>
-                    <a class="rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-300 transition-colors hover:bg-zinc-800 hover:text-zinc-100" href="https://github.com/sponsors/nunomaduro">Sponsor</a>
+                    <a class="rounded-lg px-3 py-2.5 text-sm font-medium text-[var(--theme-fg)] transition-colors hover:bg-[var(--theme-surface-raised)]" href="/docs">Documentation</a>
+                    <a class="rounded-lg px-3 py-2.5 text-sm font-medium text-[var(--theme-fg)] transition-colors hover:bg-[var(--theme-surface-raised)]" href="https://youtube.com/@nunomaduro">YouTube</a>
+                    <a class="rounded-lg px-3 py-2.5 text-sm font-medium text-[var(--theme-fg)] transition-colors hover:bg-[var(--theme-surface-raised)]" href="https://github.com/sponsors/nunomaduro">Sponsor</a>
                 </nav>
-                <button @click="$store.theme.toggle()" :aria-label="`Theme: ${$store.theme.mode}. Switch to ${$store.theme.nextMode} theme`" :aria-pressed="$store.theme.mode === 'system' ? 'mixed' : $store.theme.mode === 'light'" aria-label="Theme: dark. Switch to light theme" aria-pressed="false" class="active:scale-96 mt-6 flex w-full items-center gap-3 rounded-lg border border-zinc-700 bg-zinc-800 px-3 py-2.5 text-sm font-medium text-zinc-300 transition-[border-color,scale] hover:border-zinc-200/20" type="button">
+                <button @click="$store.theme.toggle()" :aria-label="`Theme: ${$store.theme.mode}. Switch to ${$store.theme.nextMode} theme`" :aria-pressed="$store.theme.mode === 'system' ? 'mixed' : $store.theme.mode === 'light'" aria-label="Theme: dark. Switch to light theme" aria-pressed="false" class="active:scale-96 mt-6 flex w-full items-center gap-3 rounded-lg border border-[var(--theme-border)] bg-[var(--theme-surface-raised)] px-3 py-2.5 text-sm font-medium text-[var(--theme-fg)] transition-[border-color,scale] hover:border-[var(--theme-muted)]" type="button">
                     <svg x-show="$store.theme.mode === 'light'" x-cloak aria-hidden="true" class="size-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" stroke="currentColor" viewBox="0 0 24 24">
                         <circle cx="12" cy="12" r="3.5" />
                         <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42" />
@@ -194,11 +194,11 @@
                     </svg>
                     <span x-text="`Theme: ${$store.theme.mode}`">Theme: dark</span>
                 </button>
-                <a class="active:scale-96 mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-rose-500 px-4 py-2.5 text-sm font-semibold text-white transition-[background-color,scale] hover:bg-rose-600" href="/docs/installation">Start testing</a>
+                <a class="active:scale-96 mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--theme-accent)] px-4 py-2.5 text-sm font-semibold text-[var(--theme-accent-contrast)] transition-[background-color,scale] hover:bg-[var(--theme-accent-hover)]" href="/docs/installation">Start testing</a>
             </div>
         </div>
 
-        <main class="animate-border-in lg:[animation-delay:1100ms] motion-reduce:animate-none container relative mx-auto sm:border-x border-zinc-700">
+        <main class="animate-border-in lg:[animation-delay:1100ms] motion-reduce:animate-none container relative mx-auto border-[var(--theme-border)] sm:border-x">
             <div class="motion-preset-fade motion-duration-1000 lg:motion-delay-[1100ms] motion-reduce:animate-none top-14.25 pointer-events-none fixed inset-x-0 z-10">
                 <div class="container relative mx-auto">
                     <span class="size-2.25 before:w-2.25 after:h-2.25 absolute -left-1 top-px before:absolute before:left-0 before:top-1 before:h-px before:bg-rose-500 before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-rose-500 after:content-['']"></span>
@@ -750,8 +750,8 @@
             </section>
         </main>
 
-        <footer class="pb-8">
-            <div class="container relative mx-auto border-b border-zinc-700 px-5 py-16 sm:border-x sm:px-10">
+        <footer class="bg-[var(--theme-bg)] pb-8 text-[var(--theme-muted)] [&_a]:text-[var(--theme-muted)] [&_a:hover]:text-[var(--theme-fg)] [&_h3]:text-[var(--theme-muted)]">
+            <div class="container relative mx-auto border-b border-[var(--theme-border)] px-5 py-16 sm:border-x sm:px-10">
                 <nav aria-label="Footer" class="columns-2 gap-x-6 lg:columns-4">
                 <div class="mb-10 break-inside-avoid">
                     <h3 class="mb-4 flex items-center gap-2.5 font-mono text-2xs font-bold uppercase tracking-widest text-zinc-500"><span class="text-rose-500">//</span> what's new</h3>
@@ -848,7 +848,7 @@
                 <span class="-bottom-1.25 -right-1.25 size-2.25 before:w-2.25 after:h-2.25 pointer-events-none absolute z-10 before:absolute before:left-0 before:top-1 before:h-px before:bg-rose-500 before:content-[''] after:absolute after:left-1 after:top-0 after:w-px after:bg-rose-500 after:content-['']"></span>
             </div>
             <div class="container mx-auto px-5 pt-8 sm:px-10">
-            <div class="flex flex-col items-start justify-between gap-4 text-xs text-zinc-400 sm:flex-row sm:items-center">
+            <div class="flex flex-col items-start justify-between gap-4 text-xs text-[var(--theme-muted)] sm:flex-row sm:items-center">
                 <div class="font-mono">© 2026 PestPHP — A project by <a class="font-medium underline-offset-4 transition-colors hover:text-white hover:underline" href="https://pinkary.com/@nunomaduro" target="_blank" rel="noopener">Nuno Maduro</a>. Designed by <a class="font-medium underline-offset-4 transition-colors hover:text-white hover:underline" href="https://nunoguerra.com/?ref=pestphp" target="_blank" rel="noopener">Nuno Guerra</a>.</div>
                 <div class="flex items-center gap-5 font-mono">
                     <a class="underline-offset-4 transition-colors hover:text-white hover:underline" href="/llms.txt">/llms.txt</a>
@@ -857,7 +857,7 @@
                     <a class="underline-offset-4 transition-colors hover:text-white hover:underline" href="/docs">/docs</a>
                 </div>
             </div>
-            <svg aria-hidden="true" class="mt-10 h-auto w-full fill-white/10" viewBox="0 0 381 100" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" class="mt-10 h-auto w-full fill-[var(--theme-border)]" viewBox="0 0 381 100" xmlns="http://www.w3.org/2000/svg">
                 <use href="#pest-wordmark" />
                 <use href="#pest-wordmark" class="animate-trace motion-reduce:hidden fill-none stroke-rose-500/60 drop-shadow-[0_0_4px_var(--color-rose-500)] [stroke-dasharray:40_360] stroke-[0.3]" />
             </svg>
