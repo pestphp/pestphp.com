@@ -138,7 +138,24 @@
     --theme-accent: var(--color-rose-500);
     --theme-accent-hover: var(--color-rose-600);
     --theme-accent-contrast: var(--color-white);
+    --theme-code-panel: var(--color-zinc-800);
+    --theme-code-terminal: var(--color-zinc-900);
+    --theme-code-border: var(--color-zinc-700);
+    --theme-code-tab-muted: var(--color-zinc-400);
+    --theme-code-tab-active: var(--color-zinc-200);
+    --theme-code-accent: var(--color-rose-500);
     --theme-code-text: var(--color-zinc-300);
+    --theme-code-muted: var(--color-zinc-500);
+    --theme-code-function: var(--color-green-400);
+    --theme-code-string: var(--color-yellow-200);
+    --theme-code-keyword: var(--color-pink-400);
+    --theme-code-variable: var(--color-zinc-100);
+    --theme-code-class: var(--color-cyan-300);
+    --theme-code-number: var(--color-violet-300);
+    --theme-code-success: var(--color-green-400);
+    --theme-code-pass-bg: var(--color-green-400);
+    --theme-code-pass-fg: var(--color-zinc-900);
+    --theme-code-shadow: rgb(23 22 27 / 0.18);
     --theme-grid-line: var(--color-zinc-700);
     --theme-shadow: rgb(0 0 0 / 0.4);
     --theme-hero-grid-opacity: 0.5;
@@ -161,7 +178,24 @@ html.light {
     --theme-accent: var(--color-rose-500);
     --theme-accent-hover: var(--color-rose-600);
     --theme-accent-contrast: var(--color-white);
+    --theme-code-panel: var(--color-zinc-50);
+    --theme-code-terminal: var(--color-zinc-100);
+    --theme-code-border: var(--color-zinc-200);
+    --theme-code-tab-muted: var(--color-zinc-600);
+    --theme-code-tab-active: var(--color-zinc-950);
+    --theme-code-accent: var(--color-rose-500);
     --theme-code-text: var(--color-zinc-800);
+    --theme-code-muted: var(--color-zinc-600);
+    --theme-code-function: var(--color-green-700);
+    --theme-code-string: var(--color-yellow-800);
+    --theme-code-keyword: var(--color-pink-700);
+    --theme-code-variable: var(--color-zinc-950);
+    --theme-code-class: var(--color-cyan-700);
+    --theme-code-number: var(--color-violet-700);
+    --theme-code-success: var(--color-green-700);
+    --theme-code-pass-bg: var(--color-green-600);
+    --theme-code-pass-fg: var(--color-white);
+    --theme-code-shadow: rgb(24 24 27 / 0.12);
     --theme-grid-line: var(--color-zinc-200);
     --theme-shadow: rgb(24 24 27 / 0.12);
     --theme-hero-grid-opacity: 0.7;
@@ -232,6 +266,47 @@ button {
 }
 .scrollbar-ghost::-webkit-scrollbar-thumb:hover {
     background: var(--color-rose-400);
+}
+
+/* The homepage preview keeps its hand-authored syntax markup while these scoped
+   mappings translate each token role into the active semantic code palette. */
+[data-code-preview] .text-green-400 {
+    color: var(--theme-code-function);
+}
+[data-code-preview] .text-yellow-200 {
+    color: var(--theme-code-string);
+}
+[data-code-preview] .text-pink-400 {
+    color: var(--theme-code-keyword);
+}
+[data-code-preview] .text-zinc-100 {
+    color: var(--theme-code-variable);
+}
+[data-code-preview] .text-cyan-300 {
+    color: var(--theme-code-class);
+}
+[data-code-preview] .text-violet-300 {
+    color: var(--theme-code-number);
+}
+[data-code-preview] .text-zinc-500 {
+    color: var(--theme-code-muted);
+}
+[data-code-output] .text-green-400 {
+    color: var(--theme-code-success);
+}
+[data-code-preview] .bg-green-400 {
+    background-color: var(--theme-code-pass-bg);
+}
+[data-code-preview] .bg-green-400.text-zinc-900 {
+    color: var(--theme-code-pass-fg);
+}
+[data-code-preview] .scrollbar-ghost:hover,
+[data-code-preview] .scrollbar-ghost:focus-within {
+    scrollbar-color: var(--theme-code-accent) transparent;
+}
+[data-code-preview] .scrollbar-ghost:hover::-webkit-scrollbar-thumb,
+[data-code-preview] .scrollbar-ghost:focus-within::-webkit-scrollbar-thumb {
+    background: var(--theme-code-accent);
 }
 
 /* tippy.js — "pest" blueprint tooltip theme (dark, mono, hairline border) */

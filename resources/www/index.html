@@ -245,16 +245,16 @@
                         </div>
                     </div>
 
-                    <div class="motion-preset-blur-up motion-blur-in-lg motion-delay-[400ms] lg:motion-delay-[1500ms] motion-reduce:animate-none relative overflow-hidden rounded-2xl border border-zinc-700 bg-zinc-800 shadow-[0_24px_60px_-30px_rgba(23,22,27,0.18)]" x-data="{ tab: 'browser' }">
-                        <div class="scrollbar-ghost flex overflow-x-auto border-b border-zinc-700 px-2" role="tablist">
-                            <button @click="tab = 'browser'" :aria-selected="tab === 'browser'" class="cursor-pointer whitespace-nowrap border-b-2 border-transparent px-3 py-3 font-mono text-xs text-zinc-400 transition-colors hover:text-zinc-200 aria-selected:border-rose-500 aria-selected:text-zinc-200" role="tab" type="button">BrowserTest.php</button>
-                            <button @click="tab = 'feature'" :aria-selected="tab === 'feature'" class="cursor-pointer whitespace-nowrap border-b-2 border-transparent px-3 py-3 font-mono text-xs text-zinc-400 transition-colors hover:text-zinc-200 aria-selected:border-rose-500 aria-selected:text-zinc-200" role="tab" type="button">FeatureTest.php</button>
-                            <button @click="tab = 'unit'" :aria-selected="tab === 'unit'" class="cursor-pointer whitespace-nowrap border-b-2 border-transparent px-3 py-3 font-mono text-xs text-zinc-400 transition-colors hover:text-zinc-200 aria-selected:border-rose-500 aria-selected:text-zinc-200" role="tab" type="button">UnitTest.php</button>
-                            <button @click="tab = 'eval'" :aria-selected="tab === 'eval'" class="cursor-pointer whitespace-nowrap border-b-2 border-transparent px-3 py-3 font-mono text-xs text-zinc-400 transition-colors hover:text-zinc-200 aria-selected:border-rose-500 aria-selected:text-zinc-200" role="tab" type="button">EvalTest.php</button>
-                            <button @click="tab = 'arch'" :aria-selected="tab === 'arch'" class="cursor-pointer whitespace-nowrap border-b-2 border-transparent px-3 py-3 font-mono text-xs text-zinc-400 transition-colors hover:text-zinc-200 aria-selected:border-rose-500 aria-selected:text-zinc-200" role="tab" type="button">ArchTest.php</button>
+                    <div data-code-preview class="motion-preset-blur-up motion-blur-in-lg motion-delay-[400ms] lg:motion-delay-[1500ms] motion-reduce:animate-none relative overflow-hidden rounded-2xl border border-[var(--theme-code-border)] bg-[var(--theme-code-panel)] shadow-[0_24px_60px_-30px_var(--theme-code-shadow)]" x-data="{ tab: 'browser' }">
+                        <div class="scrollbar-ghost flex overflow-x-auto border-b border-[var(--theme-code-border)] px-2" role="tablist">
+                            <button @click="tab = 'browser'" :aria-selected="tab === 'browser'" class="cursor-pointer whitespace-nowrap border-b-2 border-transparent px-3 py-3 font-mono text-xs text-[var(--theme-code-tab-muted)] transition-colors hover:text-[var(--theme-code-tab-active)] aria-selected:border-[var(--theme-code-accent)] aria-selected:text-[var(--theme-code-tab-active)]" role="tab" type="button">BrowserTest.php</button>
+                            <button @click="tab = 'feature'" :aria-selected="tab === 'feature'" class="cursor-pointer whitespace-nowrap border-b-2 border-transparent px-3 py-3 font-mono text-xs text-[var(--theme-code-tab-muted)] transition-colors hover:text-[var(--theme-code-tab-active)] aria-selected:border-[var(--theme-code-accent)] aria-selected:text-[var(--theme-code-tab-active)]" role="tab" type="button">FeatureTest.php</button>
+                            <button @click="tab = 'unit'" :aria-selected="tab === 'unit'" class="cursor-pointer whitespace-nowrap border-b-2 border-transparent px-3 py-3 font-mono text-xs text-[var(--theme-code-tab-muted)] transition-colors hover:text-[var(--theme-code-tab-active)] aria-selected:border-[var(--theme-code-accent)] aria-selected:text-[var(--theme-code-tab-active)]" role="tab" type="button">UnitTest.php</button>
+                            <button @click="tab = 'eval'" :aria-selected="tab === 'eval'" class="cursor-pointer whitespace-nowrap border-b-2 border-transparent px-3 py-3 font-mono text-xs text-[var(--theme-code-tab-muted)] transition-colors hover:text-[var(--theme-code-tab-active)] aria-selected:border-[var(--theme-code-accent)] aria-selected:text-[var(--theme-code-tab-active)]" role="tab" type="button">EvalTest.php</button>
+                            <button @click="tab = 'arch'" :aria-selected="tab === 'arch'" class="cursor-pointer whitespace-nowrap border-b-2 border-transparent px-3 py-3 font-mono text-xs text-[var(--theme-code-tab-muted)] transition-colors hover:text-[var(--theme-code-tab-active)] aria-selected:border-[var(--theme-code-accent)] aria-selected:text-[var(--theme-code-tab-active)]" role="tab" type="button">ArchTest.php</button>
                         </div>
                         <div class="grid">
-                            <div :class="tab === 'browser' ? '' : 'invisible opacity-0'" class="text-xs-plus col-start-1 row-start-1 overflow-x-auto whitespace-nowrap px-5 py-4 font-mono leading-[1.85] text-zinc-300 transition-opacity duration-200">
+                            <div :class="tab === 'browser' ? '' : 'invisible opacity-0'" class="text-xs-plus col-start-1 row-start-1 overflow-x-auto whitespace-nowrap px-5 py-4 font-mono leading-[1.85] text-[var(--theme-code-text)] transition-opacity duration-200">
                                 <div><span class="text-green-400">it</span>(<span class="text-yellow-200">'may login'</span>, <span class="text-pink-400">function</span> () {</div>
                                 <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-zinc-100">$user</span> <span class="text-pink-400">=</span> <span class="text-cyan-300">User</span><span class="text-pink-400">::</span><span class="text-green-400">factory</span>()<span class="text-pink-400">-></span><span class="text-green-400">create</span>();</div>
                                 <div>&nbsp;</div>
@@ -267,7 +267,7 @@
                                 <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-zinc-100">$this</span><span class="text-pink-400">-></span><span class="text-green-400">assertAuthenticatedAs</span>(<span class="text-zinc-100">$user</span>);</div>
                                 <div>});</div>
                             </div>
-                            <div :class="tab === 'feature' ? '' : 'invisible opacity-0'" class="text-xs-plus col-start-1 row-start-1 overflow-x-auto whitespace-nowrap px-5 py-4 font-mono leading-[1.85] text-zinc-300 transition-opacity duration-200">
+                            <div :class="tab === 'feature' ? '' : 'invisible opacity-0'" class="text-xs-plus col-start-1 row-start-1 overflow-x-auto whitespace-nowrap px-5 py-4 font-mono leading-[1.85] text-[var(--theme-code-text)] transition-opacity duration-200">
                                 <div><span class="text-green-400">it</span>(<span class="text-yellow-200">'creates a post'</span>, <span class="text-pink-400">function</span> () {</div>
                                 <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-zinc-100">$user</span> <span class="text-pink-400">=</span> <span class="text-cyan-300">User</span><span class="text-pink-400">::</span><span class="text-green-400">factory</span>()<span class="text-pink-400">-></span><span class="text-green-400">create</span>();</div>
                                 <div>&nbsp;</div>
@@ -278,7 +278,7 @@
                                 <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">expect</span>(<span class="text-zinc-100">$user</span><span class="text-pink-400">-></span>posts)<span class="text-pink-400">-></span><span class="text-green-400">toHaveCount</span>(<span class="text-violet-300">1</span>);</div>
                                 <div>});</div>
                             </div>
-                            <div :class="tab === 'unit' ? '' : 'invisible opacity-0'" class="text-xs-plus col-start-1 row-start-1 overflow-x-auto whitespace-nowrap px-5 py-4 font-mono leading-[1.85] text-zinc-300 transition-opacity duration-200">
+                            <div :class="tab === 'unit' ? '' : 'invisible opacity-0'" class="text-xs-plus col-start-1 row-start-1 overflow-x-auto whitespace-nowrap px-5 py-4 font-mono leading-[1.85] text-[var(--theme-code-text)] transition-opacity duration-200">
                                 <div><span class="text-green-400">it</span>(<span class="text-yellow-200">'performs sums'</span>, <span class="text-pink-400">function</span> () {</div>
                                 <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">expect</span>(<span class="text-green-400">sum</span>(<span class="text-violet-300">1</span>, <span class="text-violet-300">2</span>))</div>
                                 <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-pink-400">-></span><span class="text-green-400">toBe</span>(<span class="text-violet-300">3</span>)</div>
@@ -286,7 +286,7 @@
                                 <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-pink-400">-></span>not<span class="text-pink-400">-></span><span class="text-green-400">toBeString</span>();</div>
                                 <div>});</div>
                             </div>
-                            <div :class="tab === 'eval' ? '' : 'invisible opacity-0'" class="text-xs-plus col-start-1 row-start-1 overflow-x-auto whitespace-nowrap px-5 py-4 font-mono leading-[1.85] text-zinc-300 transition-opacity duration-200">
+                            <div :class="tab === 'eval' ? '' : 'invisible opacity-0'" class="text-xs-plus col-start-1 row-start-1 overflow-x-auto whitespace-nowrap px-5 py-4 font-mono leading-[1.85] text-[var(--theme-code-text)] transition-opacity duration-200">
                                 <div><span class="text-green-400">it</span>(<span class="text-yellow-200">'classifies sentiment'</span>, <span class="text-pink-400">function</span> () {</div>
                                 <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">expect</span>(<span class="text-cyan-300">SentimentAgent</span><span class="text-pink-400">::</span><span class="text-pink-400">class</span>)</div>
                                 <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-pink-400">-></span><span class="text-green-400">prompt</span>(<span class="text-yellow-200">'Is "I love Pest" positive?'</span>)</div>
@@ -294,7 +294,7 @@
                                 <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-pink-400">-></span><span class="text-green-400">toSatisfy</span>(<span class="text-yellow-200">'answers in one word'</span>);</div>
                                 <div>});</div>
                             </div>
-                            <div :class="tab === 'arch' ? '' : 'invisible opacity-0'" class="text-xs-plus col-start-1 row-start-1 overflow-x-auto whitespace-nowrap px-5 py-4 font-mono leading-[1.85] text-zinc-300 transition-opacity duration-200">
+                            <div :class="tab === 'arch' ? '' : 'invisible opacity-0'" class="text-xs-plus col-start-1 row-start-1 overflow-x-auto whitespace-nowrap px-5 py-4 font-mono leading-[1.85] text-[var(--theme-code-text)] transition-opacity duration-200">
                                 <div><span class="text-green-400">arch</span>()<span class="text-pink-400">-></span><span class="text-green-400">preset</span>()<span class="text-pink-400">-></span><span class="text-green-400">laravel</span>();</div>
                                 <div><span class="text-green-400">arch</span>()<span class="text-pink-400">-></span><span class="text-green-400">preset</span>()<span class="text-pink-400">-></span><span class="text-green-400">security</span>();</div>
                                 <div>&nbsp;</div>
@@ -304,7 +304,7 @@
                                 <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-pink-400">-></span>not<span class="text-pink-400">-></span><span class="text-green-400">toUse</span>([<span class="text-yellow-200">'dd'</span>, <span class="text-yellow-200">'dump'</span>, <span class="text-yellow-200">'die'</span>]);</div>
                             </div>
                         </div>
-                        <div class="mx-4 mb-4 grid rounded-[10px] bg-zinc-900 px-4 py-3.5 font-mono text-xs leading-[1.9] text-zinc-300">
+                        <div data-code-output class="mx-4 mb-4 grid rounded-[10px] bg-[var(--theme-code-terminal)] px-4 py-3.5 font-mono text-xs leading-[1.9] text-[var(--theme-code-text)]">
                             <div :class="tab === 'browser' ? '' : 'invisible opacity-0'" class="col-start-1 row-start-1 overflow-x-auto whitespace-nowrap transition-opacity duration-200">
                                 <div><span class="text-zinc-500">$</span> ./vendor/bin/pest</div>
                                 <div>&nbsp;&nbsp;<span class="bg-green-400 px-1.5 font-bold text-zinc-900">PASS</span>&nbsp; Tests\Browser\AuthenticationTest</div>
