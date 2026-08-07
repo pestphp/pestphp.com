@@ -42,6 +42,20 @@
     <link rel="apple-touch-icon" href="/www/apple-touch-icon.png" sizes="180x180">
     <link rel="manifest" href="/www/site.webmanifest">
     <meta name="theme-color" content="#18181b">
+    <meta name="color-scheme" content="dark light">
+    <script>
+        (() => {
+            let theme = 'dark';
+
+            try { theme = ['dark', 'light', 'system'].includes(localStorage.theme) ? localStorage.theme : 'dark'; } catch (e) {}
+
+            const light = theme === 'light' || (theme === 'system' && matchMedia('(prefers-color-scheme: light)').matches);
+
+            document.documentElement.classList.toggle('light', light);
+            document.documentElement.classList.toggle('dark', !light);
+            document.querySelector('meta[name="theme-color"]').content = light ? '#ffffff' : '#18181b';
+        })();
+    </script>
 
     {{ $head ?? '' }}
 
