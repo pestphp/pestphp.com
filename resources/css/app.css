@@ -97,20 +97,10 @@
     --theme-code-bg: var(--color-zinc-900);
     --theme-code-text: var(--color-zinc-300);
     --theme-code-border: var(--color-zinc-700);
-    --theme-code-muted: var(--color-zinc-600);
     --theme-code-accent: var(--color-rose-500);
     --theme-code-accent-hover: var(--color-rose-400);
     --theme-code-copy: var(--color-zinc-600);
     --theme-code-copy-hover: var(--color-zinc-200);
-    --theme-code-syntax-comment: #6272a4;
-    --theme-code-syntax-foreground: #f8f8f2;
-    --theme-code-syntax-pink: #ff79c6;
-    --theme-code-syntax-cyan: #8be9fd;
-    --theme-code-syntax-green: #50fa7b;
-    --theme-code-syntax-yellow: #f1fa8c;
-    --theme-code-syntax-purple: #bd93f9;
-    --theme-code-syntax-orange: #ffb86c;
-    --theme-code-syntax-red: #ff5555;
     --theme-terminal-green: #a2d86e;
     --theme-terminal-red: #f08a8a;
     --theme-terminal-amber: #f4c26b;
@@ -164,26 +154,12 @@ html.light {
     --theme-shadow: rgb(24 24 27 / 0.12);
     --theme-accent: var(--color-rose-700);
     --theme-accent-hover: var(--color-rose-800);
-    --theme-accent-fill: var(--color-rose-700);
-    --theme-accent-fill-hover: var(--color-rose-800);
-    --theme-accent-contrast: var(--color-white);
-    --theme-code-bg: var(--color-zinc-100);
+    --theme-code-bg: var(--color-white);
     --theme-code-text: var(--color-zinc-800);
     --theme-code-border: var(--color-zinc-200);
-    --theme-code-muted: var(--color-zinc-600);
-    --theme-code-accent: var(--color-rose-500);
     --theme-code-accent-hover: var(--color-rose-600);
     --theme-code-copy: var(--color-zinc-500);
     --theme-code-copy-hover: var(--color-zinc-800);
-    --theme-code-syntax-comment: var(--color-zinc-600);
-    --theme-code-syntax-foreground: var(--color-zinc-800);
-    --theme-code-syntax-pink: var(--color-pink-700);
-    --theme-code-syntax-cyan: var(--color-cyan-700);
-    --theme-code-syntax-green: var(--color-green-700);
-    --theme-code-syntax-yellow: var(--color-yellow-800);
-    --theme-code-syntax-purple: var(--color-violet-700);
-    --theme-code-syntax-orange: var(--color-orange-700);
-    --theme-code-syntax-red: var(--color-red-700);
     --theme-terminal-green: var(--color-green-700);
     --theme-terminal-red: var(--color-red-700);
     --theme-terminal-amber: var(--color-yellow-700);
@@ -196,12 +172,8 @@ html.light {
     --theme-terminal-text: var(--color-zinc-700);
     --theme-terminal-dim: var(--color-zinc-500);
     --theme-terminal-pass-fg: var(--color-white);
-    --theme-terminal-chip-fg: var(--color-white);
     --theme-terminal-danger-border: var(--color-red-400);
-    --theme-brand-preview-dark: var(--color-zinc-900);
-    --theme-brand-preview-dark-border: var(--color-zinc-700);
     --theme-brand-preview-light: var(--color-white);
-    --theme-brand-preview-light-border: var(--color-zinc-200);
     --theme-guideline-positive: var(--color-green-700);
     --theme-guideline-positive-bg: var(--color-green-700);
     --theme-guideline-positive-fg: var(--color-white);
@@ -468,34 +440,17 @@ html.light {
     scrollbar-color: var(--theme-code-accent) var(--theme-code-bg);
 }
 
-/* Torchlight's Dracula theme emits inline hex colors. These selectors retain
-   that exact palette in dark mode and remap it to the light syntax tokens. */
-.docs-main .torchlight [style*='#6272a4' i] {
-    color: var(--theme-code-syntax-comment) !important;
+/* Torchlight renders a highlighted block for each labelled theme. Keep the
+   inactive block out of layout and accessibility APIs. Unlabelled per-fence
+   theme overrides remain visible. */
+.docs-main pre code.torchlight:is([data-theme='light'], [data-theme^='light:']) {
+    display: none;
 }
-.docs-main .torchlight [style*='#f8f8f2' i] {
-    color: var(--theme-code-syntax-foreground) !important;
+html.light .docs-main pre code.torchlight:is([data-theme='dark'], [data-theme^='dark:']) {
+    display: none;
 }
-.docs-main .torchlight [style*='#ff79c6' i] {
-    color: var(--theme-code-syntax-pink) !important;
-}
-.docs-main .torchlight [style*='#8be9fd' i] {
-    color: var(--theme-code-syntax-cyan) !important;
-}
-.docs-main .torchlight [style*='#50fa7b' i] {
-    color: var(--theme-code-syntax-green) !important;
-}
-.docs-main .torchlight [style*='#f1fa8c' i] {
-    color: var(--theme-code-syntax-yellow) !important;
-}
-.docs-main .torchlight [style*='#bd93f9' i] {
-    color: var(--theme-code-syntax-purple) !important;
-}
-.docs-main .torchlight [style*='#ffb86c' i] {
-    color: var(--theme-code-syntax-orange) !important;
-}
-.docs-main .torchlight [style*='#ff5555' i] {
-    color: var(--theme-code-syntax-red) !important;
+html.light .docs-main pre code.torchlight:is([data-theme='light'], [data-theme^='light:']) {
+    display: block;
 }
 .docs-main pre code.torchlight::-webkit-scrollbar {
     height: 0.4rem;
