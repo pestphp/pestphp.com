@@ -92,6 +92,35 @@
     --theme-accent-contrast: var(--color-white);
     --theme-code-bg: var(--color-zinc-900);
     --theme-code-text: var(--color-zinc-300);
+    --theme-code-border: var(--color-zinc-700);
+    --theme-code-muted: var(--color-zinc-600);
+    --theme-code-accent: var(--color-rose-500);
+    --theme-code-accent-hover: var(--color-rose-400);
+    --theme-code-copy: var(--color-zinc-600);
+    --theme-code-copy-hover: var(--color-zinc-200);
+    --theme-code-syntax-comment: #6272a4;
+    --theme-code-syntax-foreground: #f8f8f2;
+    --theme-code-syntax-pink: #ff79c6;
+    --theme-code-syntax-cyan: #8be9fd;
+    --theme-code-syntax-green: #50fa7b;
+    --theme-code-syntax-yellow: #f1fa8c;
+    --theme-code-syntax-purple: #bd93f9;
+    --theme-code-syntax-orange: #ffb86c;
+    --theme-code-syntax-red: #ff5555;
+    --theme-terminal-green: #a2d86e;
+    --theme-terminal-red: #f08a8a;
+    --theme-terminal-amber: #f4c26b;
+    --theme-terminal-yellow: #fcdf5f;
+    --theme-terminal-blue: #82aaff;
+    --theme-terminal-violet: #c99bf5;
+    --theme-terminal-rose: #f68aa0;
+    --theme-terminal-sky: #7ec8f0;
+    --theme-terminal-strong: #e6e6e9;
+    --theme-terminal-text: #8f8f95;
+    --theme-terminal-dim: #5f5f66;
+    --theme-terminal-pass-fg: var(--color-zinc-900);
+    --theme-terminal-chip-fg: var(--color-white);
+    --theme-terminal-danger-border: #7f3a3a;
     --theme-prose-body: var(--color-zinc-300);
     --theme-prose-heading: var(--color-zinc-100);
     --theme-prose-link: var(--color-rose-400);
@@ -123,6 +152,35 @@ html.light {
     --theme-accent-contrast: var(--color-white);
     --theme-code-bg: var(--color-zinc-100);
     --theme-code-text: var(--color-zinc-800);
+    --theme-code-border: var(--color-zinc-200);
+    --theme-code-muted: var(--color-zinc-600);
+    --theme-code-accent: var(--color-rose-500);
+    --theme-code-accent-hover: var(--color-rose-600);
+    --theme-code-copy: var(--color-zinc-500);
+    --theme-code-copy-hover: var(--color-zinc-800);
+    --theme-code-syntax-comment: var(--color-zinc-600);
+    --theme-code-syntax-foreground: var(--color-zinc-800);
+    --theme-code-syntax-pink: var(--color-pink-700);
+    --theme-code-syntax-cyan: var(--color-cyan-700);
+    --theme-code-syntax-green: var(--color-green-700);
+    --theme-code-syntax-yellow: var(--color-yellow-800);
+    --theme-code-syntax-purple: var(--color-violet-700);
+    --theme-code-syntax-orange: var(--color-orange-700);
+    --theme-code-syntax-red: var(--color-red-700);
+    --theme-terminal-green: var(--color-green-700);
+    --theme-terminal-red: var(--color-red-700);
+    --theme-terminal-amber: var(--color-yellow-700);
+    --theme-terminal-yellow: var(--color-yellow-800);
+    --theme-terminal-blue: var(--color-blue-700);
+    --theme-terminal-violet: var(--color-violet-700);
+    --theme-terminal-rose: var(--color-rose-700);
+    --theme-terminal-sky: var(--color-cyan-700);
+    --theme-terminal-strong: var(--color-zinc-950);
+    --theme-terminal-text: var(--color-zinc-700);
+    --theme-terminal-dim: var(--color-zinc-500);
+    --theme-terminal-pass-fg: var(--color-white);
+    --theme-terminal-chip-fg: var(--color-white);
+    --theme-terminal-danger-border: var(--color-red-400);
     --theme-prose-body: var(--color-zinc-700);
     --theme-prose-heading: var(--color-zinc-950);
     --theme-prose-link: var(--color-rose-700);
@@ -361,29 +419,64 @@ html.light {
 
 /* Fenced code blocks — terminal wells */
 .docs-main pre {
-    @apply relative my-6 flex overflow-hidden rounded-[10px] border border-zinc-700 bg-zinc-900;
+    @apply relative my-6 flex overflow-hidden rounded-[10px] border;
+    border-color: var(--theme-code-border);
+    background: var(--theme-code-bg);
 }
 .docs-main pre code {
-    @apply flex flex-1 overflow-x-auto bg-transparent p-0 font-mono text-zinc-300;
+    @apply flex flex-1 overflow-x-auto bg-transparent p-0 font-mono;
     font-size: 0.85em;
     line-height: 1.9;
-    color: var(--color-zinc-300);
+    color: var(--theme-code-text);
 }
 .docs-main pre code.torchlight {
     @apply block overflow-x-auto px-5 py-4;
     background: transparent !important;
+    color: var(--theme-code-text) !important;
+    scrollbar-color: var(--theme-code-accent) var(--theme-code-bg);
+}
+
+/* Torchlight's Dracula theme emits inline hex colors. These selectors retain
+   that exact palette in dark mode and remap it to the light syntax tokens. */
+.docs-main .torchlight [style*='#6272a4' i] {
+    color: var(--theme-code-syntax-comment) !important;
+}
+.docs-main .torchlight [style*='#f8f8f2' i] {
+    color: var(--theme-code-syntax-foreground) !important;
+}
+.docs-main .torchlight [style*='#ff79c6' i] {
+    color: var(--theme-code-syntax-pink) !important;
+}
+.docs-main .torchlight [style*='#8be9fd' i] {
+    color: var(--theme-code-syntax-cyan) !important;
+}
+.docs-main .torchlight [style*='#50fa7b' i] {
+    color: var(--theme-code-syntax-green) !important;
+}
+.docs-main .torchlight [style*='#f1fa8c' i] {
+    color: var(--theme-code-syntax-yellow) !important;
+}
+.docs-main .torchlight [style*='#bd93f9' i] {
+    color: var(--theme-code-syntax-purple) !important;
+}
+.docs-main .torchlight [style*='#ffb86c' i] {
+    color: var(--theme-code-syntax-orange) !important;
+}
+.docs-main .torchlight [style*='#ff5555' i] {
+    color: var(--theme-code-syntax-red) !important;
 }
 .docs-main pre code.torchlight::-webkit-scrollbar {
     height: 0.4rem;
 }
 .docs-main pre code.torchlight::-webkit-scrollbar-track {
-    @apply bg-zinc-900;
+    background: var(--theme-code-bg);
 }
 .docs-main pre code.torchlight::-webkit-scrollbar-thumb {
-    @apply rounded-full bg-rose-500;
+    @apply rounded-full;
+    background: var(--theme-code-accent);
 }
 .docs-main pre code.torchlight::-webkit-scrollbar-thumb:hover {
-    @apply bg-rose-400;
+    background: var(--theme-code-accent-hover);
 }
 /* Non-torchlight (plain) code blocks still get comfortable padding */
 .docs-main pre code:not(.torchlight) {
@@ -399,19 +492,22 @@ html.light {
 
 /* Copy-to-clipboard button injected by clipboard.js */
 .docs-main pre .copyBtn {
-    @apply absolute right-2.5 top-2.5 flex size-6 items-center justify-center text-zinc-600 transition-colors;
+    @apply absolute right-2.5 top-2.5 flex size-6 items-center justify-center transition-colors;
+    color: var(--theme-code-copy);
 }
 .docs-main pre .copyBtn:hover,
 .docs-main pre .copyBtn:focus,
 .docs-main pre .copyBtn:active {
-    @apply text-zinc-200;
+    color: var(--theme-code-copy-hover);
 }
 
 /* Image-based terminal snapshots */
 .docs-main .code-snippet {
-    @apply my-6 block flex-1 overflow-x-auto rounded-[10px] border border-zinc-700 bg-zinc-900 py-5;
+    @apply my-6 block flex-1 overflow-x-auto rounded-[10px] border py-5;
+    border-color: var(--theme-code-border);
+    background: var(--theme-code-bg);
     scrollbar-width: thin;
-    scrollbar-color: var(--color-rose-500) var(--color-zinc-900);
+    scrollbar-color: var(--theme-code-accent) var(--theme-code-bg);
 }
 .docs-main pre + .code-snippet {
     @apply mt-4;
@@ -420,13 +516,14 @@ html.light {
     height: 0.4rem;
 }
 .docs-main .code-snippet::-webkit-scrollbar-track {
-    @apply bg-zinc-900;
+    background: var(--theme-code-bg);
 }
 .docs-main .code-snippet::-webkit-scrollbar-thumb {
-    @apply rounded-full bg-rose-500;
+    @apply rounded-full;
+    background: var(--theme-code-accent);
 }
 .docs-main .code-snippet:hover::-webkit-scrollbar-thumb {
-    @apply bg-rose-400;
+    background: var(--theme-code-accent-hover);
 }
 .docs-main .code-snippet img {
     --line-height: 1.85rem;
@@ -440,17 +537,17 @@ html.light {
    output the docs used to ship as raster images. Same card as .code-snippet.
    ========================================================================== */
 .docs-main .terminal {
-    --t-green: #a2d86e;
-    --t-red: #f08a8a;
-    --t-amber: #f4c26b;
-    --t-yellow: #fcdf5f;
-    --t-blue: #82aaff;
-    --t-violet: #c99bf5;
-    --t-rose: #f68aa0;
-    --t-sky: #7ec8f0;
-    --t-white: #e6e6e9;
-    --t-gray: #8f8f95;
-    --t-dim: #5f5f66;
+    --t-green: var(--theme-terminal-green);
+    --t-red: var(--theme-terminal-red);
+    --t-amber: var(--theme-terminal-amber);
+    --t-yellow: var(--theme-terminal-yellow);
+    --t-blue: var(--theme-terminal-blue);
+    --t-violet: var(--theme-terminal-violet);
+    --t-rose: var(--theme-terminal-rose);
+    --t-sky: var(--theme-terminal-sky);
+    --t-white: var(--theme-terminal-strong);
+    --t-gray: var(--theme-terminal-text);
+    --t-dim: var(--theme-terminal-dim);
 
     display: block;
     overflow-x: auto;
@@ -458,20 +555,23 @@ html.light {
     line-height: 1.9;
     color: var(--t-gray);
     scrollbar-width: thin;
-    scrollbar-color: var(--color-rose-500) var(--color-zinc-900);
-    @apply my-6 rounded-[10px] border border-zinc-700 bg-zinc-900 px-5.5 py-5 font-mono text-[13px];
+    scrollbar-color: var(--theme-code-accent) var(--theme-code-bg);
+    @apply my-6 rounded-[10px] border px-5.5 py-5 font-mono text-[13px];
+    border-color: var(--theme-code-border);
+    background: var(--theme-code-bg);
 }
 .docs-main .terminal::-webkit-scrollbar {
     height: 0.4rem;
 }
 .docs-main .terminal::-webkit-scrollbar-track {
-    @apply bg-zinc-900;
+    background: var(--theme-code-bg);
 }
 .docs-main .terminal::-webkit-scrollbar-thumb {
-    @apply rounded-full bg-rose-500;
+    @apply rounded-full;
+    background: var(--theme-code-accent);
 }
 .docs-main .terminal:hover::-webkit-scrollbar-thumb {
-    @apply bg-rose-400;
+    background: var(--theme-code-accent-hover);
 }
 .docs-main .terminal .l {
     min-height: 1.9em;
@@ -517,19 +617,19 @@ html.light {
 }
 .docs-main .terminal .pass {
     background: var(--t-green);
-    color: #18181b;
+    color: var(--theme-terminal-pass-fg);
 }
 .docs-main .terminal .fail {
     background: var(--t-red);
-    color: #ffffff;
+    color: var(--theme-terminal-chip-fg);
 }
 .docs-main .terminal .warn {
     background: var(--t-amber);
-    color: #ffffff;
+    color: var(--theme-terminal-chip-fg);
 }
 .docs-main .terminal .todo {
     background: var(--t-sky);
-    color: #ffffff;
+    color: var(--theme-terminal-chip-fg);
 }
 /* dotted leader rows (coverage / profile) */
 .docs-main .terminal .row {
@@ -547,10 +647,10 @@ html.light {
 .docs-main .terminal .hr {
     margin: 8px 0;
     border: 0;
-    border-top: 1px solid var(--color-zinc-700);
+    border-top: 1px solid var(--theme-code-border);
 }
 .docs-main .terminal .hr-red {
-    border-top-color: #7f3a3a;
+    border-top-color: var(--theme-terminal-danger-border);
 }
 /* code gutter (failure output) — continuous vertical rule beside line numbers */
 .docs-main .terminal .cl {
@@ -592,8 +692,8 @@ html.light {
     --tw-prose-invert-quote-borders: var(--theme-accent);
     --tw-prose-invert-captions: var(--theme-prose-caption);
     --tw-prose-invert-code: var(--theme-prose-inline-code);
-    --tw-prose-invert-pre-code: var(--color-zinc-300);
-    --tw-prose-invert-pre-bg: var(--color-zinc-900);
+    --tw-prose-invert-pre-code: var(--theme-code-text);
+    --tw-prose-invert-pre-bg: var(--theme-code-bg);
     --tw-prose-invert-th-borders: var(--theme-border);
     --tw-prose-invert-td-borders: var(--theme-border);
 }
