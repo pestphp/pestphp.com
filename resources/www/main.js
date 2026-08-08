@@ -32,7 +32,9 @@ document.addEventListener('alpine:init', () => {
         apply() {
             this.light = this.mode === 'light' || (this.mode === 'system' && systemTheme.matches);
             document.documentElement.classList.toggle('light', this.light);
+            document.documentElement.classList.toggle('dark', !this.light);
             document.querySelector('meta[name="theme-color"]').content = this.light ? '#ffffff' : '#18181b';
+            document.querySelector('meta[name="color-scheme"]').content = this.light ? 'light' : 'dark';
         },
         setMode(mode) {
             this.mode = ['dark', 'light', 'system'].includes(mode) ? mode : 'dark';

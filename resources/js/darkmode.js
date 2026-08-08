@@ -44,6 +44,7 @@ export default () => ({
         document.documentElement.classList.toggle('light', light);
         document.documentElement.classList.toggle('dark', !light);
         document.querySelector('meta[name="theme-color"]').content = light ? '#ffffff' : '#18181b';
+        document.querySelector('meta[name="color-scheme"]').content = light ? 'light' : 'dark';
     },
     setMode(mode) {
         this.mode = ['dark', 'light', 'system'].includes(mode) ? mode : 'dark';

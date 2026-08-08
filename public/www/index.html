@@ -19,8 +19,21 @@
         <link rel="apple-touch-icon" href="/www/apple-touch-icon.png" sizes="180x180">
         <link rel="manifest" href="/www/site.webmanifest">
         <meta name="theme-color" content="#18181b">
-        <meta name="color-scheme" content="dark light">
-        <script>try { const t = localStorage.theme; const l = t === 'light' || (t === 'system' && matchMedia('(prefers-color-scheme: light)').matches); if (l) document.documentElement.classList.add('light'); document.querySelector('meta[name="theme-color"]').content = l ? '#ffffff' : '#18181b'; } catch (e) {}</script>
+        <meta name="color-scheme" content="dark">
+        <script>
+            (() => {
+                let theme = 'dark';
+
+                try { theme = ['dark', 'light', 'system'].includes(localStorage.theme) ? localStorage.theme : 'dark'; } catch (e) {}
+
+                const light = theme === 'light' || (theme === 'system' && matchMedia('(prefers-color-scheme: light)').matches);
+
+                document.documentElement.classList.toggle('light', light);
+                document.documentElement.classList.toggle('dark', !light);
+                document.querySelector('meta[name="theme-color"]').content = light ? '#ffffff' : '#18181b';
+                document.querySelector('meta[name="color-scheme"]').content = light ? 'light' : 'dark';
+            })();
+        </script>
         <meta name="apple-mobile-web-app-title" content="Pest">
 
         <!-- Open Graph -->
@@ -85,7 +98,7 @@
         }
         </script>
         <script>try { if (+sessionStorage.getItem('pest-scroll') > 100) document.documentElement.classList.add('no-intro'); } catch (e) {}</script>
-      <script type="module" crossorigin src="/www/index.57b64d18.js"></script>
+      <script type="module" crossorigin src="/www/index.8b2006f2.js"></script>
       <link rel="stylesheet" href="/www/index-ba7b869f.css">
     </head>
 

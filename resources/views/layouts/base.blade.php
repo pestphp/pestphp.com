@@ -42,7 +42,7 @@
     <link rel="apple-touch-icon" href="/www/apple-touch-icon.png" sizes="180x180">
     <link rel="manifest" href="/www/site.webmanifest">
     <meta name="theme-color" content="#18181b">
-    <meta name="color-scheme" content="dark light">
+    <meta name="color-scheme" content="dark">
     <script>
         (() => {
             let theme = 'dark';
@@ -54,6 +54,7 @@
             document.documentElement.classList.toggle('light', light);
             document.documentElement.classList.toggle('dark', !light);
             document.querySelector('meta[name="theme-color"]').content = light ? '#ffffff' : '#18181b';
+            document.querySelector('meta[name="color-scheme"]').content = light ? 'light' : 'dark';
         })();
     </script>
 
