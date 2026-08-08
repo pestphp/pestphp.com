@@ -95,6 +95,8 @@
     --theme-prose-body: var(--color-zinc-300);
     --theme-prose-heading: var(--color-zinc-100);
     --theme-prose-link: var(--color-rose-400);
+    --theme-partner-logo-filter: none;
+    --theme-partner-logo-opacity: 1;
 }
 
 html.light {
@@ -115,6 +117,8 @@ html.light {
     --theme-prose-body: var(--color-zinc-700);
     --theme-prose-heading: var(--color-zinc-950);
     --theme-prose-link: var(--color-rose-700);
+    --theme-partner-logo-filter: brightness(0) saturate(100%);
+    --theme-partner-logo-opacity: 0.75;
 }
 
 @layer base {
