@@ -222,38 +222,53 @@ button {
    DocSearch — blueprint theme
    ========================================================================== */
 :root {
-    --docsearch-container-background: rgba(9, 9, 11, 0.7);
-    --docsearch-primary-color: #f43f5e; /* rose-500 */
-    --docsearch-modal-background: #18181b; /* zinc-900 */
-    --docsearch-modal-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.7);
-    --docsearch-highlight-color: #f43f5e; /* rose-500 */
-    --docsearch-searchbox-background: #27272a; /* zinc-800 */
-    --docsearch-searchbox-focus-background: #27272a;
-    --docsearch-searchbox-shadow: inset 0 0 0 1px #f43f5e;
-    --docsearch-hit-background: #27272a; /* zinc-800 */
+    --theme-docsearch-container: rgb(9 9 11 / 0.7);
+    --theme-docsearch-modal-shadow: 0 24px 60px -20px rgb(0 0 0 / 0.7);
+
+    --docsearch-container-background: var(--theme-docsearch-container);
+    --docsearch-primary-color: var(--theme-accent);
+    --docsearch-modal-background: var(--theme-bg);
+    --docsearch-modal-shadow: var(--theme-docsearch-modal-shadow);
+    --docsearch-highlight-color: var(--theme-accent);
+    --docsearch-searchbox-background: var(--theme-surface-raised);
+    --docsearch-searchbox-focus-background: var(--theme-surface-raised);
+    --docsearch-searchbox-shadow: inset 0 0 0 1px var(--theme-accent);
+    --docsearch-hit-background: var(--theme-surface-raised);
     --docsearch-hit-shadow: none;
-    --docsearch-hit-color: #e4e4e7; /* zinc-200 */
-    --docsearch-hit-active-color: #ffffff;
-    --docsearch-footer-background: #18181b;
-    --docsearch-footer-shadow: inset 0 1px 0 0 #3f3f46;
-    --docsearch-muted-color: #a1a1aa; /* zinc-400 */
-    --docsearch-logo-color: #f43f5e;
-    --docsearch-text-color: #e4e4e7;
-    --docsearch-key-gradient: linear-gradient(#3f3f46, #27272a);
+    --docsearch-hit-color: var(--theme-fg);
+    --docsearch-hit-active-color: var(--theme-accent-contrast);
+    --docsearch-footer-background: var(--theme-bg);
+    --docsearch-footer-shadow: inset 0 1px 0 0 var(--theme-border);
+    --docsearch-muted-color: var(--theme-muted);
+    --docsearch-logo-color: var(--theme-accent);
+    --docsearch-text-color: var(--theme-fg);
+    --docsearch-icon-color: var(--theme-muted);
+    --docsearch-key-gradient: linear-gradient(var(--theme-border), var(--theme-surface-raised));
     --docsearch-key-shadow: none;
+    --docsearch-key-pressed-shadow: none;
+}
+
+html.light {
+    --theme-docsearch-container: rgb(24 24 27 / 0.35);
+    --theme-docsearch-modal-shadow: 0 24px 60px -20px rgb(24 24 27 / 0.18);
 }
 
 .DocSearch-Container {
     @apply backdrop-blur-sm;
 }
 .DocSearch-Modal {
-    @apply rounded-2xl border border-zinc-700 text-zinc-200 shadow-2xl;
+    @apply rounded-2xl border text-[var(--theme-fg)] shadow-2xl;
+    border-color: var(--theme-border);
 }
 .DocSearch-Form {
     @apply relative z-50 rounded-xl;
 }
 .DocSearch-Hit a {
-    @apply rounded-lg border border-zinc-700 shadow-none;
+    @apply rounded-lg border shadow-none;
+    border-color: var(--theme-border);
+}
+.DocSearch-Hit[aria-selected='true'] a {
+    border-color: var(--theme-accent);
 }
 .DocSearch-Screen-Icon {
     display: none;
@@ -269,16 +284,22 @@ button {
     }
 }
 .DocSearch-Button {
-    @apply flex h-9 w-full cursor-pointer items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800 px-2.5 font-medium text-zinc-400 transition-colors sm:w-56;
+    @apply flex h-9 w-full cursor-pointer items-center gap-2 rounded-lg border px-2.5 font-medium transition-colors sm:w-56;
+    border-color: var(--theme-border);
+    background: var(--theme-surface-raised);
+    color: var(--theme-muted);
     margin: 0;
 }
 .DocSearch-Button:hover,
 .DocSearch-Button:focus {
-    @apply border-zinc-200/20 text-zinc-200 shadow-none;
-    background: var(--color-zinc-800);
+    @apply shadow-none;
+    border-color: color-mix(in srgb, var(--theme-fg) 20%, transparent);
+    background: var(--theme-surface-raised);
+    color: var(--theme-fg);
 }
 .DocSearch-Button .DocSearch-Search-Icon {
-    @apply size-4 text-zinc-500;
+    @apply size-4;
+    color: var(--theme-muted);
 }
 .DocSearch-Button-Container {
     @apply flex items-center gap-2;
@@ -291,10 +312,12 @@ button {
     @apply ml-auto flex min-w-0 items-center gap-0.5;
 }
 .DocSearch-Button-Key {
-    @apply rounded-sm border border-zinc-700 bg-zinc-900 px-1 py-px font-sans text-zinc-400;
+    @apply rounded-sm border px-1 py-px font-sans;
+    border-color: var(--theme-border);
+    color: var(--theme-muted);
     top: auto;
     box-shadow: none;
-    background: var(--color-zinc-900);
+    background: var(--theme-surface-inset);
     width: auto;
     height: auto;
     margin: 0;
