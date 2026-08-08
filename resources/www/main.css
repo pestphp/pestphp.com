@@ -135,8 +135,10 @@
     --theme-surface-raised: var(--color-zinc-800);
     --theme-surface-inset: var(--color-zinc-900);
     --theme-overlay: rgba(24, 24, 27, 0.8);
-    --theme-accent: var(--color-rose-500);
-    --theme-accent-hover: var(--color-rose-600);
+    --theme-accent: var(--color-rose-400);
+    --theme-accent-hover: var(--color-rose-300);
+    --theme-accent-fill: var(--color-rose-700);
+    --theme-accent-fill-hover: var(--color-rose-800);
     --theme-accent-contrast: var(--color-white);
     --theme-code-panel: var(--color-zinc-800);
     --theme-code-terminal: var(--color-zinc-900);
@@ -145,7 +147,7 @@
     --theme-code-tab-active: var(--color-zinc-200);
     --theme-code-accent: var(--color-rose-500);
     --theme-code-text: var(--color-zinc-300);
-    --theme-code-muted: var(--color-zinc-500);
+    --theme-code-muted: var(--color-zinc-400);
     --theme-code-function: var(--color-green-400);
     --theme-code-string: var(--color-yellow-200);
     --theme-code-keyword: var(--color-pink-400);
@@ -165,20 +167,20 @@
     --theme-hero-scanline: rgb(24 24 27 / 0.45);
     --theme-partner-logo-filter: none;
     --theme-partner-logo-opacity: 1;
-    --theme-faint: var(--color-zinc-500);
+    --theme-faint: var(--color-zinc-400);
     --theme-placeholder: var(--color-zinc-700);
     --theme-placeholder-strong: var(--color-zinc-600);
     --theme-accent-soft: var(--color-rose-400);
     --theme-danger: var(--color-red-400);
     --theme-danger-strong: var(--color-red-500);
-    --theme-danger-bg: var(--color-red-500);
+    --theme-danger-bg: var(--color-red-400);
     --theme-danger-fg: var(--color-zinc-900);
     --theme-warning: var(--color-yellow-400);
-    --theme-success-bg: var(--color-green-600);
+    --theme-success-bg: var(--color-green-700);
     --theme-success-bar: var(--color-green-500);
     --theme-success-fg: var(--color-white);
     --theme-failure-text: var(--color-slate-200);
-    --theme-failure-muted: var(--color-slate-500);
+    --theme-failure-muted: var(--color-slate-400);
     --theme-avatar-outline: rgb(255 255 255 / 0.1);
     --theme-stack-tile-bg: transparent;
     --theme-stack-tile-border: var(--color-zinc-700);
@@ -195,8 +197,10 @@ html.light {
     --theme-surface-raised: var(--color-zinc-50);
     --theme-surface-inset: var(--color-zinc-100);
     --theme-overlay: rgb(250 250 250 / 0.82);
-    --theme-accent: var(--color-rose-500);
-    --theme-accent-hover: var(--color-rose-600);
+    --theme-accent: var(--color-rose-700);
+    --theme-accent-hover: var(--color-rose-800);
+    --theme-accent-fill: var(--color-rose-700);
+    --theme-accent-fill-hover: var(--color-rose-800);
     --theme-accent-contrast: var(--color-white);
     --theme-code-panel: var(--color-zinc-50);
     --theme-code-terminal: var(--color-zinc-100);
@@ -206,14 +210,14 @@ html.light {
     --theme-code-accent: var(--color-rose-500);
     --theme-code-text: var(--color-zinc-800);
     --theme-code-muted: var(--color-zinc-600);
-    --theme-code-function: var(--color-green-700);
+    --theme-code-function: var(--color-green-800);
     --theme-code-string: var(--color-yellow-800);
     --theme-code-keyword: var(--color-pink-700);
     --theme-code-variable: var(--color-zinc-950);
-    --theme-code-class: var(--color-cyan-700);
+    --theme-code-class: var(--color-cyan-800);
     --theme-code-number: var(--color-violet-700);
-    --theme-code-success: var(--color-green-700);
-    --theme-code-pass-bg: var(--color-green-600);
+    --theme-code-success: var(--color-green-800);
+    --theme-code-pass-bg: var(--color-green-700);
     --theme-code-pass-fg: var(--color-white);
     --theme-code-shadow: rgb(24 24 27 / 0.12);
     --theme-grid-line: var(--color-zinc-200);
@@ -228,13 +232,13 @@ html.light {
     --theme-faint: var(--color-zinc-600);
     --theme-placeholder: var(--color-zinc-200);
     --theme-placeholder-strong: var(--color-zinc-300);
-    --theme-accent-soft: var(--color-rose-600);
+    --theme-accent-soft: var(--color-rose-700);
     --theme-danger: var(--color-red-700);
     --theme-danger-strong: var(--color-red-600);
-    --theme-danger-bg: var(--color-red-600);
+    --theme-danger-bg: var(--color-red-700);
     --theme-danger-fg: var(--color-white);
     --theme-warning: var(--color-yellow-700);
-    --theme-success-bg: var(--color-green-600);
+    --theme-success-bg: var(--color-green-700);
     --theme-success-bar: var(--color-green-600);
     --theme-success-fg: var(--color-white);
     --theme-failure-text: var(--color-zinc-800);
@@ -395,10 +399,10 @@ button {
     color: var(--theme-accent-soft);
 }
 [data-theme-section] .bg-rose-500 {
-    background-color: var(--theme-accent);
+    background-color: var(--theme-accent-fill);
 }
 [data-theme-section] .hover\:bg-rose-600:hover {
-    background-color: var(--theme-accent-hover);
+    background-color: var(--theme-accent-fill-hover);
 }
 [data-theme-section] .text-white {
     color: var(--theme-accent-contrast);
@@ -466,6 +470,11 @@ button {
     color: var(--theme-fg);
 }
 [data-theme-section] :is(a, button):focus-visible {
+    outline: 2px solid var(--theme-accent);
+    outline-offset: 3px;
+}
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
     outline: 2px solid var(--theme-accent);
     outline-offset: 3px;
 }

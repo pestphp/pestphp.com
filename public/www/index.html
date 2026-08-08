@@ -98,11 +98,11 @@
         }
         </script>
         <script>try { if (+sessionStorage.getItem('pest-scroll') > 100) document.documentElement.classList.add('no-intro'); } catch (e) {}</script>
-      <script type="module" crossorigin src="/www/index.8b2006f2.js"></script>
-      <link rel="stylesheet" href="/www/index-ba7b869f.css">
+      <script type="module" crossorigin src="/www/index.4ac7f03c.js"></script>
+      <link rel="stylesheet" href="/www/index-033478c1.css">
     </head>
 
-    <body x-data="{ mobileMenuIsOpen: false }" class="font-synthesis-none overflow-x-clip bg-[var(--theme-bg)] font-sans text-[var(--theme-fg)] antialiased selection:bg-rose-600 selection:text-white">
+    <body x-data="{ mobileMenuIsOpen: false }" class="font-synthesis-none overflow-x-clip bg-[var(--theme-bg)] font-sans text-[var(--theme-fg)] antialiased selection:bg-[var(--theme-accent-fill)] selection:text-[var(--theme-accent-contrast)]">
 
         <header class="motion-preset-fade lg:motion-delay-[1100ms] motion-reduce:animate-none sticky top-0 z-50 border-b border-[var(--theme-border)] bg-[var(--theme-overlay)] backdrop-blur-md">
             <nav aria-label="Main" class="h-15.5 container mx-auto flex items-center gap-7 px-5 sm:px-10">
@@ -207,7 +207,7 @@
                     </svg>
                     <span x-text="`Theme: ${$store.theme.mode}`">Theme: dark</span>
                 </button>
-                <a class="active:scale-96 mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--theme-accent)] px-4 py-2.5 text-sm font-semibold text-[var(--theme-accent-contrast)] transition-[background-color,scale] hover:bg-[var(--theme-accent-hover)]" href="/docs/installation">Start testing</a>
+                <a class="active:scale-96 mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--theme-accent-fill)] px-4 py-2.5 text-sm font-semibold text-[var(--theme-accent-contrast)] transition-[background-color,scale] hover:bg-[var(--theme-accent-fill-hover)]" href="/docs/installation">Start testing</a>
             </div>
         </div>
 
@@ -255,7 +255,7 @@
                         </h1>
                         <p class="motion-preset-slide-up motion-delay-200 lg:motion-delay-[1300ms] motion-reduce:animate-none mb-7 max-w-[48ch] text-pretty text-lg text-[var(--theme-muted)]">Pest brings the joy of testing to PHP — for you and your coding agents. Browser testing and AI evals are built in, and agents verify their own work, end to end.</p>
                         <div class="motion-preset-slide-up motion-delay-300 lg:motion-delay-[1400ms] motion-reduce:animate-none flex flex-wrap items-center gap-3">
-                            <a class="active:scale-96 inline-flex items-center gap-2 rounded-xl bg-[var(--theme-accent)] px-4 py-2.5 text-sm font-semibold text-[var(--theme-accent-contrast)] transition-[background-color,scale] hover:bg-[var(--theme-accent-hover)]" href="/docs/installation">Start testing</a>
+                            <a class="active:scale-96 inline-flex items-center gap-2 rounded-xl bg-[var(--theme-accent-fill)] px-4 py-2.5 text-sm font-semibold text-[var(--theme-accent-contrast)] transition-[background-color,scale] hover:bg-[var(--theme-accent-fill-hover)]" href="/docs/installation">Start testing</a>
                             <a class="active:scale-96 inline-flex items-center gap-2 rounded-xl border border-[var(--theme-border)] bg-[var(--theme-surface-raised)] px-4 py-2.5 text-sm font-semibold text-[var(--theme-fg)] transition-[background-color,border-color,scale] hover:border-[var(--theme-muted)] hover:bg-[var(--theme-surface-inset)]" href="https://github.com/pestphp/pest">Source code</a>
                         </div>
                     </div>
@@ -798,15 +798,15 @@
                         <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="/docs/custom-expectations">Custom Expectations</a></li>
                         <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="/docs/mocking">Mocking</a></li>
                         <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="/docs/snapshot-testing">Snapshot Testing</a></li>
-                        <li><a class="inline-flex items-center text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="/docs/browser-testing">Browser Testing<span class="text-3xs ml-1.5 rounded-full bg-rose-500 px-1.5 py-px font-mono font-bold uppercase tracking-wide text-white no-underline">new</span></a></li>
-                        <li><a class="inline-flex items-center text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="/docs/agent">Agent<span class="text-3xs ml-1.5 rounded-full bg-rose-500 px-1.5 py-px font-mono font-bold uppercase tracking-wide text-white no-underline">new</span></a></li>
+                        <li><a class="inline-flex items-center text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="/docs/browser-testing">Browser Testing<span class="text-3xs ml-1.5 rounded-full bg-[var(--theme-accent-fill)] px-1.5 py-px font-mono font-bold uppercase tracking-wide text-white no-underline">new</span></a></li>
+                        <li><a class="inline-flex items-center text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="/docs/agent">Agent<span class="text-3xs ml-1.5 rounded-full bg-[var(--theme-accent-fill)] px-1.5 py-px font-mono font-bold uppercase tracking-wide text-white no-underline">new</span></a></li>
                         <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="/docs/arch-testing">Architecture Testing</a></li>
                         <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="/docs/stress-testing">Stress Testing</a></li>
-                        <li><a class="inline-flex items-center text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="/docs/evals">Evals<span class="text-3xs ml-1.5 rounded-full bg-rose-500 px-1.5 py-px font-mono font-bold uppercase tracking-wide text-white no-underline">new</span></a></li>
+                        <li><a class="inline-flex items-center text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="/docs/evals">Evals<span class="text-3xs ml-1.5 rounded-full bg-[var(--theme-accent-fill)] px-1.5 py-px font-mono font-bold uppercase tracking-wide text-white no-underline">new</span></a></li>
                         <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="/docs/test-coverage">Test Coverage</a></li>
                         <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="/docs/type-coverage">Type Coverage</a></li>
                         <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="/docs/mutation-testing">Mutation Testing</a></li>
-                        <li><a class="inline-flex items-center text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="/docs/tia">Tia Engine<span class="text-3xs ml-1.5 rounded-full bg-rose-500 px-1.5 py-px font-mono font-bold uppercase tracking-wide text-white no-underline">new</span></a></li>
+                        <li><a class="inline-flex items-center text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="/docs/tia">Tia Engine<span class="text-3xs ml-1.5 rounded-full bg-[var(--theme-accent-fill)] px-1.5 py-px font-mono font-bold uppercase tracking-wide text-white no-underline">new</span></a></li>
                         <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="/docs/rector">Rector</a></li>
                         <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="/docs/phpstan">PHPStan</a></li>
                         <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="/docs/plugins">Plugins</a></li>

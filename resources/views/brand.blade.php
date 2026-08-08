@@ -39,7 +39,7 @@
                     Logos, wordmarks, and the colors that hold them together. Copy any asset as SVG, or grab the file. Please keep the marks intact — the shapes and colors below are the whole kit.
                 </p>
                 <div class="mt-7 flex flex-wrap items-center gap-3">
-                    <button @click="copy('wordmark-white')" class="active:scale-96 inline-flex items-center gap-2 rounded-full bg-[var(--theme-accent)] px-4 py-2.5 text-sm font-semibold text-[var(--theme-accent-contrast)] transition-[background-color,scale] hover:bg-[var(--theme-accent-hover)]" type="button">
+                    <button @click="copy('wordmark-white')" class="active:scale-96 inline-flex items-center gap-2 rounded-full bg-[var(--theme-accent-fill)] px-4 py-2.5 text-sm font-semibold text-[var(--theme-accent-contrast)] transition-[background-color,scale] hover:bg-[var(--theme-accent-fill-hover)]" type="button">
                         <svg class="size-4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" stroke="currentColor" viewBox="0 0 24 24">
                             <rect height="11" rx="2" width="11" x="9" y="9" />
                             <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
