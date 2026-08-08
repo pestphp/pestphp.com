@@ -50,7 +50,8 @@
    Pest 5 — "Blueprint Terminal" design system, documentation edition.
    Shares the tokens, palette and motifs of the landing page (resources/www),
    adjusted for long-form docs: readable prose, a blueprint sidebar and
-   terminal-styled code blocks. Dark-only — no `dark:` variants.
+   terminal-styled code blocks. Dark is the default; `html.light` overrides
+   the semantic theme properties below.
    ========================================================================== */
 
 @theme {

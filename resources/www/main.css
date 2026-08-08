@@ -140,7 +140,7 @@
     --theme-accent-fill: var(--color-rose-700);
     --theme-accent-fill-hover: var(--color-rose-800);
     --theme-accent-contrast: var(--color-white);
-    --theme-code-panel: var(--color-zinc-800);
+    --theme-code-bg: var(--color-zinc-800);
     --theme-code-terminal: var(--color-zinc-900);
     --theme-code-border: var(--color-zinc-700);
     --theme-code-tab-muted: var(--color-zinc-400);
@@ -202,7 +202,7 @@ html.light {
     --theme-accent-fill: var(--color-rose-700);
     --theme-accent-fill-hover: var(--color-rose-800);
     --theme-accent-contrast: var(--color-white);
-    --theme-code-panel: var(--color-zinc-50);
+    --theme-code-bg: var(--color-zinc-50);
     --theme-code-terminal: var(--color-zinc-100);
     --theme-code-border: var(--color-zinc-200);
     --theme-code-tab-muted: var(--color-zinc-600);
@@ -486,7 +486,7 @@ button {
     border-color: var(--theme-stack-tile-border-hover);
 }
 
-/* tippy.js — "pest" blueprint tooltip theme (dark, mono, hairline border) */
+/* tippy.js — theme-aware "pest" blueprint tooltip (mono, hairline border) */
 .tippy-box[data-theme~='pest'] {
     background-color: var(--theme-surface-raised);
     border: 1px solid var(--theme-border);
