@@ -20,6 +20,9 @@
                 <a class="font-medium underline-offset-4 transition-colors hover:text-[var(--theme-fg)] hover:underline" href="https://pinkary.com/@nunomaduro" target="_blank" rel="noopener">Nuno Maduro</a>.
                 Designed by
                 <a class="font-medium underline-offset-4 transition-colors hover:text-[var(--theme-fg)] hover:underline" href="https://nunoguerra.com/?ref=pestphp" target="_blank" rel="noopener">Nuno Guerra</a>.
+                Light mode by
+                <a class="font-medium underline-offset-4 transition-colors hover:text-[var(--theme-fg)] hover:underline" href="https://troccoli.it" target="_blank" rel="noopener">Giulio Troccoli-Allard</a>
+                and Codex.
             </div>
             <div class="flex items-center gap-5 font-mono">
                 <a class="underline-offset-4 transition-colors hover:text-[var(--theme-fg)] hover:underline" href="/llms.txt">/llms.txt</a>
