@@ -185,13 +185,14 @@ button {
     height: 8px;
 }
 .scrollbar::-webkit-scrollbar-track {
-    @apply bg-zinc-900;
+    background: var(--theme-bg);
 }
 .scrollbar::-webkit-scrollbar-thumb {
-    @apply rounded-full bg-rose-500;
+    @apply rounded-full;
+    background: var(--theme-accent);
 }
 .scrollbar::-webkit-scrollbar-thumb:hover {
-    @apply bg-rose-400;
+    background: var(--theme-accent-hover);
 }
 
 /* ==========================================================================
@@ -706,26 +707,31 @@ button {
 
 /* Section labels — mono, uppercase, // prefixed */
 .docs-nav h2 {
-    @apply mb-3 mt-9 flex items-center font-mono text-2xs font-bold uppercase tracking-widest text-zinc-500;
+    @apply mb-3 mt-9 flex items-center font-mono text-2xs font-bold uppercase tracking-widest;
+    color: var(--theme-muted);
 }
 .docs-nav > ul > li:first-child > h2 {
     @apply mt-0;
 }
 .docs-nav h2::before {
     content: '// ';
-    @apply mr-1 text-rose-500;
+    @apply mr-1;
+    color: var(--theme-accent);
 }
 
 .docs-nav ul li {
     @apply mb-1;
 }
 .docs-nav ul li a {
-    @apply flex items-center py-1 font-sans text-sm font-normal text-zinc-400 no-underline underline-offset-4 transition-colors;
+    @apply flex items-center py-1 font-sans text-sm font-normal no-underline underline-offset-4 transition-colors;
+    color: var(--theme-muted);
 }
 .docs-nav ul li a:focus,
 .docs-nav ul li a:hover {
-    @apply text-white underline;
+    @apply underline;
+    color: var(--theme-fg);
 }
 .docs-nav ul li.active a {
-    @apply font-semibold text-white underline;
+    @apply font-semibold underline;
+    color: var(--theme-fg);
 }

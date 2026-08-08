@@ -13,7 +13,7 @@
         x-transition:leave="transition-opacity ease-in duration-150"
         x-transition:leave-start="opacity-100"
         x-transition:leave-end="opacity-0"
-        class="fixed inset-0 z-40 bg-zinc-900/80 backdrop-blur-sm lg:hidden"
+        class="fixed inset-0 z-40 bg-[var(--theme-overlay)] backdrop-blur-sm lg:hidden"
     ></div>
 
     <div
@@ -25,12 +25,12 @@
         x-transition:leave="transition ease-in-out duration-200 transform"
         x-transition:leave-start="translate-x-0"
         x-transition:leave-end="translate-x-full"
-        class="scrollbar-ghost fixed inset-y-0 right-0 z-50 flex w-full max-w-xs flex-col overflow-y-auto border-l border-zinc-700 bg-zinc-900 px-6 py-5 lg:sticky lg:inset-auto lg:top-15.5 lg:z-0 lg:h-[calc(100vh-3.875rem)] lg:max-w-none lg:translate-x-0 lg:border-l-0 lg:bg-transparent lg:px-5 lg:py-8"
+        class="scrollbar-ghost fixed inset-y-0 right-0 z-50 flex w-full max-w-xs flex-col overflow-y-auto border-l border-[var(--theme-border)] bg-[var(--theme-bg)] px-6 py-5 text-[var(--theme-fg)] lg:sticky lg:inset-auto lg:top-15.5 lg:z-0 lg:h-[calc(100vh-3.875rem)] lg:max-w-none lg:translate-x-0 lg:border-l-0 lg:bg-transparent lg:px-5 lg:py-8"
     >
         {{-- mobile drawer header --}}
         <div class="mb-6 flex items-center justify-between lg:hidden">
-            <span class="font-mono text-xs tracking-widest text-zinc-400"><span class="font-bold text-rose-500">//</span> documentation</span>
-            <button @click="close()" type="button" aria-label="Close navigation" class="active:scale-96 flex size-8 items-center justify-center text-zinc-400 transition hover:text-zinc-200">
+            <span class="font-mono text-xs tracking-widest text-[var(--theme-muted)]"><span class="font-bold text-[var(--theme-accent)]">//</span> documentation</span>
+            <button @click="close()" type="button" aria-label="Close navigation" class="active:scale-96 flex size-8 items-center justify-center text-[var(--theme-muted)] transition hover:text-[var(--theme-fg)]">
                 <svg class="size-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                     <path d="M6 18 18 6M6 6l12 12" />
                 </svg>
