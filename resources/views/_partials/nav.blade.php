@@ -12,7 +12,7 @@
                 <div x-show="open" x-cloak x-transition.opacity.duration.150ms
                     @click.outside="open = false" @keydown.escape.window="open = false" @contextmenu.prevent.stop
                     :style="`left:${x}px;top:${y}px`"
-                    class="fixed z-[100] w-56 overflow-hidden rounded-xl border border-[var(--theme-border)] bg-[var(--theme-surface-raised)] py-1.5 shadow-2xl shadow-black/40">
+                    class="fixed z-[100] w-56 overflow-hidden rounded-xl border border-[var(--theme-border)] bg-[var(--theme-surface-raised)] py-1.5 shadow-2xl shadow-[color:var(--theme-shadow)]">
                     <button type="button" @click="copy('logomark')" class="flex w-full items-center gap-3 px-3 py-2 text-left text-sm text-[var(--theme-fg)] hover:bg-[var(--theme-fg)]/5">
                         <svg class="size-4 shrink-0" fill="none" viewBox="0 0 240 220" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M36.844 61.111 51.014 0H240l-32.594 140.556H81.417L62.995 220H0L32.593 79.445h125.989l4.252-18.334z"/></svg>
                         Copy Logo as SVG
