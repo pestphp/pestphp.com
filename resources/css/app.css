@@ -95,6 +95,15 @@
     --theme-prose-body: var(--color-zinc-300);
     --theme-prose-heading: var(--color-zinc-100);
     --theme-prose-link: var(--color-rose-400);
+    --theme-prose-link-hover: var(--color-rose-300);
+    --theme-prose-strong: var(--color-zinc-100);
+    --theme-prose-counter: var(--color-zinc-500);
+    --theme-prose-bullet: var(--color-zinc-600);
+    --theme-prose-quote: var(--color-zinc-200);
+    --theme-prose-quote-bg: rgb(39 39 42 / 0.4);
+    --theme-prose-caption: var(--color-zinc-500);
+    --theme-prose-inline-code: var(--color-zinc-200);
+    --theme-prose-inline-code-bg: var(--color-zinc-800);
     --theme-partner-logo-filter: none;
     --theme-partner-logo-opacity: 1;
 }
@@ -117,6 +126,15 @@ html.light {
     --theme-prose-body: var(--color-zinc-700);
     --theme-prose-heading: var(--color-zinc-950);
     --theme-prose-link: var(--color-rose-700);
+    --theme-prose-link-hover: var(--color-rose-600);
+    --theme-prose-strong: var(--color-zinc-950);
+    --theme-prose-counter: var(--color-zinc-600);
+    --theme-prose-bullet: var(--color-zinc-400);
+    --theme-prose-quote: var(--color-zinc-800);
+    --theme-prose-quote-bg: var(--color-zinc-50);
+    --theme-prose-caption: var(--color-zinc-600);
+    --theme-prose-inline-code: var(--color-zinc-800);
+    --theme-prose-inline-code-bg: var(--color-zinc-100);
     --theme-partner-logo-filter: brightness(0) saturate(100%);
     --theme-partner-logo-opacity: 0.75;
 }
@@ -330,7 +348,10 @@ html.light {
 
 /* Inline code */
 .docs-main :not(pre) > code {
-    @apply rounded-md border border-zinc-700 bg-zinc-800 px-1.5 py-0.5 font-mono text-[0.85em] font-normal text-zinc-200;
+    @apply rounded-md border px-1.5 py-0.5 font-mono text-[0.85em] font-normal;
+    border-color: var(--theme-border);
+    background: var(--theme-prose-inline-code-bg);
+    color: var(--theme-prose-inline-code);
 }
 /* Kill Tailwind Typography's backtick pseudo-elements */
 .docs-main code::before,
@@ -559,22 +580,22 @@ html.light {
    Documentation content — prose (Tailwind Typography, retuned to blueprint)
    ========================================================================== */
 .docs-main {
-    --tw-prose-invert-body: var(--color-zinc-300);
-    --tw-prose-invert-headings: var(--color-zinc-100);
-    --tw-prose-invert-lead: var(--color-zinc-400);
-    --tw-prose-invert-links: var(--color-rose-400);
-    --tw-prose-invert-bold: var(--color-zinc-100);
-    --tw-prose-invert-counters: var(--color-zinc-500);
-    --tw-prose-invert-bullets: var(--color-zinc-600);
-    --tw-prose-invert-hr: var(--color-zinc-700);
-    --tw-prose-invert-quotes: var(--color-zinc-200);
-    --tw-prose-invert-quote-borders: var(--color-rose-500);
-    --tw-prose-invert-captions: var(--color-zinc-500);
-    --tw-prose-invert-code: var(--color-zinc-100);
+    --tw-prose-invert-body: var(--theme-prose-body);
+    --tw-prose-invert-headings: var(--theme-prose-heading);
+    --tw-prose-invert-lead: var(--theme-muted);
+    --tw-prose-invert-links: var(--theme-prose-link);
+    --tw-prose-invert-bold: var(--theme-prose-strong);
+    --tw-prose-invert-counters: var(--theme-prose-counter);
+    --tw-prose-invert-bullets: var(--theme-prose-bullet);
+    --tw-prose-invert-hr: var(--theme-border);
+    --tw-prose-invert-quotes: var(--theme-prose-quote);
+    --tw-prose-invert-quote-borders: var(--theme-accent);
+    --tw-prose-invert-captions: var(--theme-prose-caption);
+    --tw-prose-invert-code: var(--theme-prose-inline-code);
     --tw-prose-invert-pre-code: var(--color-zinc-300);
     --tw-prose-invert-pre-bg: var(--color-zinc-900);
-    --tw-prose-invert-th-borders: var(--color-zinc-700);
-    --tw-prose-invert-td-borders: var(--color-zinc-700);
+    --tw-prose-invert-th-borders: var(--theme-border);
+    --tw-prose-invert-td-borders: var(--theme-border);
 }
 
 /* Headings use the display grotesque, stretched, per the design system */
@@ -591,16 +612,20 @@ html.light {
     word-break: break-word;
 }
 .docs-main h1 {
-    @apply mb-8 mt-0 text-4xl font-extrabold leading-[1.05] text-zinc-100 sm:text-[2.75rem];
+    @apply mb-8 mt-0 text-4xl font-extrabold leading-[1.05] sm:text-[2.75rem];
+    color: var(--theme-prose-heading);
 }
 .docs-main h2 {
-    @apply relative mb-4 mt-14 text-3xl font-extrabold text-zinc-100;
+    @apply relative mb-4 mt-14 text-3xl font-extrabold;
+    color: var(--theme-prose-heading);
 }
 .docs-main h3 {
-    @apply relative mb-3 mt-10 text-xl font-bold text-zinc-100;
+    @apply relative mb-3 mt-10 text-xl font-bold;
+    color: var(--theme-prose-heading);
 }
 .docs-main h4 {
-    @apply relative mb-2 mt-8 text-lg font-bold text-zinc-100;
+    @apply relative mb-2 mt-8 text-lg font-bold;
+    color: var(--theme-prose-heading);
 }
 
 /* Heading permalinks (# anchor) — rose, revealed on hover */
@@ -608,7 +633,8 @@ html.light {
     display: none;
 }
 .docs-main :is(h2, h3, h4) a.heading-permalink {
-    @apply absolute font-mono font-normal text-rose-500 no-underline opacity-0 transition-opacity;
+    @apply absolute font-mono font-normal no-underline opacity-0 transition-opacity;
+    color: var(--theme-accent);
     left: -1.1em;
     padding-right: 0.4em;
 }
@@ -619,11 +645,13 @@ html.light {
 
 /* Links */
 .docs-main a {
-    @apply font-medium text-rose-400 underline underline-offset-4 transition-colors;
+    @apply font-medium underline underline-offset-4 transition-colors;
+    color: var(--theme-prose-link);
     text-decoration-thickness: 1px;
 }
 .docs-main a:hover {
-    @apply text-rose-300 no-underline;
+    @apply no-underline;
+    color: var(--theme-prose-link-hover);
 }
 
 /* Body copy */
@@ -634,7 +662,10 @@ html.light {
 
 /* Blockquotes — rose rail callout */
 .docs-main blockquote {
-    @apply my-8 rounded-r-lg border-l-2 border-rose-500 bg-zinc-800/40 py-1 pl-4 font-normal not-italic text-zinc-300;
+    @apply my-8 rounded-r-lg border-l-2 py-1 pl-4 font-normal not-italic;
+    border-color: var(--theme-accent);
+    background: var(--theme-prose-quote-bg);
+    color: var(--theme-prose-body);
 }
 .docs-main blockquote p:first-of-type::before,
 .docs-main blockquote p:last-of-type::after {
@@ -646,12 +677,14 @@ html.light {
     @apply my-6 w-full overflow-hidden text-sm;
 }
 .docs-main thead th {
-    @apply font-mono text-xs uppercase tracking-widest text-zinc-400;
+    @apply font-mono text-xs uppercase tracking-widest;
+    color: var(--theme-muted);
 }
 
 /* Horizontal rules */
 .docs-main hr {
-    @apply my-12 border-zinc-700;
+    @apply my-12;
+    border-color: var(--theme-border);
 }
 
 /* Table-of-contents (top-of-page index list) & method lists ------------- */
@@ -670,7 +703,7 @@ html.light {
     @apply block no-underline;
 }
 .docs-main .collection-method-list ul li a code {
-    @apply text-zinc-300;
+    color: var(--theme-prose-inline-code);
 }
 
 .docs-main .content-list ul {
@@ -682,7 +715,8 @@ html.light {
 }
 .docs-main .content-list ul li::before {
     content: '';
-    @apply absolute left-1 top-[0.7em] size-1.5 rounded-full border border-rose-500;
+    @apply absolute left-1 top-[0.7em] size-1.5 rounded-full border;
+    border-color: var(--theme-accent);
 }
 
 .docs-main #toc ul,
@@ -696,16 +730,17 @@ html.light {
 }
 .docs-main #toc ul li a,
 .docs-main h1 + ul li a {
-    @apply relative block py-1 font-mono text-sm font-normal text-zinc-400 no-underline transition-colors;
+    @apply relative block py-1 font-mono text-sm font-normal no-underline transition-colors;
+    color: var(--theme-muted);
 }
 .docs-main #toc ul li a:hover,
 .docs-main h1 + ul li a:hover {
-    @apply text-rose-400;
+    color: var(--theme-prose-link);
 }
 .docs-main #toc ul li a::before,
 .docs-main h1 + ul li a::before {
     content: '// ';
-    @apply text-rose-500;
+    color: var(--theme-accent);
 }
 .docs-main #toc ul ul,
 .docs-main h1 + ul ul {
@@ -714,11 +749,12 @@ html.light {
 .docs-main #toc ul ul li a::before,
 .docs-main h1 + ul ul li a::before {
     content: '- ';
-    @apply text-zinc-600;
+    color: var(--theme-prose-bullet);
 }
 
 .docs-main iframe {
-    @apply my-6 rounded-[10px] border border-zinc-700;
+    @apply my-6 rounded-[10px] border;
+    border-color: var(--theme-border);
     max-width: 100%;
     height: auto;
     aspect-ratio: 16/9;
