@@ -335,7 +335,8 @@
                         { alt: 'Zapiet', href: 'https://zapiet.com/?ref=nunomaduro', src: '/www/assets/sponsors/zapiet.svg', h: 'h-6', tier: 2 },
                         { alt: 'LoadForge', href: 'https://loadforge.com/?ref=nunomaduro', src: '/www/assets/sponsors/loadforge.svg', h: 'h-5', tier: 2 },
                         { alt: 'Route4Me', href: 'https://route4me.com/?ref=nunomaduro', src: '/www/assets/sponsors/route4me.svg', h: 'h-6', tier: 2 },
-                        { alt: 'Nerdify', href: 'https://getnerdify.com/?ref=nunomaduro', src: '/www/assets/sponsors/nerdify.png', h: 'h-9', tier: 2 }
+                        { alt: 'Nerdify', href: 'https://getnerdify.com/?ref=nunomaduro', src: '/www/assets/sponsors/nerdify.png', h: 'h-9', tier: 2 },
+                        { alt: 'Pushery', href: 'https://www.pushery.com/?ref=nunomaduro', src: '/www/assets/sponsors/pushery.svg', h: 'h-5', tier: 2 }
                     ], sponsors: [], init() { this.sponsors = [...this.shuffle(this.all.filter(s => s.tier === 1)), ...this.shuffle(this.all.filter(s => s.tier === 2))] } }">
                         <div class="animate-marquee flex w-max hover:[animation-play-state:paused] motion-reduce:animate-none">
                             <template x-for="sponsor in sponsors" :key="sponsor.alt">
