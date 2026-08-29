@@ -50,7 +50,8 @@
    Pest 5 — "Blueprint Terminal" design system, documentation edition.
    Shares the tokens, palette and motifs of the landing page (resources/www),
    adjusted for long-form docs: readable prose, a blueprint sidebar and
-   terminal-styled code blocks. Dark-only — no `dark:` variants.
+   terminal-styled code blocks. Dark is the default; `html.light` overrides
+   the semantic theme properties below.
    ========================================================================== */
 
 @theme {
@@ -75,6 +76,124 @@
             stroke-dashoffset: -400;
         }
     }
+}
+
+:root {
+    color-scheme: dark;
+
+    --theme-bg: var(--color-zinc-900);
+    --theme-fg: var(--color-zinc-200);
+    --theme-muted: var(--color-zinc-400);
+    --theme-border: var(--color-zinc-700);
+    --theme-surface-raised: var(--color-zinc-800);
+    --theme-surface-inset: var(--color-zinc-900);
+    --theme-overlay: rgb(24 24 27 / 0.8);
+    --theme-shadow: rgb(0 0 0 / 0.4);
+    --theme-accent: var(--color-rose-400);
+    --theme-accent-hover: var(--color-rose-300);
+    --theme-accent-fill: var(--color-rose-700);
+    --theme-accent-fill-hover: var(--color-rose-800);
+    --theme-accent-contrast: var(--color-white);
+    --theme-code-bg: var(--color-zinc-900);
+    --theme-code-text: var(--color-zinc-300);
+    --theme-code-border: var(--color-zinc-700);
+    --theme-code-accent: var(--color-rose-500);
+    --theme-code-accent-hover: var(--color-rose-400);
+    --theme-code-copy: var(--color-zinc-600);
+    --theme-code-copy-hover: var(--color-zinc-200);
+    --theme-terminal-green: #a2d86e;
+    --theme-terminal-red: #f08a8a;
+    --theme-terminal-amber: #f4c26b;
+    --theme-terminal-yellow: #fcdf5f;
+    --theme-terminal-blue: #82aaff;
+    --theme-terminal-violet: #c99bf5;
+    --theme-terminal-rose: #f68aa0;
+    --theme-terminal-sky: #7ec8f0;
+    --theme-terminal-strong: #e6e6e9;
+    --theme-terminal-text: #8f8f95;
+    --theme-terminal-dim: #5f5f66;
+    --theme-terminal-pass-fg: var(--color-zinc-900);
+    --theme-terminal-chip-fg: var(--color-white);
+    --theme-terminal-danger-border: #7f3a3a;
+    --theme-brand-preview-dark: var(--color-zinc-900);
+    --theme-brand-preview-dark-border: var(--color-zinc-700);
+    --theme-brand-preview-light: var(--color-zinc-100);
+    --theme-brand-preview-light-border: var(--color-zinc-200);
+    --theme-guideline-positive: var(--color-green-400);
+    --theme-guideline-positive-bg: var(--color-green-400);
+    --theme-guideline-positive-fg: var(--color-zinc-900);
+    --theme-guideline-negative: var(--color-red-400);
+    --theme-guideline-negative-bg: var(--color-red-500);
+    --theme-guideline-negative-fg: var(--color-zinc-900);
+    --theme-prose-body: var(--color-zinc-300);
+    --theme-prose-heading: var(--color-zinc-100);
+    --theme-prose-link: var(--color-rose-400);
+    --theme-prose-link-hover: var(--color-rose-300);
+    --theme-prose-strong: var(--color-zinc-100);
+    --theme-prose-counter: var(--color-zinc-500);
+    --theme-prose-bullet: var(--color-zinc-600);
+    --theme-prose-quote: var(--color-zinc-200);
+    --theme-prose-quote-bg: rgb(39 39 42 / 0.4);
+    --theme-prose-caption: var(--color-zinc-500);
+    --theme-prose-inline-code: var(--color-zinc-200);
+    --theme-prose-inline-code-bg: var(--color-zinc-800);
+    --theme-partner-logo-filter: none;
+    --theme-partner-logo-opacity: 1;
+}
+
+html.light {
+    color-scheme: light;
+
+    --theme-bg: var(--color-white);
+    --theme-fg: var(--color-zinc-950);
+    --theme-muted: var(--color-zinc-600);
+    --theme-border: var(--color-zinc-200);
+    --theme-surface-raised: var(--color-zinc-50);
+    --theme-surface-inset: var(--color-zinc-100);
+    --theme-overlay: rgb(250 250 250 / 0.82);
+    --theme-shadow: rgb(24 24 27 / 0.12);
+    --theme-accent: var(--color-rose-700);
+    --theme-accent-hover: var(--color-rose-800);
+    --theme-code-bg: var(--color-white);
+    --theme-code-text: var(--color-zinc-800);
+    --theme-code-border: var(--color-zinc-200);
+    --theme-code-accent-hover: var(--color-rose-600);
+    --theme-code-copy: var(--color-zinc-500);
+    --theme-code-copy-hover: var(--color-zinc-800);
+    --theme-terminal-green: var(--color-green-700);
+    --theme-terminal-red: var(--color-red-700);
+    --theme-terminal-amber: var(--color-yellow-700);
+    --theme-terminal-yellow: var(--color-yellow-800);
+    --theme-terminal-blue: var(--color-blue-700);
+    --theme-terminal-violet: var(--color-violet-700);
+    --theme-terminal-rose: var(--color-rose-700);
+    --theme-terminal-sky: var(--color-cyan-700);
+    --theme-terminal-strong: var(--color-zinc-950);
+    --theme-terminal-text: var(--color-zinc-700);
+    --theme-terminal-dim: var(--color-zinc-500);
+    --theme-terminal-pass-fg: var(--color-white);
+    --theme-terminal-danger-border: var(--color-red-400);
+    --theme-brand-preview-light: var(--color-white);
+    --theme-guideline-positive: var(--color-green-700);
+    --theme-guideline-positive-bg: var(--color-green-700);
+    --theme-guideline-positive-fg: var(--color-white);
+    --theme-guideline-negative: var(--color-red-700);
+    --theme-guideline-negative-bg: var(--color-red-700);
+    --theme-guideline-negative-fg: var(--color-white);
+    --theme-prose-body: var(--color-zinc-700);
+    --theme-prose-heading: var(--color-zinc-950);
+    --theme-prose-link: var(--color-rose-700);
+    --theme-prose-link-hover: var(--color-rose-600);
+    --theme-prose-strong: var(--color-zinc-950);
+    --theme-prose-counter: var(--color-zinc-600);
+    --theme-prose-bullet: var(--color-zinc-400);
+    --theme-prose-quote: var(--color-zinc-800);
+    --theme-prose-quote-bg: var(--color-zinc-50);
+    --theme-prose-caption: var(--color-zinc-600);
+    --theme-prose-inline-code: var(--color-zinc-800);
+    --theme-prose-inline-code-bg: var(--color-zinc-100);
+    --theme-partner-logo-filter: brightness(0) saturate(100%);
+    --theme-partner-logo-opacity: 0.75;
 }
 
 @layer base {
@@ -145,13 +264,14 @@ button {
     height: 8px;
 }
 .scrollbar::-webkit-scrollbar-track {
-    @apply bg-zinc-900;
+    background: var(--theme-bg);
 }
 .scrollbar::-webkit-scrollbar-thumb {
-    @apply rounded-full bg-rose-500;
+    @apply rounded-full;
+    background: var(--theme-accent);
 }
 .scrollbar::-webkit-scrollbar-thumb:hover {
-    @apply bg-rose-400;
+    background: var(--theme-accent-hover);
 }
 
 /* ==========================================================================
@@ -177,41 +297,61 @@ button {
    DocSearch — blueprint theme
    ========================================================================== */
 :root {
-    --docsearch-container-background: rgba(9, 9, 11, 0.7);
-    --docsearch-primary-color: #f43f5e; /* rose-500 */
-    --docsearch-modal-background: #18181b; /* zinc-900 */
-    --docsearch-modal-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.7);
-    --docsearch-highlight-color: #f43f5e; /* rose-500 */
-    --docsearch-searchbox-background: #27272a; /* zinc-800 */
-    --docsearch-searchbox-focus-background: #27272a;
-    --docsearch-searchbox-shadow: inset 0 0 0 1px #f43f5e;
-    --docsearch-hit-background: #27272a; /* zinc-800 */
+    --theme-docsearch-container: rgb(9 9 11 / 0.7);
+    --theme-docsearch-modal-shadow: 0 24px 60px -20px rgb(0 0 0 / 0.7);
+
+    --docsearch-container-background: var(--theme-docsearch-container);
+    --docsearch-primary-color: var(--theme-accent-fill);
+    --docsearch-modal-background: var(--theme-bg);
+    --docsearch-modal-shadow: var(--theme-docsearch-modal-shadow);
+    --docsearch-highlight-color: var(--theme-accent);
+    --docsearch-searchbox-background: var(--theme-surface-raised);
+    --docsearch-searchbox-focus-background: var(--theme-surface-raised);
+    --docsearch-searchbox-shadow: inset 0 0 0 1px var(--theme-accent);
+    --docsearch-hit-background: var(--theme-surface-raised);
     --docsearch-hit-shadow: none;
-    --docsearch-hit-color: #e4e4e7; /* zinc-200 */
-    --docsearch-hit-active-color: #ffffff;
-    --docsearch-footer-background: #18181b;
-    --docsearch-footer-shadow: inset 0 1px 0 0 #3f3f46;
-    --docsearch-muted-color: #a1a1aa; /* zinc-400 */
-    --docsearch-logo-color: #f43f5e;
-    --docsearch-text-color: #e4e4e7;
-    --docsearch-key-gradient: linear-gradient(#3f3f46, #27272a);
+    --docsearch-hit-color: var(--theme-fg);
+    --docsearch-hit-active-color: var(--theme-accent-contrast);
+    --docsearch-footer-background: var(--theme-bg);
+    --docsearch-footer-shadow: inset 0 1px 0 0 var(--theme-border);
+    --docsearch-muted-color: var(--theme-muted);
+    --docsearch-logo-color: var(--theme-accent);
+    --docsearch-text-color: var(--theme-fg);
+    --docsearch-icon-color: var(--theme-muted);
+    --docsearch-key-gradient: linear-gradient(var(--theme-border), var(--theme-surface-raised));
     --docsearch-key-shadow: none;
+    --docsearch-key-pressed-shadow: none;
+}
+
+html.light {
+    --theme-docsearch-container: rgb(24 24 27 / 0.35);
+    --theme-docsearch-modal-shadow: 0 24px 60px -20px rgb(24 24 27 / 0.18);
 }
 
 .DocSearch-Container {
     @apply backdrop-blur-sm;
 }
 .DocSearch-Modal {
-    @apply rounded-2xl border border-zinc-700 text-zinc-200 shadow-2xl;
+    @apply rounded-2xl border text-[var(--theme-fg)] shadow-2xl;
+    border-color: var(--theme-border);
 }
 .DocSearch-Form {
     @apply relative z-50 rounded-xl;
 }
 .DocSearch-Hit a {
-    @apply rounded-lg border border-zinc-700 shadow-none;
+    @apply rounded-lg border shadow-none;
+    border-color: var(--theme-border);
+}
+.DocSearch-Hit[aria-selected='true'] a {
+    border-color: var(--theme-accent);
 }
 .DocSearch-Screen-Icon {
     display: none;
+}
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+    outline: 2px solid var(--theme-accent);
+    outline-offset: 3px;
 }
 
 /* The launcher button in the header */
@@ -224,16 +364,22 @@ button {
     }
 }
 .DocSearch-Button {
-    @apply flex h-9 w-full cursor-pointer items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800 px-2.5 font-medium text-zinc-400 transition-colors sm:w-56;
+    @apply flex h-9 w-full cursor-pointer items-center gap-2 rounded-lg border px-2.5 font-medium transition-colors sm:w-56;
+    border-color: var(--theme-border);
+    background: var(--theme-surface-raised);
+    color: var(--theme-muted);
     margin: 0;
 }
 .DocSearch-Button:hover,
 .DocSearch-Button:focus {
-    @apply border-zinc-200/20 text-zinc-200 shadow-none;
-    background: var(--color-zinc-800);
+    @apply shadow-none;
+    border-color: color-mix(in srgb, var(--theme-fg) 20%, transparent);
+    background: var(--theme-surface-raised);
+    color: var(--theme-fg);
 }
 .DocSearch-Button .DocSearch-Search-Icon {
-    @apply size-4 text-zinc-500;
+    @apply size-4;
+    color: var(--theme-muted);
 }
 .DocSearch-Button-Container {
     @apply flex items-center gap-2;
@@ -246,10 +392,12 @@ button {
     @apply ml-auto flex min-w-0 items-center gap-0.5;
 }
 .DocSearch-Button-Key {
-    @apply rounded-sm border border-zinc-700 bg-zinc-900 px-1 py-px font-sans text-zinc-400;
+    @apply rounded-sm border px-1 py-px font-sans;
+    border-color: var(--theme-border);
+    color: var(--theme-muted);
     top: auto;
     box-shadow: none;
-    background: var(--color-zinc-900);
+    background: var(--theme-surface-inset);
     width: auto;
     height: auto;
     margin: 0;
@@ -262,7 +410,10 @@ button {
 
 /* Inline code */
 .docs-main :not(pre) > code {
-    @apply rounded-md border border-zinc-700 bg-zinc-800 px-1.5 py-0.5 font-mono text-[0.85em] font-normal text-zinc-200;
+    @apply rounded-md border px-1.5 py-0.5 font-mono text-[0.85em] font-normal;
+    border-color: var(--theme-border);
+    background: var(--theme-prose-inline-code-bg);
+    color: var(--theme-prose-inline-code);
 }
 /* Kill Tailwind Typography's backtick pseudo-elements */
 .docs-main code::before,
@@ -272,29 +423,47 @@ button {
 
 /* Fenced code blocks — terminal wells */
 .docs-main pre {
-    @apply relative my-6 flex overflow-hidden rounded-[10px] border border-zinc-700 bg-zinc-900;
+    @apply relative my-6 flex overflow-hidden rounded-[10px] border;
+    border-color: var(--theme-code-border);
+    background: var(--theme-code-bg);
 }
 .docs-main pre code {
-    @apply flex flex-1 overflow-x-auto bg-transparent p-0 font-mono text-zinc-300;
+    @apply flex flex-1 overflow-x-auto bg-transparent p-0 font-mono;
     font-size: 0.85em;
     line-height: 1.9;
-    color: var(--color-zinc-300);
+    color: var(--theme-code-text);
 }
 .docs-main pre code.torchlight {
     @apply block overflow-x-auto px-5 py-4;
     background: transparent !important;
+    color: var(--theme-code-text) !important;
+    scrollbar-color: var(--theme-code-accent) var(--theme-code-bg);
+}
+
+/* Torchlight renders a highlighted block for each labelled theme. Keep the
+   inactive block out of layout and accessibility APIs. Unlabelled per-fence
+   theme overrides remain visible. */
+.docs-main pre code.torchlight:is([data-theme='light'], [data-theme^='light:']) {
+    display: none;
+}
+html.light .docs-main pre code.torchlight:is([data-theme='dark'], [data-theme^='dark:']) {
+    display: none;
+}
+html.light .docs-main pre code.torchlight:is([data-theme='light'], [data-theme^='light:']) {
+    display: block;
 }
 .docs-main pre code.torchlight::-webkit-scrollbar {
     height: 0.4rem;
 }
 .docs-main pre code.torchlight::-webkit-scrollbar-track {
-    @apply bg-zinc-900;
+    background: var(--theme-code-bg);
 }
 .docs-main pre code.torchlight::-webkit-scrollbar-thumb {
-    @apply rounded-full bg-rose-500;
+    @apply rounded-full;
+    background: var(--theme-code-accent);
 }
 .docs-main pre code.torchlight::-webkit-scrollbar-thumb:hover {
-    @apply bg-rose-400;
+    background: var(--theme-code-accent-hover);
 }
 /* Non-torchlight (plain) code blocks still get comfortable padding */
 .docs-main pre code:not(.torchlight) {
@@ -310,19 +479,22 @@ button {
 
 /* Copy-to-clipboard button injected by clipboard.js */
 .docs-main pre .copyBtn {
-    @apply absolute right-2.5 top-2.5 flex size-6 items-center justify-center text-zinc-600 transition-colors;
+    @apply absolute right-2.5 top-2.5 flex size-6 items-center justify-center transition-colors;
+    color: var(--theme-code-copy);
 }
 .docs-main pre .copyBtn:hover,
 .docs-main pre .copyBtn:focus,
 .docs-main pre .copyBtn:active {
-    @apply text-zinc-200;
+    color: var(--theme-code-copy-hover);
 }
 
 /* Image-based terminal snapshots */
 .docs-main .code-snippet {
-    @apply my-6 block flex-1 overflow-x-auto rounded-[10px] border border-zinc-700 bg-zinc-900 py-5;
+    @apply my-6 block flex-1 overflow-x-auto rounded-[10px] border py-5;
+    border-color: var(--theme-code-border);
+    background: var(--theme-code-bg);
     scrollbar-width: thin;
-    scrollbar-color: var(--color-rose-500) var(--color-zinc-900);
+    scrollbar-color: var(--theme-code-accent) var(--theme-code-bg);
 }
 .docs-main pre + .code-snippet {
     @apply mt-4;
@@ -331,13 +503,14 @@ button {
     height: 0.4rem;
 }
 .docs-main .code-snippet::-webkit-scrollbar-track {
-    @apply bg-zinc-900;
+    background: var(--theme-code-bg);
 }
 .docs-main .code-snippet::-webkit-scrollbar-thumb {
-    @apply rounded-full bg-rose-500;
+    @apply rounded-full;
+    background: var(--theme-code-accent);
 }
 .docs-main .code-snippet:hover::-webkit-scrollbar-thumb {
-    @apply bg-rose-400;
+    background: var(--theme-code-accent-hover);
 }
 .docs-main .code-snippet img {
     --line-height: 1.85rem;
@@ -351,17 +524,17 @@ button {
    output the docs used to ship as raster images. Same card as .code-snippet.
    ========================================================================== */
 .docs-main .terminal {
-    --t-green: #a2d86e;
-    --t-red: #f08a8a;
-    --t-amber: #f4c26b;
-    --t-yellow: #fcdf5f;
-    --t-blue: #82aaff;
-    --t-violet: #c99bf5;
-    --t-rose: #f68aa0;
-    --t-sky: #7ec8f0;
-    --t-white: #e6e6e9;
-    --t-gray: #8f8f95;
-    --t-dim: #5f5f66;
+    --t-green: var(--theme-terminal-green);
+    --t-red: var(--theme-terminal-red);
+    --t-amber: var(--theme-terminal-amber);
+    --t-yellow: var(--theme-terminal-yellow);
+    --t-blue: var(--theme-terminal-blue);
+    --t-violet: var(--theme-terminal-violet);
+    --t-rose: var(--theme-terminal-rose);
+    --t-sky: var(--theme-terminal-sky);
+    --t-white: var(--theme-terminal-strong);
+    --t-gray: var(--theme-terminal-text);
+    --t-dim: var(--theme-terminal-dim);
 
     display: block;
     overflow-x: auto;
@@ -369,20 +542,23 @@ button {
     line-height: 1.9;
     color: var(--t-gray);
     scrollbar-width: thin;
-    scrollbar-color: var(--color-rose-500) var(--color-zinc-900);
-    @apply my-6 rounded-[10px] border border-zinc-700 bg-zinc-900 px-5.5 py-5 font-mono text-[13px];
+    scrollbar-color: var(--theme-code-accent) var(--theme-code-bg);
+    @apply my-6 rounded-[10px] border px-5.5 py-5 font-mono text-[13px];
+    border-color: var(--theme-code-border);
+    background: var(--theme-code-bg);
 }
 .docs-main .terminal::-webkit-scrollbar {
     height: 0.4rem;
 }
 .docs-main .terminal::-webkit-scrollbar-track {
-    @apply bg-zinc-900;
+    background: var(--theme-code-bg);
 }
 .docs-main .terminal::-webkit-scrollbar-thumb {
-    @apply rounded-full bg-rose-500;
+    @apply rounded-full;
+    background: var(--theme-code-accent);
 }
 .docs-main .terminal:hover::-webkit-scrollbar-thumb {
-    @apply bg-rose-400;
+    background: var(--theme-code-accent-hover);
 }
 .docs-main .terminal .l {
     min-height: 1.9em;
@@ -428,19 +604,19 @@ button {
 }
 .docs-main .terminal .pass {
     background: var(--t-green);
-    color: #18181b;
+    color: var(--theme-terminal-pass-fg);
 }
 .docs-main .terminal .fail {
     background: var(--t-red);
-    color: #ffffff;
+    color: var(--theme-terminal-chip-fg);
 }
 .docs-main .terminal .warn {
     background: var(--t-amber);
-    color: #ffffff;
+    color: var(--theme-terminal-chip-fg);
 }
 .docs-main .terminal .todo {
     background: var(--t-sky);
-    color: #ffffff;
+    color: var(--theme-terminal-chip-fg);
 }
 /* dotted leader rows (coverage / profile) */
 .docs-main .terminal .row {
@@ -458,10 +634,10 @@ button {
 .docs-main .terminal .hr {
     margin: 8px 0;
     border: 0;
-    border-top: 1px solid var(--color-zinc-700);
+    border-top: 1px solid var(--theme-code-border);
 }
 .docs-main .terminal .hr-red {
-    border-top-color: #7f3a3a;
+    border-top-color: var(--theme-terminal-danger-border);
 }
 /* code gutter (failure output) — continuous vertical rule beside line numbers */
 .docs-main .terminal .cl {
@@ -491,22 +667,22 @@ button {
    Documentation content — prose (Tailwind Typography, retuned to blueprint)
    ========================================================================== */
 .docs-main {
-    --tw-prose-invert-body: var(--color-zinc-300);
-    --tw-prose-invert-headings: var(--color-zinc-100);
-    --tw-prose-invert-lead: var(--color-zinc-400);
-    --tw-prose-invert-links: var(--color-rose-400);
-    --tw-prose-invert-bold: var(--color-zinc-100);
-    --tw-prose-invert-counters: var(--color-zinc-500);
-    --tw-prose-invert-bullets: var(--color-zinc-600);
-    --tw-prose-invert-hr: var(--color-zinc-700);
-    --tw-prose-invert-quotes: var(--color-zinc-200);
-    --tw-prose-invert-quote-borders: var(--color-rose-500);
-    --tw-prose-invert-captions: var(--color-zinc-500);
-    --tw-prose-invert-code: var(--color-zinc-100);
-    --tw-prose-invert-pre-code: var(--color-zinc-300);
-    --tw-prose-invert-pre-bg: var(--color-zinc-900);
-    --tw-prose-invert-th-borders: var(--color-zinc-700);
-    --tw-prose-invert-td-borders: var(--color-zinc-700);
+    --tw-prose-invert-body: var(--theme-prose-body);
+    --tw-prose-invert-headings: var(--theme-prose-heading);
+    --tw-prose-invert-lead: var(--theme-muted);
+    --tw-prose-invert-links: var(--theme-prose-link);
+    --tw-prose-invert-bold: var(--theme-prose-strong);
+    --tw-prose-invert-counters: var(--theme-prose-counter);
+    --tw-prose-invert-bullets: var(--theme-prose-bullet);
+    --tw-prose-invert-hr: var(--theme-border);
+    --tw-prose-invert-quotes: var(--theme-prose-quote);
+    --tw-prose-invert-quote-borders: var(--theme-accent);
+    --tw-prose-invert-captions: var(--theme-prose-caption);
+    --tw-prose-invert-code: var(--theme-prose-inline-code);
+    --tw-prose-invert-pre-code: var(--theme-code-text);
+    --tw-prose-invert-pre-bg: var(--theme-code-bg);
+    --tw-prose-invert-th-borders: var(--theme-border);
+    --tw-prose-invert-td-borders: var(--theme-border);
 }
 
 /* Headings use the display grotesque, stretched, per the design system */
@@ -523,16 +699,20 @@ button {
     word-break: break-word;
 }
 .docs-main h1 {
-    @apply mb-8 mt-0 text-4xl font-extrabold leading-[1.05] text-zinc-100 sm:text-[2.75rem];
+    @apply mb-8 mt-0 text-4xl font-extrabold leading-[1.05] sm:text-[2.75rem];
+    color: var(--theme-prose-heading);
 }
 .docs-main h2 {
-    @apply relative mb-4 mt-14 text-3xl font-extrabold text-zinc-100;
+    @apply relative mb-4 mt-14 text-3xl font-extrabold;
+    color: var(--theme-prose-heading);
 }
 .docs-main h3 {
-    @apply relative mb-3 mt-10 text-xl font-bold text-zinc-100;
+    @apply relative mb-3 mt-10 text-xl font-bold;
+    color: var(--theme-prose-heading);
 }
 .docs-main h4 {
-    @apply relative mb-2 mt-8 text-lg font-bold text-zinc-100;
+    @apply relative mb-2 mt-8 text-lg font-bold;
+    color: var(--theme-prose-heading);
 }
 
 /* Heading permalinks (# anchor) — rose, revealed on hover */
@@ -540,7 +720,8 @@ button {
     display: none;
 }
 .docs-main :is(h2, h3, h4) a.heading-permalink {
-    @apply absolute font-mono font-normal text-rose-500 no-underline opacity-0 transition-opacity;
+    @apply absolute font-mono font-normal no-underline opacity-0 transition-opacity;
+    color: var(--theme-accent);
     left: -1.1em;
     padding-right: 0.4em;
 }
@@ -551,11 +732,13 @@ button {
 
 /* Links */
 .docs-main a {
-    @apply font-medium text-rose-400 underline underline-offset-4 transition-colors;
+    @apply font-medium underline underline-offset-4 transition-colors;
+    color: var(--theme-prose-link);
     text-decoration-thickness: 1px;
 }
 .docs-main a:hover {
-    @apply text-rose-300 no-underline;
+    @apply no-underline;
+    color: var(--theme-prose-link-hover);
 }
 
 /* Body copy */
@@ -566,7 +749,10 @@ button {
 
 /* Blockquotes — rose rail callout */
 .docs-main blockquote {
-    @apply my-8 rounded-r-lg border-l-2 border-rose-500 bg-zinc-800/40 py-1 pl-4 font-normal not-italic text-zinc-300;
+    @apply my-8 rounded-r-lg border-l-2 py-1 pl-4 font-normal not-italic;
+    border-color: var(--theme-accent);
+    background: var(--theme-prose-quote-bg);
+    color: var(--theme-prose-body);
 }
 .docs-main blockquote p:first-of-type::before,
 .docs-main blockquote p:last-of-type::after {
@@ -578,12 +764,14 @@ button {
     @apply my-6 w-full overflow-hidden text-sm;
 }
 .docs-main thead th {
-    @apply font-mono text-xs uppercase tracking-widest text-zinc-400;
+    @apply font-mono text-xs uppercase tracking-widest;
+    color: var(--theme-muted);
 }
 
 /* Horizontal rules */
 .docs-main hr {
-    @apply my-12 border-zinc-700;
+    @apply my-12;
+    border-color: var(--theme-border);
 }
 
 /* Table-of-contents (top-of-page index list) & method lists ------------- */
@@ -602,7 +790,7 @@ button {
     @apply block no-underline;
 }
 .docs-main .collection-method-list ul li a code {
-    @apply text-zinc-300;
+    color: var(--theme-prose-inline-code);
 }
 
 .docs-main .content-list ul {
@@ -614,7 +802,8 @@ button {
 }
 .docs-main .content-list ul li::before {
     content: '';
-    @apply absolute left-1 top-[0.7em] size-1.5 rounded-full border border-rose-500;
+    @apply absolute left-1 top-[0.7em] size-1.5 rounded-full border;
+    border-color: var(--theme-accent);
 }
 
 .docs-main #toc ul,
@@ -628,16 +817,17 @@ button {
 }
 .docs-main #toc ul li a,
 .docs-main h1 + ul li a {
-    @apply relative block py-1 font-mono text-sm font-normal text-zinc-400 no-underline transition-colors;
+    @apply relative block py-1 font-mono text-sm font-normal no-underline transition-colors;
+    color: var(--theme-muted);
 }
 .docs-main #toc ul li a:hover,
 .docs-main h1 + ul li a:hover {
-    @apply text-rose-400;
+    color: var(--theme-prose-link);
 }
 .docs-main #toc ul li a::before,
 .docs-main h1 + ul li a::before {
     content: '// ';
-    @apply text-rose-500;
+    color: var(--theme-accent);
 }
 .docs-main #toc ul ul,
 .docs-main h1 + ul ul {
@@ -646,11 +836,12 @@ button {
 .docs-main #toc ul ul li a::before,
 .docs-main h1 + ul ul li a::before {
     content: '- ';
-    @apply text-zinc-600;
+    color: var(--theme-prose-bullet);
 }
 
 .docs-main iframe {
-    @apply my-6 rounded-[10px] border border-zinc-700;
+    @apply my-6 rounded-[10px] border;
+    border-color: var(--theme-border);
     max-width: 100%;
     height: auto;
     aspect-ratio: 16/9;
@@ -666,26 +857,31 @@ button {
 
 /* Section labels — mono, uppercase, // prefixed */
 .docs-nav h2 {
-    @apply mb-3 mt-9 flex items-center font-mono text-2xs font-bold uppercase tracking-widest text-zinc-500;
+    @apply mb-3 mt-9 flex items-center font-mono text-2xs font-bold uppercase tracking-widest;
+    color: var(--theme-muted);
 }
 .docs-nav > ul > li:first-child > h2 {
     @apply mt-0;
 }
 .docs-nav h2::before {
     content: '// ';
-    @apply mr-1 text-rose-500;
+    @apply mr-1;
+    color: var(--theme-accent);
 }
 
 .docs-nav ul li {
     @apply mb-1;
 }
 .docs-nav ul li a {
-    @apply flex items-center py-1 font-sans text-sm font-normal text-zinc-400 no-underline underline-offset-4 transition-colors;
+    @apply flex items-center py-1 font-sans text-sm font-normal no-underline underline-offset-4 transition-colors;
+    color: var(--theme-muted);
 }
 .docs-nav ul li a:focus,
 .docs-nav ul li a:hover {
-    @apply text-white underline;
+    @apply underline;
+    color: var(--theme-fg);
 }
 .docs-nav ul li.active a {
-    @apply font-semibold text-white underline;
+    @apply font-semibold underline;
+    color: var(--theme-fg);
 }

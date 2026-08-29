@@ -1,7 +1,7 @@
 <aside class="hidden lg:block">
     <div class="scrollbar-ghost lg:top-15.5 overflow-y-auto px-5 py-8 lg:sticky lg:h-[calc(100vh-3.875rem)]">
-        <div class="text-2xs mb-4 flex items-center gap-2.5 font-mono font-bold uppercase tracking-widest text-zinc-500">
-            <span class="text-rose-500">//</span> partners
+        <div class="text-2xs mb-4 flex items-center gap-2.5 font-mono font-bold uppercase tracking-widest text-[var(--theme-muted)]">
+            <span class="text-[var(--theme-accent)]">//</span> partners
         </div>
 
         <ul class="grid grid-cols-2 gap-2.5" x-data="{
@@ -37,14 +37,14 @@
         }" x-init="init()">
             <template :key="sponsor.img" x-for="sponsor in shuffledSponsors">
                 <li :class="sponsor.tier === 1 ? 'col-span-2' : ''">
-                    <a :href="sponsor.href" class="active:scale-96 flex h-16 items-center justify-center rounded-xl border border-zinc-700 bg-zinc-800 px-3 hover:border-zinc-600" rel="noopener" target="_blank">
-                        <img :class="sponsor.class" :src="sponsor.img" class="max-w-full object-contain" loading="lazy" />
+                    <a :href="sponsor.href" class="active:scale-96 flex h-16 items-center justify-center rounded-xl border border-[var(--theme-border)] bg-[var(--theme-surface-raised)] px-3 transition-colors hover:border-[var(--theme-fg)]/20" rel="noopener" target="_blank">
+                        <img :class="sponsor.class" :src="sponsor.img" class="max-w-full object-contain [filter:var(--theme-partner-logo-filter)] [opacity:var(--theme-partner-logo-opacity)]" loading="lazy" />
                     </a>
                 </li>
             </template>
         </ul>
 
-        <a class="active:scale-96 text-2xs mt-2.5 flex h-11 items-center justify-center rounded-xl border border-dashed border-zinc-700 font-mono uppercase tracking-widest text-zinc-500 transition-colors hover:border-zinc-200/20 hover:text-zinc-300" href="https://github.com/sponsors/nunomaduro" rel="noopener" target="_blank">
+        <a class="active:scale-96 text-2xs mt-2.5 flex h-11 items-center justify-center rounded-xl border border-dashed border-[var(--theme-border)] font-mono uppercase tracking-widest text-[var(--theme-muted)] transition-colors hover:border-[var(--theme-fg)]/20 hover:text-[var(--theme-fg)]" href="https://github.com/sponsors/nunomaduro" rel="noopener" target="_blank">
             Your logo here
         </a>
     </div>
