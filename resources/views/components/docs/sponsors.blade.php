@@ -17,8 +17,7 @@
                 { href: 'https://www.testmuai.com/?utm_medium=sponsor&amp;utm_source=pest', img: '/www/assets/sponsors/testmu.svg', class: 'h-6 w-auto', tier: 2 },
                 { href: 'https://zapiet.com/?ref=nunomaduro', img: '/www/assets/sponsors/zapiet.svg', class: 'h-6 w-auto', tier: 2 },
                 { href: 'https://loadforge.com/?ref=nunomaduro', img: '/www/assets/sponsors/loadforge.svg', class: 'h-4 w-auto', tier: 2 },
-                { href: 'https://route4me.com/?ref=nunomaduro', img: '/www/assets/sponsors/route4me.svg', class: 'h-6 w-auto', tier: 2 },
-                { href: 'https://getnerdify.com/?ref=nunomaduro', img: '/www/assets/sponsors/nerdify.png', class: 'h-9 w-auto', tier: 2 }
+                { href: 'https://route4me.com/?ref=nunomaduro', img: '/www/assets/sponsors/route4me.svg', class: 'h-6 w-auto', tier: 2 }
             ],
             shuffledSponsors: [],
             shuffle(array) {
