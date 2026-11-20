@@ -9,15 +9,15 @@
                 { href: 'https://jb.gg/nuno', img: '/www/assets/sponsors/phpstorm.svg', class: 'h-6 w-auto', tier: 1 },
                 { href: 'https://coderabbit.link/nunomaduro', img: '/www/assets/sponsors/coderabbit.svg', class: 'h-6 w-auto', tier: 1 },
                 { href: 'https://serpapi.com/?ref=nunomaduro', img: '/www/assets/sponsors/serpapi.png', class: 'h-6 w-auto', tier: 1 },
-                { href: 'https://bentonow.com/?ref=nunomaduro', img: '/www/assets/sponsors/bento.svg', class: 'h-5 w-auto', tier: 1 },
-                { href: 'https://cmsmax.com/?ref=nunomaduro', img: '/www/assets/sponsors/cmsmax.png', class: 'h-6 w-auto', tier: 1 },
                 { href: 'https://redberry.international/laravel-development/?utm_source=pest&utm_medium=banner&utm_campaign=pest_sponsorship', img: '/www/assets/sponsors/redberry.png', class: 'h-5 w-auto', tier: 1 },
                 { href: 'https://typesense.org/?ref=nunomaduro', img: '/www/assets/sponsors/typesense.svg', class: 'h-7 w-auto', tier: 1 },
                 { href: 'https://wearepixel.com.au/?ref=nunomaduro', img: '/www/assets/sponsors/pixel.svg', class: 'h-5 w-auto', tier: 1 },
+                { href: 'https://nativephp.com/?ref=nunomaduro', img: '/www/assets/sponsors/nativephp.svg', class: 'h-6 w-auto', tier: 1 },
                 { href: 'https://www.testmuai.com/?utm_medium=sponsor&amp;utm_source=pest', img: '/www/assets/sponsors/testmu.svg', class: 'h-6 w-auto', tier: 2 },
                 { href: 'https://zapiet.com/?ref=nunomaduro', img: '/www/assets/sponsors/zapiet.svg', class: 'h-6 w-auto', tier: 2 },
-                { href: 'https://loadforge.com/?ref=nunomaduro', img: '/www/assets/sponsors/loadforge.svg', class: 'h-4 w-auto', tier: 2 },
-                { href: 'https://route4me.com/?ref=nunomaduro', img: '/www/assets/sponsors/route4me.svg', class: 'h-6 w-auto', tier: 2 }
+                { href: 'https://route4me.com/?ref=nunomaduro', img: '/www/assets/sponsors/route4me.svg', class: 'h-6 w-auto', tier: 2 },
+                { href: 'https://www.pushery.com/?ref=nunomaduro', img: '/www/assets/sponsors/pushery.svg', class: 'h-5 w-auto', tier: 2 },
+                { href: 'https://lfcarry.com/?ref=nunomaduro', img: '/www/assets/sponsors/lfcarry.svg', class: 'h-7 w-auto', tier: 2 }
             ],
             shuffledSponsors: [],
             shuffle(array) {

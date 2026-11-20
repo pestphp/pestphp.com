@@ -320,20 +320,18 @@
                         Backed by teams<br>who ship with Pest
                     </div>
                     <div class="mask-[linear-gradient(90deg,transparent,black_8%,black_92%,transparent)] relative overflow-hidden" x-data="{ shuffle: list => list.map(s => [Math.random(), s]).sort((a, b) => a[0] - b[0]).map(s => s[1]), all: [
-                        { alt: 'CMS Max', href: 'https://cmsmax.com/?ref=nunomaduro', src: '/www/assets/sponsors/cmsmax.png', h: 'h-6', tier: 1 },
                         { alt: 'PhpStorm', href: 'https://jb.gg/nuno', src: '/www/assets/sponsors/phpstorm.svg', h: 'h-5.5', tier: 1 },
                         { alt: 'CodeRabbit', href: 'https://coderabbit.link/nunomaduro', src: '/www/assets/sponsors/coderabbit.svg', h: 'h-6', tier: 1 },
                         { alt: 'SerpApi', href: 'https://serpapi.com/?ref=nunomaduro', src: '/www/assets/sponsors/serpapi.png', h: 'h-6', tier: 1 },
-                        { alt: 'Bento', href: 'https://bentonow.com/?ref=nunomaduro', src: '/www/assets/sponsors/bento.svg', h: 'h-5', tier: 1 },
                         { alt: 'Redberry', href: 'https://redberry.international/laravel-development/?utm_source=pest&utm_medium=banner&utm_campaign=pest_sponsorship', src: '/www/assets/sponsors/redberry.png', h: 'h-6', tier: 1 },
                         { alt: 'Typesense', href: 'https://typesense.org/?ref=nunomaduro', src: '/www/assets/sponsors/typesense.svg', h: 'h-6', tier: 1 },
                         { alt: 'Pixel', href: 'https://wearepixel.com.au/?ref=nunomaduro', src: '/www/assets/sponsors/pixel.svg', h: 'h-6', tier: 1 },
                         { alt: 'NativePHP', href: 'https://nativephp.com/?ref=nunomaduro', src: '/www/assets/sponsors/nativephp.svg', h: 'h-6', tier: 1 },
                         { alt: 'TestMu AI', href: 'https://www.testmuai.com/?utm_medium=sponsor&amp;utm_source=pest', src: '/www/assets/sponsors/testmu.svg', h: 'h-5', tier: 2 },
                         { alt: 'Zapiet', href: 'https://zapiet.com/?ref=nunomaduro', src: '/www/assets/sponsors/zapiet.svg', h: 'h-6', tier: 2 },
-                        { alt: 'LoadForge', href: 'https://loadforge.com/?ref=nunomaduro', src: '/www/assets/sponsors/loadforge.svg', h: 'h-5', tier: 2 },
                         { alt: 'Route4Me', href: 'https://route4me.com/?ref=nunomaduro', src: '/www/assets/sponsors/route4me.svg', h: 'h-6', tier: 2 },
-                        { alt: 'Pushery', href: 'https://www.pushery.com/?ref=nunomaduro', src: '/www/assets/sponsors/pushery.svg', h: 'h-5', tier: 2 }
+                        { alt: 'Pushery', href: 'https://www.pushery.com/?ref=nunomaduro', src: '/www/assets/sponsors/pushery.svg', h: 'h-5', tier: 2 },
+                        { alt: 'LFCarry', href: 'https://lfcarry.com/?ref=nunomaduro', src: '/www/assets/sponsors/lfcarry.svg', h: 'h-7', tier: 2 }
                     ], sponsors: [], init() { this.sponsors = [...this.shuffle(this.all.filter(s => s.tier === 1)), ...this.shuffle(this.all.filter(s => s.tier === 2))] } }">
                         <div class="animate-marquee flex w-max hover:[animation-play-state:paused] motion-reduce:animate-none">
                             <template x-for="sponsor in sponsors" :key="sponsor.alt">
@@ -805,14 +803,18 @@
                 <div class="mb-10 break-inside-avoid">
                     <h3 class="mb-4 flex items-center gap-2.5 font-mono text-2xs font-bold uppercase tracking-widest text-zinc-500"><span class="text-rose-500">//</span> pest partners</h3>
                     <ul class="space-y-3 text-sm">
-                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="https://cmsmax.com/?ref=nunomaduro" target="_blank">CMS Max</a></li>
                         <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="https://jb.gg/nuno" target="_blank">PhpStorm</a></li>
                         <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="https://coderabbit.link/nunomaduro" target="_blank">CodeRabbit</a></li>
                         <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="https://serpapi.com/?ref=nunomaduro" target="_blank">SerpApi</a></li>
-                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="https://bentonow.com/?ref=nunomaduro" target="_blank">Bento</a></li>
                         <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="https://redberry.international/laravel-development/?utm_source=pest&utm_medium=banner&utm_campaign=pest_sponsorship" target="_blank">Redberry</a></li>
                         <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="https://typesense.org/?ref=nunomaduro" target="_blank">Typesense</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="https://wearepixel.com.au/?ref=nunomaduro" target="_blank">Pixel</a></li>
                         <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="https://nativephp.com/?ref=nunomaduro" target="_blank">NativePHP</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="https://zapiet.com/?ref=nunomaduro" target="_blank">Zapiet</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="https://route4me.com/?ref=nunomaduro" target="_blank">Route4Me</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="https://www.testmuai.com/?utm_medium=sponsor&amp;utm_source=pest" target="_blank">TestMu AI</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="https://www.pushery.com/?ref=nunomaduro" target="_blank">Pushery</a></li>
+                        <li><a class="text-zinc-400 underline-offset-4 transition-colors hover:text-white hover:underline" href="https://lfcarry.com/?ref=nunomaduro" target="_blank">LFCarry</a></li>
                     </ul>
                 </div>
                 </nav>
