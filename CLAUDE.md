@@ -21,7 +21,7 @@ A **standalone static Vite project** at `resources/www/`, completely separate fr
 | `resources/www/mockups/` | Working directory for mockup assets. |
 | `resources/www/package.json`, `vite.config.js` | Its **own** npm project (Vite 4, Alpine, tippy, tailwindcss-motion, Tailwind v4). `base: 'www'`, builds to `../../public/www`. |
 
-- **Dev**: `cd resources/www && npm install && npm run dev`.
+- **Dev**: `cd resources/www && npm install && npm run dev` (port 5174), or `composer dev` from the repo root to run it alongside `artisan serve`, the docs Vite server (5173) and `pail` (registered in `AppServiceProvider::configureDevCommands()`).
 - **Build**: `cd resources/www && npm run build` → writes to `public/www/`.
 - **Served by**: `routes/web.php` → `Route::get('/')` returns `file_get_contents(public_path('www/index.html'))`. It serves the **built artifact**, so changes to `resources/www/` do **not** appear at `/` until you build. Iterate on the dev server (`npm run dev`, at `http://localhost:<port>/www`), then build and re-verify.
 - **`public/www/`** = generated output (hashed `*.css`/`*.js`, `index.html`, and copies of everything in `resources/www/public/`). Never hand-edit; it is overwritten by every build.

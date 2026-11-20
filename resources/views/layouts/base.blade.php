@@ -48,6 +48,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     @stack('styles')
+
+    <script defer data-domain="pestphp.com" data-site="01a1dc71-f719-7d5f-8ae7-2c83a5d1d096" src="https://analytics.everfold.test/script.js"></script>
 </head>
 
 <body {{ $attributes->except(['title', 'description']) }}>

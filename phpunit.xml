@@ -5,8 +5,8 @@
          colors="true"
 >
     <testsuites>
-        <testsuite name="Browser">
-            <directory>tests/Browser</directory>
+        <testsuite name="Feature">
+            <directory>tests</directory>
         </testsuite>
     </testsuites>
     <source>

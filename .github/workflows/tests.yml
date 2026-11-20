@@ -11,26 +11,20 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: ['22.x']
-        php: ['8.4']
+        php: ['8.5']
 
-    name: PHP ${{ matrix.php }} - Node ${{ matrix.node }} - ${{ matrix.os }}
+    name: PHP ${{ matrix.php }} - ${{ matrix.os }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-
-      - name: Setup Node ${{ matrix.node }}
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
-        with:
-          node-version: ${{ matrix.node }}
 
       - name: Setup PHP
         uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240 # v2
         with:
           php-version: ${{ matrix.php }}
           tools: composer:v2
-          coverage: xdebug
+          coverage: none
 
       - name: Setup Problem Matches
         run: |
@@ -39,9 +33,6 @@ jobs:
 
       - name: Install PHP dependencies
         run: composer install --no-interaction --no-progress --ansi
-
-      - name: Install Playwright
-        run: npx playwright install
 
       - name: Tests
         run: composer test

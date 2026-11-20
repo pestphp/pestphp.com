@@ -1,7 +1,11 @@
 {
     "private": true,
+    "type": "module",
+    "engines": {
+        "node": ">=26"
+    },
     "scripts": {
-        "dev": "npm run development",
+        "dev": "vite",
         "development": "vite",
         "watch": "npm run development",
         "serve": "npm run watch",
@@ -10,19 +14,23 @@
         "production": "vite build"
     },
     "devDependencies": {
-        "@tailwindcss/typography": "^0.5.16",
-        "vite": "^4.0.0"
+        "@tailwindcss/typography": "^0.5.20",
+        "concurrently": "^10.0.7",
+        "laravel-vite-plugin": "^3.2.1",
+        "vite": "^8.3.8"
     },
     "dependencies": {
-        "@docsearch/css": "^3.3.3",
-        "@docsearch/js": "^3.3.3",
-        "@tailwindcss/postcss": "^4.1.12",
+        "@docsearch/css": "^3.9.0",
+        "@docsearch/js": "^3.9.0",
+        "@tailwindcss/postcss": "^4.3.5",
         "ally.js": "^1.4.1",
-        "alpinejs": "^3.14.9",
+        "alpinejs": "^3.17.5",
         "clipboard": "^2.0.11",
-        "laravel-vite-plugin": "^0.7.4",
-        "postcss": "^8.5.6",
-        "tailwindcss": "^4.1.12",
+        "postcss": "^8.5.33",
+        "tailwindcss": "^4.3.5",
         "tippy.js": "^6.3.7"
+    },
+    "optionalDependencies": {
+        "@laravel/multiplex": "^0.4.5"
     }
 }
