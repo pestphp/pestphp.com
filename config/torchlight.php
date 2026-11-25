@@ -6,9 +6,12 @@ return [
     // leave this blank your default app cache will be used.
     'cache' => env('TORCHLIGHT_CACHE_DRIVER'),
 
-    // Which theme you want to use. You can find all of the themes at
-    // https://torchlight.dev/themes.
-    'theme' => env('TORCHLIGHT_THEME', 'dracula'),
+    // Render both themes so syntax colors come directly from Torchlight rather
+    // than trying to translate one theme's inline colors in CSS.
+    'theme' => [
+        'dark' => env('TORCHLIGHT_DARK_THEME', env('TORCHLIGHT_THEME', 'dracula')),
+        'light' => env('TORCHLIGHT_LIGHT_THEME', 'github-light'),
+    ],
 
     // Your API token from torchlight.dev.
     'token' => env('TORCHLIGHT_TOKEN'),

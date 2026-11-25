@@ -1,6 +1,6 @@
 <x-app-layout description="Pest has IDE plugins for PhpStorm and VSCode." layout="app" title='IDE plugins'>
     <main class="w-full flex-auto" role="main">
-        <div class="relative container mx-auto min-h-[70vh] border-x border-zinc-700">
+        <div class="relative container mx-auto min-h-[70vh] border-x border-[var(--theme-border)] bg-[var(--theme-bg)] text-[var(--theme-fg)]">
             <div class="top-14.25 pointer-events-none fixed inset-x-0 z-10">
                 <div class="container relative mx-auto">
                     <span class="crosshair -left-1 top-px"></span>
@@ -15,13 +15,13 @@
             <div class="lg:grid lg:grid-cols-[15rem_minmax(0,1fr)_15rem]">
                 <x-docs.sidebar>{!! $index !!}</x-docs.sidebar>
 
-                <div class="min-w-0 px-5 py-10 sm:px-10 lg:border-x lg:border-zinc-700">
-                    <div class="mb-8 flex items-center gap-2.5 font-mono text-xs tracking-widest text-zinc-500">
-                        <span class="font-bold text-rose-500">//</span>
+                <div class="min-w-0 px-5 py-10 sm:px-10 lg:border-x lg:border-[var(--theme-border)]">
+                    <div class="mb-8 flex items-center gap-2.5 font-mono text-xs tracking-widest text-[var(--theme-muted)]">
+                        <span class="font-bold text-[var(--theme-accent)]">//</span>
                         <span>docs</span>
-                        <span class="text-zinc-600">/</span>
-                        <span class="text-zinc-400">editor-setup</span>
-                        <a class="ml-auto hidden text-zinc-400 underline-offset-4 hover:text-rose-400 hover:underline lg:inline" href="https://github.com/pestphp/pestphp.com/edit/next/resources/views/ide.blade.php" rel="noopener" target="_blank">edit this page →</a>
+                        <span class="text-[var(--theme-border)]">/</span>
+                        <span>editor-setup</span>
+                        <a class="ml-auto hidden underline-offset-4 transition-colors hover:text-[var(--theme-accent)] hover:underline lg:inline" href="https://github.com/pestphp/pestphp.com/edit/next/resources/views/ide.blade.php" rel="noopener" target="_blank">edit this page →</a>
                     </div>
 
                     <article class="docs-main prose prose-invert max-w-none">

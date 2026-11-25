@@ -66,7 +66,7 @@ Laravel + Blade, driven by markdown. A different pipeline entirely.
 
 This is the complete visual specification for the **landing page** (`resources/www/`), and the spec the shipped `index.html` already implements. It is self-contained on purpose: use it to add elements that belong or build new sections without diffing the whole file. Every value below is a real value, not an approximation.
 
-**The theme is dark-only.** All values below are the canonical dark values. Write them as plain (unprefixed) classes — do **not** add light-mode counterparts or `dark:` variants. If any copied markup carries `dark:` pairs, keep only the dark value.
+Dark remains the canonical default and no-JavaScript fallback. The values below describe that default design; active UI colors are mapped through semantic `--theme-*` properties in `resources/www/main.css`, with light values under `html.light`. Prefer those semantic properties over `dark:` variants when changing theme-aware UI.
 
 ## 1. Identity in one paragraph
 
@@ -306,7 +306,7 @@ Only **two breakpoints: `sm` (640px) and `lg` (1024px)**, mobile-first. `md`, `x
 
 - **Padding**: `px-5` → `sm:px-10` on every content block. Cell padding `px-5 sm:px-6` or `px-5 sm:px-8`.
 - **Hero**: single column stack (`gap-12`) → `lg:grid-cols-[1.05fr_0.95fr]`. H1 uses viewport clamps: `text-[clamp(30px,8.6vw,40px)]` then `sm:text-[clamp(34px,4vw,50px)]` — the *only* fluid type on the page. Watch `whitespace-nowrap` spans in H1: phrases must fit 320px at the clamp minimum.
-- **Header**: nav links `hidden lg:flex`; search box `hidden sm:flex` (fixed `w-56`); logo + GitHub always visible. There is **no theme toggle** (dark-only). Below `lg`, a hamburger (`lg:hidden`) opens a slide-in mobile menu driven by `x-data="{ mobileMenuIsOpen: false }"` on `<body>` — it carries the nav links (Documentation/YouTube/Sponsor) that are otherwise hidden.
+- **Header**: nav links `hidden lg:flex`; search box `hidden sm:flex` (fixed `w-56`); logo + GitHub always visible. A theme toggle is available in the desktop header and mobile menu. Below `lg`, a hamburger (`lg:hidden`) opens a slide-in mobile menu driven by `x-data="{ mobileMenuIsOpen: false }"` on `<body>` — it carries the nav links (Documentation/YouTube/Sponsor) that are otherwise hidden.
 - **Bento**: 1 column → `lg:grid-cols-5` with `lg:col-span-3`/`lg:col-span-2`. Inside the browser-testing card, media splits `lg:grid-cols-2`.
 - **Fact strip (Built on)**: `grid-cols-2` with the label cell `col-span-2 border-b` → at `lg`: `lg:grid-cols-[auto_repeat(4,1fr)]`, label becomes `lg:col-span-1 lg:border-b-0 lg:border-r`. Cells alternate `border-r` (kept on mobile 2-col) and `lg:border-r` (only for 4-col). When adding cells, re-derive which need `border-r` vs `lg:border-r` for both layouts.
 - **Stats strip**: `grid-cols-2 lg:grid-cols-4`; per-cell borders are data-driven: cell 1 `border-b border-r lg:border-b-0`, cell 2 `border-b lg:border-b-0 lg:border-r`, cell 3 `border-r`, cell 4 none.
@@ -337,7 +337,7 @@ Only **two breakpoints: `sm` (640px) and `lg` (1024px)**, mobile-first. `md`, `x
 ## 11. Build, serve & gotchas
 
 - **Loop**: edit `resources/www/` → check on the dev server → `npm run build` → confirm the built page still matches (the `/` route serves `public/www/index.html`, not the source).
-- **Dark-only**: write dark values as plain classes; never add `dark:` variants or a theme toggle. `<body>` is `bg-zinc-900`.
+- **Theme behavior**: dark is the default; use the shared semantic `--theme-*` properties for colors and define light-mode differences under `html.light`. Avoid parallel `dark:` utility trees for active theme-aware UI.
 - **Wordmark**: keep the header `<svg id="pest-wordmark">` — the footer watermark is a `<use href="#pest-wordmark">` and only resolves because both live in the same `index.html`.
 - **Logo colors on the dark canvas**: brand-colored SVGs (Laravel red, Drupal blue, CodeIgniter orange, Statamic lime, Livewire pink, Symfony white, sponsor logos) render **as-is — do not `invert`**. Only truly-black/`currentColor` glyphs (WordPress, Inertia) get `invert` to flip them white. Inverting an already-white logo turns it black (invisible) — the classic mistake here.
 - **No page-level horizontal scroll**: `<html>` carries `overflow-x-clip` to absorb the ~4px bleed from the decorative corner crosshair marks (fixed-positioned marks escape `<body>` clipping). Keep it.
